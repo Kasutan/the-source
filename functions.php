@@ -24,6 +24,7 @@ include_once( get_template_directory() . '/inc/site-header.php' );
 include_once( get_template_directory() . '/inc/site-footer.php' );
 
 //Paid membership pro
+include_once( get_template_directory() . '/inc/pmp/checkout-fields.php' );
 //include_once( get_template_directory() . '/inc/pmp/my-account.php' );
 
 // Editor
