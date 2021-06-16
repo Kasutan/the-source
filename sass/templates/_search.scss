@@ -1,0 +1,22 @@
+.search-results {
+	form.search-form {
+		justify-content: center;
+	}
+	.loop {
+		margin-bottom: 0;
+	}
+	li.product {
+		margin-bottom: var(--margin-y-2);
+		text-align: left;
+	}
+}
+
+.no-results{
+	min-height:50vh;
+	.entry-header {
+		padding:0 var(--padding-x);	
+	}
+	.entry-content {
+		padding:0 var(--padding-x-largeur-reduite);	
+	}
+}

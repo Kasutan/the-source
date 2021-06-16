@@ -1,0 +1,19 @@
+.single-title {
+	@include fs(42);
+	margin-bottom: 0;
+	text-align: left;
+	text-transform: unset;
+}
+
+.single {
+	.entry-content > p {
+		line-height:1.7;
+		margin-bottom:2em;
+	}
+}
+
+.entry-footer  {
+	text-align: center;
+	font-weight: 400;
+	margin-bottom:var(--margin-y-1);
+}

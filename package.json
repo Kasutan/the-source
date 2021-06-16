@@ -1,0 +1,21 @@
+{
+  "name": "lapeyre",
+  "version": "1.0.0",
+  "description": "Theme pour Lapeyre base sur underscore",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Magalie Castaing",
+  "license": "ISC"
+}

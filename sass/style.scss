@@ -1,0 +1,48 @@
+/*!
+Theme Name: The Source
+Theme URI: hhttps://kasutan.pro
+Author: Magalie Castaing
+Author URI: https://kasutan.pro
+Description: Avril 2021
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: the-source
+Tags: custom-logo, custom-menu, featured-images
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+This theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import "abstracts/variables-et-mixins";
+@import "base/normalize";
+@import "base/utilities";
+@import "base/colors"; 
+@import "base/layout";
+@import "base/typography";
+@import "base/boutons";
+@import "base/elements";
+@import "base/navigation"; 
+@import "base/print";
+@import "base/animations";
+@import "lib/modaal";
+@import "templates/header";
+@import "templates/footer";
+@import "templates/loop";
+@import "templates/loop-products";
+@import "templates/home";
+@import "templates/post";
+@import "templates/search";
+@import "templates/single";
+@import "templates/single-product";
+@import "components/blocs-natifs";
+@import "components/filtres";
+@import "components/owl_nav";
+@import "components/pagination";
+@import "components/post-summary";

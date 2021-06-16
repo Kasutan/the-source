@@ -1,0 +1,38 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.section-banniere {
+	margin-bottom: var(--margin-y-1);
+	.banniere-wrap {
+		align-items: center;
+		background-color: var(--bleu);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height:39vw;
+		position: relative;
+		padding:var(--margin-y-2) var(--padding-x);
+		.image {
+			display: flex;
+			height:100%;
+			left:0;
+			position:absolute;
+			top:0;
+			width:100%;
+			img {
+				@include object-fit;
+			}
+		}
+		.cadre {
+			background-color: rgba(255,255,255,0.9);
+			max-width: 93rem;
+			padding:var(--margin-y-1) var(--margin-y-1);
+			position: relative;
+			text-align: center;
+		}
+	}
+	@include bp(xxl) {
+		.banniere-wrap {
+			min-height:75rem;
+		}
+	}	
+}

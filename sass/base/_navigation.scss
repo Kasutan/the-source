@@ -1,0 +1,421 @@
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+:root {
+	--transition:0.45s ease-in-out;
+}
+a,
+a:visited {
+	color: var(--bleu);
+	transition: all var(--transition);
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: var(--bleu-fonce);
+}
+
+
+
+a:hover,
+a:focus,
+a:active {
+	outline: 0;
+}
+a:focus-visible {
+	outline: medium dotted;
+}
+
+
+/*--------------------------------------------------------------
+## Ancres
+--------------------------------------------------------------*/
+.avec-ancre {
+	position: relative;
+	.ancre {
+		left:0;
+		position:absolute;
+		top:calc(-1px * var(--header-bottom));
+	}
+}
+
+/*--------------------------------------------------------------
+## Fil d'ariane
+--------------------------------------------------------------*/
+p.fil-ariane {
+	margin:var(--margin-y-1) 0;
+	a {
+		color:var(--bleu-fonce);
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+/*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/ 
+
+.nav-topbar-gauche, .nav-main, .volet-navigation {
+	display: none; // tous les menus sont cachés en mobile
+	.menu {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+}
+
+button.menu-toggle {
+	display: block;
+	&:focus {
+		outline: none;
+	}
+	svg.fermer-menu { //croix pour refermer le menu
+		display:none;
+	}
+	//menu mobile ouvert
+	&[aria-expanded=true] {
+		svg.menu { //cacher hamburger 
+			display:none;
+		}
+		svg.fermer-menu { // afficher croix
+			display:block;
+		}
+	}
+}
+
+.volet-navigation.toggled { 
+	display: flex;
+	flex-direction: column;
+	left:0;
+	max-height:calc(100vh - 64px); //magic number : hauteur de la topbar
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding:18px;
+	padding-bottom: 35px;
+	position:absolute;
+	top:100%;
+	width:100vw;
+	z-index: 10;
+}
+
+@include bp(lg) { 
+	button.menu-toggle {
+		display: none;
+	}
+	.nav-topbar-gauche, .nav-main { //menus affichés en desktop
+		display:flex;
+	}
+}
+
+
+/* Style pictos menu mobile */
+
+.menu-toggle {
+	background:transparent;
+	border:0;
+	margin:0;
+	min-width:unset;
+	padding:0 1rem;
+	&:hover, &:focus, &:active {
+		background:transparent;
+	}
+	svg path {
+		fill : var(--blanc);
+	}
+}
+
+
+/*Style liens de menus TOPBAR*/
+.topbar {
+	align-items: center;
+	background-color: var(--bleu);
+	display: flex;
+	justify-content: space-between;
+	padding:1rem var(--padding-x);
+	position: relative; // référence pour le volet de navigation
+	.menu-topbar {
+		align-items: center;
+		display:flex;
+		list-style: none;
+		margin:0;
+		padding:0;
+		text-align:center;
+
+		li {
+			margin-right:2rem;
+		}
+		a {
+			@include fs(17);
+			color:var(--blanc);
+			letter-spacing: 1.4px;
+			line-height: 1;
+			text-decoration: none;
+			&:hover, &:focus {
+				text-decoration: underline;
+				text-underline-offset:1rem;
+			}
+		}
+		li.current-menu-item, li.current-menu-ancestor {
+			a {
+				font-weight: 700;
+			}
+		}
+	}
+	
+	.compte {
+		background-image:url('icons/mon-compte.png');
+		background-size:contain;
+		background-repeat: no-repeat;
+		height:21px;
+		overflow: hidden;
+		width:22px;
+		transition:transform 0.3s;
+		a {
+			color:transparent;
+			&:focus-visible {
+				outline-color:var(--blanc);
+			}
+		}
+		&:hover, &:focus-within {
+			transform:scale(1.1);
+		}
+	}
+	@include bp(xl) {
+		padding-top:1.5rem;
+		padding-bottom: 1.5rem;
+	}
+}
+
+/* Style liens de menu VOLET NAVIGATION MOBILE */
+.volet-navigation {
+	background-color:var(--blanc);
+	box-shadow: 0 3px 3px rgba(0,0,0,.2);
+
+	/*Logique affichage sous-menu*/
+	.sub-menu {
+		display: none;
+		//animation JS pour ouvrir/refermer
+	}
+	.picto-angle {
+		display: inline-block;
+		transition:transform var(--transition);
+	}
+
+	button.js-ouvert .picto-angle {
+		transform-origin: center;
+		transform:rotate(90deg);
+	}
+
+	
+	/*Styles communs menu et sous-menu*/
+	.menu-mobile, .sub-menu {
+		list-style: none;
+		margin: 0;
+		padding-left: 1rem;
+
+		a {
+			font-weight: 400;
+			text-decoration: none;
+		}
+	}
+	
+	.menu-mobile {
+		margin-bottom:var(--margin-y-1);
+	}
+
+	/*Styles éléments de niveau 1*/
+	.menu-mobile > li {
+		align-items: center;
+		border-bottom:solid 1px var(--texte-gris);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding:1rem 0;
+		> a {
+			flex:auto 0 0;
+			text-transform: uppercase;
+		}
+	}
+	button.ouvrir-sous-menu {
+		padding:0;
+		padding-left:2rem;
+		svg path {
+			fill:var(--rouge);
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	.sub-menu {
+		flex-basis:100%;
+		flex-shrink:0;
+		padding-top: 0.5rem;
+
+		li {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+
+/*Style liens de menus MENU PRINCIPAL */ 
+.nav-main { 
+	align-items: center;
+	justify-content: space-between;
+	padding:0 var(--padding-x);
+
+	.centreur {
+		flex-basis:4rem;
+		flex-shrink: 0;
+		&:last-of-type {
+			text-align: right;
+		}
+	}
+	.nav-primary { //conteneur du menu
+		flex-grow:0;
+	}
+	.search-form {
+		justify-content: flex-end;
+	}
+	.menu {
+		justify-content: space-around;
+		width:100%;
+		li {
+			padding:0 1rem;
+		}
+		a {
+			color:var(--noir);
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		//styles spécifiques aux liens de premier niveau
+
+		& > li {
+			& > a {
+				padding:2rem 0;
+				letter-spacing: 1px;
+				transition: none;
+				text-decoration: none;
+			}
+			
+			&:hover > a, & > a:focus, & > a:active, &:focus-within > a, &.current-menu-item > a, &.current-menu-ancestor > a {
+				color :var(--bleu);
+				font-weight: 400;
+				text-decoration: underline;
+				text-underline-offset:1rem;
+				text-decoration-thickness: 2px;
+			}
+		}
+
+		//styles spécifiques aux liens de premier niveau DESKTOP XL
+		@include bp(xl) {
+			& > li {
+				padding-left:2rem;
+				padding-right:2rem;
+
+				& > a {
+					@include fs(28);
+					letter-spacing: 1.86px;
+				}
+			}
+			
+		}
+
+
+		//Logique affichage sous-menu
+		.sub-menu { 
+			float: left;
+			margin-top:0px;
+			position: absolute;
+			top: 90%;
+			top: calc(100% - 0.5rem);
+			left: -999em;
+			z-index: 10;
+		}
+
+		> li { //affichage du sous-menu
+			position: relative;
+			&:hover, &.focus, &:focus-within { //classe .focus ajoutée en JS
+				.sub-menu {
+					animation: animSousMenu 0.45s cubic-bezier(0.7,0,0.3,1) both;
+					display:flex;
+					flex-direction: column;
+					left:0;
+					opacity:1;
+					max-width:30rem;
+					min-width:20rem;
+				}
+			}
+		}
+
+		//Style sous-menu
+		.sub-menu {
+			background: var(--blanc);
+			border: 1px solid var(--bleu);
+			list-style:none;
+			margin:0;
+			padding:0;
+			padding-right:2rem;
+			li {
+				padding : 1rem;
+				position: relative;
+			}
+			a {
+				@include fs(18);
+				color:var(--bleu);
+				left:0;
+				line-height:1.1;
+				position: relative;
+				transition: left var(--transition);
+				&:hover, &:focus {
+					color:var(--bleu);
+					font-weight: 400;
+					left:0.5rem;
+				}
+			}
+		}
+	}
+
+	
+
+}
+
+//Bouton recherche
+button.recherche {
+	padding:0;
+	width:2rem;
+	@include bp(xl) {
+		width:3rem;
+	}
+	&:hover, &:focus {
+		transform:scale(1.1);
+		svg path {
+			fill:var(--bleu);
+		}
+	}
+}
+
+
+
+
+/*Animations*/
+@keyframes animTrait {
+	from { 
+		width: 0; 
+	}
+}
+
+@keyframes animSousMenu {
+	from { 
+		opacity:0.4;
+		top: calc(90% + 10px); 
+	}
+}
+

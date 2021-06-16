@@ -1,0 +1,55 @@
+//Vignette article pour pages archives (y compris recherche)
+//Ici pas de mixin pour font-size pour ne pas réduire les textes en mobile
+.post-summary {
+	font-size:1.7rem;
+	
+	a {
+		text-decoration: none;
+	}
+
+	p.entry-category {
+		font-size:1.4rem;
+		color:var(--texte-gris);
+		margin-bottom: 0;
+		text-transform: uppercase;
+	}
+
+	p.entry-date {
+		font-size:1.2rem;
+		font-weight: 400;
+	}
+
+}
+
+.post-summary__image {
+	display: block;
+	text-align: center;
+}
+
+h2.post-summary__title {
+	font-size:2rem;
+	margin-top: 0;
+}
+
+.suite {
+	font-weight:400;
+}
+
+.chevrons-suite {
+	display: inline-block;
+	margin-left:1ch;
+}
+
+@include bp(md) {
+	.post-summary {
+		display: flex;
+	}
+	.post-summary__image {
+		flex:44% 0 0;
+		margin-right:2.5rem;
+	}
+	.post-summary__content {
+		flex-grow:1;
+		padding:0.5rem 0;
+	}
+}

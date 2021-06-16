@@ -1,0 +1,156 @@
+:root {
+	--padding-lien:7px 12px;
+}
+
+html {
+	font-size: 62.5%; /* 1rem = 10px */
+	--taille-texte:1.8rem;
+	@include bp(xl) {
+		--taille-texte:2.1rem;
+	}
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color:  map-get($colors, 'texte'); //si les variables css ne sont pas supportées
+	color: var(--texte);
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.8rem; //si les variables css ne sont pas supportées
+	font-size: var(--taille-texte);
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+::selection {
+	background: var(--bleu);
+	color: var(--blanc);
+}
+
+h1, .h1 {
+	color:var(--noir);
+	font-style: 3rem;
+	font-weight: 500;
+	margin:1.5em 0 1em;
+	padding:0;
+	text-align:center;
+	text-transform: uppercase;
+}
+
+@include bp(sm) {
+	h1, .h1 {
+		@include fs(41);
+		font-weight: 400;
+	}
+}
+
+h2,
+h3,
+h4,
+.h2, .h3, .h4
+{
+	color:var(--bleu);
+	clear: both;
+	font-weight: 700;
+	margin:0 0 0.5em;
+}
+
+
+h2, .h2 {
+	@include fs(28);
+}
+p + h2, p + .h2 {
+	margin-top:2em;
+}
+h3, .h3 {
+	@include fs(26);
+}
+h4, .h4, h5, .h5, h6, .h6 {
+	@include fs(24);
+
+}
+
+p {
+	margin-bottom: 1em;
+	margin-top:0;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left:solid 5px var(--bleu);
+	font-size:1.2em;
+	margin: 0 0 1em;
+	padding:5px 27px;
+	cite {
+		font-weight: 500;
+	}
+}
+
+mark,
+ins {
+	background: var(--fond);
+	text-decoration: none;
+}
+
+small, .has-small-font-size  {
+	font-size: 80%;
+}
+
+.has-regular-font-size {
+	font-size: 100%;
+}
+
+big, .has-big-font-size  {
+	font-size: 125%;
+}
+.has-huge-font-size {
+	font-size: 200%;
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+.screen-reader-text:focus {
+	background-color: var(--fond);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	display: block;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	* {
+		animation-duration: 0s !important;
+		transition-duration: 0s !important;
+	}
+}

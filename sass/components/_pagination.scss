@@ -1,0 +1,18 @@
+a.page {
+	@include fs(30);
+	color:var(--bleu);
+	margin:0 0.5rem;
+	padding:1rem;
+	text-decoration: none;
+}
+.pagination {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	list-style:none;
+	padding:0 var(--padding-x);
+	margin:var(--margin-y-2) 0;
+	li.active {
+		font-weight:500;
+	}
+}

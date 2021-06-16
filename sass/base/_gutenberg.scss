@@ -1,0 +1,38 @@
+.wp-block-button__link {
+	background-color: var(--bleu-bouton);
+	text-transform: uppercase;
+}
+a.wp-block-button__link {
+	@include bouton;
+
+	background: var(--bleu-bouton);
+	border-radius: 1rem;
+	color: var(--blanc);
+	font-size: 1em;
+	font-weight:400;
+	letter-spacing: 1.05px;
+	line-height: 1.1;
+	min-height:4.4rem;
+	min-width:21rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all var(--transition);
+
+	&:hover, &:focus, &:active {
+		background: var(--bleu-fonce);
+		outline: none;
+		text-decoration: none;
+	}
+	&:focus-visible {
+		outline : solid 1px var(--bleu-fonce);
+	}
+	
+}
+
+.block-list-appender button, button.acf-button , .wp-editor-tabs button {
+	min-width:unset;
+	padding:unset;
+	&, &:hover,&:focus {
+		background-color:transparent;
+	}
+}

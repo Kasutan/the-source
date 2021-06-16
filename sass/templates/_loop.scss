@@ -1,0 +1,19 @@
+.loop {
+	list-style:none;
+	margin:0;
+	margin-bottom: calc(-1 * var(--margin-y-1)); //margin bottom négatif pour absorber la marge de la dernière ligne de posts
+	padding:var(--margin-y-2) var(--padding-x) 0;
+
+	.post-summary {
+		margin-bottom : var(--margin-y-1);
+	}
+
+	@include bp(lg) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.post-summary {
+			flex-basis:calc((100% - 2.5rem) / 2);
+		}
+	}
+}

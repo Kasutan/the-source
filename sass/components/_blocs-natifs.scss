@@ -1,0 +1,55 @@
+.wp-block-columns {
+	&.antennes-regionales {
+		align-items: center;
+		ol {
+			color:var(--bleu);
+			font-weight: 700;
+			li {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
+
+.decor-traits {
+	position: relative;
+	&::before {
+		background-image:url('icons/decor-droit.svg');
+		background-position: bottom right;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content:'';
+		position: absolute;
+		height:600px;
+		right:-300px;
+		width:545px;
+		top:-200px;
+		@include bp(md) {
+			top:-120%;
+			height:872px;
+			right:-90%;
+			width:823px;
+		}
+	}
+}
+
+.wp-block-image {
+	figcaption {
+		font-style: italic;
+	}
+	&.alignwide {
+		@include bleed;
+		padding:0 var(--padding-x-grille);
+		figcaption {
+			text-align: right;
+		}
+	}
+}
+
+/*Galeries créées avec Meow Gallery*/
+.mgl-masonry-container, .mgl-tiles-container, .mgl-justified-container, .mgl-square-container, 
+.mgl-cascade-container {
+	@include bleed;
+	padding:0 var(--padding-x-grille);
+	margin-bottom:var(--margin-y);
+}

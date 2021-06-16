@@ -1,0 +1,21 @@
+@media print {
+
+	.topbar,
+	.main-navigation,
+	.page-header,
+	.entry-header,
+	.topfooter,
+	.site-footer,
+	.picto-flottant
+	{
+		display: none;
+	}
+
+	* {
+		position:unset !important;
+		background-color:transparent !important;
+		color:#000 !important;
+	}
+	
+	
+}

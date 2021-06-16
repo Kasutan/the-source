@@ -1,0 +1,202 @@
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul:not([class]),
+ol:not([class]) {
+	margin: 0 0 1.5em 0;
+	padding-left:1em;
+}
+
+ul:not([class])  {
+	list-style: none;
+	padding-left:1em;
+	> li::before {
+		content: '•'; 
+		color: var(--bleu);
+		display: inline-block; 
+		width: 1em;
+		margin-left: -1em		
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+li>ul,
+li>ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	figcaption {
+		text-align: center;
+	}
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: var(--texte);
+	border: 1px solid var(--texte-gris);
+	border-radius: 1rem;
+	outline-color:var(--bleu);
+	min-height:4.4rem;
+	padding: 3px;
+	
+	&:focus {
+		color: var(--bleu);
+	}
+}
+
+
+select {
+	border: 1px solid var(--gris);
+}
+
+textarea {
+	width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+## Search form
+--------------------------------------------------------------*/
+.volet-recherche {
+	overflow:hidden;
+	transition:all var(--transition); //animation de l'affichage du volet
+	.search-form .search-field {
+		width:15rem;
+		@include bp(xl) {
+			width:20rem;
+		}
+	}
+}
+.search-form {
+	align-items: stretch;
+	display: flex;
+	justify-content: flex-start;
+}
+.search-form .search-field {
+	border:solid 1px var(--bleu);
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 0;
+	padding-left: 1.2rem;
+	&:focus-visible, &:focus {
+		border-color:var(--bleu-fonce);
+		outline:none;
+	}
+}
+.search-form .search-submit {
+	margin-bottom: 0;
+	margin-left:14px;
+	padding:0;
+	height:40px;
+	min-width:unset;
+	text-align: center;
+	width:49px;
+}
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+

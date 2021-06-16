@@ -1,0 +1,89 @@
+$colors: ( 
+	'blanc':#fff,
+	'bleu' : #124b5a, //titres rgb(18,75,90)
+	'bleu-bouton' : #0e4b5b, //fond boutons
+	'bleu-fonce' : #073239, //fond header et footer
+	'vert' : #1b7c32,
+	'rouge' :#da1515,
+	'fond' : #e7edee, //fond filtres et bloc nouveautés
+	'texte' : #303030, 
+	'texte-blanc' : #eceded,
+	'texte-gris' : #919191, 
+	'noir' : #000000
+);
+
+
+
+// Breakpoints
+@mixin bp($point) {
+	$sm: "(min-width: 500px)";
+	$md: "(min-width: 768px)";
+	$lg: "(min-width: 960px)";
+	$xl: "(min-width: 1400px)";
+	$xxl: "(min-width: 1920px)";
+  
+	@if $point == sm {
+	@media #{$sm} { @content; }
+	}
+	@else if $point == md {
+	@media #{$md} { @content; }
+	}
+
+	@else if $point == lg {
+	@media #{$lg} { @content; }
+	}
+  
+	@else if $point == xl {
+	@media #{$xl} { @content; }
+	}
+
+	@else if $point == xxl {
+		@media #{$xxl} { @content; }
+		}
+}
+
+@mixin fs($px) {
+	font-size:calc(#{$px} * var(--taille-texte) / 21);
+}
+
+
+@mixin bleed {
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+
+@mixin bouton {
+	border: none;
+	cursor: pointer;
+	display:inline-block;
+	padding: 1rem 1.2rem 0.8rem;
+	text-align: center;
+	vertical-align: middle;
+}
+
+@mixin screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+@mixin placeholder {
+	color:#727272;
+	opacity:1;
+}
+
+@mixin object-fit {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}

@@ -1,0 +1,98 @@
+
+@keyframes spin {
+	100% {
+		transform:rotate(360deg)
+	}
+}
+
+/*https://tympanus.net/codrops/2014/08/05/page-preloading-effect/*/
+/*https://alligator.io/js/intersection-observer*/ 
+
+/*Cette classe est ajoutée en JS avec intersection observer aux éléments qui portent la classe js-fade-in-on-visible*/
+.fade-in {
+	opacity: 1;
+	animation: animFadeIn 1s cubic-bezier(0.7,0,0.3,1) both;
+	animation-delay: 0.2s;
+}
+
+@keyframes animFadeIn {
+	from { 
+		opacity: 0; 
+	}
+}
+
+@keyframes animCascade {
+	from { 
+		opacity: 0; 
+		transform: translate3d(0, 50% ,0); 
+	}
+}
+
+/*Cette classe est ajoutée en JS avec intersection observer aux enfants des éléments qui portent la class js-cascade-on-visible*/
+
+.cascade {
+	opacity: 1;
+	animation: animCascade 1s cubic-bezier(0.7,0,0.3,1) both;
+	animation-delay: 0.2s;
+}
+
+/* Si besoin d'une cascade plus complexe ou plus longue : utiliser sass*/
+/*.cascade:nth-child(n) {
+	animation-delay:calc(0.2s + 0.1s * n);
+}*/
+
+.cascade:nth-child(1) {
+	animation-delay:calc(0.2s + 0.1s * 1);
+}
+.cascade:nth-child(2) {
+	animation-delay:calc(0.2s + 0.1s * 2);
+}
+.cascade:nth-child(3) {
+	animation-delay:calc(0.2s + 0.1s * 3);
+}
+.cascade:nth-child(4) {
+	animation-delay:calc(0.2s + 0.1s * 4);
+}
+.cascade:nth-child(5) {
+	animation-delay:calc(0.2s + 0.1s * 5);
+}
+
+/*Cette classe est ajoutée en JS avec intersection observer aux éléments de la section avec décors animés*/
+@keyframes animCascadeX {
+	from { 
+		opacity: 0; 
+		transform: translate3d(-15%, 0 ,0); 
+	}
+}
+@keyframes animCascadeXdroite {
+	from { 
+		opacity: 0; 
+		transform: translate3d(15%, 0 ,0); 
+	}
+}
+.cascade-x, .cascade-x-droite {
+	--delai-initial:1s;
+	--delai-supp:0.5s;
+	opacity: 1;
+	animation: animCascadeX 1s cubic-bezier(0.7,0,0.3,1) both;
+	animation-delay: var(--delai-initial);
+}
+.cascade-x-droite {
+	animation: animCascadeXdroite 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+.retard-1 {
+	animation-delay:calc(var(--delai-initial) + var(--delai-supp) * 1);
+}
+.retard-2 {
+	animation-delay:calc(var(--delai-initial) + var(--delai-supp) * 2);
+}
+.retard-3 {
+	animation-delay:calc(var(--delai-initial) + var(--delai-supp) * 3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fade-in, .cascade, .cascade-x, .cascade-x-droite {
+		animation: none;
+		-webkit-animation: none;
+	}
+}
