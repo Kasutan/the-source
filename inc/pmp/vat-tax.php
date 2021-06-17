@@ -15,8 +15,8 @@ function kasutan_pmpro_level_cost_text($cost, $level)
 {
 	global $pmpro_pages;
 	if( is_page( $pmpro_pages["checkout"] ) && !pmpro_isLevelFree($level) )
-		$cost .= " " . '<span id="vat-eu-message">Members in the EU will be charged a VAT tax.</span>';
-		$cost .= '<span id="vat-eu-rate"></span>';
+		$cost .= " " . '<span class="js-vat-eu-message">Members in the EU will be charged a VAT tax.</span>';
+		$cost .= '<span class="js-vat-eu-rate"></span>';
 
 	return $cost;
 }
