@@ -25,6 +25,7 @@ include_once( get_template_directory() . '/inc/site-footer.php' );
 
 //Paid membership pro
 include_once( get_template_directory() . '/inc/pmp/checkout-fields.php' );
+include_once( get_template_directory() . '/inc/pmp/vat-tax.php' );
 //include_once( get_template_directory() . '/inc/pmp/my-account.php' );
 
 // Editor
@@ -175,7 +176,7 @@ function kasutan_scripts() {
 		wp_enqueue_script( 'jquery' );
 	}
 
-	wp_enqueue_script( 'thesource-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+//	wp_enqueue_script( 'thesource-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'thesource-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

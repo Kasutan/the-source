@@ -46,6 +46,7 @@ function kasutan_menu_topbar() {
 		</button>
 		<div class="volet-navigation"  id="volet-navigation">
 			<?php
+			/*
 			if( class_exists('etcode_sublevel_walker') ) {
 				wp_nav_menu( array(
 					'theme_location' => 'mobile',
@@ -59,7 +60,7 @@ function kasutan_menu_topbar() {
 					'menu_id'        => 'menu-mobile',
 					'menu_class'=>'menu-mobile',
 				) );
-			}
+			}*/
 					
 			get_search_form();
 
