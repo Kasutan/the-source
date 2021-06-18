@@ -44,7 +44,7 @@ li.product {
 		width:100%;
 	}
 	.woocommerce-loop-product__title {
-		@include fs(18);
+		@include oldfs(18);
 		color:var(--noir);
 		font-weight: 300;
 		line-height: 1.1;
@@ -106,14 +106,14 @@ li.product {
 
 	}
 	.categorie {
-		@include fs(14);
+		@include oldfs(14);
 		color:var(--gris);
 		font-weight: 700;
 		margin-bottom: 5px;
 		text-transform: uppercase;
 	}
 	.price {
-		@include fs(18);
+		@include oldfs(18);
 		color:var(--bleu);
 		display: block;
 		font-weight: 700;

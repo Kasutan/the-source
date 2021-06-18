@@ -8,7 +8,7 @@
 	position: relative;
 
 	h2 {
-		@include fs(26);
+		@include oldfs(26);
 		margin-bottom:0.5em;
 	}
 	
@@ -226,7 +226,7 @@
 			grid-template-columns: repeat(4, 1fr);
 		}
 		.copyright {
-			@include fs(17);
+			@include oldfs(17);
 		}
 	}
 }

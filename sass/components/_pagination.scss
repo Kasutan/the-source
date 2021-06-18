@@ -1,5 +1,5 @@
 a.page {
-	@include fs(30);
+	@include oldfs(30);
 	color:var(--bleu);
 	margin:0 0.5rem;
 	padding:1rem;

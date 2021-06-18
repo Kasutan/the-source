@@ -150,7 +150,7 @@ button.menu-toggle {
 			margin-right:2rem;
 		}
 		a {
-			@include fs(17);
+			@include oldfs(17);
 			color:var(--blanc);
 			letter-spacing: 1.4px;
 			line-height: 1;
@@ -321,7 +321,7 @@ button.menu-toggle {
 				padding-right:2rem;
 
 				& > a {
-					@include fs(28);
+					@include oldfs(28);
 					letter-spacing: 1.86px;
 				}
 			}
@@ -368,7 +368,7 @@ button.menu-toggle {
 				position: relative;
 			}
 			a {
-				@include fs(18);
+				@include oldfs(18);
 				color:var(--bleu);
 				left:0;
 				line-height:1.1;

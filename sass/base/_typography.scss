@@ -4,9 +4,9 @@
 
 html {
 	font-size: 62.5%; /* 1rem = 10px */
-	--taille-texte:1.8rem;
-	@include bp(xl) {
-		--taille-texte:2.1rem;
+	--taille-texte:1.6rem;
+	@include bp(sm) {
+		--taille-texte:2rem;
 	}
 }
 
@@ -16,11 +16,10 @@ input,
 select,
 optgroup,
 textarea {
-	color:  map-get($colors, 'texte'); //si les variables css ne sont pas supportées
+	color:  map-get($colors, 'bleu'); //si les variables css ne sont pas supportées
 	color: var(--bleu);
 	font-family: "Open Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 1.8rem; //si les variables css ne sont pas supportées
-	font-size: var(--taille-texte);
+	@include fs(1.6rem,2rem); //Maquette 1.2rem mobile
 	font-weight: 300;
 	line-height: 1.4;
 }
@@ -31,21 +30,15 @@ textarea {
 }
 
 h1, .h1 {
-	color:var(--noir);
-	font-style: 3rem;
-	font-weight: 500;
+	color:var(--bleu);
+	@include fs(2.2rem,7rem);
+	font-weight: 700;
 	margin:1.5em 0 1em;
 	padding:0;
 	text-align:center;
 	text-transform: uppercase;
 }
 
-@include bp(sm) {
-	h1, .h1 {
-		@include fs(41);
-		font-weight: 400;
-	}
-}
 
 h2,
 h3,
@@ -60,16 +53,16 @@ h4,
 
 
 h2, .h2 {
-	@include fs(28);
+	@include fs(2rem,5rem);
 }
 p + h2, p + .h2 {
 	margin-top:2em;
 }
 h3, .h3 {
-	@include fs(26);
+	@include fs(1.7rem,4rem);
 }
 h4, .h4, h5, .h5, h6, .h6 {
-	@include fs(24);
+	@include fs(1.6rem,3rem);
 
 }
 

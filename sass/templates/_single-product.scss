@@ -27,7 +27,7 @@
 }
 
 h1.titre-produit {
-	@include fs(38);
+	@include oldfs(38);
 	color:var(--noir);
 	line-height: 1.1;
 	margin-bottom:0;
@@ -37,7 +37,7 @@ h1.titre-produit {
 }
 
 .single-product .product .summary p.price {
-	@include fs(32);
+	@include oldfs(32);
 	color:var(--bleu);
 	font-weight: 700;
 	margin-bottom: var(--margin-y);
@@ -157,7 +157,7 @@ h1.titre-produit {
 		}
 
 		a {
-			@include fs(30);
+			@include oldfs(30);
 			color:var(--noir);
 			font-weight: 300;
 			text-transform: uppercase;
@@ -179,7 +179,7 @@ h1.titre-produit {
 } 
 
 h3.titre-interne-onglet {
-	@include fs(21);
+	@include oldfs(21);
 	color:var(--noir);
 	font-weight: 400;
 	margin-bottom: 0;
@@ -192,7 +192,7 @@ h3.titre-interne-onglet {
 	background-color: var(--fond);
 	padding:var(--margin-y-1) var(--padding-x) 0;
 	> h2 {
-		@include fs(36);
+		@include oldfs(36);
 		color:var(--noir);
 		font-weight: 400;
 		margin-bottom: var(--margin-y-1);

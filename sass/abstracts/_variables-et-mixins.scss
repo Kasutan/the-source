@@ -44,10 +44,6 @@ $colors: (
 		}
 }
 
-@mixin fs($px) {
-	font-size:calc(#{$px} * var(--taille-texte) / 21);
-}
-
 
 @mixin bleed {
 	width: 100vw;
@@ -88,4 +84,50 @@ $colors: (
 	object-fit: cover;
 	object-position: center;
 	width: 100%;
+}
+
+//TODO supprimer après avoir remplacé toutes les occurences par la nouvelle mixin
+@mixin oldfs($px) {
+	font-size:calc(#{$px} * var(--taille-texte) / 20);
+}
+
+@mixin fs($min-font-size, $max-font-size) {
+	$font-size-step: 0.1rem;
+	$min-screen-width:360px;
+	$max-screen-width:1440px;
+
+	font-size: $max-font-size;
+	@media all and (max-width: $min-screen-width) {
+		font-size: $min-font-size;
+	}
+
+	@if $font-size-step <= 0 {
+		@warn "parameter to responsive-font-size: font-size-step must be greater than 0";
+	}
+	@else {
+		$min-scale-factor: $min-font-size / $min-screen-width / 1rem * 1px;
+		$max-scale-factor: $max-font-size / $max-screen-width / 1rem * 1px;
+
+		$screen-width: round($max-screen-width);
+		$font-size: $max-font-size;
+
+		@while $screen-width >= $min-screen-width {
+
+			$progress: ($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width);
+			$scale-factor: $min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor);
+
+			$font-size: $screen-width * $scale-factor / 1px * 1rem;
+
+			@media all and (max-width: $screen-width) {
+				font-size: $font-size;
+			}
+
+			$screen-width-step: $font-size-step / $scale-factor / 1rem * 1px;
+			@if $screen-width-step < 1px {
+				$screen-width-step: 1px;
+			}
+
+			$screen-width: round($screen-width - $screen-width-step);
+		}
+	}
 }
