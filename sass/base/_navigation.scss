@@ -6,14 +6,15 @@
 }
 a,
 a:visited {
-	color: var(--bleu);
-	transition: all var(--transition);
+	color: var(--cyan);
+	font-weight: 700;
+	text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-	color: var(--bleu);
+	text-decoration: underline;
 }
 
 

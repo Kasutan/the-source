@@ -17,19 +17,9 @@
 	.has-#{$name}-background-color {
 		background-color: $color;
 	}
-	a.wp-block-button__link.has-#{$name}-background-color {
-		background-color: $color;
-		&:focus, &:hover {
-			background-color: $color;
-			filter:brightness(0.8);
-		}
-	}
-
-	.wp-block-button.is-style-outline a.wp-block-button__link.has-#{$name}-color {
-		border-color: $color;
-		color: $color;
-		&:focus, &:hover {
-			filter:brightness(0.8);
+	a.wp-block-button__link {
+		&.has-#{$name}-background-color, &.has-#{$name}-color {
+			@include couleurs-bouton; //Forcer les couleurs du thème quels que soient les choix en BO
 		}
 	}
 

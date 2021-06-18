@@ -1,46 +1,13 @@
 
-button:not(.picto),
+button,
 input[type="button"],
 .site-container .nf-form-content input[type="button"],
 input[type="reset"],
 input[type="submit"],
-a.button:not(.picto),
+a.button,
 a.wp-block-button__link,
-.woocommerce button.button.alt {
+.is-style-outline > a.wp-block-button__link,
+.is-style-outline > .wp-block-button__link:not(.has-text-color) {
 	@include bouton;
-
-	background: var(--bleu);
-	border-radius: 1rem;
-	color: var(--blanc);
-	font-size: 0.7em;
-	font-weight:400;
-	letter-spacing: 1.05px;
-	line-height: 1.1;
-	min-width:15rem;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: all var(--transition);
-
-	&:hover, &:focus, &:active {
-		background: var(--bleu);
-		color: var(--blanc);
-		outline: none;
-		text-decoration: none;
-	}
-	&:focus-visible {
-		outline : solid 1px var(--bleu);
-	}
-	
-}
-
-button.picto,
-a.button.picto {
-	@include bouton;
-
-	background-color:transparent;
-	border-radius:0;
-	transition:all 0.3s;
-	svg {
-		max-width:100%;
-	}
+	@include couleurs-bouton;
 }
