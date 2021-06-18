@@ -38,7 +38,7 @@ h1.titre-produit {
 
 .single-product .product .summary p.price {
 	@include fs(32);
-	color:var(--bleu-fonce);
+	color:var(--bleu);
 	font-weight: 700;
 	margin-bottom: var(--margin-y);
 }

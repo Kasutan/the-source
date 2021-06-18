@@ -9,7 +9,7 @@ a.wp-block-button__link,
 .woocommerce button.button.alt {
 	@include bouton;
 
-	background: var(--bleu-bouton);
+	background: var(--bleu);
 	border-radius: 1rem;
 	color: var(--blanc);
 	font-size: 0.7em;
@@ -22,13 +22,13 @@ a.wp-block-button__link,
 	transition: all var(--transition);
 
 	&:hover, &:focus, &:active {
-		background: var(--bleu-fonce);
+		background: var(--bleu);
 		color: var(--blanc);
 		outline: none;
 		text-decoration: none;
 	}
 	&:focus-visible {
-		outline : solid 1px var(--bleu-fonce);
+		outline : solid 1px var(--bleu);
 	}
 	
 }

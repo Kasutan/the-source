@@ -388,16 +388,15 @@ template {
 
 :root {
   --blanc: #fff;
-  --bleu: #124b5a;
-  --bleu-bouton: #0e4b5b;
-  --bleu-fonce: #073239;
-  --vert: #1b7c32;
-  --rouge: #da1515;
-  --fond: #e7edee;
-  --texte: #303030;
-  --texte-blanc: #eceded;
-  --texte-gris: #919191;
-  --noir: #000000; }
+  --rouge: #eb1118;
+  --bleu: #173a65;
+  --bleu-clair: #F0F7FF;
+  --fond: #F0F7FF;
+  --bordure: #c2d6ee;
+  --gradient: linear-gradient(#18AD92, #173a65);
+  --cyan: #18AD92;
+  --noir: #081525;
+  --gris: #959698; }
 
 .has-blanc-color {
   color: #fff; }
@@ -419,203 +418,183 @@ a.wp-block-button__link.has-blanc-background-color {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.has-bleu-color {
-  color: #124b5a; }
-
-.has-bleu-background-color {
-  background-color: #124b5a; }
-
-a.wp-block-button__link.has-bleu-background-color {
-  background-color: #124b5a; }
-  a.wp-block-button__link.has-bleu-background-color:focus, a.wp-block-button__link.has-bleu-background-color:hover {
-    background-color: #124b5a;
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color {
-  border-color: #124b5a;
-  color: #124b5a; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color:hover {
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.has-bleu-bouton-color {
-  color: #0e4b5b; }
-
-.has-bleu-bouton-background-color {
-  background-color: #0e4b5b; }
-
-a.wp-block-button__link.has-bleu-bouton-background-color {
-  background-color: #0e4b5b; }
-  a.wp-block-button__link.has-bleu-bouton-background-color:focus, a.wp-block-button__link.has-bleu-bouton-background-color:hover {
-    background-color: #0e4b5b;
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-bouton-color {
-  border-color: #0e4b5b;
-  color: #0e4b5b; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-bouton-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-bouton-color:hover {
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.has-bleu-fonce-color {
-  color: #073239; }
-
-.has-bleu-fonce-background-color {
-  background-color: #073239; }
-
-a.wp-block-button__link.has-bleu-fonce-background-color {
-  background-color: #073239; }
-  a.wp-block-button__link.has-bleu-fonce-background-color:focus, a.wp-block-button__link.has-bleu-fonce-background-color:hover {
-    background-color: #073239;
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-fonce-color {
-  border-color: #073239;
-  color: #073239; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-fonce-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-fonce-color:hover {
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.has-vert-color {
-  color: #1b7c32; }
-
-.has-vert-background-color {
-  background-color: #1b7c32; }
-
-a.wp-block-button__link.has-vert-background-color {
-  background-color: #1b7c32; }
-  a.wp-block-button__link.has-vert-background-color:focus, a.wp-block-button__link.has-vert-background-color:hover {
-    background-color: #1b7c32;
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
-.wp-block-button.is-style-outline a.wp-block-button__link.has-vert-color {
-  border-color: #1b7c32;
-  color: #1b7c32; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-vert-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-vert-color:hover {
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8); }
-
 .has-rouge-color {
-  color: #da1515; }
+  color: #eb1118; }
 
 .has-rouge-background-color {
-  background-color: #da1515; }
+  background-color: #eb1118; }
 
 a.wp-block-button__link.has-rouge-background-color {
-  background-color: #da1515; }
+  background-color: #eb1118; }
   a.wp-block-button__link.has-rouge-background-color:focus, a.wp-block-button__link.has-rouge-background-color:hover {
-    background-color: #da1515;
+    background-color: #eb1118;
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
 .wp-block-button.is-style-outline a.wp-block-button__link.has-rouge-color {
-  border-color: #da1515;
-  color: #da1515; }
+  border-color: #eb1118;
+  color: #eb1118; }
   .wp-block-button.is-style-outline a.wp-block-button__link.has-rouge-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-rouge-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
+.has-bleu-color {
+  color: #173a65; }
+
+.has-bleu-background-color {
+  background-color: #173a65; }
+
+a.wp-block-button__link.has-bleu-background-color {
+  background-color: #173a65; }
+  a.wp-block-button__link.has-bleu-background-color:focus, a.wp-block-button__link.has-bleu-background-color:hover {
+    background-color: #173a65;
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
+.wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color {
+  border-color: #173a65;
+  color: #173a65; }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-color:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
+.has-bleu-clair-color {
+  color: #F0F7FF; }
+
+.has-bleu-clair-background-color {
+  background-color: #F0F7FF; }
+
+a.wp-block-button__link.has-bleu-clair-background-color {
+  background-color: #F0F7FF; }
+  a.wp-block-button__link.has-bleu-clair-background-color:focus, a.wp-block-button__link.has-bleu-clair-background-color:hover {
+    background-color: #F0F7FF;
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
+.wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-clair-color {
+  border-color: #F0F7FF;
+  color: #F0F7FF; }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-clair-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bleu-clair-color:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
 .has-fond-color {
-  color: #e7edee; }
+  color: #F0F7FF; }
 
 .has-fond-background-color {
-  background-color: #e7edee; }
+  background-color: #F0F7FF; }
 
 a.wp-block-button__link.has-fond-background-color {
-  background-color: #e7edee; }
+  background-color: #F0F7FF; }
   a.wp-block-button__link.has-fond-background-color:focus, a.wp-block-button__link.has-fond-background-color:hover {
-    background-color: #e7edee;
+    background-color: #F0F7FF;
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
 .wp-block-button.is-style-outline a.wp-block-button__link.has-fond-color {
-  border-color: #e7edee;
-  color: #e7edee; }
+  border-color: #F0F7FF;
+  color: #F0F7FF; }
   .wp-block-button.is-style-outline a.wp-block-button__link.has-fond-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-fond-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.has-texte-color {
-  color: #303030; }
+.has-bordure-color {
+  color: #c2d6ee; }
 
-.has-texte-background-color {
-  background-color: #303030; }
+.has-bordure-background-color {
+  background-color: #c2d6ee; }
 
-a.wp-block-button__link.has-texte-background-color {
-  background-color: #303030; }
-  a.wp-block-button__link.has-texte-background-color:focus, a.wp-block-button__link.has-texte-background-color:hover {
-    background-color: #303030;
+a.wp-block-button__link.has-bordure-background-color {
+  background-color: #c2d6ee; }
+  a.wp-block-button__link.has-bordure-background-color:focus, a.wp-block-button__link.has-bordure-background-color:hover {
+    background-color: #c2d6ee;
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.wp-block-button.is-style-outline a.wp-block-button__link.has-texte-color {
-  border-color: #303030;
-  color: #303030; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-color:hover {
+.wp-block-button.is-style-outline a.wp-block-button__link.has-bordure-color {
+  border-color: #c2d6ee;
+  color: #c2d6ee; }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-bordure-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-bordure-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.has-texte-blanc-color {
-  color: #eceded; }
+.has-gradient-color {
+  color: linear-gradient(#18AD92, #173a65); }
 
-.has-texte-blanc-background-color {
-  background-color: #eceded; }
+.has-gradient-background-color {
+  background-color: linear-gradient(#18AD92, #173a65); }
 
-a.wp-block-button__link.has-texte-blanc-background-color {
-  background-color: #eceded; }
-  a.wp-block-button__link.has-texte-blanc-background-color:focus, a.wp-block-button__link.has-texte-blanc-background-color:hover {
-    background-color: #eceded;
+a.wp-block-button__link.has-gradient-background-color {
+  background-color: linear-gradient(#18AD92, #173a65); }
+  a.wp-block-button__link.has-gradient-background-color:focus, a.wp-block-button__link.has-gradient-background-color:hover {
+    background-color: linear-gradient(#18AD92, #173a65);
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.wp-block-button.is-style-outline a.wp-block-button__link.has-texte-blanc-color {
-  border-color: #eceded;
-  color: #eceded; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-blanc-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-blanc-color:hover {
+.wp-block-button.is-style-outline a.wp-block-button__link.has-gradient-color {
+  border-color: linear-gradient(#18AD92, #173a65);
+  color: linear-gradient(#18AD92, #173a65); }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-gradient-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-gradient-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.has-texte-gris-color {
-  color: #919191; }
+.has-cyan-color {
+  color: #18AD92; }
 
-.has-texte-gris-background-color {
-  background-color: #919191; }
+.has-cyan-background-color {
+  background-color: #18AD92; }
 
-a.wp-block-button__link.has-texte-gris-background-color {
-  background-color: #919191; }
-  a.wp-block-button__link.has-texte-gris-background-color:focus, a.wp-block-button__link.has-texte-gris-background-color:hover {
-    background-color: #919191;
+a.wp-block-button__link.has-cyan-background-color {
+  background-color: #18AD92; }
+  a.wp-block-button__link.has-cyan-background-color:focus, a.wp-block-button__link.has-cyan-background-color:hover {
+    background-color: #18AD92;
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
-.wp-block-button.is-style-outline a.wp-block-button__link.has-texte-gris-color {
-  border-color: #919191;
-  color: #919191; }
-  .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-gris-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-texte-gris-color:hover {
+.wp-block-button.is-style-outline a.wp-block-button__link.has-cyan-color {
+  border-color: #18AD92;
+  color: #18AD92; }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-cyan-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-cyan-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
 .has-noir-color {
-  color: #000000; }
+  color: #081525; }
 
 .has-noir-background-color {
-  background-color: #000000; }
+  background-color: #081525; }
 
 a.wp-block-button__link.has-noir-background-color {
-  background-color: #000000; }
+  background-color: #081525; }
   a.wp-block-button__link.has-noir-background-color:focus, a.wp-block-button__link.has-noir-background-color:hover {
-    background-color: #000000;
+    background-color: #081525;
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
 .wp-block-button.is-style-outline a.wp-block-button__link.has-noir-color {
-  border-color: #000000;
-  color: #000000; }
+  border-color: #081525;
+  color: #081525; }
   .wp-block-button.is-style-outline a.wp-block-button__link.has-noir-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-noir-color:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
+.has-gris-color {
+  color: #959698; }
+
+.has-gris-background-color {
+  background-color: #959698; }
+
+a.wp-block-button__link.has-gris-background-color {
+  background-color: #959698; }
+  a.wp-block-button__link.has-gris-background-color:focus, a.wp-block-button__link.has-gris-background-color:hover {
+    background-color: #959698;
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8); }
+
+.wp-block-button.is-style-outline a.wp-block-button__link.has-gris-color {
+  border-color: #959698;
+  color: #959698; }
+  .wp-block-button.is-style-outline a.wp-block-button__link.has-gris-color:focus, .wp-block-button.is-style-outline a.wp-block-button__link.has-gris-color:hover {
     -webkit-filter: brightness(0.8);
     filter: brightness(0.8); }
 
@@ -784,8 +763,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #303030;
-  color: var(--texte);
+  color: var(--bleu);
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
   font-size: var(--taille-texte);
@@ -928,7 +906,7 @@ a.wp-block-button__link,
   padding: 1rem 1.2rem 0.8rem;
   text-align: center;
   vertical-align: middle;
-  background: var(--bleu-bouton);
+  background: var(--bleu);
   border-radius: 1rem;
   color: var(--blanc);
   font-size: 0.7em;
@@ -962,7 +940,7 @@ a.wp-block-button__link,
   .woocommerce button.button.alt:hover,
   .woocommerce button.button.alt:focus,
   .woocommerce button.button.alt:active {
-    background: var(--bleu-fonce);
+    background: var(--bleu);
     color: var(--blanc);
     outline: none;
     text-decoration: none; }
@@ -974,7 +952,7 @@ a.wp-block-button__link,
   a.button:not(.picto):focus-visible,
   a.wp-block-button__link:focus-visible,
   .woocommerce button.button.alt:focus-visible {
-    outline: solid 1px var(--bleu-fonce); }
+    outline: solid 1px var(--bleu); }
 
 button.picto,
 a.button.picto {
@@ -1074,8 +1052,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: var(--texte);
-  border: 1px solid var(--texte-gris);
+  color: var(--bleu);
+  border: 1px solid var(--gris);
   border-radius: 1rem;
   outline-color: var(--bleu);
   min-height: 4.4rem;
@@ -1135,7 +1113,7 @@ textarea {
   margin-bottom: 0;
   padding-left: 1.2rem; }
   .search-form .search-field:focus-visible, .search-form .search-field:focus {
-    border-color: var(--bleu-fonce);
+    border-color: var(--bleu);
     outline: none; }
 
 .search-form .search-submit {
@@ -1197,7 +1175,7 @@ a:visited {
 a:hover,
 a:active,
 a:focus {
-  color: var(--bleu-fonce); }
+  color: var(--bleu); }
 
 a:hover,
 a:focus,
@@ -1223,7 +1201,7 @@ a:focus-visible {
 p.fil-ariane {
   margin: var(--margin-y-1) 0; }
   p.fil-ariane a {
-    color: var(--bleu-fonce);
+    color: var(--bleu);
     text-decoration: none; }
     p.fil-ariane a:hover, p.fil-ariane a:focus {
       text-decoration: underline; }
@@ -1387,7 +1365,7 @@ button.menu-toggle {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-bottom: solid 1px var(--texte-gris);
+    border-bottom: solid 1px var(--gris);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2084,7 +2062,7 @@ button.modaal-close {
     font-size: calc(26 * var(--taille-texte) / 21);
     margin-bottom: 0.5em; }
   .site-footer a {
-    color: var(--bleu-fonce);
+    color: var(--bleu);
     font-weight: 400;
     text-decoration: none;
     -webkit-transition-duration: 0.3s;
@@ -2121,7 +2099,7 @@ button.modaal-close {
     width: 30px;
     z-index: 1; }
     .site-footer .backtotop:hover, .site-footer .backtotop:focus {
-      background-color: var(--bleu-fonce); }
+      background-color: var(--bleu); }
     .site-footer .backtotop svg {
       margin-left: -1px; }
       .site-footer .backtotop svg path {
@@ -2135,7 +2113,7 @@ button.modaal-close {
     max-width: 20rem;
     margin-bottom: 2rem; }
   .site-footer .coordonnees-boutique {
-    background-color: var(--bleu-fonce); }
+    background-color: var(--bleu); }
     .site-footer .coordonnees-boutique, .site-footer .coordonnees-boutique a, .site-footer .coordonnees-boutique h2 {
       color: var(--blanc); }
     .site-footer .coordonnees-boutique svg {
@@ -2145,7 +2123,7 @@ button.modaal-close {
     .site-footer .social-links svg path {
       fill: currentColor; }
     .site-footer .social-links svg.facebook path {
-      fill: var(--bleu-fonce); }
+      fill: var(--bleu); }
   .site-footer .copyright {
     font-size: 1.3rem;
     padding: 2rem var(--padding-x); }
@@ -2362,7 +2340,7 @@ li.product {
       width: unset; }
   li.product .categorie {
     font-size: calc(14 * var(--taille-texte) / 21);
-    color: var(--texte-gris);
+    color: var(--gris);
     font-weight: 700;
     margin-bottom: 5px;
     text-transform: uppercase; }
@@ -2409,7 +2387,7 @@ li.product {
       li.product .actions-vignette a.add_to_cart_button.loading, li.product .actions-vignette a.add_to_cart_button.added {
         width: 5.3rem; }
         li.product .actions-vignette a.add_to_cart_button.loading::after, li.product .actions-vignette a.add_to_cart_button.added::after {
-          color: var(--bleu-fonce);
+          color: var(--bleu);
           content: '✓';
           display: block;
           font-size: 150%;
@@ -2422,7 +2400,7 @@ li.product {
         animation: spin 2s linear infinite;
         content: "↻"; }
     li.product .actions-vignette a.added_to_cart.wc-forward {
-      color: var(--bleu-fonce);
+      color: var(--bleu);
       margin-left: 1rem;
       padding: 0;
       text-decoration: underline;
@@ -2572,7 +2550,7 @@ h1.titre-produit {
 
 .single-product .product .summary p.price {
   font-size: calc(32 * var(--taille-texte) / 21);
-  color: var(--bleu-fonce);
+  color: var(--bleu);
   font-weight: 700;
   margin-bottom: var(--margin-y); }
 
@@ -2876,7 +2854,7 @@ a.page {
     text-decoration: none; }
   .post-summary p.entry-category {
     font-size: 1.4rem;
-    color: var(--texte-gris);
+    color: var(--gris);
     margin-bottom: 0;
     text-transform: uppercase; }
   .post-summary p.entry-date {

@@ -1,11 +1,11 @@
 .wp-block-button__link {
-	background-color: var(--bleu-bouton);
+	background-color: var(--bleu);
 	text-transform: uppercase;
 }
 a.wp-block-button__link {
 	@include bouton;
 
-	background: var(--bleu-bouton);
+	background: var(--bleu);
 	border-radius: 1rem;
 	color: var(--blanc);
 	font-size: 1em;
@@ -19,12 +19,12 @@ a.wp-block-button__link {
 	transition: all var(--transition);
 
 	&:hover, &:focus, &:active {
-		background: var(--bleu-fonce);
+		background: var(--bleu);
 		outline: none;
 		text-decoration: none;
 	}
 	&:focus-visible {
-		outline : solid 1px var(--bleu-fonce);
+		outline : solid 1px var(--bleu);
 	}
 	
 }

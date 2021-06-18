@@ -13,7 +13,7 @@
 	}
 	
 	a {
-		color:var(--bleu-fonce);
+		color:var(--bleu);
 		font-weight: 400;
 		text-decoration: none;
 		transition-duration: 0.3s;
@@ -50,7 +50,7 @@
 		z-index:1;
 
 		&:hover, &:focus {
-			background-color:var(--bleu-fonce);
+			background-color:var(--bleu);
 		}
 
 		svg {
@@ -74,7 +74,7 @@
 		margin-bottom:2rem;
 	}
 	.coordonnees-boutique {
-		background-color:var(--bleu-fonce);
+		background-color:var(--bleu);
 		&, & a, & h2 {
 			color:var(--blanc);
 		}
@@ -92,7 +92,7 @@
 		}
 		svg.facebook {
 			path {
-				fill :var(--bleu-fonce);
+				fill :var(--bleu);
 			}
 
 		}

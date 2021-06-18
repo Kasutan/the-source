@@ -13,7 +13,7 @@ a:visited {
 a:hover,
 a:active,
 a:focus {
-	color: var(--bleu-fonce);
+	color: var(--bleu);
 }
 
 
@@ -46,7 +46,7 @@ a:focus-visible {
 p.fil-ariane {
 	margin:var(--margin-y-1) 0;
 	a {
-		color:var(--bleu-fonce);
+		color:var(--bleu);
 		text-decoration: none;
 		&:hover, &:focus {
 			text-decoration: underline;
@@ -231,7 +231,7 @@ button.menu-toggle {
 	/*Styles éléments de niveau 1*/
 	.menu-mobile > li {
 		align-items: center;
-		border-bottom:solid 1px var(--texte-gris);
+		border-bottom:solid 1px var(--gris);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

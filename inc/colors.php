@@ -8,54 +8,53 @@
  */
 
 add_theme_support( 'editor-color-palette', array(
-	array(
+	/*array(
 		'name'  =>'Bleu foncé',
 		'slug'  => 'bleu-fonce',
-		'color'	=> '#073239',
-	),
+		'color'	=> '#30358C',
+	),*/
 	array(
-		'name'  =>'Bleu',
+		'name'  =>'Blue',
 		'slug'  => 'bleu',
-		'color'	=> '#124b5a',
+		'color'	=> '#173a65',
 	),
 	array(
-		'name'  =>'Bleu clair',
-		'slug'  => 'fond',
-		'color'	=> '#e7edee',
+		'name'  =>'Cyan',
+		'slug'  => 'cyan',
+		'color'	=> '#18AD92',
 	),
 	array(
-		'name'  =>'Vert',
-		'slug'  => 'vert',
-		'color'	=> '#1b7c32',
+		'name'  =>'Light blue',
+		'slug'  => 'bordure',
+		'color'	=> '#c2d6ee',
 	),
 	array(
-		'name'  =>'Rouge',
+		'name'  =>'Very light blue',
+		'slug'  => 'bleu-clair',
+		'color'	=> '#F0F7FF',
+	),
+	
+	
+	array(
+		'name'  =>'Red',
 		'slug'  => 'rouge',
-		'color'	=> '#da1515',
+		'color'	=> '#eb1118',
+	),
+
+	
+	array(
+		'name'  =>'Grey',
+		'slug'  => 'gris',
+		'color'	=> '#959698',
 	),
 	array(
-		'name'  =>'Gris (texte)',
-		'slug'  => 'texte-gris',
-		'color'	=> '#919191',
-	),
-	array(
-		'name'  =>'Blanc (texte)',
-		'slug'  => 'texte-blanc',
-		'color'	=> '#eceded',
-	),
-	array(
-		'name'  =>'Noir (texte)',
-		'slug'  => 'texte',
-		'color'	=> '#303030',
-	),
-	array(
-		'name'  =>'Blanc (pur)',
+		'name'  =>'White',
 		'slug'  => 'blanc',
 		'color'	=> '#ffffff',
 	),
 	array(
-		'name'  =>'Noir (pur)',
+		'name'  =>'Black',
 		'slug'  => 'noir',
-		'color'	=> '#101631',
+		'color'	=> '#081525',
 	),
 ));

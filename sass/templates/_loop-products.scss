@@ -107,7 +107,7 @@ li.product {
 	}
 	.categorie {
 		@include fs(14);
-		color:var(--texte-gris);
+		color:var(--gris);
 		font-weight: 700;
 		margin-bottom: 5px;
 		text-transform: uppercase;
@@ -152,7 +152,7 @@ li.product {
 				width:5.3rem;
 
 				&::after {
-					color: var(--bleu-fonce);
+					color: var(--bleu);
 					content: '✓';
 					display: block;
 					font-size: 150%;
@@ -170,7 +170,7 @@ li.product {
 		}
 			
 		a.added_to_cart.wc-forward {
-			color:var(--bleu-fonce);
+			color:var(--bleu);
 			margin-left:1rem;
 			padding:0;
 			text-decoration: underline;

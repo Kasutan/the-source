@@ -96,8 +96,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: var(--texte);
-	border: 1px solid var(--texte-gris);
+	color: var(--bleu);
+	border: 1px solid var(--gris);
 	border-radius: 1rem;
 	outline-color:var(--bleu);
 	min-height:4.4rem;
@@ -143,7 +143,7 @@ textarea {
 	margin-bottom: 0;
 	padding-left: 1.2rem;
 	&:focus-visible, &:focus {
-		border-color:var(--bleu-fonce);
+		border-color:var(--bleu);
 		outline:none;
 	}
 }

@@ -1,15 +1,16 @@
-$colors: ( 
+$colors: (
 	'blanc':#fff,
-	'bleu' : #124b5a, //titres rgb(18,75,90)
-	'bleu-bouton' : #0e4b5b, //fond boutons
-	'bleu-fonce' : #073239, //fond header et footer
-	'vert' : #1b7c32,
-	'rouge' :#da1515,
-	'fond' : #e7edee, //fond filtres et bloc nouveautés
-	'texte' : #303030, 
-	'texte-blanc' : #eceded,
-	'texte-gris' : #919191, 
-	'noir' : #000000
+	'rouge' :#eb1118,
+	'bleu' : #173a65, //bleu principal 
+	//'bleu-fonce' : #30358C,
+	'bleu-clair' : #F0F7FF,//pour les fonds
+	'fond' : #F0F7FF,//pour les fonds
+	'bordure' : #c2d6ee,
+	'gradient' : linear-gradient(#18AD92,#173a65),   
+	'cyan' : #18AD92,
+	'noir' : #081525, 
+	'gris' :#959698
+
 );
 
 
