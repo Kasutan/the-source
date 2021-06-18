@@ -43,7 +43,7 @@ function kasutan_vat_script() {
 	}
 	global $pmpro_vat_by_country;
 
-	$price=850; //TODO dynamic price
+	$price=850.00; //TODO dynamic price
 	//pmpro_getLevelCost($temp_level, false, true)
 	//apply_filters( 'pmpro_level_cost_text', $r, $level, $tags, $short )
 
