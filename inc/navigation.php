@@ -88,9 +88,7 @@ function ea_site_header() {
 		if( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
 		}
-		if(function_exists('kasutan_affiche_recherche')) {
-			kasutan_affiche_recherche('desktop');
-		}
+		
 	echo '</nav>';
 
 }
