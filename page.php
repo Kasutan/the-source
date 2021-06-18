@@ -15,9 +15,7 @@ $redirection_boutique=false;
 if(is_tax('product_tag')) {
 	$redirection_boutique=true;
 }
-if(kasutan_is_woo_active() && is_shop()) {
-	$redirection_boutique=true;
-}
+
 
 if(is_tax('product_cat')) {
 	wc_get_template( 'taxonomy-product-cat.php' );
