@@ -33,10 +33,11 @@ h1, .h1 {
 	color:var(--bleu);
 	@include fs(2.2rem,7rem);
 	font-weight: 700;
-	margin:1.5em 0 1em;
+	margin:auto 0;
 	padding:0;
 	text-align:center;
 	text-transform: uppercase;
+	@include dots;
 }
 
 
@@ -48,7 +49,11 @@ h4,
 	color:var(--bleu);
 	clear: both;
 	font-weight: 700;
-	margin:0 0 0.5em;
+	margin:0 0 1rem;
+
+	&.dots {
+		@include dots;
+	}
 }
 
 
