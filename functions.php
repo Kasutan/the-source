@@ -121,23 +121,23 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		*/
 		add_theme_support( 'editor-font-sizes', array(
 			array(
-				'name' => __( 'Petite', 'the-source' ),
-				'size' => 16,
+				'name' => __( 'Small', 'the-source' ),
+				'size' => 14,
 				'slug' => 'small'
 			),
 			array(
-				'name' => __( 'Normale', 'the-source' ),
-				'size' => 18,
+				'name' => __( 'Normal', 'the-source' ),
+				'size' => 20,
 				'slug' => 'normal'
 			),
 			array(
-				'name' => __( 'Grande', 'the-source' ),
-				'size' => 20,
+				'name' => __( 'Big', 'the-source' ),
+				'size' => 30,
 				'slug' => 'big'
 			),
 			array(
-				'name' => __( 'Très grande', 'the-source' ),
-				'size' => 32,
+				'name' => __( 'Huge', 'the-source' ),
+				'size' => 60,
 				'slug' => 'huge'
 			)
 		) );

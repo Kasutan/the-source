@@ -1696,16 +1696,16 @@ ins {
   text-decoration: none; }
 
 small, .has-small-font-size {
-  font-size: 80%; }
+  font-size: 70%; }
 
 .has-regular-font-size {
   font-size: 100%; }
 
 big, .has-big-font-size {
-  font-size: 125%; }
+  font-size: 150%; }
 
 .has-huge-font-size {
-  font-size: 200%; }
+  font-size: 300%; }
 
 /*--------------------------------------------------------------
 # Accessibility
