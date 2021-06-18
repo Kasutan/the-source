@@ -18,11 +18,7 @@ add_theme_support( 'editor-color-palette', array(
 		'slug'  => 'bleu',
 		'color'	=> '#173a65',
 	),
-	array(
-		'name'  =>'Cyan',
-		'slug'  => 'cyan',
-		'color'	=> '#18AD92',
-	),
+
 	array(
 		'name'  =>'Light blue',
 		'slug'  => 'bordure',
@@ -33,8 +29,16 @@ add_theme_support( 'editor-color-palette', array(
 		'slug'  => 'bleu-clair',
 		'color'	=> '#F0F7FF',
 	),
-	
-	
+	array(
+		'name'  =>'Cyan',
+		'slug'  => 'cyan',
+		'color'	=> '#18AD92',
+	),
+	array(
+		'name'  =>'Green',
+		'slug'  => 'vert',
+		'color'	=> '#187C7F',
+	),
 	array(
 		'name'  =>'Red',
 		'slug'  => 'rouge',
