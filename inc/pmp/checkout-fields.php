@@ -5,18 +5,30 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 * Simplify account creation on checkout page.
 *
 */
-add_filter("checkout_confirm_password", function() {return false;});
-add_filter("checkout_confirm_email", function() {return false;});
-add_filter("default_country", function() {return "";});
+add_filter("pmpro_checkout_confirm_password", function() {
+	return false;
+});
+add_filter("pmpro_checkout_confirm_email",  function() {
+	return false;
+});
+add_filter("pmpro_default_country",  function() {
+	return false;
+});
 
-add_filter( "required_user_fields", 'kasutan_pmpro_required_user_fields_remove_username' );
+add_filter( "pmpro_required_user_fields", 'kasutan_pmpro_required_user_fields_remove_username' );
 function kasutan_pmpro_required_user_fields_remove_username($fields) {
 	unset( $fields['username'] );
 	return $fields;
 }
 
+add_filter( "pmpro_required_billing_fields", 'kasutan_pmpro_required_billing_fields_remove_state' );
+function kasutan_pmpro_required_billing_fields_remove_state($fields) {
+	unset( $fields['bstate'] );
+	return $fields;
+}
 
-add_filter( "checkout_new_user_array", "kasutan_new_user_email_as_username" );
+
+add_filter( "pmpro_checkout_new_user_array", "kasutan_new_user_email_as_username" );
 function kasutan_new_user_email_as_username($new_user_array) {
 	$new_user_array["user_login"]=$new_user_array["user_email"];
 	return $new_user_array;
@@ -28,6 +40,7 @@ function kasutan_new_user_email_as_username($new_user_array) {
 */
 
 // We have to put everything in a function called on init, so we are sure Register Helper is loaded.
+add_action( 'init', 'kasutan_pmprorh_init' );
 function kasutan_pmprorh_init() {
 	// Don't break if Register Helper is not loaded.
 	if ( ! function_exists( 'pmprorh_add_registration_field' ) ) {
@@ -77,7 +90,6 @@ function kasutan_pmprorh_init() {
 
 	// That's it. See the PMPro Register Helper readme for more information and examples.
 }
-add_action( 'init', 'kasutan_pmprorh_init' );
 
 /*
 * Add PMPro billing fields to the edit user profile page.
