@@ -18,7 +18,7 @@ optgroup,
 textarea {
 	color:  map-get($colors, 'texte'); //si les variables css ne sont pas supportées
 	color: var(--bleu);
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.8rem; //si les variables css ne sont pas supportées
 	font-size: var(--taille-texte);
 	font-weight: 300;
