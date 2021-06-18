@@ -1055,8 +1055,11 @@ h1, .h1 {
   color: var(--bleu);
   font-size: 7rem;
   font-weight: 700;
-  margin: 1.5em 0 1em;
+  margin: auto 0;
   padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
   text-align: center;
   text-transform: uppercase; }
   @media all and (max-width: 360px) {
@@ -1242,6 +1245,10 @@ h1, .h1 {
   @media all and (max-width: 362px) {
     h1, .h1 {
       font-size: 2.21138rem; } }
+  h1::before, h1::after, .h1::before, .h1::after {
+    content: '•';
+    display: inline-block;
+    padding: 0 0.5ch; }
 
 h2,
 h3,
@@ -1250,7 +1257,24 @@ h4,
   color: var(--bleu);
   clear: both;
   font-weight: 700;
-  margin: 0 0 0.5em; }
+  margin: 0 0 1rem; }
+  h2.dots,
+  h3.dots,
+  h4.dots,
+  .h2.dots, .h3.dots, .h4.dots {
+    display: block;
+    text-align: center;
+    text-transform: uppercase; }
+    h2.dots::before, h2.dots::after,
+    h3.dots::before,
+    h3.dots::after,
+    h4.dots::before,
+    h4.dots::after,
+    .h2.dots::before,
+    .h2.dots::after, .h3.dots::before, .h3.dots::after, .h4.dots::before, .h4.dots::after {
+      content: '•';
+      display: inline-block;
+      padding: 0 0.5ch; }
 
 h2, .h2 {
   font-size: 5rem; }
