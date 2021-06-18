@@ -2154,10 +2154,10 @@ html {
   box-sizing: inherit; }
 
 hr {
-  background-color: #ccc;
+  background-color: var(--bordure);
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em; }
+  margin-top: 2em; }
 
 ul:not([class]),
 ol:not([class]) {
@@ -2224,11 +2224,12 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: var(--bleu);
-  border: 1px solid var(--gris);
-  border-radius: 1rem;
+  border: 1px solid var(--bordure);
+  border-radius: 0;
+  font-weight: 700;
   outline-color: var(--bleu);
-  min-height: 4.4rem;
-  padding: 3px; }
+  min-height: 5rem;
+  padding: 1rem 1.5rem; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -2245,10 +2246,91 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
+    border-color: var(--bleu);
     color: var(--bleu); }
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="email"]::-webkit-input-placeholder,
+  input[type="url"]::-webkit-input-placeholder,
+  input[type="password"]::-webkit-input-placeholder,
+  input[type="search"]::-webkit-input-placeholder,
+  input[type="number"]::-webkit-input-placeholder,
+  input[type="tel"]::-webkit-input-placeholder,
+  input[type="range"]::-webkit-input-placeholder,
+  input[type="date"]::-webkit-input-placeholder,
+  input[type="month"]::-webkit-input-placeholder,
+  input[type="week"]::-webkit-input-placeholder,
+  input[type="time"]::-webkit-input-placeholder,
+  input[type="datetime"]::-webkit-input-placeholder,
+  input[type="datetime-local"]::-webkit-input-placeholder,
+  input[type="color"]::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--bordure);
+    font-weight: 700;
+    opacity: 1; }
+  input[type="text"]::-moz-placeholder,
+  input[type="email"]::-moz-placeholder,
+  input[type="url"]::-moz-placeholder,
+  input[type="password"]::-moz-placeholder,
+  input[type="search"]::-moz-placeholder,
+  input[type="number"]::-moz-placeholder,
+  input[type="tel"]::-moz-placeholder,
+  input[type="range"]::-moz-placeholder,
+  input[type="date"]::-moz-placeholder,
+  input[type="month"]::-moz-placeholder,
+  input[type="week"]::-moz-placeholder,
+  input[type="time"]::-moz-placeholder,
+  input[type="datetime"]::-moz-placeholder,
+  input[type="datetime-local"]::-moz-placeholder,
+  input[type="color"]::-moz-placeholder,
+  textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--bordure);
+    font-weight: 700;
+    opacity: 1; }
+  input[type="text"]:-ms-input-placeholder,
+  input[type="email"]:-ms-input-placeholder,
+  input[type="url"]:-ms-input-placeholder,
+  input[type="password"]:-ms-input-placeholder,
+  input[type="search"]:-ms-input-placeholder,
+  input[type="number"]:-ms-input-placeholder,
+  input[type="tel"]:-ms-input-placeholder,
+  input[type="range"]:-ms-input-placeholder,
+  input[type="date"]:-ms-input-placeholder,
+  input[type="month"]:-ms-input-placeholder,
+  input[type="week"]:-ms-input-placeholder,
+  input[type="time"]:-ms-input-placeholder,
+  input[type="datetime"]:-ms-input-placeholder,
+  input[type="datetime-local"]:-ms-input-placeholder,
+  input[type="color"]:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--bordure);
+    font-weight: 700;
+    opacity: 1; }
+  input[type="text"]:-moz-placeholder,
+  input[type="email"]:-moz-placeholder,
+  input[type="url"]:-moz-placeholder,
+  input[type="password"]:-moz-placeholder,
+  input[type="search"]:-moz-placeholder,
+  input[type="number"]:-moz-placeholder,
+  input[type="tel"]:-moz-placeholder,
+  input[type="range"]:-moz-placeholder,
+  input[type="date"]:-moz-placeholder,
+  input[type="month"]:-moz-placeholder,
+  input[type="week"]:-moz-placeholder,
+  input[type="time"]:-moz-placeholder,
+  input[type="datetime"]:-moz-placeholder,
+  input[type="datetime-local"]:-moz-placeholder,
+  input[type="color"]:-moz-placeholder,
+  textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--bordure);
+    font-weight: 700;
+    opacity: 1; }
 
 select {
-  border: 1px solid var(--gris); }
+  border: 1px solid var(--bordure); }
 
 textarea {
   width: 100%; }
@@ -2256,16 +2338,6 @@ textarea {
 /*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/
-.volet-recherche {
-  overflow: hidden;
-  -webkit-transition: all var(--transition);
-  transition: all var(--transition); }
-  .volet-recherche .search-form .search-field {
-    width: 15rem; }
-    @media (min-width: 1400px) {
-      .volet-recherche .search-form .search-field {
-        width: 20rem; } }
-
 .search-form {
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;

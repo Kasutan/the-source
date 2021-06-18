@@ -108,7 +108,8 @@ $colors: (
 }
 
 @mixin placeholder {
-	color:#727272;
+	color: var(--bordure);
+	font-weight: 700;
 	opacity:1;
 }
 

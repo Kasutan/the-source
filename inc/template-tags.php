@@ -224,26 +224,6 @@ function kasutan_fil_ariane() {
 }
 
 
-/**
-* Volet de recherche
-*
-*/
-function kasutan_affiche_recherche($contexte='desktop') {
-	if(!function_exists('kasutan_picto') ) {
-		return;
-	}
-	//volet avec formulaire de recherche
-	printf('<div class="volet-recherche %s" id="volet-recherche-%s" role="form" aria-expanded="false" >',$contexte,$contexte);
-		get_search_form();
-	echo '</div>';
-	//bouton ouvrir/fermer volet de recherche
-	printf('<div class="centreur"><button id="ouvrir-recherche-%s" aria-expanded="false" class="recherche picto" aria-controls="volet-recherche-%s" aria-label="Ouvrir le formulaire de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
-		$contexte,
-		$contexte,
-		kasutan_picto(array('icon'=>'loupe','size'=>'33'))
-	);
-}
-
 
 
 /**
