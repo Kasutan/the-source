@@ -194,18 +194,13 @@ add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 * Image sizes. 
 * https://developer.wordpress.org/reference/functions/add_image_size/
 */
-/*Autres tailles réglées en bo : 
-	thumbnail 150
-	medium = woocommerce_medium 520 
-	large 1000 x 600 
-	medium_large 768
-	woocommerce_single = shop_single 520 
-	woocommerce_thumbnail = shop_catalog 330
-	woocommerce_gallery_thumbnail = shop_thumbnail 100 
-	1536x1536
+/*Toutes tailles réglées en BO : 
+	thumbnail 200 pour portraits
+	medium 308 large, hauteur libre (masonry) 
+	medium_large 768 (product)
+	large 1400 large, hauteur libre (product with zoom) 
 
 */
-//add_image_size('banniere',1920,600,false);
 
 /**
 * CPT, custom fields, custom taxonomies et functions associées
