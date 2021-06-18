@@ -1,0 +1,122 @@
+{
+    "key": "group_60cc31ec94242",
+    "title": "Contact request details",
+    "fields": [
+        {
+            "key": "field_60cc32a90ec67",
+            "label": "Advisors this request was sent to",
+            "name": "advisors",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "advisors"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_60cc31fe0ec65",
+            "label": "Source",
+            "name": "source",
+            "type": "radio",
+            "instructions": "Where this request was made on the website",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "product": "Product page",
+                "faq": "FAQ page",
+                "about": "About The Source page"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "product",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60cc327e0ec66",
+            "label": "Product",
+            "name": "product",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60cc31fe0ec65",
+                        "operator": "==",
+                        "value": "product"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "exceptional_assets",
+                "philantropy",
+                "virtuous_companies"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_60cc360d7c179",
+            "label": "Notes",
+            "name": "notes",
+            "type": "textarea",
+            "instructions": "Optional notes about this request. Notes are not shown to the member.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 20,
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "contact_requests"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623995989
+}

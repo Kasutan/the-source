@@ -3,18 +3,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 /***************************************************************
-	Custom Taxonomy Type of goods
+	Custom Taxonomy Type of assets
 /***************************************************************/
 
-add_action( 'init', 'kasutan_create_type_goods_tag', 0 );
-function kasutan_create_type_goods_tag() {
+add_action( 'init', 'kasutan_create_type_assets_tag', 0 );
+function kasutan_create_type_assets_tag() {
 // Labels part for the GUI
 $labels = array(
-	'name' => _x( 'Goods categories', 'taxonomy general name' ),
-	'singular_name' => _x( 'Goods category', 'taxonomy singular name' ),
-	'menu_name' => __( 'Goods categories' ),
+	'name' => _x( 'Assets categories', 'taxonomy general name' ),
+	'singular_name' => _x( 'Assets category', 'taxonomy singular name' ),
+	'menu_name' => __( 'Assets categories' ),
 ); 
-register_taxonomy('cat_goods','exceptionnal_goods',array(
+register_taxonomy('cat_assets','exceptional_assets',array(
 	'hierarchical' => true,
 	'labels' => $labels,
 	'show_ui' => true, 
@@ -29,38 +29,38 @@ register_taxonomy('cat_goods','exceptionnal_goods',array(
 
 
 /***************************************************************
-	Custom Post Type : Exceptionnal goods
+	Custom Post Type : Exceptional assets
 /***************************************************************/
-add_action( 'init', 'kasutan_goods_post_type', 0 );
-function kasutan_goods_post_type() {
+add_action( 'init', 'kasutan_assets_post_type', 0 );
+function kasutan_assets_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Exceptional Goods', 'Post Type General Name', 'the-source' ),
-		'singular_name'         => _x( 'Goods', 'Post Type Singular Name', 'the-source' ),
-		'menu_name'             => __( 'Exceptional Goods', 'the-source' ),
-		'name_admin_bar'        => __( 'Exceptional Goods', 'the-source' ),
-		'archives'              => __( 'Exceptional Goods Archives', 'the-source' ),
+		'name'                  => _x( 'Exceptional Assets', 'Post Type General Name', 'the-source' ),
+		'singular_name'         => _x( 'Asset', 'Post Type Singular Name', 'the-source' ),
+		'menu_name'             => __( 'Exceptional Assets', 'the-source' ),
+		'name_admin_bar'        => __( 'Exceptional Assets', 'the-source' ),
+		'archives'              => __( 'Exceptional Assets Archives', 'the-source' ),
 		'attributes'            => __( 'Item Attributes', 'the-source' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'the-source' ),
-		'all_items'             => __( 'All goods', 'the-source' ),
-		'add_new_item'          => __( 'Add goods', 'the-source' ),
-		'add_new'               => __( 'Add goods', 'the-source' ),
-		'new_item'              => __( 'New goods', 'the-source' ),
-		'edit_item'             => __( 'Edit goods', 'the-source' ),
-		'update_item'           => __( 'Udpdate goods', 'the-source' ),
-		'view_item'             => __( 'Display goods', 'the-source' ),
-		'view_items'            => __( 'Display goods', 'the-source' ),
-		'search_items'          => __( 'Search goods', 'the-source' ),
-		'not_found'             => __( 'No goods', 'the-source' ),
-		'not_found_in_trash'    => __( 'No goods in trash', 'the-source' ),
-		'featured_image'        => __( 'Featured image for this item', 'the-source' ),
+		'all_items'             => __( 'All assets', 'the-source' ),
+		'add_new_item'          => __( 'Add asset', 'the-source' ),
+		'add_new'               => __( 'Add asset', 'the-source' ),
+		'new_item'              => __( 'New asset', 'the-source' ),
+		'edit_item'             => __( 'Edit asset', 'the-source' ),
+		'update_item'           => __( 'Udpdate asset', 'the-source' ),
+		'view_item'             => __( 'Display asset', 'the-source' ),
+		'view_items'            => __( 'Display assets', 'the-source' ),
+		'search_items'          => __( 'Search assets', 'the-source' ),
+		'not_found'             => __( 'No assets', 'the-source' ),
+		'not_found_in_trash'    => __( 'No assets in trash', 'the-source' ),
+		'featured_image'        => __( 'Featured image for this asset', 'the-source' ),
 	);
 	$args = array(
-		'label'                 => __( 'Goods', 'the-source' ),
-		'description'           => __( 'Goods', 'the-source' ),
+		'label'                 => __( 'Assets', 'the-source' ),
+		'description'           => __( 'Assets', 'the-source' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail' ),
-		'taxonomies'            => array( 'cat_goods'),
+		'supports'              => array( 'title', 'revisions', 'custom-fields', 'thumbnail', 'author' ),
+		'taxonomies'            => array( 'cat_assets'),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -76,7 +76,7 @@ function kasutan_goods_post_type() {
 		'capability_type'       => 'page',
 		'show_in_rest'          => false,
 	);
-	register_post_type( 'exceptionnal_goods', $args );
+	register_post_type( 'exceptional_assets', $args );
 
 }
 
@@ -89,7 +89,7 @@ function kasutan_create_type_companies_tag() {
 // Labels part for the GUI
 $labels = array(
 	'name' => _x( 'Companies categories', 'taxonomy general name' ),
-	'singular_name' => _x( 'Companies category', 'taxonomy singular name' ),
+	'singular_name' => _x( 'Companies category', 'taxonomy singular name'),
 	'menu_name' => __( 'Companies categories' ),
 ); 
 register_taxonomy('cat_companies','virtuous_companies',array(
@@ -137,7 +137,7 @@ function kasutan_companies_post_type() {
 		'label'                 => __( 'Virtuous Companies', 'the-source' ),
 		'description'           => __( 'Virtuous Companies', 'the-source' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail' ),
+		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail', 'author' ),
 		'taxonomies'            => array( 'cat_companies'),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -215,7 +215,7 @@ function kasutan_projects_post_type() {
 		'label'                 => __( 'Philantropic Projects', 'the-source' ),
 		'description'           => __( 'Philantropic Projects', 'the-source' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail' ),
+		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail', 'author' ),
 		'taxonomies'            => array( 'cat_projects'),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -236,6 +236,104 @@ function kasutan_projects_post_type() {
 
 }
 
+/***************************************************************
+	Custom Post Type : advisors
+/***************************************************************/
+add_action( 'init', 'kasutan_advisors_post_type', 0 );
+function kasutan_advisors_post_type() {
 
-//TODO Référents
-//TODO Contact requests
+	$labels = array(
+		'name'                  => _x( 'Advisors', 'Post Type General Name', 'the-source' ),
+		'singular_name'         => _x( 'Advisor', 'Post Type Singular Name', 'the-source' ),
+		'menu_name'             => __( 'Advisors', 'the-source' ),
+		'name_admin_bar'        => __( 'Advisor', 'the-source' ),
+		'archives'              => __( 'Advisor', 'the-source' ),
+		'attributes'            => __( 'Item Attributes', 'the-source' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'the-source' ),
+		'all_items'             => __( 'All advisors', 'the-source' ),
+		'add_new_item'          => __( 'Add advisor', 'the-source' ),
+		'add_new'               => __( 'Add advisor', 'the-source' ),
+		'new_item'              => __( 'New advisor', 'the-source' ),
+		'edit_item'             => __( 'Edit advisor', 'the-source' ),
+		'update_item'           => __( 'Udpdate advisor', 'the-source' ),
+		'view_item'             => __( 'Display advisor', 'the-source' ),
+		'view_items'            => __( 'Display advisors', 'the-source' ),
+		'search_items'          => __( 'Search advisors', 'the-source' ),
+		'not_found'             => __( 'No advisors', 'the-source' ),
+		'not_found_in_trash'    => __( 'No advisors in trash', 'the-source' ),
+		'featured_image'        => __( 'Profile picture', 'the-source' ),
+	);
+	$args = array(
+		'label'                 => __( 'Advisors', 'the-source' ),
+		'description'           => __( 'Advisors', 'the-source' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields', 'thumbnail' ),
+		'hierarchical'          => false,
+		'public'                => false,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 55,
+		'menu_icon'             => 'dashicons-nametag',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => false,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => false,
+		'capability_type'       => 'page',
+		'show_in_rest'          => false,
+	);
+	register_post_type( 'advisors', $args );
+
+}
+
+
+/***************************************************************
+	Custom Post Type : Contact requests
+/***************************************************************/
+add_action( 'init', 'kasutan_contact_requests_post_type', 0 );
+function kasutan_contact_requests_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Contact requests', 'Post Type General Name', 'the-source' ),
+		'singular_name'         => _x( 'Contact request', 'Post Type Singular Name', 'the-source' ),
+		'menu_name'             => __( 'Contact requests', 'the-source' ),
+		'name_admin_bar'        => __( 'Contact request', 'the-source' ),
+		'archives'              => __( 'Contact requests archives', 'the-source' ),
+		'attributes'            => __( 'Item Attributes', 'the-source' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'the-source' ),
+		'all_items'             => __( 'All contact requests', 'the-source' ),
+		'add_new_item'          => __( 'Add contact request', 'the-source' ),
+		'add_new'               => __( 'Add contact request', 'the-source' ),
+		'new_item'              => __( 'New contact request', 'the-source' ),
+		'edit_item'             => __( 'Edit contact request', 'the-source' ),
+		'update_item'           => __( 'Udpdate contact request', 'the-source' ),
+		'view_item'             => __( 'Display contact request', 'the-source' ),
+		'view_items'            => __( 'Display contact requests', 'the-source' ),
+		'search_items'          => __( 'Search contact requests', 'the-source' ),
+		'not_found'             => __( 'No contact requests', 'the-source' ),
+		'not_found_in_trash'    => __( 'No contact requests in trash', 'the-source' ),
+	);
+	$args = array(
+		'label'                 => __( 'Contact requests', 'the-source' ),
+		'description'           => __( 'Contact requests', 'the-source' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'revisions', 'custom-fields', 'author' ),
+		'hierarchical'          => false,
+		'public'                => false,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 60,
+		'menu_icon'             => 'dashicons-email',
+		'show_in_admin_bar'     => false,
+		'show_in_nav_menus'     => false,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => false,
+		'capability_type'       => 'page',
+		'show_in_rest'          => false,
+	);
+	register_post_type( 'contact_requests', $args );
+
+}
