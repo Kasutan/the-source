@@ -21,7 +21,8 @@ register_taxonomy('cat_assets','exceptional_assets',array(
 	'show_admin_column' => true,
 	'query_var' => true,
 	'public' => true,
-	'show_in_rest' => true
+	'show_in_rest' => true,
+	'rewrite' => array('slug'=>'exceptional-assets','hierarchical'=>'true')
 ));
 }
 
@@ -99,7 +100,8 @@ register_taxonomy('cat_companies','virtuous_companies',array(
 	'show_admin_column' => true,
 	'query_var' => true,
 	'public' => true,
-	'show_in_rest' => true
+	'show_in_rest' => true,
+	'rewrite' => array('slug'=>'virtuous-companies','hierarchical'=>'true')
 ));
 }
 
@@ -177,7 +179,8 @@ register_taxonomy('cat_projects','philantropy',array(
 	'show_admin_column' => true,
 	'query_var' => true,
 	'public' => true,
-	'show_in_rest' => true
+	'show_in_rest' => true,
+	'rewrite' => array('slug'=>'philantropic-projects','hierarchical'=>'true')
 ));
 }
 

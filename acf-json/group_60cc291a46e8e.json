@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "cat_assets",
+            "taxonomy": "cat_projects",
             "field_type": "radio",
             "allow_null": 0,
             "add_term": 1,
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623992639
+    "modified": 1624270244
 }
