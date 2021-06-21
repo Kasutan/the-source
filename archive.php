@@ -25,53 +25,68 @@ add_filter( 'body_class', 'ea_archive_body_class' );
  * Archive Header
  *
  */
+add_action( 'tha_content_while_before', 'ea_archive_header' );
 function ea_archive_header() {
+	$title = $subtitle = '';
 
-	$title = $subtitle = $description = $more = false;
-
-	if( is_home() && get_option( 'page_for_posts' ) ) {
-		$title = get_the_title( get_option( 'page_for_posts' ) );
+	$queried_object = get_queried_object();
+	
+	if(function_exists('kasutan_is_archive_for_product') && $taxonomy=kasutan_is_archive_for_product($queried_object)) {
+		$title=$queried_object->name;
+		if($queried_object->parent===0) {
+			//top category, display cpt name
+			$subtitle=kasutan_get_cpt_for_taxonomy($taxonomy);
+		} else {
+			//category has parent, display closest parent's name
+			$parent=get_term($queried_object->parent,$taxonomy);
+			if($parent) $subtitle=$parent->name;
+		}
+	} elseif( is_home() ) {
+		$title = 'News';
 
 	} elseif( is_search() ) {
-		$title = 'Résultats de recherche';
-		$more = get_search_form( false );
+		$title = 'Search results';
 
 	} elseif( is_archive() ) {
+		$subtitle='News';
 		$title = get_the_archive_title();
-		if( ! get_query_var( 'paged' ) )
-			$description = get_the_archive_description();
 	}
 
-	if( empty( $title ) && empty( $description ) )
+	if( empty( $title )  )
 		return;
 
 	$classes = [ 'archive-description' ];
-	if( is_author() )
-		$classes[] = 'author-archive-description';
 
-	echo '<header class="' . join( ' ', $classes ) . '">';
 	do_action ('ea_archive_header_before' );
+	echo '<header class="' . join( ' ', $classes ) . '">';
+	if( !empty( $subtitle ) )
+	echo '<div class="h2 dots">' . $subtitle . '</div>';
 	if( ! empty( $title ) )
 		echo '<h1 class="archive-title">' . $title . '</h1>';
-	if( !empty( $subtitle ) )
-		echo '<h4>' . $subtitle . '</h4>';
-	echo apply_filters( 'ea_the_content', $description );
-	printf('<div class="container">%s</div>', $more);
-	do_action ('ea_archive_header_after' );
 	echo '</header>';
+	do_action ('ea_archive_header_after' );
 
 }
-add_action( 'tha_content_while_before', 'ea_archive_header' );
 
 // Breadcrumbs
-add_action( 'ea_archive_header_before', 'kasutan_fil_ariane', 5 );
+add_action( 'ea_archive_header_after', 'kasutan_fil_ariane', 5 );
 
-//Filtre si c'est la page du blog + balises html pour que le filtre avec list.js fonctionne
-add_action('tha_content_while_before','kasutan_blog_content_while_before');
-function kasutan_blog_content_while_before() {
-	if(is_home() && function_exists('kasutan_affiche_filtre_taxonomy')) {
-		echo '<section id="liste-filtrable" data-pagination="4">'; //Si besoin : pagination blog = option du thème
-			kasutan_affiche_filtre_taxonomy('category');
+
+//Filtre si c'est une catégorie produit et qu'elle a des filles : balises html pour que le filtre avec list.js fonctionne
+add_action('kasutan_loop_wrap_before','kasutan_loop_wrap_before');
+function kasutan_loop_wrap_before() {
+
+	$direct_children=$taxonomy=false;
+	$queried_object = get_queried_object();
+	$taxonomy=kasutan_is_archive_for_product($queried_object);
+	if($taxonomy) {
+		$term_id=$queried_object->term_id;
+		$direct_children=get_terms(array('taxonomy'=>$taxonomy, 'parent'=>$term_id));
+	}
+
+	if($direct_children) {
+		echo '<section id="liste-filtrable" data-pagination="4">'; //Si besoin : pagination = option du thème
+			kasutan_display_product_cat_filter($taxonomy,$direct_children);
 			echo '<ul class="list loop">';
 	} else {
 		//Simple conteneur pour la mise en page grille
@@ -80,9 +95,17 @@ function kasutan_blog_content_while_before() {
 }
 
 //Fermer les balises
-add_action('tha_content_while_after','kasutan_blog_content_while_after');
-function kasutan_blog_content_while_after() {
-	if(is_home() && function_exists('kasutan_affiche_filtre_taxonomy')) {
+add_action('kasutan_loop_wrap_after','kasutan_loop_wrap_after');
+function kasutan_loop_wrap_after() {
+	$direct_children=$taxonomy=false;
+	$queried_object = get_queried_object();
+	$taxonomy=kasutan_is_archive_for_product($queried_object);
+	if($taxonomy) {
+		$term_id=$queried_object->term_id;
+		$direct_children=get_terms(array('taxonomy'=>$taxonomy, 'parent'=>$term_id));
+	}
+
+	if($direct_children) {
 		echo '</ul><ul class="pagination"></ul></section>';
 	} else {
 		echo '</ul>';

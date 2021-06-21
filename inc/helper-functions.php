@@ -19,6 +19,44 @@ add_filter( 'ea_the_content', 'shortcode_unautop'  );
 add_filter( 'ea_the_content', 'do_shortcode'       );
 
 /**
+* Check if current page is archive for a product
+* @param object $queried_object
+* @return bool/string $taxonomy
+*/
+function kasutan_is_archive_for_product($queried_object) {
+	if(!is_tax()) {
+		return false;
+	}
+	$queried_object = get_queried_object();
+	$taxonomy=$queried_object->taxonomy;
+	$product_taxonomies=['cat_assets','cat_projets','cat_companies'];
+	if(!in_array($taxonomy,$product_taxonomies)) {
+		return false;
+	}
+	return $taxonomy;
+}
+
+
+/**
+* Get custom post type name for this taxonomy
+* @param string $taxonomy 
+* @return string $cpt_name
+*/
+function kasutan_get_cpt_for_taxonomy($taxonomy) {
+	$cpt_name='';
+	$cpt_objects=get_post_types(array(
+		'taxonomies'            => array($taxonomy),
+	), $output='objects');
+	foreach ($cpt_objects as $cpt) {
+		if(array_key_exists('label',$cpt)) {
+			$cpt_name=$cpt->label;
+		}
+	}
+	return $cpt_name;
+}
+
+
+/**
  * Get the first term attached to post
  *
  * @param string $taxonomy
@@ -202,13 +240,6 @@ function ea_has_action( $hook ) {
 	return !empty( $output );
 }
 
-/***************************************************************
-			Vérifier si WooCommerce est activé
-***************************************************************/
-function kasutan_is_woo_active() {
-	$active_plugins=apply_filters( 'active_plugins', get_option( 'active_plugins' ));
-	return in_array('woocommerce/woocommerce.php', $active_plugins);
-}
 
 
 /***************************************************************

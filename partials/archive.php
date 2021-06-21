@@ -13,7 +13,6 @@ echo '<li class="post-summary">';
 	ea_post_summary_image('woocommerce_thumbnail');
 
 	echo '<div class="post-summary__content">';
-		echo $context;
 		ea_entry_category('archive');
 		printf('<p class="entry-date">%s</p>',get_the_date('d/m/Y'));
 		ea_post_summary_title();

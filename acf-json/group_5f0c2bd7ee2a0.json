@@ -1,6 +1,6 @@
 {
     "key": "group_5f0c2bd7ee2a0",
-    "title": "Options générales",
+    "title": "The Source settings",
     "fields": [
         {
             "key": "field_609a9ba534b7b",
@@ -20,28 +20,6 @@
             "maxlength": "",
             "rows": 2,
             "new_lines": "br"
-        },
-        {
-            "key": "field_608ac16ae3a8c",
-            "label": "Page X",
-            "name": "zs_page_x",
-            "type": "post_object",
-            "instructions": "Used in breadcrumbs",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
         },
         {
             "key": "field_5f2439218c9df",
@@ -88,6 +66,28 @@
             "max_height": "",
             "max_size": "0.5",
             "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_608ac16ae3a8c",
+            "label": "Mechanical dreams Page",
+            "name": "zs_page_mechanical_dreams",
+            "type": "post_object",
+            "instructions": "Used for displaying a special template",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
         }
     ],
     "location": [
@@ -107,6 +107,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623949841,
-    "local_file": "C:UsersMagalieLocal Sitesthesourceapppublic\/wp-content\/themes\/the-source\/acf-json\/group_5f0c2bd7ee2a0.json"
+    "modified": 1624288812
 }
