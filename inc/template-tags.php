@@ -103,87 +103,63 @@ function kasutan_fil_ariane() {
 		return;
 	}
 
+	$queried_object = get_queried_object();
 	$post_type=get_post_type();
+	$product_types=array('exceptional_assets','virtuous_companies','philantropy');
+	$archive_ID=false;
+	$cat_parent=false;
 
 	echo '<p class="fil-ariane">';
 
-	//Afficher la page boutique pour les fiches produits et les archives produits
-	if ( (is_single() && 'product' === $post_type) || is_tax('product_cat') || is_tax('product_tag') ) {
-		//l'ID de la page est stockée dans les options ACF
-		$page_boutique=kasutan_get_page_ID('page_boutique'); ; 
-		if($page_boutique) :
-			printf('<a href="%s">%s</a> > ',
-				get_the_permalink( $page_boutique),
-				strip_tags(get_the_title($page_boutique))
-			);
-		endif;
-		//Ajouter la catégorie de produits pour les fiches produits
-		if(is_singular()) {
-			$categories=kasutan_categories_produit();
-			if(is_array($categories)) {
-				$parente=$categories['categorie_parente'];
-				$sous_categorie=$categories['sous_categorie'];
-				
-				if($parente) {
-					printf('<a href="%s">%s</a> > ',
-						get_category_link( $parente ),
-						$parente->name
-					);
-				}
-				
-				printf('<a href="%s?filtre_cat=%s">%s</a> > ',
-					get_category_link( $parente ),
-					$sous_categorie->slug,
-					$sous_categorie->name
-				);
-			}
+	//Pour tous les contenus : afficher en premier le lien vers l'accueil du site
+	printf('<a href="/">Home</a> > ');
+
+	//Pour les fiches produit
+	if(is_single() && in_array($post_type,$product_types)) {
+		$archive_ID=kasutan_get_page_ID('zs_page_'.$post_type,'option');
+		$taxonomy=kasutan_get_taxonomy_slug_for_cpt($post_type);
+		$cat_parent=kasutan_get_closest_cat_for_product(get_the_ID(),$post_type);
+	}
+
+	//Pour les archives produits
+	if(function_exists('kasutan_is_archive_for_product') && $taxonomy=kasutan_is_archive_for_product($queried_object)) {
+		$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
+		$archive_ID=kasutan_get_page_ID('zs_page_'.$post_type,'option');
+		if($queried_object->parent!==0) {
+			//category has parent, get closest parent's term
+			$cat_parent=get_term($queried_object->parent,$taxonomy);
 		}
-	} else {
-		//Pour tous les autres contenus : afficher en premier le lien vers l'accueil du site
-		$accueil=get_option('page_on_front');
+	}
+
+	if($archive_ID) {
 		printf('<a href="%s">%s</a> > ',
-			get_the_permalink( $accueil),
-			strip_tags(get_the_title($accueil))
+			get_the_permalink( $archive_ID),
+			strip_tags(get_the_title($archive_ID))
 		);
 	}
 
+	if($cat_parent) {
+		$family[]=$cat_parent;
+		$cat_parent_1=$cat_parent->parent;
+		if($cat_parent->parent!==0) {
+			$cat_gdparent=get_term($cat_parent->parent,$taxonomy);
+			$family[]=$cat_gdparent;
 
-	//Afficher la page des actualités pour les articles (single ou archive de catégorie ou archive des articles ou archive de tag)
-	if ( (is_single() && 'post' === $post_type) || is_category() || is_tag() ) :
-		//l'ID de la page est stockée dans les options ACF
-		$actus=get_option('page_for_posts'); 
-		if($actus) :
-			printf('<a href="%s">%s</a> > ',
-				get_the_permalink( $actus),
-				strip_tags(get_the_title($actus))
-			);
-		endif;
-		//Ajouter la catégorie d'article pour les posts single
-		if(is_single()) {
-			$term=ea_first_term();
-			if(!empty($term)) {
-				printf('<a href="%s?filtre_cat=%s">%s</a> > ',
-				get_the_permalink( $actus),
-					$term->slug,
-					$term->name
-				);
+			if($cat_gdparent->parent!==0) {
+				$cat_arrgdparent=get_term($cat_gdparent->parent,$taxonomy);
+				$family[]=$cat_arrgdparent;
+
 			}
 		}
-	endif;
-
-	//Afficher la page des producteurs pour les fiches producteurs
-	if ( (is_single() && 'producteur' === $post_type) ):
-		//l'ID de la page est stockée dans les options ACF
-		$page_producteurs=kasutan_get_page_ID('page_producteurs'); ; 
-		if($page_producteurs) :
+		$family=array_reverse($family);
+		foreach($family as $term) {
 			printf('<a href="%s">%s</a> > ',
-				get_the_permalink( $page_producteurs),
-				strip_tags(get_the_title($page_producteurs))
+				get_term_link($term, $taxonomy),
+				strip_tags($term->name)
 			);
-		endif;
-	endif;
+		}
+	}
 
-	
 
 
 	//Afficher le titre de la page courante
@@ -209,12 +185,14 @@ function kasutan_fil_ariane() {
 		echo '<span class="current">'.strip_tags(single_cat_title( '', false )).'</span>';
 	elseif (is_tag()) :  //archives tags d'articles
 		echo '<span class="current">'.strip_tags(single_tag_title( '', false )).'</span>';
+	elseif (is_tax()) : //custom tax archive
+		echo '<span class="current">'.strip_tags($queried_object->name).'</span>';
 	elseif (is_home()) :
 		echo '<span class="current">Blog</span>';
 	elseif (is_search()) :
-		echo '<span class="current">Recherche : '.get_search_query().'</span>';
+		echo '<span class="current">Search : '.get_search_query().'</span>';
 	elseif (is_404()) :
-		echo '<span class="current">Page introuvable</span>';
+		echo '<span class="current">Page not found</span>';
 
 	endif;
 

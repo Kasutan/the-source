@@ -55,6 +55,60 @@ function kasutan_get_cpt_for_taxonomy($taxonomy) {
 	return $cpt_name;
 }
 
+/**
+* Get custom post type slug for this taxonomy
+* @param string $taxonomy 
+* @return string $cpt_slug
+*/
+function kasutan_get_cpt_slug_for_taxonomy($taxonomy) {
+	$cpt_slug='';
+	$cpt_objects=get_post_types(array(
+		'taxonomies'            => array($taxonomy),
+	), $output='objects');
+	foreach ($cpt_objects as $cpt) {
+		if(array_key_exists('name',$cpt)) {
+			$cpt_slug=$cpt->name;
+		}
+	}
+	return $cpt_slug;
+}
+
+/**
+* Get custom taxonomy slug for this post type slug
+* @param string $cpt 
+* @return string $taxonomy
+*/
+function kasutan_get_taxonomy_slug_for_cpt($cpt) {
+	$taxonomy=false;
+	$taxonomies=array(
+		'exceptional_assets' =>'cat_assets',
+		'virtuous_companies' =>'cat_companies',
+		'philantropy' =>'cat_projects',
+	);
+	if(array_key_exists($cpt,$taxonomies)) {
+		$taxonomy= $taxonomies[$cpt];
+	}
+	return $taxonomy;
+}
+
+/**
+* Get closest category for this product
+* @param int $post_id
+* @param string $post_type
+* @return object $term
+*/
+function kasutan_get_closest_cat_for_product($post_id,$post_type) {
+	//Tous les terms de la custom tax associée à ce post
+	$terms=get_the_terms($post_id,kasutan_get_taxonomy_slug_for_cpt($post_type));
+	//Normalement chaque produit n'est rangé que dans une catégorie, la plus basse (boutons radio dans les champs ACF)
+	if(!empty($terms)) {
+		//return the first one
+		return $terms[0];
+	} else {
+		return false;
+	}
+}
+
 
 /**
  * Get the first term attached to post
