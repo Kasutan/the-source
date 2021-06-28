@@ -36,6 +36,19 @@ function kasutan_is_archive_for_product($queried_object) {
 	return $taxonomy;
 }
 
+/**
+* Check if current post is single for a product
+* @return bool
+*/
+function kasutan_is_single_for_product() {
+	if(!is_single()) {
+		return false;
+	}
+	$post_type=get_post_type();
+	$product_types=array('exceptional_assets','virtuous_companies','philantropy');
+	return in_array($post_type,$product_types);
+}
+
 
 /**
 * Get custom post type name for this taxonomy
@@ -117,6 +130,7 @@ function kasutan_get_closest_cat_for_product($post_id,$post_type) {
  * @param string/int $field, pass false to return object
  * @param int $post_id
  * @return string/object
+ * TODO : supprimer
  */
 function ea_first_term( $args = [] ) {
 

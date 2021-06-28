@@ -22,7 +22,7 @@ add_action( 'tha_entry_top', 'ea_entry_title' );
 
 /**
  * Entry Category
- *
+ * TODO : supprimer
  */
 function ea_entry_category($contexte='archive') {
 	$post_type=get_post_type();
@@ -105,7 +105,6 @@ function kasutan_fil_ariane() {
 
 	$queried_object = get_queried_object();
 	$post_type=get_post_type();
-	$product_types=array('exceptional_assets','virtuous_companies','philantropy');
 	$archive_ID=false;
 	$cat_parent=false;
 
@@ -115,7 +114,7 @@ function kasutan_fil_ariane() {
 	printf('<a href="/">Home</a> > ');
 
 	//Pour les fiches produit
-	if(is_single() && in_array($post_type,$product_types)) {
+	if(kasutan_is_single_for_product()) {
 		$archive_ID=kasutan_get_page_ID('zs_page_'.$post_type,'option');
 		$taxonomy=kasutan_get_taxonomy_slug_for_cpt($post_type);
 		$cat_parent=kasutan_get_closest_cat_for_product(get_the_ID(),$post_type);
