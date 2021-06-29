@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /* Function to display advisor card in different contexts */
 
 function kasutan_display_advisor($post_id,$context) {
