@@ -111,8 +111,8 @@ function ea_page_layout( $id = false ) {
 	$available_layouts = ea_page_layout_options();
 	$layout = 'largeur-normale';
 
-	if(is_single() && get_post_type()!=='product') {
-		$layout='deux-colonnes';
+	if(kasutan_is_single_for_product()) {
+		$layout = 'pleine-largeur';
 	}
 
 	if(is_tax('product_cat')) {
