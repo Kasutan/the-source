@@ -57,7 +57,7 @@ function kasutan_pmprorh_init() {
 			'size'		=> 30,				// input size
 			'class'		=> 'company',		// custom class
 			'profile'	=> true,			// show in user profile
-			'required'	=> true,			// make this field required
+			'required'	=> false,			// make this field required
 			'memberslistcsv' => true,
 			'showrequired' => true,
 			'html_attributes' => array('placeholder' => 'Company' )
