@@ -41,10 +41,13 @@ if(function_exists('get_field')) {
 	$details=wp_kses_post(get_field('details'));
 	$video=esc_url(get_field('video'));
 	if(strpos($video,'vimeo')<=0) {
-		$video=false;
+		$iframe_url=false;
+	} else {
+		//https://player.vimeo.com/video/38437356
+		$iframe_url=str_replace('vimeo.com','player.vimeo.com/video',$video);
 	}
 } else {
-	$price=$intro=$main_advisor=$details=$video=false;
+	$price=$intro=$main_advisor=$details=$iframe_url=false;
 }
 
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
@@ -154,12 +157,13 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 			echo '</section>';
 		endif;
 
-		if($video) : 
+		if($iframe_url) : 
 		echo '<section class="product-video">';
 			echo '<div class="sep"></div>';
 			echo '<h2>Video presentation</h2>';
-			//TODO embed code 
-			echo apply_filters( 'the_content', $video );
+			?>
+			<iframe src="<?php echo $iframe_url;?>" width="640" height="316" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+			<?php 
 		echo '</section>';
 		endif;
 
