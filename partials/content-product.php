@@ -31,6 +31,9 @@ if(function_exists('get_field')) {
 	$backup_advisor=esc_attr(get_field('backup_advisor'));
 	$details=wp_kses_post(get_field('details'));
 	$video=esc_url(get_field('video'));
+	if(strpos($video,'vimeo')<=0) {
+		$video=false;
+	}
 } else {
 	$price=$intro=$main_advisor=$details=$video=false;
 }
@@ -97,14 +100,56 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 		echo '</section>';
 
-		echo '<section class="product-details">';
+		if(have_rows('icons') || have_rows('table') || $details) : 
+			echo '<section class="product-details">';
+					echo '<h2 class="line">Details</h2>';
+					
+					if(have_rows('icons')) {
+						echo '<ul class="icons">';
+						while(have_rows('icons')) {
+							the_row();
+							echo '<li class="icon-wrap">';
+								$legend=wp_kses_post(get_sub_field('legend'));
+								$icon=esc_attr(get_sub_field('image'));
+								printf('<div class="icon">%s</div>',
+									wp_get_attachment_image( $icon, 'thumbnail', true, array('alt'=>$legend))
+								);
+								printf('<p class="legend">%s</p>',$legend);
+							echo '</li>';
+						}
+						echo '</ul>';
+					}
 
-		echo '</section>';
+					if($details) {
+						echo '<div class="details-text">';
+						echo $details;
+						echo '</div>';
+					}
 
+					if(have_rows('table')) {
+						echo '<ul class="table">';
+						while(have_rows('table')) {
+							the_row();
+							echo '<li class="row">';
+								$label=wp_kses_post(get_sub_field('label'));
+								$value=wp_kses_post(get_sub_field('value'));
+								printf('<strong>%s:</strong> %s',$label,$value);
+							echo '</li>';
+						}
+						echo '</ul>';
+					}
+		
+			echo '</section>';
+		endif;
 
+		if($video) : 
 		echo '<section class="product-video">';
-
+			echo '<div class="sep"></div>';
+			echo '<h2>Video presentation</h2>';
+			//TODO embed code 
+			echo apply_filters( 'the_content', $video );
 		echo '</section>';
+		endif;
 
 		echo '<section class="product-related">';
 
