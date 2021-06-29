@@ -29,6 +29,11 @@ function kasutan_lock_content() {
 		$redirect=false;
 	};
 
+	//Ne jamais rediriger la home (même si PMPro et ACF ne sont pas activés)
+	if(is_home()) {
+		$redirect=false;
+	}
+
 	if(function_exists('pmpro_getOption') && function_exists('get_field')) :
 
 		$pmpro_pages = array(pmpro_getOption('billing_page_id'), pmpro_getOption('account_page_id'), pmpro_getOption('levels_page_id'), pmpro_getOption('checkout_page_id'), pmpro_getOption('confirmation_page_id'));
@@ -36,7 +41,7 @@ function kasutan_lock_content() {
 		$public_pages=get_field('zs_public_pages','options');
 		$free_page=get_field('zs_free_page','options');
 
-		if(is_home() || is_page($pmpro_pages) || is_page($public_pages)) {
+		if(is_page($pmpro_pages) || is_page($public_pages)) {
 			$redirect=false;
 		} else if(kasutan_is_free_member() && is_page($free_page)) {
 			$redirect=false;
