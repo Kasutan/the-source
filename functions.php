@@ -206,6 +206,7 @@ add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 * CPT, custom fields, custom taxonomies et functions associées
 */
 require_once( 'inc/cpt-taxonomies.php' );
+require_once( 'inc/advisors.php' );
 
 
 /**
