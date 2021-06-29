@@ -13,6 +13,14 @@ define( 'KASUTAN_STARTER_VERSION', filemtime( get_template_directory() . '/style
 // General cleanup
 include_once( get_template_directory() . '/inc/wordpress-cleanup.php' );
 
+//Paid membership pro
+include_once( get_template_directory() . '/inc/pmp/lock-content.php' );
+include_once( get_template_directory() . '/inc/pmp/checkout-fields.php' );
+include_once( get_template_directory() . '/inc/pmp/pdf-invoice.php' );
+include_once( get_template_directory() . '/inc/pmp/vat-tax.php' );
+//include_once( get_template_directory() . '/inc/pmp/my-account.php' );
+
+
 // Theme
 include_once( get_template_directory() . '/inc/tha-theme-hooks.php' );
 include_once( get_template_directory() . '/inc/layouts.php' );
@@ -23,11 +31,6 @@ include_once( get_template_directory() . '/inc/template-tags.php' );
 include_once( get_template_directory() . '/inc/site-header.php' );
 include_once( get_template_directory() . '/inc/site-footer.php' );
 
-//Paid membership pro
-include_once( get_template_directory() . '/inc/pmp/checkout-fields.php' );
-include_once( get_template_directory() . '/inc/pmp/pdf-invoice.php' );
-include_once( get_template_directory() . '/inc/pmp/vat-tax.php' );
-//include_once( get_template_directory() . '/inc/pmp/my-account.php' );
 
 // Editor
 include_once( get_template_directory() . '/inc/disable-editor.php' );

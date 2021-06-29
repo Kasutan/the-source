@@ -22,6 +22,28 @@
             "new_lines": "br"
         },
         {
+            "key": "field_608ac16ae3a8c",
+            "label": "Mechanical dreams Page",
+            "name": "zs_page_mechanical_dreams",
+            "type": "post_object",
+            "instructions": "Used for displaying a special template",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
             "key": "field_5f2439218c9df",
             "label": "Contact page",
             "name": "zs_page_contact",
@@ -66,28 +88,6 @@
             "max_height": "",
             "max_size": "0.5",
             "mime_types": "jpg, jpeg"
-        },
-        {
-            "key": "field_608ac16ae3a8c",
-            "label": "Mechanical dreams Page",
-            "name": "zs_page_mechanical_dreams",
-            "type": "post_object",
-            "instructions": "Used for displaying a special template",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
         },
         {
             "key": "field_60d9d14178f0f",
@@ -154,6 +154,48 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_60dadd7ab8b16",
+            "label": "Public pages",
+            "name": "zs_public_pages",
+            "type": "post_object",
+            "instructions": "Pages that will be accessible to everyone",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_60dadd98b8b17",
+            "label": "Free page",
+            "name": "zs_free_page",
+            "type": "post_object",
+            "instructions": "Page that will be accessible to members with an active \"Free\" membership",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
         }
     ],
     "location": [
@@ -173,5 +215,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624887754
+    "modified": 1624956453
 }
