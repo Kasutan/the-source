@@ -8,6 +8,7 @@ $post_id=get_the_ID();
 $post_type=get_post_type();
 $taxonomy=kasutan_get_taxonomy_slug_for_cpt($post_type);
 $cat=kasutan_get_closest_cat_for_product($post_id,$post_type);
+$related=kasutan_get_related_products($post_id,$post_type,$taxonomy,$cat,$number=3);
 
 $in_selection=false; //TODO is item already in user's selection ?
 if($in_selection) {
@@ -67,7 +68,10 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 				?>
 				<formgroup class="to-selection <?php echo $class_selected;?>">
-					<input type="checkbox" id="js-to-selection" name="js-to-selection" <?php echo $attr_checked;?>>
+					<input type="checkbox" id="js-to-selection" name="js-to-selection" <?php echo $attr_checked;?> 
+						data-product="<?php echo $post_id;?>"
+						data-user="<?php echo $user_id;?>"
+					>
 					<label for="js-to-selection">
 						<span class="add">Save this item in my selection</span>
 						<span class="remove">Saved in my selection</span>
@@ -152,6 +156,15 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 		endif;
 
 		echo '<section class="product-related">';
+			echo '<div class="sep"></div>';
+			if($related) {
+				printf('<h2>In the same category: %s</h2>',$cat->name);
+				echo '<ul class="product-grid 3-col">';
+					foreach($related as $product_id) {
+						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
+					}
+				echo '</ul>';
+			}
 
 		echo '</section>';
 

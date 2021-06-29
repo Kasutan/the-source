@@ -104,3 +104,69 @@ function kasutan_get_closest_cat_for_product($post_id,$post_type) {
 		return false;
 	}
 }
+
+/**
+* Get related products in category
+* @param int $post_id
+* @param string $post_type
+* @param string $taxonomy
+* @param int $number
+* @param object $term
+* @return array $related
+*/
+
+function kasutan_get_related_products($post_id,$post_type,$taxonomy,$term,$number=4) {
+	$args=array(
+		'post_type'=>$post_type,
+		'numberposts' => $number,
+		'exclude' => $post_id,
+		'tax_query' => array( 
+			array( 
+				'taxonomy'=>$taxonomy,
+				'terms'=> $term->term_id
+			 )
+			),
+		'fields' => 'ids'
+	);
+	return get_posts($args);
+}
+
+/**
+* Display product card
+* @param int $post_id
+* @param object $term
+* @param string $taxonomy
+* @param string $context
+*/
+function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context) {
+	$in_selection=false; //TODO is item already in user's selection ?
+	if($in_selection) {
+		$attr_checked="checked";
+		$class_selected="selected";
+	} else {
+		$attr_checked=$class_selected="";
+	}
+
+	$link=get_the_permalink( $post_id);
+	echo '<li class="product">';
+		//TODO display grid
+		printf('<a href="%s" class="card-image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
+		printf('<a href="%s" class="card-title"><h3>%s</h3></a>',$link,get_the_title( $post_id ));
+		printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
+		if($context==="filtre") {
+			//TODO ajouter span hidden pour filtre par catégorie et tri alphabétique
+		}
+		?>
+		<formgroup class="to-selection <?php echo $class_selected;?>">
+		<input type="checkbox" id="js-to-selection" name="js-to-selection" <?php echo $attr_checked;?> 
+				data-product="<?php echo $post_id;?>"
+				data-user="<?php echo $user_id;?>"
+			>
+		<label for="js-to-selection">
+			<span class="add">Save</span>
+			<span class="remove">Saved</span>
+		</label>
+	</formgroup>
+	<?php
+	echo '</li>';
+}
