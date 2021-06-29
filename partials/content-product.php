@@ -10,6 +10,14 @@ $taxonomy=kasutan_get_taxonomy_slug_for_cpt($post_type);
 $cat=kasutan_get_closest_cat_for_product($post_id,$post_type);
 $related=kasutan_get_related_products($post_id,$post_type,$taxonomy,$cat,$number=3);
 
+if($cat->parent!==0) {
+	$cat_parent=get_term($cat->parent,$taxonomy);
+	$cat_siblings=kasutan_get_cat_siblings($cat->parent,$cat->term_id,$taxonomy);
+} else {
+	$cat_parent=$cat_siblings=false;
+}
+
+
 $in_selection=false; //TODO is item already in user's selection ?
 if($in_selection) {
 	$attr_checked="checked";
@@ -164,6 +172,32 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
 					}
 				echo '</ul>';
+			}
+
+			echo '<div clas="browse-buttons">';
+				printf('<a class="button" href="%s">Browse <strong>%s</strong></a>',
+					get_term_link($cat,$taxonomy),
+					$cat->name
+				);
+				if($cat_parent) {
+					printf('<a class="button" href="%s">Browse <strong>%s</strong></a>',
+						get_term_link($cat_parent,$taxonomy),
+						$cat_parent->name
+					);
+				}
+				
+			echo '</div>';
+
+			if($cat_siblings) {
+				echo '<p class="siblings-title">Quick access to</p>';
+				echo '<nav class="siblings">';
+					foreach($cat_siblings as $term) {
+						printf('<a class="button small" href="%s">%s</a>',
+							get_term_link($term,$taxonomy),
+							$term->name
+						);	
+					}
+				echo '</nav>';
 			}
 
 		echo '</section>';

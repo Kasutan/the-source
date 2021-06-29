@@ -112,7 +112,7 @@ function kasutan_get_closest_cat_for_product($post_id,$post_type) {
 * @param string $taxonomy
 * @param int $number
 * @param object $term
-* @return array $related
+* @return array $related //array of product ids
 */
 
 function kasutan_get_related_products($post_id,$post_type,$taxonomy,$term,$number=4) {
@@ -131,6 +131,23 @@ function kasutan_get_related_products($post_id,$post_type,$taxonomy,$term,$numbe
 	return get_posts($args);
 }
 
+/**
+* Get sibling categories (with same parent)
+* @param int $parent_id
+* @param int $term_id
+* @param string $taxonomy
+* @return array $siblings // array of Terms
+*/
+function kasutan_get_cat_siblings($parent_id,$term_id,$taxonomy) {
+	$args=array(
+		'taxonomy' => $taxonomy, 
+		'orderby' => 'name', //default
+		'hide_empty' => false, //TODO changer en prod
+		'exclude' => $term_id,
+		'parent' => $parent_id
+	);
+	return get_terms($args);
+}
 /**
 * Display product card
 * @param int $post_id
