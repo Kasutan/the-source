@@ -26,7 +26,6 @@ add_action( 'wp_enqueue_scripts', 'kasutan_vat_script' );
 function kasutan_vat_script() {
 	if(!function_exists('pmpro_is_checkout') || !pmpro_is_checkout()) {
 		//not checkout page
-		error_log('not checkout page');
 		return;
 	}
 
