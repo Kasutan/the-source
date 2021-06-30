@@ -19,13 +19,21 @@
 /* walker for product menu sub nav */
 class kasutan_products_menu_walker extends Walker_Nav_Menu
 {
-	//TODO identifier la catégorie qui va avec la page et lister les sous-catégories
 	//TODO ajouter des classes dès cette étape si la page actuellement affichée correspond à un cpt single ou archive -> afficher le sous-menu
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button><ul class="sub-menu">',kasutan_picto(array('icon'=>'angle')) );
-	}
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "</ul>";
+	
+	function end_el(&$output, $item, $depth = 0, $args = NULL) {
+		$product_taxonomies=['cat_assets','cat_projects','cat_companies'];
+		$product_types=array('exceptional_assets','virtuous_companies','philantropy');
+		$taxonomy=$item->description; //taxonomy slug stored as description for the menu item
+		if(in_array($taxonomy,$product_taxonomies)) {
+
+			$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'angle')) );
+			
+			$output.=kasutan_get_categories_for_menu($taxonomy);
+			
+			
+
+		}
 	}
 }
 

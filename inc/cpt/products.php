@@ -12,7 +12,7 @@ function kasutan_is_archive_for_product($queried_object) {
 	}
 	$queried_object = get_queried_object();
 	$taxonomy=$queried_object->taxonomy;
-	$product_taxonomies=['cat_assets','cat_projets','cat_companies'];
+	$product_taxonomies=['cat_assets','cat_projects','cat_companies'];
 	if(!in_array($taxonomy,$product_taxonomies)) {
 		return false;
 	}
@@ -186,4 +186,50 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 	</formgroup>
 	<?php
 	echo '</li>';
+}
+
+
+/**
+* Get categories for menu
+* @param string $taxonomy
+* @return string $output
+*/
+function kasutan_get_categories_for_menu($taxonomy) {
+	$output='';
+	$args=array(
+		'taxonomy' => $taxonomy, 
+		'hide_empty' => false, //TODO changer en prod
+		'parent' => 0
+	);
+	$terms=get_terms($args);
+	if(!empty($terms)) {
+		$output.='<ul class="sub-menu">';
+		foreach ($terms as $term) {
+			$link=get_term_link($term,$taxonomy);
+			
+			$output.=sprintf('<li><a href="%s">%s</a>',$link,$term->name);
+				if($term->slug==='mechanical-dreams') {
+					$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'angle')) );
+					$args=array(
+						'taxonomy' => $taxonomy, 
+						'hide_empty' => false, //TODO changer en prod
+						'parent' => $term->term_id
+					);
+					$children=get_terms($args);
+					if(!empty($children)) {
+						$output.='<ul class="sub-menu-2">';
+						foreach($children as $child) {
+							$link=get_term_link($child,$taxonomy);
+							$output.=sprintf('<li><a href="%s">%s</a>',$link,$child->name);
+						}
+						$output.='</ul>';
+					}
+				}
+			$output.='</li>';
+			
+		}
+		$output.='</ul>';
+
+	}
+	return $output;
 }
