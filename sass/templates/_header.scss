@@ -3,6 +3,8 @@
 --------------------------------------------------------------*/
 .site-header {
 	background-color: var(--blanc);
+	display: flex;
+	justify-content: space-between;
 	position: relative;
 	z-index:10;
 

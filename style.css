@@ -2512,7 +2512,7 @@ button.menu-toggle {
   .menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active {
     background: transparent; }
   .menu-toggle svg path {
-    fill: var(--blanc); }
+    fill: var(--cyan); }
 
 /*Style liens de menus TOPBAR*/
 .topbar {
@@ -3224,6 +3224,12 @@ button.modaal-close {
 --------------------------------------------------------------*/
 .site-header {
   background-color: var(--blanc);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   position: relative;
   z-index: 10; }
   .site-header .site-branding, .site-header .recherche.bouton, .site-header .menu-toggle {

@@ -73,8 +73,10 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		add_theme_support( 'post-thumbnails', array('post','page','exceptional_assets','virtuous_companies','philantropic_projects','advisors'));
 
 		register_nav_menus( array(
-			'primary' => 'Product categories',
+			'products' => 'Product categories',
 			'the-source' => 'The Source links',
+			'my-account' => 'My account desktop',
+			'my-account-mobile' => 'My account mobile',
 			'footer-legal' => 'Legal links in footer'
 		) );
 

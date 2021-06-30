@@ -61,7 +61,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 	echo '<div class="entry-content">';
 		echo '<section class="product-top">';
 			echo '<div class="product-gallery">';
-			the_post_thumbnail( 'large');
+			the_post_thumbnail( 'large'); //TODO carrousel galerie
 			echo '</div>';
 
 			echo '<div class="product-main">';

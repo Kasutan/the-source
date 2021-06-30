@@ -28,7 +28,7 @@ echo '<div class="site-container">';
 
 	tha_header_before();
 	echo '<header class="site-header" role="banner">';
-		tha_header_top();
+		tha_header_left();
 
 		echo '<div class="title-area">';
 		$logo_tag='p';
@@ -52,7 +52,7 @@ echo '<div class="site-container">';
 			
 		echo '</div>';
 
-		tha_header_bottom();
+		tha_header_right();
 	echo '</header>';
 	tha_header_after();
 	echo '<div class="site-inner" id="main-content">';

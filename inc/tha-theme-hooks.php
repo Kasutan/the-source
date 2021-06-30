@@ -142,12 +142,12 @@ function tha_header_after() {
 	do_action( 'tha_header_after' );
 }
 
-function tha_header_top() {
-	do_action( 'tha_header_top' );
+function tha_header_left() {
+	do_action( 'tha_header_left' );
 }
 
-function tha_header_bottom() {
-	do_action( 'tha_header_bottom' );
+function tha_header_right() {
+	do_action( 'tha_header_right' );
 }
 
 /**
