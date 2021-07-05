@@ -36,7 +36,7 @@ function kasutan_lock_content() {
 
 	if(function_exists('pmpro_getOption') && function_exists('get_field')) :
 
-		$pmpro_pages = array(pmpro_getOption('billing_page_id'), pmpro_getOption('account_page_id'), pmpro_getOption('levels_page_id'), pmpro_getOption('checkout_page_id'), pmpro_getOption('confirmation_page_id'));
+		$pmpro_pages = array(pmpro_getOption('billing_page_id'), pmpro_getOption('account_page_id'), pmpro_getOption('levels_page_id'), pmpro_getOption('checkout_page_id'), pmpro_getOption('confirmation_page_id'),pmpro_getOption('login_page_id'));
 
 		$public_pages=get_field('zs_public_pages','options');
 		$free_page=get_field('zs_free_page','options');

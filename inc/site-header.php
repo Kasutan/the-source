@@ -76,8 +76,18 @@ function kasutan_menu_left() {
 add_action('tha_header_right','kasutan_header_right');
 function kasutan_header_right() {
 	if(!kasutan_is_premium_member()) {
-		echo '<nav class="header-right">Connexion</nav>';
-		//TODO tester menu "Log In Widget - PMPro"
+		echo '<nav class="header-right">';
+			if(is_user_logged_in(  )) {
+				printf('<a href="%s">Logout</a>',wp_logout_url(get_permalink()));
+			} else {
+				if(function_exists('pmpro_getOption')) {
+					$login_url=get_page_link(pmpro_getOption('login_page_id'));
+				} else {
+					$login_url=wp_login_url(get_permalink());
+				}
+				printf('Already a member? <a href="%s" class="login-link">Just sign in</a>',$login_url);
+			}
+		echo '</nav>';
 		return;
 	}
 	echo '<nav class="header-right">';
