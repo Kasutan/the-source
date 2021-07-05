@@ -18,6 +18,7 @@ include_once( get_template_directory() . '/inc/pmp/lock-content.php' );
 include_once( get_template_directory() . '/inc/pmp/checkout-fields.php' );
 include_once( get_template_directory() . '/inc/pmp/pdf-invoice.php' );
 include_once( get_template_directory() . '/inc/pmp/vat-tax.php' );
+include_once( get_template_directory() . '/inc/pmp/free-trial.php' );
 //include_once( get_template_directory() . '/inc/pmp/my-account.php' );
 
 
