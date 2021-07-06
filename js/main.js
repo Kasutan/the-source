@@ -4,36 +4,7 @@
 		var width=$(window).width();
 	
 		
-		/*********Afficher/masquer le volet de recherche **********/
-
-		//Au chargement de la page, masquer les volets de recherche
-		$('.volet-recherche').css('width',0);
-		$('.volet-recherche').hide();
-
-		var boutonRecherche=$("button.recherche");
-		if($(boutonRecherche).length>0) {
-			$(boutonRecherche).click(function(){
-				var voletRecherche=$('#'+$(this).attr('aria-controls'));
-				if($(boutonRecherche).attr('aria-expanded')=="false") {
-					$(voletRecherche).show();
-					$(voletRecherche).css('width','200px');
-					$(voletRecherche).css('flex-grow','1');
-					$(voletRecherche).attr('aria-expanded','true');
-					$(boutonRecherche).attr('aria-expanded','true');
-					$('#volet-recherche .search-field').focus();
-					$('.nav-main .centreur:first-of-type').hide();
-					
-				} else {
-					$(voletRecherche).css('width','0');
-					$(voletRecherche).css('flex-grow','unset');
-					$(voletRecherche).fadeOut();
-					$(voletRecherche).attr('aria-expanded','false');
-					$(boutonRecherche).attr('aria-expanded','false');
-					$('.nav-main .centreur:first-of-type').show();
-				}
-
-			});
-		}
+		
 		
 		/********* Ouvrir-fermer les sous-menus mobile **********/
 		var ouvrirSousMenu=$('.volet-navigation .ouvrir-sous-menu');
@@ -68,7 +39,7 @@
 
 
 		/****************** Sticky header *************************/
-		
+		/*
 		var siteHeader=$('.site-header');
 		var siteContent=$('.site-main');
 		var mainNavigation=$('.nav-main');
@@ -94,7 +65,7 @@
 		} else {
 			$(topbar).addClass('js-sticky');
 			siteHeader.css('margin-top',topbar.outerHeight());
-		}
+		}*/
 
 		
 
@@ -179,69 +150,7 @@
 		
 		}
 
-		/*=================================================
-		CART PAGE : changer la quantité avec les boutons + et - puis mettre à jour
-		=================================================*/
-
-		var $cart_shop_table = $('table.shop_table.cart');
-		if($cart_shop_table.length>0) {
-			var timeout;
-
-			kasutan_bind_qty(); // on lie les évènements dès le chargement de la page
-
-			$( document.body ).on( 'updated_wc_div', function(){
-				kasutan_bind_qty(); // on recommence après mise à jour du panier
-			});
-		}
-		function kasutan_bind_qty() {
-
-			//Modifier quantité au clic sur un bouton +/-
-			$('.change-quantity').click(function(e){
-				e.preventDefault();
-				var action=$(this).attr("data-value");
-				var input=$(this).parents('.quantity').find('input.qty');
-				var currentQty=parseInt($(input).val());
-				var minQty=parseInt($(input).attr('min'));
-				var maxQty=parseInt($(input).attr('max'));
-				if(currentQty>minQty && action=="-") {
-					$(input).val(currentQty-1);
-					kasutan_update_cart();
-				} else if (currentQty<maxQty && action=="+") {
-					$(input).val(currentQty+1);
-					kasutan_update_cart();
-				}
-			});
-
-			$cart_shop_table.on('change keyup mouseup', 'input.qty', function(){ 
-				kasutan_update_cart();
-			});
-		}
-
-		function kasutan_update_cart() {
-			if (timeout != undefined) clearTimeout(timeout); //cancel previously scheduled event
-			timeout = setTimeout(function() {
-				$('button[name="update_cart"]').prop("disabled", false);
-				$('button[name="update_cart"]').trigger('click');
-			}, 1000 );
-		}
-
-		/*=================================================
-		PRODUCT PAGE : changer la quantité avec les boutons + et -
-		=================================================*/
-		var singleProductButton=$('.single-product .summary .single_add_to_cart_button');
-		if(singleProductButton.length>0) {
-			kasutan_bind_qty();
-		}
-
-		/*=================================================
-		Corrections pour l'accessibilité
-		=================================================*/
-		$(document.body).on('woofc_cart_loaded',function() {
-			$('.woofc-menu-item a').attr('title',"Mon panier");
-		});
-		setTimeout(function(){ 
-			$('.woocommerce-product-gallery__trigger').attr('title',"Afficher les images du produit en plein écran");
-		}, 1000);		
+		
 
 	}); //fin document ready
 })( jQuery );
