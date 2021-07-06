@@ -4,7 +4,24 @@
 		var width=$(window).width();
 	
 		
-		
+		/********* Identifier menu-item actif pour un template single ou tax produits*******/
+		/******Fonctionne en ajoutant une classe productType et une classe productTax à chaque lien de menu dans le menu "Product categories" */
+
+		var productTypes=['exceptional_assets','virtuous_companies','philantropy'];
+		productTypes.forEach(function(value,index) {
+			if($('body').hasClass('single-'+value)) {
+				console.log('on est sur un single ',value);
+				$('.menu-item.'+value).addClass('current-menu-item');
+			}
+		});
+
+		var productTaxonomies=['cat_assets','cat_projects','cat_companies'];
+		productTaxonomies.forEach(function(value,index) {
+			if($('body').hasClass('tax-'+value)) {
+				console.log('on est sur une archive ',value);
+				$('.menu-item.'+value).addClass('current-menu-item');
+			}
+		});
 		
 		/********* Ouvrir-fermer les sous-menus mobile **********/
 		var ouvrirSousMenu=$('.volet-navigation .ouvrir-sous-menu');
