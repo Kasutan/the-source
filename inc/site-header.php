@@ -18,14 +18,14 @@ function kasutan_menu_left() {
 					'menu_id'        => 'menu-products',
 					'walker' => new kasutan_products_menu_walker,
 					'container'=>false, 
-					'menu_class' => 'menu-products'
+					'menu_class' => 'menu-products nav-menu desktop'
 				) );
 			} else {
 				wp_nav_menu( array(
 					'theme_location' => 'products',
 					'menu_id'        => 'menu-products',
 					'container'=>false, 
-					'menu_class' => 'menu-products'
+					'menu_class' => 'menu-products nav-menu desktop'
 				) );
 			}
 		}
@@ -44,24 +44,24 @@ function kasutan_menu_left() {
 						'menu_id'        => 'menu-products-mobile',
 						'walker' => new kasutan_products_menu_walker,
 						'container'=>false, 
-						'menu_class' => 'menu-products-mobile'
+						'menu_class' => 'menu-products nav-menu mobile'
 					) );
 				} else {
 					wp_nav_menu( array(
 						'theme_location' => 'products',
 						'menu_id'        => 'menu-products-mobile',
 						'container'=>false, 
-						'menu_class' => 'menu-products-mobile'
+						'menu_class' => 'menu-products nav-menu mobile'
 					) );
 				}
 			}
 		
 			if( has_nav_menu( 'the-source' ) ) {
-				wp_nav_menu( array( 'theme_location' => 'the-source', 'menu_id' => 'menu-the-source-mobile', 'container'=>false, 'menu_class' => 'menu-the-source-mobile' ) );
+				wp_nav_menu( array( 'theme_location' => 'the-source', 'menu_id' => 'menu-the-source-mobile', 'container'=>false, 'menu_class' => 'menu-the-source  nav-menu mobile' ) );
 			}
 	
 			if( has_nav_menu( 'my-account-mobile' ) ) {
-				wp_nav_menu( array( 'theme_location' => 'my-account-mobile', 'menu_id' => 'menu-my-account-mobile', 'container'=>false, 'menu_class' => 'menu-my-account-mobile' ) );
+				wp_nav_menu( array( 'theme_location' => 'my-account-mobile', 'menu_id' => 'menu-my-account-mobile', 'container'=>false, 'menu_class' => 'menu-my-account  nav-menu mobile' ) );
 			}
 
 		echo '</div>'; //Fin volet navigation
@@ -93,11 +93,11 @@ function kasutan_header_right() {
 	echo '<nav class="header-right">';
 		
 		if( has_nav_menu( 'the-source' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'the-source', 'menu_id' => 'menu-the-source', 'container'=>false, 'menu_class' => 'menu-the-source' ) );
+			wp_nav_menu( array( 'theme_location' => 'the-source', 'menu_id' => 'menu-the-source', 'container'=>false, 'menu_class' => 'menu-the-source nav-menu desktop' ) );
 		}
 
 		if( has_nav_menu( 'my-account' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'my-account', 'menu_id' => 'menu-my-account', 'container'=>false, 'menu_class' => 'menu-my-account' ) );
+			wp_nav_menu( array( 'theme_location' => 'my-account', 'menu_id' => 'menu-my-account', 'container'=>false, 'menu_class' => 'menu-my-account nav-menu desktop' ) );
 		}
 
 		echo '<span>my selection N</span>';

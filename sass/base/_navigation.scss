@@ -57,17 +57,19 @@ p.fil-ariane {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+//Reset styles menus
+.nav-menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
 
 /*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/ 
 
-.nav-topbar-gauche, .nav-main, .volet-navigation {
+
+.nav-menu.desktop, .volet-navigation, .sub-menu {
 	display: none; // tous les menus sont cachés en mobile
-	.menu {
-		display: flex;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-	}
 }
 
 button.menu-toggle {
@@ -108,7 +110,7 @@ button.menu-toggle {
 	button.menu-toggle {
 		display: none;
 	}
-	.nav-topbar-gauche, .nav-main { //menus affichés en desktop
+	.nav-menu.desktop { //menus affichés en desktop
 		display:flex;
 	}
 }
@@ -130,68 +132,29 @@ button.menu-toggle {
 	}
 }
 
-
-/*Style liens de menus TOPBAR*/
-.topbar {
-	align-items: center;
-	background-color: var(--bleu);
-	display: flex;
-	justify-content: space-between;
-	padding:1rem var(--padding-x);
-	position: relative; // référence pour le volet de navigation
-	.menu-topbar {
-		align-items: center;
-		display:flex;
-		list-style: none;
-		margin:0;
-		padding:0;
-		text-align:center;
-
-		li {
-			margin-right:2rem;
-		}
+/* Styles communs menus desktop et mobile */
+.site-header .nav-menu {
+	.menu-item {
+		padding:1rem;
 		a {
-			@include oldfs(17);
-			color:var(--blanc);
-			letter-spacing: 1.4px;
-			line-height: 1;
+			color:var(--bleu);
+			display: inline-block;
+			font-size: 1.5rem;
+			font-weight: 700;
+			text-align: center;
 			text-decoration: none;
+			text-transform: uppercase;
 			&:hover, &:focus {
-				text-decoration: underline;
-				text-underline-offset:1rem;
+				color:var(--cyan);
 			}
-		}
-		li.current-menu-item, li.current-menu-ancestor {
+		} 
+		&.focus, &:focus-within, &.current-menu-item {
 			a {
-				font-weight: 700;
+				color:var(--cyan);
 			}
 		}
-	}
-	
-	.compte {
-		background-image:url('icons/mon-compte.png');
-		background-size:contain;
-		background-repeat: no-repeat;
-		height:21px;
-		overflow: hidden;
-		width:22px;
-		transition:transform 0.3s;
-		a {
-			color:transparent;
-			&:focus-visible {
-				outline-color:var(--blanc);
-			}
-		}
-		&:hover, &:focus-within {
-			transform:scale(1.1);
-		}
-	}
-	@include bp(xl) {
-		padding-top:1.5rem;
-		padding-bottom: 1.5rem;
 	}
 }
-
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
 	background-color:var(--blanc);

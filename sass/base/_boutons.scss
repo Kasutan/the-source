@@ -10,4 +10,9 @@ a.wp-block-button__link,
 .is-style-outline > .wp-block-button__link:not(.has-text-color) {
 	@include bouton;
 	@include couleurs-bouton;
+	&.picto {
+		background-color: transparent;
+		border:none;
+		padding:0;
+	}
 }

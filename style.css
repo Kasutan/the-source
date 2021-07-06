@@ -2141,6 +2141,18 @@ a.wp-block-button__link,
     background-color: var(--cyan);
     border-color: var(--cyan);
     color: var(--blanc); }
+  button.picto,
+  input[type="button"].picto,
+  .site-container .nf-form-content input[type="button"].picto,
+  input[type="reset"].picto,
+  input[type="submit"].picto,
+  a.button.picto,
+  a.wp-block-button__link.picto,
+  .is-style-outline > a.wp-block-button__link.picto,
+  .is-style-outline > .wp-block-button__link:not(.has-text-color).picto {
+    background-color: transparent;
+    border: none;
+    padding: 0; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -2453,16 +2465,17 @@ p.fil-ariane {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+
 /*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/
-.nav-topbar-gauche, .nav-main, .volet-navigation {
+.nav-menu.desktop, .volet-navigation, .sub-menu {
   display: none; }
-  .nav-topbar-gauche .menu, .nav-main .menu, .volet-navigation .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
 
 button.menu-toggle {
   display: block; }
@@ -2497,7 +2510,7 @@ button.menu-toggle {
 @media (min-width: 960px) {
   button.menu-toggle {
     display: none; }
-  .nav-topbar-gauche, .nav-main {
+  .nav-menu.desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; } }
@@ -2514,66 +2527,21 @@ button.menu-toggle {
   .menu-toggle svg path {
     fill: var(--cyan); }
 
-/*Style liens de menus TOPBAR*/
-.topbar {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--bleu);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 1rem var(--padding-x);
-  position: relative; }
-  .topbar .menu-topbar {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center; }
-    .topbar .menu-topbar li {
-      margin-right: 2rem; }
-    .topbar .menu-topbar a {
-      font-size: calc(17 * var(--taille-texte) / 20);
-      color: var(--blanc);
-      letter-spacing: 1.4px;
-      line-height: 1;
-      text-decoration: none; }
-      .topbar .menu-topbar a:hover, .topbar .menu-topbar a:focus {
-        text-decoration: underline;
-        text-underline-offset: 1rem; }
-    .topbar .menu-topbar li.current-menu-item a, .topbar .menu-topbar li.current-menu-ancestor a {
-      font-weight: 700; }
-  .topbar .compte {
-    background-image: url("icons/mon-compte.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 21px;
-    overflow: hidden;
-    width: 22px;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s; }
-    .topbar .compte a {
-      color: transparent; }
-      .topbar .compte a:focus-visible {
-        outline-color: var(--blanc); }
-    .topbar .compte:hover, .topbar .compte:focus-within {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1); }
-  @media (min-width: 1400px) {
-    .topbar {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem; } }
+/* Styles communs menus desktop et mobile */
+.site-header .nav-menu .menu-item {
+  padding: 1rem; }
+  .site-header .nav-menu .menu-item a {
+    color: var(--bleu);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .site-header .nav-menu .menu-item a:hover, .site-header .nav-menu .menu-item a:focus {
+      color: var(--cyan); }
+  .site-header .nav-menu .menu-item.focus a, .site-header .nav-menu .menu-item:focus-within a, .site-header .nav-menu .menu-item.current-menu-item a {
+    color: var(--cyan); }
 
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
