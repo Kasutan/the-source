@@ -174,7 +174,7 @@ add_theme_support( 'disable-custom-colors' );
 function kasutan_scripts() {
 	wp_enqueue_style( 'thesource-owl-carousel', get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.css',array(),'2.3.4');
 	wp_enqueue_style( 'thesource-style', get_stylesheet_uri(),array(), filemtime( get_template_directory() . '/style.css' ) );
-	//wp_enqueue_style( 'thesource-google-font', 'https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+	wp_enqueue_style( 'thesource-google-font', 'https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 
 	// Move jQuery to footer
 	if( ! is_admin() ) {

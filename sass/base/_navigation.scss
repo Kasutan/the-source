@@ -274,120 +274,178 @@ button.menu-toggle {
 }
 
 
-/*Style liens de menus MENU PRINCIPAL */ 
-.nav-main { 
-	align-items: center;
-	justify-content: space-between;
-	padding:0 var(--padding-x);
+/*Style liens de menus DESKTOP */ 
+.nav-menu.desktop { 
 
-	.centreur {
-		flex-basis:4rem;
-		flex-shrink: 0;
-		&:last-of-type {
-			text-align: right;
+	//Liens de niveau 1
+	.menu-item {
+		text-align: center;
+		> .picto {
+			display: none;
 		}
 	}
-	.nav-primary { //conteneur du menu
-		flex-grow:0;
-	}
-	.search-form {
-		justify-content: flex-end;
-	}
-	.menu {
-		justify-content: space-around;
-		width:100%;
-		li {
-			padding:0 1rem;
-		}
-		a {
-			color:var(--noir);
-			display: block;
-			text-decoration: none;
-			text-transform: uppercase;
+
+	&.menu-products {  //affichage des sous-menus produits
+		align-items: flex-start;
+		padding-top: 1rem;
+		padding-left: 4rem;
+		position: relative;
+		top: 6px;
+
+		.menu-item {
+			max-width: 13rem;
+			padding: 1rem;
 		}
 
-		//styles spécifiques aux liens de premier niveau
-
-		& > li {
-			& > a {
-				padding:2rem 0;
-				letter-spacing: 1px;
-				transition: none;
-				text-decoration: none;
-			}
-			
-			&:hover > a, & > a:focus, & > a:active, &:focus-within > a, &.current-menu-item > a, &.current-menu-ancestor > a {
-				color :var(--bleu);
-				font-weight: 400;
-				text-decoration: underline;
-				text-underline-offset:1rem;
-				text-decoration-thickness: 2px;
+		.sub-menu, .sub-menu-2 {
+			list-style: none;
+			display: none;
+			margin: 0;
+			padding: 0;
+		}
+		.current-menu-item {
+			background-color: var(--blanc);
+			border:solid 1px var(--noir);
+			border-bottom: 0;
+			padding-bottom: 2rem;
+			.sub-menu {
+				background-color: var(--blanc);
+				border-bottom: solid 1px var(--bleu);
+				display: flex;
+				height:4.6rem;
+				left:0;
+				position: absolute;
+				width:calc(100vw - 2 * var(--margin-x-header));
+				top:100%;
 			}
 		}
 
-		//styles spécifiques aux liens de premier niveau DESKTOP XL
 		@include bp(xl) {
-			& > li {
-				padding-left:2rem;
-				padding-right:2rem;
+			padding-top: 3rem;
+			top: 7px;
+			.menu-item {
+				padding-top: 1.5rem;
+			}
+			.current-menu-item {
+				padding-bottom: 3.5rem;
+			}
+		}
 
-				& > a {
-					@include oldfs(28);
-					letter-spacing: 1.86px;
+		.sub-menu > li {
+			align-items: center;
+			display: flex;
+			padding-left:3.4rem;
+			position: relative;
+			a {
+				color:var(--bleu);
+				font-weight: 300;
+			}
+
+			.picto-angle {
+				align-items: center;
+				display: flex;
+				margin-left: 0.5rem;
+			}
+
+			//Sous menu niveau 2
+			.sub-menu-2 { 
+				float: left;
+				margin-top:0px;
+				position: absolute;
+				top: 90%;
+				top: calc(100% - 0.5rem);
+				left: -999em;
+				z-index: 10;
+			}
+
+			&:hover, &.focus, &:focus-within { //classe .focus ajoutée en JS
+				.sub-menu-2 {
+					animation: animSousMenu 0.45s cubic-bezier(0.7,0,0.3,1) both;
+					background-color: var(--bleu);
+					display:flex;
+					flex-direction: column;
+					left:calc(50% - 9rem);
+					opacity:1;
+					max-width:30rem;
+					min-width:18rem;
 				}
 			}
-			
+
 		}
 
-
-		//Logique affichage sous-menu
-		.sub-menu { 
-			float: left;
-			margin-top:0px;
-			position: absolute;
-			top: 90%;
-			top: calc(100% - 0.5rem);
-			left: -999em;
-			z-index: 10;
+		.sub-menu-2 {
+			padding:1.4rem;
+			li {
+				border-bottom:solid 1px var(--blanc);
+				margin-bottom: 0.5em;
+				padding-bottom : 0.5em;
+				text-align: left;
+				&:last-of-type {
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+				a {
+					color:var(--blanc);
+					display: block;
+				}
+			}
 		}
 
-		> li { //affichage du sous-menu
+		
+	}
+
+
+	&.menu-my-account { //affichage du sous-menu my account
+		& > li {
+
+			//Logique affichage sous-menu
+			.sub-menu { 
+				float: left;
+				margin-top:0px;
+				position: absolute;
+				top: 90%;
+				top: calc(100% - 0.5rem);
+				left: -999em;
+				z-index: 10;
+			}
+
 			position: relative;
 			&:hover, &.focus, &:focus-within { //classe .focus ajoutée en JS
 				.sub-menu {
 					animation: animSousMenu 0.45s cubic-bezier(0.7,0,0.3,1) both;
 					display:flex;
 					flex-direction: column;
-					left:0;
+					left:unset;
+					right:0;
 					opacity:1;
 					max-width:30rem;
-					min-width:20rem;
+					min-width:25rem;
 				}
 			}
 		}
 
-		//Style sous-menu
+		//Style sous-menu my account
+		//TODO 2 triangles et picto déconnexion + baisser le sous-menu 
 		.sub-menu {
-			background: var(--blanc);
-			border: 1px solid var(--bleu);
+			background: linear-gradient(var(--cyan), var(--bleu));
 			list-style:none;
 			margin:0;
-			padding:0;
-			padding-right:2rem;
+			padding:1.8rem 2.5rem;
 			li {
-				padding : 1rem;
+				margin-bottom: 0.5rem;
 				position: relative;
+				text-align: center;
 			}
 			a {
-				@include oldfs(18);
-				color:var(--bleu);
+				color:var(--blanc);
+				font-size: 2rem;
 				left:0;
 				line-height:1.1;
 				position: relative;
 				transition: left var(--transition);
+				text-transform: unset;
 				&:hover, &:focus {
-					color:var(--bleu);
-					font-weight: 400;
 					left:0.5rem;
 				}
 			}
@@ -395,25 +453,7 @@ button.menu-toggle {
 	}
 
 	
-
 }
-
-//Bouton recherche
-button.recherche {
-	padding:0;
-	width:2rem;
-	@include bp(xl) {
-		width:3rem;
-	}
-	&:hover, &:focus {
-		transform:scale(1.1);
-		svg path {
-			fill:var(--bleu);
-		}
-	}
-}
-
-
 
 
 /*Animations*/

@@ -209,7 +209,7 @@ function kasutan_get_categories_for_menu($taxonomy) {
 			
 			$output.=sprintf('<li><a href="%s">%s</a>',$link,$term->name);
 				if($term->slug==='mechanical-dreams') {
-					$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'angle')) );
+					$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'triangle', 'size'=>false)) );
 					$args=array(
 						'taxonomy' => $taxonomy, 
 						'hide_empty' => false, //TODO changer en prod

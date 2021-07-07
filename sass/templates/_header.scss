@@ -9,7 +9,7 @@
 	justify-content: space-between;
 	position: relative;
 	margin:0 var(--margin-x-header);
-	
+	z-index: 10; //pour les sous-menus
 	
 	.header-left, .header-right {
 		align-items: center;
@@ -36,7 +36,7 @@
 		width:25vw;
 	}
 	@include bp(lg) {
-		margin:2.5rem 3.5rem;
+		margin:2.5rem 3.5rem 1rem;
 		width:25.3rem;
 	}
 	@include bp(xl) {
