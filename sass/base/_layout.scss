@@ -12,6 +12,7 @@ body {
 	--margin-y-1: 2rem;
 	--margin-y-2: 3.5rem;
 	--padding-x:15px;
+	--margin-x-header:9px;
 	--padding-x-largeur-reduite:var(--padding-x);
 	--padding-x-pleine-largeur:0rem;
 	//--header-height:80px;
@@ -24,11 +25,16 @@ body {
 	}
 
 	@include bp(md) {
+		--margin-x-header:2.5rem;
 		--padding-x-largeur-reduite: calc(50vw - 60ch/2);
 	}
 	@include bp(lg) {
 		--margin-y-1: 4.5rem;
 		--margin-y-2: 7.5rem;
+	}
+	@include bp(xl) {
+		--margin-x-header:3rem;
+
 	}
 
 	@include bp(xxl) {

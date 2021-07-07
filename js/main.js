@@ -28,18 +28,19 @@
 		if(ouvrirSousMenu.length>0) {
 			ouvrirSousMenu.click(function(e) {
 				var sousMenu=$(this).siblings('.sub-menu');
+				var menuItem=$(this).parent('.menu-item');
 
-				if($(this).hasClass('js-ouvert')) {
+				if($(menuItem).hasClass('js-ouvert')) {
 					//le sous-menu était ouvert, on le referme
-					$(this).removeClass('js-ouvert');
+					$(menuItem).removeClass('js-ouvert');
 					$(sousMenu).slideUp();
 				} else {
 					//on referme tous les sous-menus
-					ouvrirSousMenu.removeClass('js-ouvert');
+					$('.volet-navigation .menu-item').removeClass('js-ouvert');
 					$('.volet-navigation .sub-menu').slideUp();
 
 					//on ouvre celui demandé
-					$(this).addClass('js-ouvert');
+					$(menuItem).addClass('js-ouvert');
 					$(sousMenu).slideDown();
 				}
 			});

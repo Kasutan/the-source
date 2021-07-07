@@ -2,47 +2,54 @@
 ## Site header
 --------------------------------------------------------------*/
 .site-header {
+	align-content: center;
 	background-color: var(--blanc);
+	border-bottom:solid 1px var(--bleu);
 	display: flex;
 	justify-content: space-between;
 	position: relative;
-	z-index:10;
-
-	.site-branding, .recherche.bouton, .menu-toggle {
-		position: relative;
+	margin:0 var(--margin-x-header);
+	
+	
+	.header-left, .header-right {
+		align-items: center;
+		display: flex;
+		flex-basis:30%;
+		flex-grow:1;
+	}
+	.title-area {
+		align-items: center;
+		display: flex;
+		flex-basis:auto;
+		flex-grow:0;
 	}
 }
 
 
 .site-title {
-	border-bottom:solid 2px var(--bleu);
-	margin:0;
-	padding : 2rem var(--padding-x);
+	margin:1rem 5rem;
+	position: relative;
 	text-align: center;
+	width:14.2rem;
+	@include bp(md) {
+		margin:1rem 3.5rem;
+		width:25vw;
+	}
 	@include bp(lg) {
-		padding-top:3.5rem;
-		padding-bottom:3.2rem;
+		width:25.3rem;
+	}
+	@include bp(xl) {
+		width: 33rem;
+		margin: 3.4rem 5.5rem 2.5rem;
+
 	}
 }
 
 .custom-logo-link {
-	display: inline-block;
-	max-width:19rem;
+
+
 }
 
-.custom-logo {
-	display: block;
-	margin:0;
-	//max-width: 169px;
-}
-
-//Topbar sticky en mobile
-.topbar.js-sticky {
-	position:fixed;
-	left: 0;
-	top: 0;
-	width:100%;
-}
 
 #wpadminbar {
 	position: fixed;
@@ -50,31 +57,6 @@
 .admin-bar .topbar.js-sticky {
 	top:32px;
 }	
-
-
-@include bp(lg) {
-	.logo-sticky {
-		display:none;
-	}
-	.nav-main.js-sticky {
-		background-color:var(--blanc);
-		box-shadow: 0 3px 3px rgba(18,75,90,0.2);
-		position:fixed;
-		left: 0;
-		top: 0;
-		width:100%;
-		.logo-sticky {
-			display:block;
-		}
-		.centreur {
-			flex-basis:6rem;
-		}
-	}
-
-	.admin-bar .nav-main.js-sticky {
-		top:32px;
-	}	
-}
 
 
 /*--------------------------------------------------------------
