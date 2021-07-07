@@ -276,6 +276,7 @@ button.menu-toggle {
 
 /*Style liens de menus DESKTOP */ 
 .nav-menu.desktop { 
+	justify-content: space-around;
 
 	//Liens de niveau 1
 	.menu-item {
@@ -395,10 +396,40 @@ button.menu-toggle {
 		
 	}
 
+	&.menu-the-source {
+		justify-content: space-around;
+		.menu-item {
+			align-items: center;
+			display: flex;
+			max-width: 10rem;
+			padding:1.5rem 1rem;
+
+			@include bp(xl) {
+				margin-left:2rem;
+				margin-right:2rem;
+			}
+		}
+	}
 
 	&.menu-my-account { //affichage du sous-menu my account
 		& > li {
-
+			a {
+				color:var(--cyan);
+				position: relative;
+				font-weight: 300;
+				text-transform: unset;
+			}
+			> a::after {
+				background-image:url('icons/triangle-outline.svg');
+				background-position: center 60%;
+				background-repeat:no-repeat;
+				background-size: contain;
+				content:'';
+				display: inline-block;
+				height:1rem;
+				margin-left:0.6rem;
+				width:0.7rem;
+			}
 			//Logique affichage sous-menu
 			.sub-menu { 
 				float: left;
@@ -426,7 +457,7 @@ button.menu-toggle {
 		}
 
 		//Style sous-menu my account
-		//TODO 2 triangles et picto déconnexion + baisser le sous-menu 
+		//TODO 1 triangle et picto déconnexion + baisser le sous-menu 
 		.sub-menu {
 			background: linear-gradient(var(--cyan), var(--bleu));
 			list-style:none;

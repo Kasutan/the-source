@@ -2656,72 +2656,144 @@ button.menu-toggle {
       display: none; }
 
 /*Style liens de menus DESKTOP */
-.nav-menu.desktop .menu-item {
-  text-align: center; }
-  .nav-menu.desktop .menu-item > .picto {
-    display: none; }
-
-.nav-menu.desktop.menu-products {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  padding-top: 1rem;
-  padding-left: 4rem;
-  position: relative;
-  top: 6px; }
-  .nav-menu.desktop.menu-products .menu-item {
-    max-width: 13rem;
-    padding: 1rem; }
-  .nav-menu.desktop.menu-products .sub-menu, .nav-menu.desktop.menu-products .sub-menu-2 {
-    list-style: none;
-    display: none;
-    margin: 0;
-    padding: 0; }
-  .nav-menu.desktop.menu-products .current-menu-item {
-    background-color: var(--blanc);
-    border: solid 1px var(--noir);
-    border-bottom: 0;
-    padding-bottom: 2rem; }
-    .nav-menu.desktop.menu-products .current-menu-item .sub-menu {
+.nav-menu.desktop {
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  .nav-menu.desktop .menu-item {
+    text-align: center; }
+    .nav-menu.desktop .menu-item > .picto {
+      display: none; }
+  .nav-menu.desktop.menu-products {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    position: relative;
+    top: 6px; }
+    .nav-menu.desktop.menu-products .menu-item {
+      max-width: 13rem;
+      padding: 1rem; }
+    .nav-menu.desktop.menu-products .sub-menu, .nav-menu.desktop.menu-products .sub-menu-2 {
+      list-style: none;
+      display: none;
+      margin: 0;
+      padding: 0; }
+    .nav-menu.desktop.menu-products .current-menu-item {
       background-color: var(--blanc);
-      border-bottom: solid 1px var(--bleu);
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      height: 4.6rem;
-      left: 0;
-      position: absolute;
-      width: calc(100vw - 2 * var(--margin-x-header));
-      top: 100%; }
-  @media (min-width: 1400px) {
-    .nav-menu.desktop.menu-products {
-      padding-top: 3rem;
-      top: 7px; }
-      .nav-menu.desktop.menu-products .menu-item {
-        padding-top: 1.5rem; }
-      .nav-menu.desktop.menu-products .current-menu-item {
-        padding-bottom: 3.5rem; } }
-  .nav-menu.desktop.menu-products .sub-menu > li {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 3.4rem;
-    position: relative; }
-    .nav-menu.desktop.menu-products .sub-menu > li a {
-      color: var(--bleu);
-      font-weight: 300; }
-    .nav-menu.desktop.menu-products .sub-menu > li .picto-angle {
+      border: solid 1px var(--noir);
+      border-bottom: 0;
+      padding-bottom: 2rem; }
+      .nav-menu.desktop.menu-products .current-menu-item .sub-menu {
+        background-color: var(--blanc);
+        border-bottom: solid 1px var(--bleu);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 4.6rem;
+        left: 0;
+        position: absolute;
+        width: calc(100vw - 2 * var(--margin-x-header));
+        top: 100%; }
+    @media (min-width: 1400px) {
+      .nav-menu.desktop.menu-products {
+        padding-top: 3rem;
+        top: 7px; }
+        .nav-menu.desktop.menu-products .menu-item {
+          padding-top: 1.5rem; }
+        .nav-menu.desktop.menu-products .current-menu-item {
+          padding-bottom: 3.5rem; } }
+    .nav-menu.desktop.menu-products .sub-menu > li {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      margin-left: 0.5rem; }
-    .nav-menu.desktop.menu-products .sub-menu > li .sub-menu-2 {
+      padding-left: 3.4rem;
+      position: relative; }
+      .nav-menu.desktop.menu-products .sub-menu > li a {
+        color: var(--bleu);
+        font-weight: 300; }
+      .nav-menu.desktop.menu-products .sub-menu > li .picto-angle {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-left: 0.5rem; }
+      .nav-menu.desktop.menu-products .sub-menu > li .sub-menu-2 {
+        float: left;
+        margin-top: 0px;
+        position: absolute;
+        top: 90%;
+        top: calc(100% - 0.5rem);
+        left: -999em;
+        z-index: 10; }
+      .nav-menu.desktop.menu-products .sub-menu > li:hover .sub-menu-2, .nav-menu.desktop.menu-products .sub-menu > li.focus .sub-menu-2, .nav-menu.desktop.menu-products .sub-menu > li:focus-within .sub-menu-2 {
+        -webkit-animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
+        animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
+        background-color: var(--bleu);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        left: calc(50% - 9rem);
+        opacity: 1;
+        max-width: 30rem;
+        min-width: 18rem; }
+    .nav-menu.desktop.menu-products .sub-menu-2 {
+      padding: 1.4rem; }
+      .nav-menu.desktop.menu-products .sub-menu-2 li {
+        border-bottom: solid 1px var(--blanc);
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        text-align: left; }
+        .nav-menu.desktop.menu-products .sub-menu-2 li:last-of-type {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0; }
+        .nav-menu.desktop.menu-products .sub-menu-2 li a {
+          color: var(--blanc);
+          display: block; }
+  .nav-menu.desktop.menu-the-source {
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+    .nav-menu.desktop.menu-the-source .menu-item {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      max-width: 10rem;
+      padding: 1.5rem 1rem; }
+      @media (min-width: 1400px) {
+        .nav-menu.desktop.menu-the-source .menu-item {
+          margin-left: 2rem;
+          margin-right: 2rem; } }
+  .nav-menu.desktop.menu-my-account > li {
+    position: relative; }
+    .nav-menu.desktop.menu-my-account > li a {
+      color: var(--cyan);
+      position: relative;
+      font-weight: 300;
+      text-transform: unset; }
+    .nav-menu.desktop.menu-my-account > li > a::after {
+      background-image: url("icons/triangle-outline.svg");
+      background-position: center 60%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      margin-left: 0.6rem;
+      width: 0.7rem; }
+    .nav-menu.desktop.menu-my-account > li .sub-menu {
       float: left;
       margin-top: 0px;
       position: absolute;
@@ -2729,10 +2801,9 @@ button.menu-toggle {
       top: calc(100% - 0.5rem);
       left: -999em;
       z-index: 10; }
-    .nav-menu.desktop.menu-products .sub-menu > li:hover .sub-menu-2, .nav-menu.desktop.menu-products .sub-menu > li.focus .sub-menu-2, .nav-menu.desktop.menu-products .sub-menu > li:focus-within .sub-menu-2 {
+    .nav-menu.desktop.menu-my-account > li:hover .sub-menu, .nav-menu.desktop.menu-my-account > li.focus .sub-menu, .nav-menu.desktop.menu-my-account > li:focus-within .sub-menu {
       -webkit-animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
       animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
-      background-color: var(--bleu);
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -2740,72 +2811,32 @@ button.menu-toggle {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      left: calc(50% - 9rem);
+      left: unset;
+      right: 0;
       opacity: 1;
       max-width: 30rem;
-      min-width: 18rem; }
-  .nav-menu.desktop.menu-products .sub-menu-2 {
-    padding: 1.4rem; }
-    .nav-menu.desktop.menu-products .sub-menu-2 li {
-      border-bottom: solid 1px var(--blanc);
-      margin-bottom: 0.5em;
-      padding-bottom: 0.5em;
-      text-align: left; }
-      .nav-menu.desktop.menu-products .sub-menu-2 li:last-of-type {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0; }
-      .nav-menu.desktop.menu-products .sub-menu-2 li a {
-        color: var(--blanc);
-        display: block; }
-
-.nav-menu.desktop.menu-my-account > li {
-  position: relative; }
-  .nav-menu.desktop.menu-my-account > li .sub-menu {
-    float: left;
-    margin-top: 0px;
-    position: absolute;
-    top: 90%;
-    top: calc(100% - 0.5rem);
-    left: -999em;
-    z-index: 10; }
-  .nav-menu.desktop.menu-my-account > li:hover .sub-menu, .nav-menu.desktop.menu-my-account > li.focus .sub-menu, .nav-menu.desktop.menu-my-account > li:focus-within .sub-menu {
-    -webkit-animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
-    animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    left: unset;
-    right: 0;
-    opacity: 1;
-    max-width: 30rem;
-    min-width: 25rem; }
-
-.nav-menu.desktop.menu-my-account .sub-menu {
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--cyan)), to(var(--bleu)));
-  background: linear-gradient(var(--cyan), var(--bleu));
-  list-style: none;
-  margin: 0;
-  padding: 1.8rem 2.5rem; }
-  .nav-menu.desktop.menu-my-account .sub-menu li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    text-align: center; }
-  .nav-menu.desktop.menu-my-account .sub-menu a {
-    color: var(--blanc);
-    font-size: 2rem;
-    left: 0;
-    line-height: 1.1;
-    position: relative;
-    -webkit-transition: left var(--transition);
-    transition: left var(--transition);
-    text-transform: unset; }
-    .nav-menu.desktop.menu-my-account .sub-menu a:hover, .nav-menu.desktop.menu-my-account .sub-menu a:focus {
-      left: 0.5rem; }
+      min-width: 25rem; }
+  .nav-menu.desktop.menu-my-account .sub-menu {
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--cyan)), to(var(--bleu)));
+    background: linear-gradient(var(--cyan), var(--bleu));
+    list-style: none;
+    margin: 0;
+    padding: 1.8rem 2.5rem; }
+    .nav-menu.desktop.menu-my-account .sub-menu li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      text-align: center; }
+    .nav-menu.desktop.menu-my-account .sub-menu a {
+      color: var(--blanc);
+      font-size: 2rem;
+      left: 0;
+      line-height: 1.1;
+      position: relative;
+      -webkit-transition: left var(--transition);
+      transition: left var(--transition);
+      text-transform: unset; }
+      .nav-menu.desktop.menu-my-account .sub-menu a:hover, .nav-menu.desktop.menu-my-account .sub-menu a:focus {
+        left: 0.5rem; }
 
 /*Animations*/
 @-webkit-keyframes animTrait {
@@ -3302,6 +3333,10 @@ button.modaal-close {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
+  .site-header .header-right {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
   .site-header .title-area {
     -webkit-box-align: center;
     -ms-flex-align: center;
