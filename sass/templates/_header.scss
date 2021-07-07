@@ -36,6 +36,7 @@
 		width:25vw;
 	}
 	@include bp(lg) {
+		margin:2.5rem 3.5rem;
 		width:25.3rem;
 	}
 	@include bp(xl) {

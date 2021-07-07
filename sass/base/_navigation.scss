@@ -58,7 +58,7 @@ p.fil-ariane {
 /*--------------------------------------------------------------
 ## Lien ma selection
 --------------------------------------------------------------*/
-.site-header .selection {
+.site-header a.selection {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -77,6 +77,24 @@ p.fil-ariane {
 		margin-bottom: 3px;
 		text-align: center;
 		width:var(--diametre);
+	}
+
+	@include bp(lg) {
+		display: flex;
+		flex-direction: row-reverse;
+		font-size: 1.6rem;
+		font-weight: 300;
+		top:3px;
+		.count {
+			--diametre:2.5rem;
+			background-color: transparent;
+			border:solid 1px var(--cyan);
+			color:var(--cyan);
+			margin-left: 7px;
+		}
+		&:hover, &:focus {
+			text-decoration: none !important;
+		}
 	}
 }
 
