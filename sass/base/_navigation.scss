@@ -54,6 +54,32 @@ p.fil-ariane {
 		}
 	}
 }
+
+/*--------------------------------------------------------------
+## Lien ma selection
+--------------------------------------------------------------*/
+.site-header .selection {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-size: 1rem;
+	position:absolute;
+	right:var(--margin-x-header);
+	text-align: center;
+	top:1.4rem;
+	.count {
+		--diametre:1.6rem;
+		background-color: var(--cyan);
+		border-radius: 100%;
+		color:var(--blanc);
+		height:var(--diametre);
+		line-height: var(--diametre);
+		margin-bottom: 3px;
+		text-align: center;
+		width:var(--diametre);
+	}
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/

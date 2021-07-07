@@ -66,6 +66,28 @@
             "ui": 1
         },
         {
+            "key": "field_60e5a0a7f9170",
+            "label": "My selection page",
+            "name": "zs_page_selection",
+            "type": "post_object",
+            "instructions": "Used for link in header",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_60a0e771c0bde",
             "label": "Default product image",
             "name": "zs_default_image",
@@ -215,5 +237,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624956453
+    "modified": 1625661663
 }

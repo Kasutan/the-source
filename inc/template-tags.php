@@ -111,7 +111,7 @@ function kasutan_fil_ariane() {
 
 	//Pour les fiches produit
 	if(kasutan_is_single_for_product()) {
-		$archive_ID=kasutan_get_page_ID('zs_page_'.$post_type,'option');
+		$archive_ID=kasutan_get_page_ID($post_type);
 		$taxonomy=kasutan_get_taxonomy_slug_for_cpt($post_type);
 		$cat_parent=kasutan_get_closest_cat_for_product(get_the_ID(),$post_type);
 	}
@@ -119,7 +119,7 @@ function kasutan_fil_ariane() {
 	//Pour les archives produits
 	if(function_exists('kasutan_is_archive_for_product') && $taxonomy=kasutan_is_archive_for_product($queried_object)) {
 		$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
-		$archive_ID=kasutan_get_page_ID('zs_page_'.$post_type,'option');
+		$archive_ID=kasutan_get_page_ID($post_type);
 		if($queried_object->parent!==0) {
 			//category has parent, get closest parent's term
 			$cat_parent=get_term($queried_object->parent,$taxonomy);

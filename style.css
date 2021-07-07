@@ -2468,6 +2468,36 @@ p.fil-ariane {
       text-decoration: underline; }
 
 /*--------------------------------------------------------------
+## Lien ma selection
+--------------------------------------------------------------*/
+.site-header .selection {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 1rem;
+  position: absolute;
+  right: var(--margin-x-header);
+  text-align: center;
+  top: 1.4rem; }
+  .site-header .selection .count {
+    --diametre:1.6rem;
+    background-color: var(--cyan);
+    border-radius: 100%;
+    color: var(--blanc);
+    height: var(--diametre);
+    line-height: var(--diametre);
+    margin-bottom: 3px;
+    text-align: center;
+    width: var(--diametre); }
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .nav-menu {

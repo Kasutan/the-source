@@ -195,7 +195,7 @@ function kasutan_get_page_ID($nom) {
 		return;
 	}
 
-	$page=get_field($nom,'option');
+	$page=get_field('zs_page_'.$nom,'option');
 
 	return $page;
 }
