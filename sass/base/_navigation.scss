@@ -47,12 +47,21 @@ a:focus-visible {
 p.fil-ariane {
 	margin:var(--margin-y-1) 0;
 	a {
+		@include fs(1.2rem,1.8rem);
 		color:var(--bleu);
 		text-decoration: none;
 		&:hover, &:focus {
 			text-decoration: underline;
 		}
 	}
+}
+@include bp(lg) {
+	body.js-product-menu-open {
+		p.fil-ariane {
+			margin-top: calc(var(--margin-y-1) + 5rem);
+		}
+	}
+
 }
 
 /*--------------------------------------------------------------

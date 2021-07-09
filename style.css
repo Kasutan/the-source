@@ -2462,10 +2462,93 @@ a:focus-visible {
 p.fil-ariane {
   margin: var(--margin-y-1) 0; }
   p.fil-ariane a {
+    font-size: 1.8rem;
     color: var(--bleu);
     text-decoration: none; }
+    @media all and (max-width: 360px) {
+      p.fil-ariane a {
+        font-size: 1.2rem; } }
+    @media all and (max-width: 1440px) {
+      p.fil-ariane a {
+        font-size: 1.8rem; } }
+    @media all and (max-width: 1360px) {
+      p.fil-ariane a {
+        font-size: 1.90988rem; } }
+    @media all and (max-width: 1289px) {
+      p.fil-ariane a {
+        font-size: 1.98671rem; } }
+    @media all and (max-width: 1224px) {
+      p.fil-ariane a {
+        font-size: 2.04rem; } }
+    @media all and (max-width: 1164px) {
+      p.fil-ariane a {
+        font-size: 2.07472rem; } }
+    @media all and (max-width: 1108px) {
+      p.fil-ariane a {
+        font-size: 2.0946rem; } }
+    @media all and (max-width: 1055px) {
+      p.fil-ariane a {
+        font-size: 2.10227rem; } }
+    @media all and (max-width: 1005px) {
+      p.fil-ariane a {
+        font-size: 2.09957rem; } }
+    @media all and (max-width: 957px) {
+      p.fil-ariane a {
+        font-size: 2.0879rem; } }
+    @media all and (max-width: 911px) {
+      p.fil-ariane a {
+        font-size: 2.06838rem; } }
+    @media all and (max-width: 867px) {
+      p.fil-ariane a {
+        font-size: 2.04207rem; } }
+    @media all and (max-width: 825px) {
+      p.fil-ariane a {
+        font-size: 2.00998rem; } }
+    @media all and (max-width: 784px) {
+      p.fil-ariane a {
+        font-size: 1.9721rem; } }
+    @media all and (max-width: 744px) {
+      p.fil-ariane a {
+        font-size: 1.92889rem; } }
+    @media all and (max-width: 705px) {
+      p.fil-ariane a {
+        font-size: 1.88082rem; } }
+    @media all and (max-width: 668px) {
+      p.fil-ariane a {
+        font-size: 1.82978rem; } }
+    @media all and (max-width: 631px) {
+      p.fil-ariane a {
+        font-size: 1.77347rem; } }
+    @media all and (max-width: 595px) {
+      p.fil-ariane a {
+        font-size: 1.71361rem; } }
+    @media all and (max-width: 560px) {
+      p.fil-ariane a {
+        font-size: 1.65062rem; } }
+    @media all and (max-width: 526px) {
+      p.fil-ariane a {
+        font-size: 1.5849rem; } }
+    @media all and (max-width: 493px) {
+      p.fil-ariane a {
+        font-size: 1.51685rem; } }
+    @media all and (max-width: 460px) {
+      p.fil-ariane a {
+        font-size: 1.4446rem; } }
+    @media all and (max-width: 428px) {
+      p.fil-ariane a {
+        font-size: 1.37052rem; } }
+    @media all and (max-width: 397px) {
+      p.fil-ariane a {
+        font-size: 1.295rem; } }
+    @media all and (max-width: 366px) {
+      p.fil-ariane a {
+        font-size: 1.21576rem; } }
     p.fil-ariane a:hover, p.fil-ariane a:focus {
       text-decoration: underline; }
+
+@media (min-width: 1024px) {
+  body.js-product-menu-open p.fil-ariane {
+    margin-top: calc(var(--margin-y-1) + 5rem); } }
 
 /*--------------------------------------------------------------
 ## Lien ma selection

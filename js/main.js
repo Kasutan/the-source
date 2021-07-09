@@ -11,6 +11,7 @@
 		productTypes.forEach(function(value,index) {
 			if($('body').hasClass('single-'+value)) {
 				console.log('on est sur un single ',value);
+				$('body').addClass('js-product-menu-open');
 				$('.menu-item.'+value).addClass('current-menu-item');
 			}
 		});
@@ -19,6 +20,7 @@
 		productTaxonomies.forEach(function(value,index) {
 			if($('body').hasClass('tax-'+value)) {
 				console.log('on est sur une archive ',value);
+				$('body').addClass('js-product-menu-open');
 				$('.menu-item.'+value).addClass('current-menu-item');
 			}
 		});
