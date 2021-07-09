@@ -47,12 +47,14 @@ a:focus-visible {
 p.fil-ariane {
 	margin:var(--margin-y-1) 0;
 	a {
-		@include fs(1.2rem,1.8rem);
 		color:var(--bleu);
 		text-decoration: none;
 		&:hover, &:focus {
 			text-decoration: underline;
 		}
+	}
+	&, a, span {
+		@include fs(1.2rem,1.8rem);
 	}
 }
 @include bp(lg) {

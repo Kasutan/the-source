@@ -135,6 +135,48 @@ textarea {
 }
 
 
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+	input[type='checkbox'] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+	}
+
+	label {
+		--size:1.4rem;
+		--color:var(--bleu);
+		color:var(--color);
+		&::before {
+			align-items: center;
+			border: solid 1px var(--color);
+			border-radius: 100%;
+			content:'l';
+			color:transparent;
+			display: inline-flex;
+			font-size: 120%;
+			height:var(--size);
+			justify-content: center;
+			margin-right: 0.5ch;
+			padding-bottom: 1px;
+			position: relative;
+			text-align: center;
+			top: 1px;
+			width:var(--size);
+		}
+	}
+	input:focus + label {
+		color:var(--cyan);
+	}
+	input:checked + label {
+		--color:var(--cyan);
+		&::before {
+			color:var(--color);
+			content:'•';
+		} 
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/

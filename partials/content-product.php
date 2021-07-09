@@ -50,7 +50,7 @@ if(function_exists('get_field')) {
 	$price=$intro=$main_advisor=$details=$iframe_url=false;
 }
 
-echo '<article class="' . join( ' ', get_post_class() ) . '">';
+echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 
 	if( ea_has_action( 'tha_entry_top' ) ) {
 		echo '<header class="entry-header">';
@@ -60,12 +60,13 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<div class="entry-content">';
 		echo '<section class="product-top">';
+			printf('<h1 class="no-dots product-title hide-for-lg">%s</h1>',get_the_title());
 			echo '<div class="product-gallery">';
 			the_post_thumbnail( 'large'); //TODO carrousel galerie
 			echo '</div>';
 
 			echo '<div class="product-main">';
-				printf('<h1 class="no-dots product-title">%s</h1>',get_the_title());
+				printf('<h1 class="no-dots product-title show-for-lg">%s</h1>',get_the_title());
 				if($cat) {
 					printf('<a href="%s">%s</a>',get_term_link($cat,$taxonomy),$cat->name);
 				}
@@ -73,8 +74,8 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 					printf('<p class="price"><strong>%s</strong></p>',$price);
 				}
 				if($intro) {
-					$intro.='<a href="#details">More details</a>';
-					printf('<div class="details">%s</div>',$details);
+					$intro.=' <a href="#product-details">More details↴</a>';
+					printf('<div class="intro">%s</div>',$intro);
 				}
 
 				?>
@@ -116,7 +117,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 		echo '</section>';
 
 		if(have_rows('icons') || have_rows('table') || $details) : 
-			echo '<section class="product-details">';
+			echo '<section class="product-details" id="product-details">';
 					echo '<h2 class="line">Details</h2>';
 					
 					if(have_rows('icons')) {

@@ -38,7 +38,7 @@ h1, .h1 {
 	text-align:center;
 	text-transform: uppercase;
 
-	&:not(.archive-title) {
+	&:not(.archive-title):not(.no-dots) {
 		@include dots;
 	}
 }
