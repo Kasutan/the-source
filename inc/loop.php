@@ -15,12 +15,12 @@
 function ea_default_loop() {
 
 	if ( have_posts() ) :
+		$queried_object = get_queried_object();
 
 		tha_content_while_before();
 
 		//Special content for Mechanical dreams
 		$special_loop=false;
-		$queried_object = get_queried_object();
 		if(is_tax('cat_assets') && $queried_object->slug==="mechanical-dreams") {
 			if(function_exists('get_field')) {
 				$page_mechanical_dreams=get_field('zs_page_mechanical_dreams','option');
@@ -41,6 +41,12 @@ function ea_default_loop() {
 
 					if(kasutan_is_single_for_product()) {
 						get_template_part( 'partials/content-product');
+					} else if($taxonomy=kasutan_is_archive_for_product($queried_object)) {
+						$user_id=get_current_user_id(  );
+						$post_id=get_the_ID();
+						$term=$queried_object;
+						$context='archive';
+						kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context);
 					} else {
 						$partial = apply_filters( 'ea_loop_partial', is_singular() ? 'content' : 'archive' );
 						$context = apply_filters( 'ea_loop_partial_context', is_search() ? 'search' : get_post_type() );

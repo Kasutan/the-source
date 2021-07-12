@@ -184,7 +184,7 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 			<?php
 			
 			printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
-			if($context==="filtre") {
+			if($context==="archive") {
 				//TODO ajouter span hidden pour filtre par catégorie et tri alphabétique
 			}
 		echo '</div>'; //fin .card-info

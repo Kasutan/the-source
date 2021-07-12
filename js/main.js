@@ -93,14 +93,14 @@
 		/****************** Filtre articles, producteurs et produits *************************/	
 		if($("#filtre-liste").length>0) {
 
-			var page=parseInt($('#liste-filtrable').attr('data-pagination'));
+			/*var page=parseInt($('#liste-filtrable').attr('data-pagination'));
 			if(typeof(page)===NaN || page <=0) {
 				page=8;
-			}
+			}*/
 			var optionsListe = {
 				valueNames: ['term'],
-				page: page, 
-				pagination: true
+				//page: page, 
+				//pagination: true
 			};
 	
 			var listeFiltrable = new List('liste-filtrable', optionsListe);

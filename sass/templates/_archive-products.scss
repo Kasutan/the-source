@@ -1,0 +1,31 @@
+@include bp(lg) {
+	body.archive.js-product-menu-open {
+		.archive-description {
+			margin-bottom: var(--margin-y-2);
+			margin-top: calc(var(--margin-y-1) + 5rem);
+		}
+
+	}
+}
+
+.archive {
+	.product-grid {
+		padding:0 var(--padding-x);
+	}
+
+	.liste-filtrable {
+		padding:0 var(--padding-x);
+		.product-grid {
+			padding:0;
+		}
+	}
+	@include bp(lg) {
+		.liste-filtrable {
+			display: flex;
+			.filtre {
+				flex-basis:25%;
+				margin-right: 1.6rem;
+			}
+		}
+	}
+}

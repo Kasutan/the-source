@@ -58,7 +58,7 @@ p.fil-ariane {
 	}
 }
 @include bp(lg) {
-	body.js-product-menu-open {
+	body.single.js-product-menu-open {
 		p.fil-ariane {
 			margin-top: calc(var(--margin-y-1) + 5rem);
 		}

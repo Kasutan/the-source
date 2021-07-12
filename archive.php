@@ -85,12 +85,12 @@ function kasutan_loop_wrap_before() {
 	}
 
 	if($direct_children) {
-		echo '<section id="liste-filtrable" data-pagination="4">'; //Si besoin : pagination = option du thème
+		echo '<section id="liste-filtrable" class="liste-filtrable" data-pagination="4">'; //Si besoin : pagination = option du thème
 			kasutan_display_product_cat_filter($taxonomy,$direct_children);
-			echo '<ul class="list loop">';
+			echo '<ul class="list product-grid nb-col-3">';
 	} else {
 		//Simple conteneur pour la mise en page grille
-		echo '<ul class="loop">';
+		echo '<ul class="product-grid nb-col-4">';
 	}
 }
 
@@ -106,9 +106,10 @@ function kasutan_loop_wrap_after() {
 	}
 
 	if($direct_children) {
-		echo '</ul><ul class="pagination"></ul></section>';
+		echo '</ul></section>';
 	} else {
 		echo '</ul>';
+		//TODO bouton browse all catégorie parente
 	}
 }
 // Build the page
