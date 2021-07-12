@@ -15,4 +15,11 @@ a.wp-block-button__link,
 		border:none;
 		padding:0;
 	}
+
+	&.small {
+		font-size: 1.9rem;
+		font-weight: 300;
+		padding:1rem 2rem;
+		text-transform: unset;
+	}
 }

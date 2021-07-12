@@ -196,7 +196,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 			echo '</div>';
 
 			if($cat_siblings) {
-				echo '<p class="siblings-title show-for-md">Quick access to</p>';
+				echo '<p class="siblings-title show-for-md">Quick access to:</p>';
 				echo '<nav class="siblings show-for-md">';
 					foreach($cat_siblings as $term) {
 						printf('<a class="button small" href="%s">%s</a>',

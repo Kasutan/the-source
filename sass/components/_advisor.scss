@@ -18,7 +18,7 @@
 		color:var(--cyan);
 		font-weight: 700;
 		margin-bottom: 0;
-		@include fs(1.4rem,1.4rem);
+		@include fs(1.4rem,2.4rem);
 	}
 	&.advisor-product {
 		flex-direction: row;
@@ -27,9 +27,13 @@
 			margin-left: 1rem;
 		}
 		.above-name {
-			@include fs(1rem,1rem);
+			@include fs(1rem,1.8rem);
 			font-weight: 700;
 			margin-bottom: 0;
 		}
+	}
+
+	@include bp(lg) {
+		--size:8rem;
 	}
 }
