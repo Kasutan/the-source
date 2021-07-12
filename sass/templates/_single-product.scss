@@ -2,6 +2,16 @@
 	.entry-content {
 		padding:0 var(--padding-x);
 	}
+
+	h2 {
+		@include fs(2.2rem,2.2rem);
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	section {
+		margin-bottom: 5rem;
+	}
 }
 h1.product-title {
 	@include fs(2.2rem,4.6rem);
@@ -38,7 +48,6 @@ h1.product-title {
 .contact-request {
 	background-color: var(--bleu-clair);
 	display: block;
-	margin-bottom: 5rem;
 	padding:0.5rem 1.5rem 1.5rem;
 	legend {
 		font-weight: 700;
@@ -83,6 +92,46 @@ h1.product-title {
 			@include bp(lg) {
 				--taille-picto:1.9rem;
 			}
+		}
+	}
+}
+
+.product-details {
+	ul.table {
+		list-style:none;
+		margin:0;
+		padding:0;
+
+		li.row {
+			padding:1rem;
+			&:nth-of-type(2n+1) {
+				background-color: var(--bleu-clair);
+			}
+		}
+	}
+}
+
+.product-video {
+	iframe {
+		height:50vw;
+	}
+}
+
+.product-related {
+	h2 {
+		text-transform: unset;
+		span {
+			color:var(--cyan);
+		}
+	}
+	.browse-buttons {
+		align-items: center;
+		display:flex;
+		flex-direction:column;
+		justify-content: center;
+
+		.button {
+			margin-bottom:1rem;
 		}
 	}
 }

@@ -123,7 +123,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 					echo '<h2 class="line">Details</h2>';
 					
 					if(have_rows('icons')) {
-						echo '<ul class="icons">';
+						echo '<ul class="icons show-for-md">';
 						while(have_rows('icons')) {
 							the_row();
 							echo '<li class="icon-wrap">';
@@ -151,7 +151,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 							echo '<li class="row">';
 								$label=wp_kses_post(get_sub_field('label'));
 								$value=wp_kses_post(get_sub_field('value'));
-								printf('<strong>%s:</strong> %s',$label,$value);
+								printf('<strong>%s</strong>: %s',$label,$value);
 							echo '</li>';
 						}
 						echo '</ul>';
@@ -173,7 +173,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 		echo '<section class="product-related">';
 			echo '<div class="sep"></div>';
 			if($related) {
-				printf('<h2>In the same category: %s</h2>',$cat->name);
+				printf('<h2>In the same category: <span>%s</span></h2>',$cat->name);
 				echo '<ul class="product-grid 3-col">';
 					foreach($related as $product_id) {
 						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
@@ -181,7 +181,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 				echo '</ul>';
 			}
 
-			echo '<div clas="browse-buttons">';
+			echo '<div class="browse-buttons">';
 				printf('<a class="button" href="%s">Browse <strong>%s</strong></a>',
 					get_term_link($cat,$taxonomy),
 					$cat->name
