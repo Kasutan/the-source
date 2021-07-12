@@ -27,6 +27,7 @@ if($in_selection) {
 }
 
 $request_sent=false; //TODO has the user already sent a request for this item (less than 6 month ago) ?
+$request_sent=true;
 if($request_sent) {
 	$class_sent="request-sent";
 } else {
@@ -97,14 +98,14 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 						kasutan_display_advisor($main_advisor,'product'); 
 					?>
 					<p class="info send">Send a Contact Request and I will get in touch with you asap.</p>
-					<button class="send" id="sent-request"
+					<button class="send" id="send-request"
 						data-main-advisor="<?php echo $main_advisor;?>"
 						data-backup-advisor="<?php echo $backup_advisor;?>"
 						data-product="<?php echo $post_id;?>"
 						data-user="<?php echo $user_id;?>"
 					>Send <strong> a contact request</strong></button>
 
-					<button class="sent cyan"><span class="check"></span><strong>Contact request sent</strong></button>
+					<button class="sent cyan" disabled><span class="check"></span><strong>Contact request sent</strong></button>
 					<p class="info sent">Your Contact Request is being treated by our services.</p>
 
 				</formgroup>

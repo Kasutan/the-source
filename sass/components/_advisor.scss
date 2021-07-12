@@ -1,0 +1,35 @@
+.advisor {
+	--size : 4.7rem;
+	align-items: center;
+	display: flex;
+
+	.portrait {
+		border-radius: 100%;
+		display: flex;
+		height:var(--size);
+		width:var(--size);
+		img {
+			object-fit:cover;
+			object-position: center;
+		}
+	
+	}
+	.name {
+		color:var(--cyan);
+		font-weight: 700;
+		margin-bottom: 0;
+		@include fs(1.4rem,1.4rem);
+	}
+	&.advisor-product {
+		flex-direction: row;
+		margin-bottom: 0.6rem;
+		.text {
+			margin-left: 1rem;
+		}
+		.above-name {
+			@include fs(1rem,1rem);
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+	}
+}
