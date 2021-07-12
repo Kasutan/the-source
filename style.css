@@ -4683,76 +4683,80 @@ h1.product-title {
       background-color: var(--bleu-clair); }
 
 @media (min-width: 768px) {
-  .product-details .sep {
-    display: none; }
-  .product-details h2 {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  .product-details {
     margin-left: auto;
     margin-right: auto;
-    position: relative; }
-    .product-details h2::before, .product-details h2::after {
-      background-color: var(--bleu);
-      content: '';
-      display: inline-block;
-      height: 2px;
-      margin: 0 3.6rem;
-      width: 10.5rem; }
-  .product-details ul.icons {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    .product-details ul.icons li.icon-wrap {
-      -ms-flex-preferred-size: calc(8.6rem + 4rem);
-      flex-basis: calc(8.6rem + 4rem);
-      -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-      flex-grow: 0;
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-      padding: 0 2rem 2rem; }
-      .product-details ul.icons li.icon-wrap .icon {
-        --icon-size:7rem;
-        border: solid 1px var(--cyan);
-        border-radius: 100%;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        margin-bottom: 1.3rem;
-        padding: 1rem;
-        height: var(--icon-size);
-        width: var(--icon-size); }
-      .product-details ul.icons li.icon-wrap .legend {
-        color: var(--cyan);
-        font-size: 1.8rem;
-        font-weight: 700;
-        line-height: 1;
-        margin-bottom: 0;
-        text-align: center; } }
+    max-width: 84rem; }
+    .product-details .sep {
+      display: none; }
+    .product-details h2 {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative; }
+      .product-details h2::before, .product-details h2::after {
+        background-color: var(--bleu);
+        content: '';
+        display: inline-block;
+        height: 2px;
+        margin: 0 3.6rem;
+        width: 10.5rem; }
+    .product-details ul.icons {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .product-details ul.icons li.icon-wrap {
+        -ms-flex-preferred-size: calc(8.6rem + 4rem);
+        flex-basis: calc(8.6rem + 4rem);
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        padding: 0 2rem 2rem; }
+        .product-details ul.icons li.icon-wrap .icon {
+          --icon-size:7rem;
+          border: solid 1px var(--cyan);
+          border-radius: 100%;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          margin-bottom: 1.3rem;
+          padding: 1rem;
+          height: var(--icon-size);
+          width: var(--icon-size); }
+        .product-details ul.icons li.icon-wrap .legend {
+          color: var(--cyan);
+          font-size: 1.8rem;
+          font-weight: 700;
+          line-height: 1;
+          margin-bottom: 0;
+          text-align: center; } }
 
 .product-video iframe {
   height: 50vw;
