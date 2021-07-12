@@ -174,7 +174,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 			echo '<div class="sep"></div>';
 			if($related) {
 				printf('<h2>In the same category: <span>%s</span></h2>',$cat->name);
-				echo '<ul class="product-grid 3-col">';
+				echo '<ul class="product-grid nb-col-3">';
 					foreach($related as $product_id) {
 						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
 					}

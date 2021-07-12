@@ -166,7 +166,6 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 
 	$link=get_the_permalink( $post_id);
 	echo '<li class="product">';
-		//TODO display grid
 		printf('<a href="%s" class="card-image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
 
 		echo '<div class="card-info">';
