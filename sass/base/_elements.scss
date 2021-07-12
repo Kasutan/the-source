@@ -146,7 +146,7 @@ textarea {
 		--size:1.4rem;
 		--color:var(--bleu);
 		color:var(--color);
-		&::before {
+		&::before, &::after { // la marque peut être avant ou après le label
 			align-items: center;
 			border: solid 1px var(--color);
 			border-radius: 100%;
@@ -163,13 +163,19 @@ textarea {
 			top: 1px;
 			width:var(--size);
 		}
+		&::after {
+			//par défaut elle est avant
+			display:none;
+			margin-left: 0.5ch;
+			margin-right:0;
+		}
 	}
 	input:focus + label {
 		color:var(--cyan);
 	}
 	input:checked + label {
 		--color:var(--cyan);
-		&::before {
+		&::before, &::after {
 			color:var(--color);
 			content:'•';
 		} 

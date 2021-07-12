@@ -168,23 +168,29 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 	echo '<li class="product">';
 		//TODO display grid
 		printf('<a href="%s" class="card-image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
-		printf('<a href="%s" class="card-title"><h3>%s</h3></a>',$link,get_the_title( $post_id ));
-		printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
-		if($context==="filtre") {
-			//TODO ajouter span hidden pour filtre par catégorie et tri alphabétique
-		}
-		?>
-		<formgroup class="to-selection <?php echo $class_selected;?>">
-		<input type="checkbox" id="js-to-selection" name="js-to-selection" <?php echo $attr_checked;?> 
-				data-product="<?php echo $post_id;?>"
-				data-user="<?php echo $user_id;?>"
-			>
-		<label for="js-to-selection">
-			<span class="add">Save</span>
-			<span class="remove">Saved</span>
-		</label>
-	</formgroup>
-	<?php
+
+		echo '<div class="card-info">';
+			printf('<a href="%s" class="card-title"><h3>%s</h3></a>',$link,get_the_title( $post_id ));
+			?>
+				<formgroup class="to-selection <?php echo $class_selected;?>">
+				<input type="checkbox" id="js-to-selection-<?php echo $post_id;?>" name="js-to-selection" <?php echo $attr_checked;?> 
+						data-product="<?php echo $post_id;?>"
+						data-user="<?php echo $user_id;?>"
+					><label for="js-to-selection-<?php echo $post_id;?>">
+					<span class="add">Save</span>
+					<span class="remove">Saved</span>
+					<span class="screen-reader-text"><?php echo get_the_title( $post_id );?> to my selection</span>
+				</label>
+			</formgroup>
+			<?php
+			
+			printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
+			if($context==="filtre") {
+				//TODO ajouter span hidden pour filtre par catégorie et tri alphabétique
+			}
+		echo '</div>'; //fin .card-info
+
+		
 	echo '</li>';
 }
 
