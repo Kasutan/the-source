@@ -5,6 +5,7 @@
 
 	h2 {
 		@include fs(2.2rem,2.2rem);
+		margin-bottom: 5rem;
 		text-align: center;
 		text-transform: uppercase;
 	}
@@ -62,6 +63,13 @@ h1.product-title {
 		display: none;
 	}
 
+	button {
+		font-weight: 300;
+		strong {
+			font-weight: 700;
+		}
+	}
+
 	&.request-sent {
 		.send {
 			display: none;
@@ -84,7 +92,7 @@ h1.product-title {
 				color:var(--blanc);
 				content:'✔';
 				display: inline-block;
-				font-size: 80%;
+				font-size: 1rem;
 				height:var(--taille-picto);
 				margin-right: 1ch;
 				width:var(--taille-picto);
@@ -109,11 +117,70 @@ h1.product-title {
 			}
 		}
 	}
+
+	@include bp(md) {
+		.sep {
+			display: none;
+		}
+		h2 {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			margin-left:auto;
+			margin-right:auto;
+			position: relative;
+			&::before, &::after {
+				background-color: var(--bleu);
+				content:'';
+				display: inline-block;
+				height:2px;
+				margin:0 3.6rem;
+				width:10.5rem;
+			}
+		}
+		ul.icons {
+			align-items: flex-start;
+			display: flex;
+			flex-wrap:wrap;
+			justify-content: center;
+			list-style:none;
+			margin:0;
+			padding:0;
+
+			li.icon-wrap {
+				flex-basis:calc(8.6rem + 4rem);
+				flex-grow:0;
+				flex-shrink:0;
+				padding:0 2rem 2rem;
+				.icon {
+					--icon-size:7rem;
+					border:solid 1px var(--cyan);
+					border-radius:100%;
+					align-items: center;
+					display: flex;
+					justify-content: center;
+					margin-bottom: 1.3rem;
+					padding:1rem;
+					height:var(--icon-size);
+					width:var(--icon-size);
+				}
+				.legend {
+					color:var(--cyan);
+					font-size: 1.8rem;
+					font-weight: 700;
+					line-height: 1;
+					margin-bottom: 0;
+					text-align: center;
+				}
+			}
+		}
+	}
 }
 
 .product-video {
 	iframe {
 		height:50vw;
+		width:100%;
 	}
 }
 
@@ -131,7 +198,20 @@ h1.product-title {
 		justify-content: center;
 
 		.button {
+			font-weight: 300;
 			margin-bottom:1rem;
+			strong {
+				font-weight: 700;
+			}
+		}
+	}
+
+	@include bp(md) {
+		.browse-buttons {
+			flex-direction: row;
+			.button {
+				margin:1rem;
+			}
 		}
 	}
 }
