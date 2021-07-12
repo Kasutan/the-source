@@ -4263,6 +4263,7 @@ h1.product-title {
 .contact-request {
   background-color: var(--bleu-clair);
   display: block;
+  margin-bottom: 5rem;
   padding: 0.5rem 1.5rem 1.5rem; }
   .contact-request legend {
     font-weight: 700;
@@ -4831,5 +4832,12 @@ h2.post-summary__title {
     -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 0.5rem 0; } }
+
+.sep {
+  background-color: var(--bleu);
+  display: block;
+  height: 2px;
+  margin: 2rem auto;
+  width: 6rem; }
 
 /*# sourceMappingURL=style.css.map */

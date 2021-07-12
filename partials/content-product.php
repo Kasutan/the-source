@@ -119,6 +119,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 
 		if(have_rows('icons') || have_rows('table') || $details) : 
 			echo '<section class="product-details" id="product-details">';
+					echo '<div class="sep hide-for-md"></div>';
 					echo '<h2 class="line">Details</h2>';
 					
 					if(have_rows('icons')) {
