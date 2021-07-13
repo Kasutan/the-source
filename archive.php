@@ -110,7 +110,17 @@ function kasutan_loop_wrap_after() {
 		echo '</ul></section>';
 	} else {
 		echo '</ul>';
-		//TODO bouton browse all catégorie parente
+
+		if($taxonomy) {
+			$parent_id=$queried_object->parent;
+			$parent=get_term($parent_id,$taxonomy);
+			if($parent) {
+				printf('<div class="text-center"><a href="%s" class="button browse-all">Browse all <span>%s</span></a></div>',
+					get_term_link($parent,$taxonomy),
+					$parent->name
+				);
+			}
+		}
 	}
 }
 // Build the page

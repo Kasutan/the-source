@@ -10,7 +10,7 @@
 
 .archive {
 	.product-grid {
-		padding:0 var(--padding-x);
+		padding:0 var(--padding-x) 5rem;
 	}
 
 	.liste-filtrable {
@@ -20,12 +20,24 @@
 		}
 	}
 	@include bp(lg) {
+		.product-grid {
+			padding-bottom:10rem;
+		}
 		.liste-filtrable {
 			display: flex;
 			.filtre {
 				flex-basis:25%;
 				margin-right: 1.6rem;
 			}
+		}
+	}
+
+	.browse-all {
+		@include fs(1.5rem,1.9rem);
+		color:var(--bleu);
+		font-weight: 300;
+		span {
+			font-weight: 700;
 		}
 	}
 }
