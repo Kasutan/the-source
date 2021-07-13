@@ -1,13 +1,3 @@
-@include bp(lg) {
-	body.archive.js-product-menu-open {
-		.archive-description {
-			margin-bottom: var(--margin-y-2);
-			margin-top: calc(var(--margin-y-1) + 5rem);
-		}
-
-	}
-}
-
 .archive {
 	.product-grid {
 		padding:0 var(--padding-x) 5rem;

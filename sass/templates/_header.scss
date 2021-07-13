@@ -66,16 +66,32 @@
 /*--------------------------------------------------------------
 ## Entry-header
 --------------------------------------------------------------*/
-.page-banniere {
+.entry-header, .archive-header {
+	align-items: center;
+	background-image: url('icons/header-fond.svg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	display: flex;
-	height:31vw;
-	width:100vw;
-	img {
-		object-fit: cover;
-		object-position: center;
-		width:100%;
+	flex-direction: column;
+	justify-content: center;
+	margin-left:var(--margin-x-header);
+	margin-right:var(--margin-x-header);
+	min-height:24vw;
+	padding:var(--margin-y-2) var(--padding-x);
+
+
+	@include bp(xl) {
+		min-height:30rem;
 	}
-	@include bp(xxl) {
-		height:60rem;
+
+}
+
+@include bp(lg) {
+	body.archive.js-product-menu-open {
+		.archive-header {
+			margin-bottom: var(--margin-y-2);
+			margin-top: var(--submenu-height);
+		}
+
 	}
 }

@@ -55,7 +55,7 @@ function ea_archive_header() {
 	if( empty( $title )  )
 		return;
 
-	$classes = [ 'archive-description' ];
+	$classes = [ 'archive-header' ];
 
 	do_action ('ea_archive_header_before' );
 	echo '<header class="' . join( ' ', $classes ) . '">';
