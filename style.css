@@ -4594,7 +4594,8 @@ h1.product-title {
     display: flex; }
   .product-gallery, .product-main {
     -ms-flex-preferred-size: 50%;
-    flex-basis: 50%; }
+    flex-basis: 50%;
+    max-width: 50%; }
   .product-main {
     padding-left: 4rem; }
   h1.product-title.show-for-lg {
@@ -5045,42 +5046,51 @@ h1.product-title {
 .filtre-input:checked + .filtre-label {
   font-weight: 700; }
 
-.owl-nav {
+.owl-carousel {
+  margin-bottom: 4.5rem;
+  max-width: 100%; }
+
+.slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  left: 0;
+  height: 65vw; }
+  .slide img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 100%; }
+  @media (min-width: 1024px) {
+    .slide {
+      height: calc(0.71 * (100vw - 2* var(--padding-x)) / 2); } }
+
+.owl-dots {
+  --dot-size:1.4rem;
+  --dot-margin:1rem;
+  bottom: -3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: absolute;
-  top: calc(50% - 20px);
   width: 100%; }
-  .owl-nav button {
-    background-color: transparent;
-    border: none;
-    margin: 10px;
-    padding: 0; }
-    .owl-nav button span {
-      background-image: url("icons/Fleche-P.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: transparent;
-      display: block;
-      height: 19px;
-      left: -20px;
-      position: relative;
-      width: 10px; }
-      @media (min-width: 768px) {
-        .owl-nav button span {
-          left: -50px; } }
-    .owl-nav button.owl-next span {
-      background-image: url("icons/Fleche-S.svg");
-      left: 20px; }
-      @media (min-width: 768px) {
-        .owl-nav button.owl-next span {
-          left: 50px; } }
+  .owl-dots button.owl-dot {
+    background-color: var(--bleu);
+    border-radius: 100%;
+    height: var(--dot-size);
+    margin: 0 var(--dot-margin);
+    width: var(--dot-size); }
+    .owl-dots button.owl-dot.active, .owl-dots button.owl-dot:hover, .owl-dots button.owl-dot:focus {
+      background-color: var(--cyan);
+      opacity: 1; }
+  @media (min-width: 768px) {
+    .owl-dots {
+      --dot-size: 2rem;
+      --dot-margin:1.5rem;
+      bottom: -3.7rem; } }
 
 a.page {
   font-size: calc(30 * var(--taille-texte) / 20);

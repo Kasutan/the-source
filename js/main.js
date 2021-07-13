@@ -170,7 +170,32 @@
 		
 		}
 
-		
+
+		/****************** Product carousel *************************/	
+		var owl = $(".owl-carousel");
+		owl.owlCarousel({
+			loop:true,
+			nav : false,
+			dots : true,
+			autoplay:true,
+			autoplayTimeout:3000,
+			autoplaySpeed:1500,
+			autoplayHoverPause:true,
+			items: 1,
+			checkVisible: false
+		});
+
+		var titreDejaAjoute=false;
+		owl.on('changed.owl.carousel', function(event) {
+			if(titreDejaAjoute) {
+				return;
+			}
+			var dots= $('.owl-dot');
+			$.each(dots, function (indexInArray, valueOfElement) { 
+				$(valueOfElement).attr('title','Go to image '+(indexInArray+1));
+			});
+			titreDejaAjoute=true;
+		})
 
 	}); //fin document ready
 })( jQuery );

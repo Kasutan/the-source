@@ -27,7 +27,7 @@ if($in_selection) {
 }
 
 $request_sent=false; //TODO has the user already sent a request for this item (less than 6 month ago) ?
-$request_sent=true;
+//$request_sent=true;
 if($request_sent) {
 	$class_sent="request-sent";
 } else {
@@ -35,6 +35,7 @@ if($request_sent) {
 }
 
 if(function_exists('get_field')) {
+	$images = get_field('gallery');
 	$price=wp_kses_post(get_field('price'));
 	$intro=wp_kses_post(get_field('intro'));
 	$main_advisor=esc_attr(get_field('main_advisor'));
@@ -48,7 +49,7 @@ if(function_exists('get_field')) {
 		$iframe_url=str_replace('vimeo.com','player.vimeo.com/video',$video);
 	}
 } else {
-	$price=$intro=$main_advisor=$details=$iframe_url=false;
+	$images=$price=$intro=$main_advisor=$details=$iframe_url=false;
 }
 
 echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
@@ -63,7 +64,19 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 		echo '<section class="product-top">';
 			printf('<h1 class="no-dots product-title hide-for-lg">%s</h1>',get_the_title());
 			echo '<div class="product-gallery">';
-			the_post_thumbnail( 'large'); //TODO carrousel galerie
+				if($images) {
+					echo '<div class="product-carousel owl-carousel">';
+					foreach ($images as $image_id) {
+						echo '<div class="slide">';
+								echo wp_get_attachment_image( $image_id, 'large');
+						echo '</div>';
+					}
+					echo '</div>';
+					//TODO loupe qui ouvre une galerie plein écran
+				} else if(has_post_thumbnail()) {
+					the_post_thumbnail( 'large');
+				}
+				//TODO fallback image
 			echo '</div>';
 
 			echo '<div class="product-main">';

@@ -1,0 +1,51 @@
+.owl-carousel {
+	margin-bottom: 4.5rem;
+	max-width: 100%;
+}
+
+.slide {
+	display: flex;
+	height:65vw;
+	img {
+		object-fit: cover;
+		object-position: center;
+		width:100%;
+	}
+
+	@include bp(lg) {
+		height: calc(0.71 * (100vw - 2* var(--padding-x)) / 2);
+	}
+}
+
+.owl-dots {
+	--dot-size:1.4rem;
+	--dot-margin:1rem;
+
+	bottom: -3rem;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+
+
+
+	button.owl-dot {
+		background-color: var(--bleu);
+		border-radius:100%;
+		height:var(--dot-size);
+		margin: 0 var(--dot-margin);
+		width:var(--dot-size);
+
+		&.active, &:hover, &:focus {
+			background-color: var(--cyan);
+			opacity: 1;
+		}
+	}
+
+	@include bp(md) {
+		--dot-size: 2rem;
+		--dot-margin:1.5rem;
+
+		bottom: -3.7rem;
+	}
+}

@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_60cb8f5e1cb36",
-            "label": "Gallery of image",
+            "label": "Gallery of images",
             "name": "gallery",
             "type": "gallery",
             "instructions": "Landscape images, 4\/3 ratio, minimum width 1300px.\r\nShown in slider on product page",
@@ -148,46 +148,7 @@
             "max": 0,
             "layout": "row",
             "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_60cb93f91cb39",
-                    "label": "Label",
-                    "name": "label",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60cb94041cb3a",
-                    "label": "Value",
-                    "name": "value",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "sub_fields": []
         },
         {
             "key": "field_60cb945394da1",
@@ -207,51 +168,7 @@
             "max": 0,
             "layout": "table",
             "button_label": "Add icon",
-            "sub_fields": [
-                {
-                    "key": "field_60cb94bc94da2",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Choose PNG from icons library",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_60cb94f694da3",
-                    "label": "Legend",
-                    "name": "legend",
-                    "type": "text",
-                    "instructions": "Displayed underneath the icon image",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "sub_fields": []
         },
         {
             "key": "field_60cb91461cb37",
@@ -301,5 +218,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623994175
+    "modified": 1626169225
 }
