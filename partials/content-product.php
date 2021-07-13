@@ -75,6 +75,8 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 					//TODO loupe qui ouvre une galerie plein écran https://humaan.com/modaal/ ou recalculate owl carousel
 				} else if(has_post_thumbnail()) {
 					the_post_thumbnail( 'large');
+				} else {
+					printf('<img src="%s/icons/default.svg" alt="default image" height="308" width="308" class="default"/>',get_stylesheet_directory_uri(  ));
 				}
 				//TODO fallback image
 			echo '</div>';

@@ -198,7 +198,12 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 
 	$link=get_the_permalink( $post_id);
 	echo '<li class="product">';
-		printf('<a href="%s" class="card-image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
+		if(has_post_thumbnail( $post_id )) {
+			$img=get_the_post_thumbnail( $post_id, 'medium');
+		} else {
+			$img=sprintf('<img src="%s/icons/default.svg" alt="default image" height="308" width="308"/>',get_stylesheet_directory_uri(  ));
+		}
+		printf('<a href="%s" class="card-image">%s</a>',$link,$img);
 
 		echo '<div class="card-info">';
 			printf('<a href="%s" class="card-title"><h3>%s</h3></a>',$link,get_the_title( $post_id ));
