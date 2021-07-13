@@ -33,6 +33,13 @@ h1.product-title {
 	text-transform: unset;
 }
 
+.product-gallery {
+	.default {
+		display: block;
+		margin:0 auto;
+	}
+}
+
 .to-selection {
 	display: block;
 	margin:1.2rem 0 1.6rem;
