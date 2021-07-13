@@ -195,6 +195,15 @@ function kasutan_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 
+/**
+* Register and enqueue a custom stylesheet in the WordPress admin.
+*/
+function kasutan_enqueue_custom_admin_style() {
+	wp_register_style( 'zs_wp_admin_css', get_template_directory_uri() . '/admin-styles.css', false, '1.0.0' );
+	wp_enqueue_style( 'zs_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'kasutan_enqueue_custom_admin_style' );
+
 
 /**
 * Image sizes. 
