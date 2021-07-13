@@ -62,7 +62,7 @@ function kasutan_get_cpt_slug_for_taxonomy($taxonomy) {
 		'taxonomies'            => array($taxonomy),
 	), $output='objects');
 	foreach ($cpt_objects as $cpt) {
-		if(array_key_exists('name',$cpt)) {
+		if(property_exists($cpt,'name')) {
 			$cpt_slug=$cpt->name;
 		}
 	}
@@ -104,6 +104,31 @@ function kasutan_get_closest_cat_for_product($post_id,$post_type) {
 		return false;
 	}
 }
+
+/**
+* Get all products in category
+* @param string $taxonomy
+* @param int $number
+* @param object $term
+* @return array $products //array of product ids
+*/
+
+function kasutan_get_all_products($taxonomy,$term,$number=-1) {
+	$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
+	$args=array(
+		'post_type'=>$post_type,
+		'numberposts' => $number,
+		'tax_query' => array( 
+			array( 
+				'taxonomy'=>$taxonomy,
+				'terms'=> $term->term_id
+			)
+			),
+		'fields' => 'ids'
+	);
+	return get_posts($args);
+}
+
 
 /**
 * Get related products in category
@@ -154,15 +179,19 @@ function kasutan_get_cat_siblings($parent_id,$term_id,$taxonomy) {
 * Filtre pour une taxonomie
 *
 */
-function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug) {
+function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title='') {
 
 	if(empty($terms)) {
 		return;
 	}
 	//TODO boutons mobile filter = ouvre volet et sort -> quelle action ?
-	// attention il peut y avoir plusieurs filtres sur une même page
+	//TODO si $title on est sur un bloc acf, pas de tri
 	printf('<form class="filtre %s" id="filtre-%s">',$taxonomy,$parent_slug);
-		echo '<p class="filtre-titre">Filter<span class="show-for-lg"> by</span></p>';
+		if($title) {
+			printf('<p class="filtre-titre">%s</p>',$title);
+		} else {
+			echo '<p class="filtre-titre">Filter<span class="show-for-lg"> by</span></p>';
+		}
 		foreach($terms as $term) : 
 			$nom=$term->name;
 			$slug=$term->slug;
@@ -221,7 +250,7 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 			<?php
 			
 			printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
-			if($context==="archive") {
+			if($context==="archive" || $context==='acf') {
 				//span hidden pour filtre par catégorie et tri alphabétique
 				printf('<span class="screen-reader-text term">%s</span>',$term->slug);
 			}

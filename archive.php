@@ -86,12 +86,12 @@ function kasutan_loop_wrap_before() {
 	}
 
 	if($direct_children) {
-		printf('<section id="liste-filtrable-%s" class="liste-filtrable" data-pagination="4">',$term_slug); //Si besoin : pagination = option du thème
+		printf('<section id="liste-filtrable-%s" class="liste-filtrable products" data-pagination="4">',$term_slug); //Si besoin : pagination = option du thème
 			kasutan_display_product_cat_filter($taxonomy,$direct_children,$term_slug);
 			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
 	} else {
 		//Simple conteneur pour la mise en page grille
-		echo '<ul class="product-grid nb-col-4 last-cat">';
+		echo '<section class="products"><ul class="product-grid nb-col-4 last-cat">';
 	}
 }
 
@@ -106,12 +106,10 @@ function kasutan_loop_wrap_after() {
 		$direct_children=get_terms(array('taxonomy'=>$taxonomy, 'parent'=>$term_id));
 	}
 
-	if($direct_children) {
-		echo '</ul></section>';
-	} else {
+
 		echo '</ul>';
 
-		if($taxonomy) {
+		if($taxonomy && !$direct_children) {
 			$parent_id=$queried_object->parent;
 			$parent=get_term($parent_id,$taxonomy);
 			if($parent) {
@@ -121,7 +119,7 @@ function kasutan_loop_wrap_after() {
 				);
 			}
 		}
-	}
+	echo '</section>';
 }
 // Build the page
 require get_template_directory() . '/index.php';

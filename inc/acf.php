@@ -140,6 +140,32 @@ class BE_ACF_Customizations {
 			$categories
 		);
 	}
+
+	function helper_register_block_type($slug,$titre,$description,$icon='admin-generic',$js=false,$keywords=[] ){
+		$keywords_from_slug=explode('-',$slug);
+		$keywords=array_merge($keywords,$keywords_from_slug, array('the-source'));
+		$args=[
+			'name'            => $slug,
+			'title'           => $titre,
+			'description'     => $description,
+			'render_template' => 'partials/blocks/'.$slug.'/'.$slug.'.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/'.$slug.'/'.$slug.'.css',
+			'category'        => 'the-source',
+			'icon'            => $icon, 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>true,
+				'anchor' => true,
+			),
+			'keywords'        => $keywords
+		];
+		if($js) {
+			$args['enqueue_script']=get_stylesheet_directory_uri() . '/partials/blocks/'.$slug.'/'.$slug.'.js';
+		}
+		acf_register_block_type( $args);
+	}
 	
 
 	/**
@@ -155,196 +181,12 @@ class BE_ACF_Customizations {
 		if( ! function_exists('acf_register_block_type') )
 			return;
 
-		/*********Bloc tous producteurs ***************/
-		acf_register_block_type( [
-			'name'            => 'tous-producteurs',
-			'title'           => 'Bloc tous les producteurs',
-			'description'     => 'Liste de tous les producteurs, avec filtre et pagination',
-			'render_template' => 'partials/blocks/tous-producteurs/tous-producteurs.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/tous-producteurs/tous-producteurs.css',
-			'category'        => 'the-source',
-			'icon'            => 'buddicons-replies', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'producteur', 'the-source'],
-		] );
-		
-		/*********Bloc colonnes alternées ***************/
-		acf_register_block_type( [
-			'name'            => 'colonnes-alternees',
-			'title'           => 'Bloc colonnes alternées',
-			'description'     => 'Une colonne de texte et une colonne avec une image, alternativement à droite puis à gauche du texte - selon la position du bloc dans la page. La colonne de texte peut contenir un bouton (facultatif).',
-			'render_template' => 'partials/blocks/colonnes-alternees/colonnes-alternees.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/colonnes-alternees/colonnes-alternees.css',
-			'category'        => 'the-source',
-			'icon'            => 'align-right', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>true,
-				'anchor' => true,
-			),
-			'keywords'        => [ 'colonne', 'image','the-source'],
-		] );
-
-		/*********Bloc carrousel ***************/
-		acf_register_block_type( [
-			'name'            => 'carrousel',
-			'title'           => 'Bloc carrousel',
-			'description'     => 'Carrousel avec images bannières, messages et boutons en option.',
-			'render_template' => 'partials/blocks/carrousel/carrousel.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.css',
-			'enqueue_script' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.js',
-			'category'        => 'the-source',
-			'icon'            => 'slides', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'slide', 'carrousel','the-source','accueil'],
-		] );
-
-		/*********Bloc reassurance ***************/
-		acf_register_block_type( [
-			'name'            => 'reassurance',
-			'title'           => 'Bloc réassurance',
-			'description'     => 'Bandeau avec 3 pictos et leurs textes de réassurance.',
-			'render_template' => 'partials/blocks/reassurance/reassurance.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/reassurance/reassurance.css',
-			'category'        => 'the-source',
-			'icon'            => 'format-status', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>true,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'reassurance','the-source','accueil'],
-		] );
-
-		/*********Bloc categories de produits ***************/
-		acf_register_block_type( [
-			'name'            => 'categories-produits',
-			'title'           => 'Bloc catégories de produits',
-			'description'     => 'Section avec 1 image et un titre cliquable par catégorie de produit.',
-			'render_template' => 'partials/blocks/categories-produits/categories-produits.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/categories-produits/categories-produits.css',
-			'category'        => 'the-source',
-			'icon'            => 'cart', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'categorie', 'produit','the-source','accueil'],
-		] );
-
-		/*********Bloc section animée ***************/
-		acf_register_block_type( [
-			'name'            => 'section-animee',
-			'title'           => 'Bloc section avec décors animés',
-			'description'     => 'Section avec 2 images, 2 titres, un texte, un bouton et éléments de décor animés.',
-			'render_template' => 'partials/blocks/section-animee/section-animee.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/section-animee/section-animee.css',
-			'category'        => 'the-source',
-			'icon'            => 'art', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'animee', 'animée', 'decor', 'décor','the-source','accueil'],
-		] );
-
-		/*********Bloc nouveautés produits ***************/
-		acf_register_block_type( [
-			'name'            => 'nouveautes-produits',
-			'title'           => 'Bloc nouveautés produits',
-			'description'     => 'Section avec les 4 derniers produits, visibles et en stock (contenu automatique).',
-			'render_template' => 'partials/blocks/nouveautes-produits/nouveautes-produits.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/nouveautes-produits/nouveautes-produits.css',
-			'category'        => 'the-source',
-			'icon'            => 'cart', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'produit', 'nouveau', 'nouveauté','the-source','accueil'],
-		] );
-
-		/*********Bloc section bannière ***************/
-		acf_register_block_type( [
-			'name'            => 'section-banniere',
-			'title'           => 'Bloc section banniere',
-			'description'     => 'Section avec titre principal, image bannière et cadre blanc avec titre, texte et bouton optionnel.',
-			'render_template' => 'partials/blocks/section-banniere/section-banniere.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/section-banniere/section-banniere.css',
-			'category'        => 'the-source',
-			'icon'            => 'cover-image', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>true,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'section', 'banniere', 'image','the-source','accueil'],
-		] );
-
-		/*********Bloc personnalisations ***************/
-		acf_register_block_type( [
-			'name'            => 'personnalisations',
-			'title'           => 'Bloc vos personnalisations',
-			'description'     => 'Section avec titre principal, trois images légendées, titre secondaire, texte et bouton optionnel.',
-			'render_template' => 'partials/blocks/personnalisations/personnalisations.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/personnalisations/personnalisations.css',
-			'category'        => 'the-source',
-			'icon'            => 'format-gallery', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>true,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'personnalisation', 'image','the-source','accueil'],
-		] );
-
-		/*********Bloc blog ***************/
-		acf_register_block_type( [
-			'name'            => 'blog',
-			'title'           => 'Bloc blog',
-			'description'     => 'Section avec titre principal et les deux derniers articles publiés sur le blog.',
-			'render_template' => 'partials/blocks/blog/blog.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/blog/blog.css',
-			'category'        => 'the-source',
-			'icon'            => 'welcome-write-blog', 
-			'mode'			=> "edit",
-			'supports' => array( 
-				'mode' => false,
-				'align'=>false,
-				'multiple'=>false,
-				'anchor' => false,
-			),
-			'keywords'        => [ 'blog', 'article','the-source','accueil'],
-		] );
+		/*********Blocs assets***************/
+		$this->helper_register_block_type(
+			'products',
+			'Products block',
+			'Display grid of products in selected category.'
+		);
 		
 	}
 }
