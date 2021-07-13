@@ -66,7 +66,7 @@
 /*--------------------------------------------------------------
 ## Entry-header
 --------------------------------------------------------------*/
-.entry-header, .archive-header {
+.page .entry-header, .archive-header {
 	align-items: center;
 	background-image: url('icons/header-fond.svg');
 	background-repeat: no-repeat;
@@ -88,7 +88,7 @@
 
 @include bp(lg) {
 	body.archive.js-product-menu-open {
-		.archive-header {
+		.archive-header, .no-results .entry-header {
 			margin-bottom: var(--margin-y-2);
 			margin-top: var(--submenu-height);
 		}

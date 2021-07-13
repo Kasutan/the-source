@@ -16,6 +16,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 		echo '</header>';
 	}
 
+	do_action('ea_content_header_after');
 	echo '<div class="entry-content">';
 		tha_entry_content_before();
 

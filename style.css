@@ -3640,7 +3640,7 @@ button.modaal-close {
 /*--------------------------------------------------------------
 ## Entry-header
 --------------------------------------------------------------*/
-.entry-header, .archive-header {
+.page .entry-header, .archive-header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -3662,11 +3662,11 @@ button.modaal-close {
   min-height: 24vw;
   padding: var(--margin-y-2) var(--padding-x); }
   @media (min-width: 1400px) {
-    .entry-header, .archive-header {
+    .page .entry-header, .archive-header {
       min-height: 30rem; } }
 
 @media (min-width: 1024px) {
-  body.archive.js-product-menu-open .archive-header {
+  body.archive.js-product-menu-open .archive-header, body.archive.js-product-menu-open .no-results .entry-header {
     margin-bottom: var(--margin-y-2);
     margin-top: var(--submenu-height); } }
 
