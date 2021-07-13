@@ -3568,6 +3568,9 @@ button.modaal-close {
   .archive .browse-all span {
     font-weight: 700; }
 
+.archive .last-cat .card-cat {
+  display: none; }
+
 /*--------------------------------------------------------------
 ## Site header
 --------------------------------------------------------------*/

@@ -91,7 +91,7 @@ function kasutan_loop_wrap_before() {
 			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
 	} else {
 		//Simple conteneur pour la mise en page grille
-		echo '<ul class="product-grid nb-col-4">';
+		echo '<ul class="product-grid nb-col-4 last-cat">';
 	}
 }
 

@@ -40,4 +40,9 @@
 			font-weight: 700;
 		}
 	}
+
+	//Sur les archives de dernier niveau, masquer la catégorie dans la vignette produit (c'est la même pour toutes les vignettes)
+	.last-cat .card-cat {
+		display: none;
+	}
 }
