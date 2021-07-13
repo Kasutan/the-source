@@ -32,6 +32,7 @@ body {
 	@include bp(lg) {
 		--margin-y-1: 4.5rem;
 		--margin-y-2: 7.5rem;
+		--padding-x-largeur-reduite: calc(50vw - 850px/2);
 	}
 	@include bp(xl) {
 		--margin-x-header:3rem;

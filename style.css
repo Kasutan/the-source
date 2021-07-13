@@ -588,7 +588,8 @@ body {
   @media (min-width: 1024px) {
     :root {
       --margin-y-1: 4.5rem;
-      --margin-y-2: 7.5rem; } }
+      --margin-y-2: 7.5rem;
+      --padding-x-largeur-reduite: calc(50vw - 850px/2); } }
   @media (min-width: 1400px) {
     :root {
       --margin-x-header:3rem; } }
