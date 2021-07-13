@@ -7,7 +7,7 @@
             "label": "Gallery of images",
             "name": "gallery",
             "type": "gallery",
-            "instructions": "Landscape images, 4\/3 ratio, minimum width 1300px.\r\nShown in slider on product page",
+            "instructions": "Landscape images, recommanded size: width 1600px by height 1100px\r\nShown in slider on product page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -218,5 +218,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626169225
+    "modified": 1626197652
 }

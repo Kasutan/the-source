@@ -68,17 +68,16 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 					echo '<div class="product-carousel owl-carousel">';
 					foreach ($images as $image_id) {
 						echo '<div class="slide">';
-								echo wp_get_attachment_image( $image_id, 'large');
+								echo wp_get_attachment_image( $image_id, 'medium_large');
 						echo '</div>';
 					}
 					echo '</div>';
-					//TODO loupe qui ouvre une galerie plein écran https://humaan.com/modaal/ ou recalculate owl carousel
+					//TODO loupe qui ouvre une galerie plein écran https://humaan.com/modaal/ ou recalculate owl carousel, taille d'image large
 				} else if(has_post_thumbnail()) {
 					the_post_thumbnail( 'large');
 				} else {
 					printf('<img src="%s/icons/default.svg" alt="default image" height="308" width="308" class="default"/>',get_stylesheet_directory_uri(  ));
 				}
-				//TODO fallback image
 			echo '</div>';
 
 			echo '<div class="product-main">';

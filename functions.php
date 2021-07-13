@@ -213,7 +213,7 @@ add_action( 'admin_enqueue_scripts', 'kasutan_enqueue_custom_admin_style' );
 	thumbnail 200 pour portraits
 	medium 308 large, hauteur libre (masonry) 
 	medium_large 768 (product)
-	large 1400 large, hauteur libre (product with zoom) 
+	large 1600 large, hauteur libre (product with zoom) 
 
 */
 
