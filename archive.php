@@ -86,7 +86,7 @@ function kasutan_loop_wrap_before() {
 	}
 
 	if($direct_children) {
-		printf('<section id="liste-filtrable-%s" class="liste-filtrable products" data-pagination="4">',$term_slug); //Si besoin : pagination = option du thème
+		printf('<section id="liste-filtrable-%s" class="liste-filtrable products">',$term_slug);
 			kasutan_display_product_cat_filter($taxonomy,$direct_children,$term_slug);
 			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
 	} else {

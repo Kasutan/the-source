@@ -44,7 +44,7 @@ if(function_exists('get_field')) :
 	$mobile_title=sprintf('<h2 class="dots">%s</h2>',$title);
 
 	if($direct_children) {
-		printf('<section id="liste-filtrable-%s" class="liste-filtrable acf products" data-pagination="4">',$term_slug); //Si besoin : pagination = option du thème
+		printf('<section id="liste-filtrable-%s" class="liste-filtrable acf products" data-pagination="6">',$term_slug);
 			echo $mobile_title; 
 			kasutan_display_product_cat_filter($taxonomy,$direct_children,$term_slug,$title);
 			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
@@ -55,13 +55,14 @@ if(function_exists('get_field')) :
 		echo '<ul class="product-grid nb-col-4 last-cat">';
 	}
 
-	$products=kasutan_get_all_products($taxonomy,$term);
+	$products=kasutan_get_all_products($taxonomy,$term,6);
 	foreach($products as $product_id) {
 		$cat=kasutan_get_closest_cat_for_product($product_id,$post_type);
 		kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'acf');
 	}
 
 	echo '</ul>';
+	echo '<ul class="pagination"></ul>'; //caché mais nécessaire pour que list.js fonctionne
 
 	printf('<div class="text-center"><a href="%s" class="button browse-all">Browse <span>%s</span></a></div>',
 		get_term_link($term,$taxonomy),

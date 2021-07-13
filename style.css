@@ -3457,6 +3457,8 @@ button.modaal-close {
     padding: 0; }
     .products.acf .product-grid {
       padding: 0; }
+    .products.acf .pagination {
+      display: none; }
   @media (min-width: 1024px) {
     .products {
       margin-bottom: 9rem; }

@@ -104,16 +104,19 @@
 				console.log(liste);
 				console.log(id);
 
-				/*var page=parseInt($('#liste-filtrable').attr('data-pagination'));
-				if(typeof(page)===NaN || page <=0) {
-					page=8;
-				}*/
-				var optionsListe = {
-					valueNames: ['term'],
-					//page: page, 
-					//pagination: true
-				};
-
+				var page=parseInt($(section).attr('data-pagination'));
+				if(typeof(page)!==NaN && page > 0) {
+					var optionsListe = {
+						valueNames: ['term'],
+						page: page, 
+						pagination: true
+					};
+				} else {
+					var optionsListe = {
+						valueNames: ['term']
+					};
+					
+				}
 				var listeFiltrable = new List(id, optionsListe);
 				console.log(listeFiltrable);
 

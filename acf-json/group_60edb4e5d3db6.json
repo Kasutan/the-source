@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Choose only one category among the following options.\r\nA grid of all products belonging to the selected category will be displayed.\r\nIf the category has sub-categories, a filter will be included.",
+            "message": "Choose only one category among the following options.\r\nA grid with the 6 most recent products belonging to the selected category will be displayed.\r\nIf the category has sub-categories, a filter will be included.",
             "new_lines": "wpautop",
             "esc_html": 0
         },

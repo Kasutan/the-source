@@ -16,6 +16,9 @@
 		.product-grid {
 			padding:0;
 		}
+		.pagination {
+			display: none;
+		}
 	}
 	@include bp(lg) {
 		margin-bottom:9rem;
