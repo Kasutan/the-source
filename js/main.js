@@ -91,82 +91,70 @@
 
 
 		/****************** Filtre articles, producteurs et produits *************************/	
-		if($("#filtre-liste").length>0) {
+		if($(".liste-filtrable").length>0) {
 
-			/*var page=parseInt($('#liste-filtrable').attr('data-pagination'));
-			if(typeof(page)===NaN || page <=0) {
-				page=8;
-			}*/
-			var optionsListe = {
-				valueNames: ['term'],
-				//page: page, 
-				//pagination: true
-			};
-	
-			var listeFiltrable = new List('liste-filtrable', optionsListe);
+			$(".liste-filtrable").each(function(item){
+				console.log($(this));
+				var section=$(this);
+				var filtre=$(this).find('.filtre');
+				var liste=$(this).find('ul.list');
+				var id=$(this).attr('id');
+				console.log(section);
+				console.log(filtre);
+				console.log(liste);
+				console.log(id);
 
-			var resultats=$('.list, .pagination');
+				/*var page=parseInt($('#liste-filtrable').attr('data-pagination'));
+				if(typeof(page)===NaN || page <=0) {
+					page=8;
+				}*/
+				var optionsListe = {
+					valueNames: ['term'],
+					//page: page, 
+					//pagination: true
+				};
+
+				var listeFiltrable = new List(id, optionsListe);
+				console.log(listeFiltrable);
+
+				//reset filtre au chargement de la page
+				$(filtre).find("input:checked").prop('checked',false);
 			
-			$('#filtre-liste').change(function(){
-				//quand on clique sur une checkbox
-				$(resultats).animate(
-					{opacity:0},
-					400,
-					'linear',
-					function(){
-						//callback de l'animation
-						//on récupère le type sélectionné
-						var selectedValue=$("#filtre-liste input:checked").val();
+				$(filtre).change(function(){
+					//quand on clique sur une checkbox
+					$(liste).animate(
+						{opacity:0},
+						400,
+						'linear',
+						function(){
+							//callback de l'animation
+							//on récupère le type sélectionné
+							var checkedInputs=$(filtre).find("input:checked");
 
-						if(selectedValue=='tous') {
-							//on réinitialise le filtre
-							listeFiltrable.filter();
-						} else {
-							//on filtre la liste pour ne garder que les éléments qui contiennent le type sélectionné
-							listeFiltrable.filter(function(item) {
-								return (item.values().term.indexOf(selectedValue) >= 0);
-							});
+							if(checkedInputs.length==0) {
+								//on réinitialise le filtre
+								listeFiltrable.filter();
+							} else {
+								var selectedValues='';
+								$(checkedInputs).each(function(){
+									selectedValues+=' '+$(this).val();
+								});
+								console.log(selectedValues);
+								//on filtre la liste pour ne garder que les éléments dont le term se trouve dans selectedValues
+								listeFiltrable.filter(function(item) {
+									return (selectedValues.indexOf(item.values().term) >= 0);
+								});
+							}
+							//la nouvelle liste est prête, nouvelle animation pour réafficher
+							$(liste).animate(
+								{opacity:1}, 1000, 'linear'	
+							);
 						}
-						//la nouvelle liste est prête, nouvelle animation pour réafficher
-						$(resultats).animate(
-							{opacity:1}, 1000, 'linear'	
-						);
-					}
-				);
+					);
 				
+				});
+
 			});
-
-
-
-			//Activer filtre si paramètre filtre_cat ds l'url
-			const queryString = window.location.search;
-			const urlParams = new URLSearchParams(queryString);
-			if(urlParams.has('filtre_cat')) {
-				//s'il y a un paramètre filtre_cat dans l'url, on coche l'input du filtre correspondant
-				$("#filtre-liste input").each(function (index, element) {
-					if($(element).val() === urlParams.get('filtre_cat')) {
-						$(element).prop("checked", true);
-						//on force la mise en oeuvre du filtre
-						$('#filtre-liste').trigger('change');
-					}
-				});
-			}
-
-			//Au clic sur un élément de pagination, smooth scroll en haut de la liste
-			bindScroll(); // lier les écouteurs au premier affichage
-
-			//lier les écouteurs à chaque fois que la liste est mise à jour + attendre un peu pour que les liens de navigation soient reconstruits
-			listeFiltrable.on('updated',function(e) {
-				setTimeout(bindScroll,1000);
-			})
-
-			function bindScroll() {
-				$('.pagination li').click(function(e) {
-					$("html, body").animate({
-						scrollTop: $('#filtre-liste').offset().top - 60
-						}, 500);
-				});
-			}
 		
 		}
 

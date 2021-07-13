@@ -5008,20 +5008,136 @@ h1.product-title {
   margin-bottom: var(--margin-y); }
 
 .filtre {
-  font-size: calc(19 * var(--taille-texte) / 20);
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--fond);
-  color: var(--noir);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-x: auto;
-  padding: 1.5rem var(--padding-x); }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
-.filtre-sep {
-  padding: 0 2ch 0.5rem 0; }
+.filtre-titre {
+  font-size: 3.8rem;
+  border-bottom: solid 1px var(--bordure);
+  color: var(--bleu);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase; }
+  @media all and (max-width: 360px) {
+    .filtre-titre {
+      font-size: 1.5rem; } }
+  @media all and (max-width: 1440px) {
+    .filtre-titre {
+      font-size: 3.8rem; } }
+  @media all and (max-width: 1402px) {
+    .filtre-titre {
+      font-size: 3.77509rem; } }
+  @media all and (max-width: 1365px) {
+    .filtre-titre {
+      font-size: 3.7469rem; } }
+  @media all and (max-width: 1329px) {
+    .filtre-titre {
+      font-size: 3.71577rem; } }
+  @media all and (max-width: 1293px) {
+    .filtre-titre {
+      font-size: 3.68096rem; } }
+  @media all and (max-width: 1258px) {
+    .filtre-titre {
+      font-size: 3.64361rem; } }
+  @media all and (max-width: 1223px) {
+    .filtre-titre {
+      font-size: 3.60279rem; } }
+  @media all and (max-width: 1189px) {
+    .filtre-titre {
+      font-size: 3.55981rem; } }
+  @media all and (max-width: 1156px) {
+    .filtre-titre {
+      font-size: 3.51498rem; } }
+  @media all and (max-width: 1123px) {
+    .filtre-titre {
+      font-size: 3.46706rem; } }
+  @media all and (max-width: 1091px) {
+    .filtre-titre {
+      font-size: 3.41765rem; } }
+  @media all and (max-width: 1059px) {
+    .filtre-titre {
+      font-size: 3.36535rem; } }
+  @media all and (max-width: 1028px) {
+    .filtre-titre {
+      font-size: 3.31192rem; } }
+  @media all and (max-width: 997px) {
+    .filtre-titre {
+      font-size: 3.25576rem; } }
+  @media all and (max-width: 966px) {
+    .filtre-titre {
+      font-size: 3.19689rem; } }
+  @media all and (max-width: 936px) {
+    .filtre-titre {
+      font-size: 3.13733rem; } }
+  @media all and (max-width: 906px) {
+    .filtre-titre {
+      font-size: 3.07523rem; } }
+  @media all and (max-width: 877px) {
+    .filtre-titre {
+      font-size: 3.01277rem; } }
+  @media all and (max-width: 848px) {
+    .filtre-titre {
+      font-size: 2.94793rem; } }
+  @media all and (max-width: 819px) {
+    .filtre-titre {
+      font-size: 2.88072rem; } }
+  @media all and (max-width: 791px) {
+    .filtre-titre {
+      font-size: 2.81356rem; } }
+  @media all and (max-width: 763px) {
+    .filtre-titre {
+      font-size: 2.74419rem; } }
+  @media all and (max-width: 735px) {
+    .filtre-titre {
+      font-size: 2.6726rem; } }
+  @media all and (max-width: 707px) {
+    .filtre-titre {
+      font-size: 2.59879rem; } }
+  @media all and (max-width: 680px) {
+    .filtre-titre {
+      font-size: 2.52551rem; } }
+  @media all and (max-width: 653px) {
+    .filtre-titre {
+      font-size: 2.45018rem; } }
+  @media all and (max-width: 626px) {
+    .filtre-titre {
+      font-size: 2.37278rem; } }
+  @media all and (max-width: 600px) {
+    .filtre-titre {
+      font-size: 2.2963rem; } }
+  @media all and (max-width: 574px) {
+    .filtre-titre {
+      font-size: 2.2179rem; } }
+  @media all and (max-width: 548px) {
+    .filtre-titre {
+      font-size: 2.13759rem; } }
+  @media all and (max-width: 522px) {
+    .filtre-titre {
+      font-size: 2.05538rem; } }
+  @media all and (max-width: 497px) {
+    .filtre-titre {
+      font-size: 1.97451rem; } }
+  @media all and (max-width: 472px) {
+    .filtre-titre {
+      font-size: 1.89188rem; } }
+  @media all and (max-width: 447px) {
+    .filtre-titre {
+      font-size: 1.80749rem; } }
+  @media all and (max-width: 422px) {
+    .filtre-titre {
+      font-size: 1.72132rem; } }
+  @media all and (max-width: 397px) {
+    .filtre-titre {
+      font-size: 1.63339rem; } }
+  @media all and (max-width: 373px) {
+    .filtre-titre {
+      font-size: 1.54731rem; } }
 
 .filtre-input {
   border: 0;
@@ -5035,15 +5151,112 @@ h1.product-title {
 
 .filtre-label {
   cursor: pointer;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  padding-right: 2ch;
-  text-transform: uppercase; }
+  font-size: 2rem;
+  line-height: 4rem; }
+  @media all and (max-width: 360px) {
+    .filtre-label {
+      font-size: 1.5rem; } }
+  @media all and (max-width: 1440px) {
+    .filtre-label {
+      font-size: 2rem; } }
+  @media all and (max-width: 1368px) {
+    .filtre-label {
+      font-size: 2.15333rem; } }
+  @media all and (max-width: 1304px) {
+    .filtre-label {
+      font-size: 2.26724rem; } }
+  @media all and (max-width: 1246px) {
+    .filtre-label {
+      font-size: 2.35227rem; } }
+  @media all and (max-width: 1193px) {
+    .filtre-label {
+      font-size: 2.41484rem; } }
+  @media all and (max-width: 1144px) {
+    .filtre-label {
+      font-size: 2.45984rem; } }
+  @media all and (max-width: 1097px) {
+    .filtre-label {
+      font-size: 2.49139rem; } }
+  @media all and (max-width: 1053px) {
+    .filtre-label {
+      font-size: 2.51063rem; } }
+  @media all and (max-width: 1011px) {
+    .filtre-label {
+      font-size: 2.5197rem; } }
+  @media all and (max-width: 971px) {
+    .filtre-label {
+      font-size: 2.5199rem; } }
+  @media all and (max-width: 932px) {
+    .filtre-label {
+      font-size: 2.51218rem; } }
+  @media all and (max-width: 895px) {
+    .filtre-label {
+      font-size: 2.49762rem; } }
+  @media all and (max-width: 859px) {
+    .filtre-label {
+      font-size: 2.47669rem; } }
+  @media all and (max-width: 824px) {
+    .filtre-label {
+      font-size: 2.44996rem; } }
+  @media all and (max-width: 790px) {
+    .filtre-label {
+      font-size: 2.41795rem; } }
+  @media all and (max-width: 757px) {
+    .filtre-label {
+      font-size: 2.3812rem; } }
+  @media all and (max-width: 725px) {
+    .filtre-label {
+      font-size: 2.34021rem; } }
+  @media all and (max-width: 694px) {
+    .filtre-label {
+      font-size: 2.29548rem; } }
+  @media all and (max-width: 664px) {
+    .filtre-label {
+      font-size: 2.24749rem; } }
+  @media all and (max-width: 634px) {
+    .filtre-label {
+      font-size: 2.19487rem; } }
+  @media all and (max-width: 605px) {
+    .filtre-label {
+      font-size: 2.1396rem; } }
+  @media all and (max-width: 577px) {
+    .filtre-label {
+      font-size: 2.08213rem; } }
+  @media all and (max-width: 549px) {
+    .filtre-label {
+      font-size: 2.02062rem; } }
+  @media all and (max-width: 522px) {
+    .filtre-label {
+      font-size: 1.9575rem; } }
+  @media all and (max-width: 495px) {
+    .filtre-label {
+      font-size: 1.89063rem; } }
+  @media all and (max-width: 469px) {
+    .filtre-label {
+      font-size: 1.82268rem; } }
+  @media all and (max-width: 443px) {
+    .filtre-label {
+      font-size: 1.75126rem; } }
+  @media all and (max-width: 418px) {
+    .filtre-label {
+      font-size: 1.67931rem; } }
+  @media all and (max-width: 393px) {
+    .filtre-label {
+      font-size: 1.60414rem; } }
+  @media all and (max-width: 369px) {
+    .filtre-label {
+      font-size: 1.52896rem; } }
+  .filtre-label::before {
+    display: none; }
+
+.filtre-input:focus + .filtre-label {
+  color: var(--bleu); }
 
 .filtre-input:focus-visible + .filtre-label {
   outline: dotted 1px var(--noir); }
 
 .filtre-input:checked + .filtre-label {
+  color: var(--cyan);
   font-weight: 700; }
 
 .owl-carousel {

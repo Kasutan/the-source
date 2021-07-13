@@ -225,34 +225,6 @@ function kasutan_affiche_thumbnail_dans_contenu() {
 	}
 }
 
-/**
-* Filtre pour une taxonomie
-*
-*/
-function kasutan_display_product_cat_filter($taxonomy,$terms) {
-
-	if(empty($terms)) {
-		return;
-	}
-	printf('<form id="filtre-liste" class="filtre %s">',$taxonomy);
-		echo '<p class="screen-reader-text">Filtrer par type de contenu</p>';
-		echo '<input type="radio" name="filtre" id="tous" value="tous" class="type filtre-input" checked>';
-		echo '<label for="tous" class="filtre-label">Tous</label>';
-		foreach($terms as $term) : 
-			$nom=$term->name;
-			$slug=$term->slug;
-			echo '<div class="filtre-sep">|</div>';
-			printf('<input type="radio" id="%s" name="filtre" value="%s" class="type filtre-input">',
-				$slug,
-				$slug
-			);
-			printf('<label for="%s" class="filtre-label">%s</label>',
-				$slug,
-				$nom
-			);
-		endforeach;
-	echo '</form>';
-}
 
 /**
 * Deux colonnes avec texte et image

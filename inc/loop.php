@@ -31,6 +31,12 @@ function ea_default_loop() {
 			}
 		}
 
+		//special partial for product archive
+		$taxonomy=kasutan_is_archive_for_product($queried_object);
+		if($taxonomy) {
+			$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
+			$user_id=get_current_user_id(  );
+		}
 		if(!$special_loop) : 
 
 			do_action('kasutan_loop_wrap_before');
@@ -41,10 +47,9 @@ function ea_default_loop() {
 
 					if(kasutan_is_single_for_product()) {
 						get_template_part( 'partials/content-product');
-					} else if($taxonomy=kasutan_is_archive_for_product($queried_object)) {
-						$user_id=get_current_user_id(  );
+					} else if($taxonomy) {
 						$post_id=get_the_ID();
-						$term=$queried_object;
+						$term=kasutan_get_closest_cat_for_product($post_id,$post_type);
 						$context='archive';
 						kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context);
 					} else {

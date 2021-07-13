@@ -1,16 +1,16 @@
 .filtre {
-	@include oldfs(19);
-
-	align-items: center;
-	background-color: var(--fond);
-	color:var(--noir);
 	display: flex;
-	overflow-x: auto;
-	padding: 1.5rem var(--padding-x);
-}
+	flex-direction: column;
 
-.filtre-sep {
-	padding: 0 2ch 0.5rem 0; //on le décale un peu vers le haut
+}
+.filtre-titre {
+	@include fs(1.5rem,3.8rem);
+	border-bottom:solid 1px var(--bordure);
+	color:var(--bleu);
+	font-weight: 700;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	text-transform: uppercase;
 }
 
 .filtre-input {
@@ -26,13 +26,19 @@
 
 .filtre-label {
 	cursor: pointer;
-	flex-shrink:0; //forcer scroll en mobile
-	padding-right : 2ch; // respiration sur le dernier élément en mobile
-	text-transform: uppercase;
+	@include fs(1.5rem,2rem);
+	line-height: 4rem;
+	&::before {
+		display: none;
+	}
+}
+.filtre-input:focus + .filtre-label {
+	color:var(--bleu);
 }
 .filtre-input:focus-visible + .filtre-label {
 	outline:dotted 1px var(--noir);
 }
 .filtre-input:checked + .filtre-label {
+	color:var(--cyan);
 	font-weight: 700;
 }

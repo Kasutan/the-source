@@ -148,6 +148,38 @@ function kasutan_get_cat_siblings($parent_id,$term_id,$taxonomy) {
 	);
 	return get_terms($args);
 }
+
+
+/**
+* Filtre pour une taxonomie
+*
+*/
+function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug) {
+
+	if(empty($terms)) {
+		return;
+	}
+	//TODO boutons mobile filter = ouvre volet et sort -> quelle action ?
+	// attention il peut y avoir plusieurs filtres sur une même page
+	printf('<form class="filtre %s" id="filtre-%s">',$taxonomy,$parent_slug);
+		echo '<p class="filtre-titre">Filter<span class="show-for-lg"> by</span></p>';
+		foreach($terms as $term) : 
+			$nom=$term->name;
+			$slug=$term->slug;
+			printf('<input type="checkbox" id="%s" name="filtre" value="%s" class="type filtre-input">',
+				$slug,
+				$slug
+			);
+			printf('<label for="%s" class="filtre-label">%s</label>',
+				$slug,
+				$nom
+			);
+		endforeach;
+		//TODO boutons mobile display = fermer volet, reset = monter tout + fermer volet
+	echo '</form>';
+}
+
+
 /**
 * Display product card
 * @param int $post_id
@@ -185,7 +217,8 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 			
 			printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
 			if($context==="archive") {
-				//TODO ajouter span hidden pour filtre par catégorie et tri alphabétique
+				//span hidden pour filtre par catégorie et tri alphabétique
+				printf('<span class="screen-reader-text term">%s</span>',$term->slug);
 			}
 		echo '</div>'; //fin .card-info
 

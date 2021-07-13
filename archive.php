@@ -81,13 +81,14 @@ function kasutan_loop_wrap_before() {
 	$taxonomy=kasutan_is_archive_for_product($queried_object);
 	if($taxonomy) {
 		$term_id=$queried_object->term_id;
+		$term_slug=$queried_object->slug;
 		$direct_children=get_terms(array('taxonomy'=>$taxonomy, 'parent'=>$term_id));
 	}
 
 	if($direct_children) {
-		echo '<section id="liste-filtrable" class="liste-filtrable" data-pagination="4">'; //Si besoin : pagination = option du thème
-			kasutan_display_product_cat_filter($taxonomy,$direct_children);
-			echo '<ul class="list product-grid nb-col-3">';
+		printf('<section id="liste-filtrable-%s" class="liste-filtrable" data-pagination="4">',$term_slug); //Si besoin : pagination = option du thème
+			kasutan_display_product_cat_filter($taxonomy,$direct_children,$term_slug);
+			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
 	} else {
 		//Simple conteneur pour la mise en page grille
 		echo '<ul class="product-grid nb-col-4">';
