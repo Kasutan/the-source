@@ -233,6 +233,8 @@ add_action( 'admin_enqueue_scripts', 'kasutan_enqueue_custom_admin_style' );
 require_once( 'inc/cpt/cpt-taxonomies.php' );
 require_once( 'inc/cpt/advisors.php' );
 require_once( 'inc/cpt/products.php' );
+include_once( get_template_directory() . '/inc/cpt/contact-requests.php' );
+
 
 
 /**
