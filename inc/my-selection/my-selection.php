@@ -39,7 +39,8 @@ function kasutan_is_product_in_selection($product_id,$user_id) {
 */
 
 function kasutan_count_selection($user_id) {
-	//TODO
+	$selected=kasutan_get_products_in_selection($user_id);
+	return count($selected);
 }
 
 /**
@@ -76,6 +77,14 @@ function kasutan_remove_product_from_selection($product_id,$user_id) {
 			$selected_new[]=$id;
 		}
 	}
+	update_user_meta($user_id,'zs_my_selection',$selected_new);
+/*
+	ob_start();
+		echo 'selection origine';
+		print_r($selected);
+		echo 'nouvelle selection';
+		print_r($selected_new);
+	error_log(ob_get_clean());*/
 	
 	/*Check*/
 	return !kasutan_is_product_in_selection($product_id,$user_id);
@@ -123,8 +132,7 @@ function kasutan_update_selection_for_user() {
 		}
 
 		if($response) {
-			//todo : renvoyer le nombre d'items dans la sélection pour mettre à jour le span dans l'en-tête
-			echo true;
+			echo kasutan_count_selection($user_id);
 			die();
 		} else {
 			error_log('AJAX MY SELECTION user_meta could not be updated');

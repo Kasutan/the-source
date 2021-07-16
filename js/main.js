@@ -222,7 +222,8 @@
 					console.log('success ajax',response);
 					if (response) {
 						$(input).prop('disabled',false);
-						//TODO update span with count in header
+						//update span with count in header
+						$('.selection #count').html(response);
 					} else {
 						console.log('le php a renvoyé une réponse false');
 						$(errorMessage).show();

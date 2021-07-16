@@ -101,9 +101,10 @@ function kasutan_header_right() {
 		}
 
 		$page_selection=kasutan_get_page_ID('selection');
-		//TODO count dynamique (en php au chargement de la page, et en js quand le membre ajoute/supprime un élément de sa sélection)
+		$user_id=get_current_user_id(  );
+		$count=kasutan_count_selection($user_id);
 		if($page_selection) {
-			printf('<a class="selection" href="%s"><span id="count" class="count">11</span><span class="label">Saved items</span></a>',get_page_link($page_selection));
+			printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">Saved items</span></a>',get_page_link($page_selection),$count);
 		}
 
 		
