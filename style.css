@@ -3959,6 +3959,9 @@ li.product {
         li.product .to-selection label {
           font-size: 1.4rem;
           --size:1.4rem; } }
+    li.product .to-selection.my-selection-page label, li.product .to-selection.my-selection-page input:focus + label, li.product .to-selection.my-selection-page input:checked + label {
+      --color:var(--rouge);
+      color: var(--rouge); }
 
 .archive .actualites, .blog .actualites {
   display: -webkit-box;

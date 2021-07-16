@@ -174,6 +174,21 @@ function kasutan_get_cat_siblings($parent_id,$term_id,$taxonomy) {
 	return get_terms($args);
 }
 
+/**
+* Get all 1rst level products categories for a taxonomy
+* @param string $taxonomy
+* @return array $parent_terms // array of Terms
+*/
+function kasutan_get_all_parent_cats($taxonomy) {
+	$parent_terms=array();
+	$terms=get_terms(array('taxonomy'=>$taxonomy));
+	foreach($terms as $term) {
+		if($term->parent === 0) {
+			$parent_terms[]=$term;
+		}
+	}
+	return $parent_terms;
+}
 
 /**
 * Filtre pour une taxonomie
@@ -222,6 +237,9 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 	if($in_selection) {
 		$attr_checked="checked";
 		$class_selected="selected";
+		if($context==="my-selection") {
+			$class_selected.=" my-selection-page";
+		}
 	} else {
 		$attr_checked=$class_selected="";
 	}
@@ -244,7 +262,14 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 						data-user="<?php echo $user_id;?>"
 					><label for="js-to-selection-<?php echo $post_id;?>">
 					<span class="add">Save</span>
-					<span class="remove">Saved</span>
+					<?php 
+						if($context==="my-selection") {
+							echo '<span class="remove">Remove</span>';
+						} else {
+							echo '<span class="remove">Saved</span>';
+						}
+					
+					?>
 					<span class="screen-reader-text"><?php echo get_the_title( $post_id );?> to my selection</span>
 				</label>
 				<p class="error" hidden>There was an error, your selection was not updated. Please try again later or contact us.</p>

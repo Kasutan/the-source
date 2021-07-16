@@ -96,6 +96,12 @@ li.product {
 				--size:1.4rem;
 			}
 		}
+		&.my-selection-page {
+			label, input:focus + label, input:checked + label {
+				--color:var(--rouge);
+				color:var(--rouge);
+			}
+		}
 	}
 	
 }

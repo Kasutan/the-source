@@ -203,6 +203,11 @@
 				action='remove';
 			}
 
+			var isSelectionPage=false;
+			if($(input).parent('formgroup').hasClass('my-selection-page')) {
+				isSelectionPage=true;
+			}
+
 			var errorMessage=$(input).parent('formgroup').find('.error');
 
 			$.ajax({
@@ -224,6 +229,10 @@
 						$(input).prop('disabled',false);
 						//update span with count in header
 						$('.selection #count').html(response);
+						//Hide product on selection page
+						if(isSelectionPage && action==="remove") {
+							$(input).parents('.product').hide();
+						}
 					} else {
 						console.log('le php a renvoyé une réponse false');
 						$(errorMessage).show();
