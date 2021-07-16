@@ -217,7 +217,8 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 * @param string $context
 */
 function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context) {
-	$in_selection=false; //TODO is item already in user's selection ?
+	$in_selection=kasutan_is_product_in_selection($post_id,$user_id); //Is item already in user's selection ?
+
 	if($in_selection) {
 		$attr_checked="checked";
 		$class_selected="selected";
@@ -238,7 +239,7 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 			printf('<a href="%s" class="card-title"><h3>%s</h3></a>',$link,get_the_title( $post_id ));
 			?>
 				<formgroup class="to-selection <?php echo $class_selected;?>">
-				<input type="checkbox" id="js-to-selection-<?php echo $post_id;?>" name="js-to-selection" <?php echo $attr_checked;?> 
+				<input type="checkbox" id="js-to-selection-<?php echo $post_id;?>" name="js-to-selection-<?php echo $post_id;?>" class="js-to-selection" <?php echo $attr_checked;?> 
 						data-product="<?php echo $post_id;?>"
 						data-user="<?php echo $user_id;?>"
 					><label for="js-to-selection-<?php echo $post_id;?>">
@@ -246,6 +247,7 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 					<span class="remove">Saved</span>
 					<span class="screen-reader-text"><?php echo get_the_title( $post_id );?> to my selection</span>
 				</label>
+				<p class="error" hidden>There was an error, your selection was not updated. Please try again later or contact us.</p>
 			</formgroup>
 			<?php
 			

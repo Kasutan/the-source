@@ -41,6 +41,7 @@ include_once( get_template_directory() . '/inc/tinymce.php' );
 include_once( get_template_directory() . '/inc/login-logo.php' );
 include_once( get_template_directory() . '/inc/social-links.php' );
 include_once( get_template_directory() . '/inc/traductions.php' );
+include_once( get_template_directory() . '/inc/my-selection/my-selection.php' );
 
 // Plugin Support
 include_once( get_template_directory() . '/inc/acf.php' );
@@ -192,6 +193,15 @@ function kasutan_scripts() {
 	wp_register_script( 'thesource-list',get_template_directory_uri() . '/lib/list/list.min.js', array('jquery'), '1.5.0', true );
 
 	wp_enqueue_script( 'thesource-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'thesource-owl-carousel','thesource-list'), '', true );
+
+	wp_localize_script(
+		'thesource-scripts',
+		'thesourceVars',
+		array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce('thesource_nonce'),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 

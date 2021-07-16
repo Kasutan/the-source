@@ -188,6 +188,56 @@
 			titreDejaAjoute=true;
 		})
 
+		/****************** Toggle my selection *************************/	
+		$('.js-to-selection').change(function(e){
+			var input=$(this);
+			$(input).prop('disabled',true);
+
+			var selected=$(input).prop('checked');
+			var user=$(input).attr('data-user');
+			var product=$(input).attr('data-product');
+			var action='';
+			if(selected) {
+				action='add';
+			} else {
+				action='remove';
+			}
+
+			var errorMessage=$(input).parent('formgroup').find('.error');
+
+			$.ajax({
+				type: "POST",
+				url: thesourceVars.ajax_url,
+				data: {
+					nonce: thesourceVars.nonce,
+					action: 'kasutan_update_selection_for_user',
+					data: {
+						product: product,
+						user: user,
+						action: action
+					},
+				},
+				success: function(response){
+					//Success
+					console.log('success ajax',response);
+					if (response) {
+						$(input).prop('disabled',false);
+						//TODO update span with count in header
+					} else {
+						console.log('le php a renvoyé une réponse false');
+						$(errorMessage).show();
+					}
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					//Error
+					console.log('erreur ajax',errorThrown);
+					$(errorMessage).show();				
+				},
+				timeout: 60000
+			});
+
+		});
+
 	}); //fin document ready
 })( jQuery );
 

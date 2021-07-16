@@ -18,7 +18,7 @@ if($cat->parent!==0) {
 }
 
 
-$in_selection=false; //TODO is item already in user's selection ?
+$in_selection=kasutan_is_product_in_selection($post_id,$user_id); //Is item already in user's selection ?
 if($in_selection) {
 	$attr_checked="checked";
 	$class_selected="selected";
@@ -95,7 +95,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 
 				?>
 				<formgroup class="to-selection <?php echo $class_selected;?>">
-					<input type="checkbox" id="js-to-selection" name="js-to-selection" <?php echo $attr_checked;?> 
+					<input type="checkbox" id="js-to-selection" name="js-to-selection" class="js-to-selection" <?php echo $attr_checked;?> 
 						data-product="<?php echo $post_id;?>"
 						data-user="<?php echo $user_id;?>"
 					>
@@ -103,6 +103,8 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 						<span class="add">Save this item in my selection</span>
 						<span class="remove">Saved in my selection</span>
 					</label>
+
+					<p class="error" hidden>There was an error, your selection was not updated. Please try again later or contact us.</p>
 				</formgroup>
 
 				<?php if($main_advisor && function_exists('kasutan_display_advisor')) : ?>
