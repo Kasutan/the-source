@@ -29,6 +29,9 @@ class BE_ACF_Customizations {
 		add_filter( 'block_categories', array($this,'kasutan_block_categories'), 10, 2 );
 		add_action('acf/init', array( $this, 'register_blocks' ) );
 
+		//Show custom fields in edit screens
+		add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
 	}
 
 	/**

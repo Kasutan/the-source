@@ -248,6 +248,55 @@
 
 		});
 
+		/****************** Send contact request *************************/	
+		$('.js-send-request').click(function(e){
+			var button=$(this);
+			$(button).prop('disabled',true);
+
+		
+			var user=$(button).attr('data-user');
+			var source=$(button).attr('data-source');
+			var product=$(button).attr('data-product');
+			var mainAdvisor=$(button).attr('data-main-advisor');
+			var backupAdvisor=$(button).attr('data-backup-advisor');
+			
+
+			//var errorMessage=$(button).parent('formgroup').find('.error');
+
+			$.ajax({
+				type: "POST",
+				url: thesourceVars.ajax_url,
+				data: {
+					nonce: thesourceVars.nonce,
+					action: 'kasutan_send_new_contact_request',
+					data: {
+						product: product,
+						user: user,
+						source: source,
+						mainAdvisor: mainAdvisor,
+						backupAdvisor: backupAdvisor
+					},
+				},
+				success: function(response){
+					//Success
+					console.log('success ajax',response);
+					if (response) {
+						$(button).prop('disabled',false);
+					} else {
+						console.log('le php a renvoyé une réponse false');
+						//$(errorMessage).show();
+					}
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					//Error
+					console.log('erreur ajax',errorThrown);
+					//$(errorMessage).show();				
+				},
+				timeout: 60000
+			});
+
+		});
+
 	}); //fin document ready
 })( jQuery );
 

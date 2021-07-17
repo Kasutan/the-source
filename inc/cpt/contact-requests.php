@@ -81,42 +81,113 @@ function kasutan_get_product_of_request($request_id) {
 	return get_post_meta($request_id,'product',true);
 }
 
+/**
+*  Helper get user full name
+*
+* @param int $user_id
+* @return string $name
+*/
+function kasutan_get_user_name($user_id) {
+	$name=get_user_meta( $user_id, 'first_name', true);
+	$name.=' ';
+	$name.=get_user_meta( $user_id, 'last_name', true);
+	return $name;
+}
 
 /**
 *  Create new contact request
 *
-* @param int $product_id
 * @param int $user_id
 * @param int $main_advisor_id
 * @param int $backup_advisor_id
+* @param string $source ('FAQ', 'Product', 'About')
+* @param optionnal int $product_id
 * @return bool
 */
 
-function kasutan_new_contact_request($source,$user_id,$main_advisor_id,$backup_advisor_id) {
-	//TODO la requête peut aussi être envoyée depuis une page statique : $source est $product_id ou faq-page ou about-page
-	//TODO préparer variables
+function kasutan_new_contact_request($user_id,$main_advisor_id,$backup_advisor_id=0,$source,$product_id=0) {
+
+	//Préparer variables pour la création du post et pour l'email
+	$user=get_user_by('id', $user_id );
+	if(!$user) {
+		error_log('NEW CONTACT REQUEST - user id is invalid');
+		return false;
+	}
+
+	$main_advisor_email=get_post_meta($main_advisor_id,'email',true);
+	if(!$main_advisor_email) {
+		error_log('NEW CONTACT REQUEST - no email found for main advisor '.$main_advisor_id);
+		return false;
+	}
+	$main_advisor_page=sprintf('<a href="https://thesourceworldconnections.com/wp-admin/post.php?post=%s&action=edit">Link to main advisor page</a>',$main_advisor_id);
+
+	$data=array(
+		'date' => date('d/m/Y'),
+		'user_name' =>kasutan_get_user_name($user_id),
+		'user_email'=>$user->user_email,
+		'main_advisor_name' => get_the_title($main_advisor_id),
+		'main_advisor_email'=>$main_advisor_email,
+		'main_advisor_page'=>$main_advisor_page,
+		'source' => $source.' page',
+	);
+
+	if($source==="Product") {
+		$product_title=get_the_title($product_id);
+		$product_url=get_the_permalink( $product_id);
+		if(!$product_url || empty($product_title)) {
+			error_log('NEW CONTACT REQUEST - product id is invalid');
+			return false;
+		}
+		$data['product_name']=$product_title;
+		$data['product_url']=sprintf('<a href="%s">Link to product page</a>',$product_url);
+	}
+
+	//Backup advisor is optional
+	$backup_advisor_email=get_post_meta($backup_advisor_id,'email',true);
+	if(!$backup_advisor_email) {
+		error_log('NEW CONTACT REQUEST - no email found for backup advisor '.$backup_advisor_id);
+	} else {
+		$data['backup_advisor_name']=get_the_title($backup_advisor_id);
+		$data['backup_advisor_email']=$backup_advisor_email;
+		$data['backup_advisor_page']=sprintf('<a href="https://thesourceworldconnections.com/wp-admin/post.php?post=%s&action=edit">Link to backup advisor page</a>',$backup_advisor_id);
+	}
+
+	//Préparer titre du post 
+	$request_title=sprintf('Sent by %s to %s from %s',$data['user_name'],$data['main_advisor_name'],$data['source']);
+	if(array_key_exists('product_name',$data)) {
+		$request_title.=' '.$data['product_name'];
+	}
+
+	//Préparer contenu du post et de l'email
 	ob_start();
-	//TODO url produit BO + url du profil advisor dans le BO + url profil backup advisor BO
-	$content=ob_get_clean();
+		echo '<p>Contact request details:</p><ul>';
+		foreach($data as $key=>$value) {
+			printf('<li><strong>%s:</strong> %s</li>',$key, $value);
+		}
+		echo '</ul>';
+	$request_content=ob_get_clean();
+
+	//Création du post
 	$postarr=array(
 		'post_author' => $user_id,
 		'post_type' => 'contact_requests',
-		'post_title' => 'Sent by '.$user_name.' to '.$advisor_name.' about '.$product_name,
-		'post_excerpt' => $content
+		'post_title' => $request_title,
+		'post_content' => $request_content,
+		'post_status' => 'publish'
 	);
 	$new_post_id=wp_insert_post($postarr);
 	if($new_post_id) {
-		update_post_meta($new_post_id,'product',$product_id);
+		update_post_meta($new_post_id,'source',$source);
 		update_post_meta($new_post_id,'main_advisor',$main_advisor_id);
-		update_post_meta($new_post_id,'backup_advisor',$backup_advisor_id);
-		update_post_meta($new_post_id,'main_advisor_email',$main_advisor_email);
-		update_post_meta($new_post_id,'backup_advisor_email',$backup_advisor_email);
+		if($product_id) update_post_meta($new_post_id,'product',$product_id);
+		if($backup_advisor_id) update_post_meta($new_post_id,'backup_advisor',$backup_advisor_id);
 	}
 
 	//TODO send emails 
 
+	return $new_post_id;
 	/*Check*/
-	return kasutan_is_product_in_requests($product_id,$user_id);
+	//return kasutan_is_product_in_requests($product_id,$user_id);
 }
 
 
@@ -132,31 +203,16 @@ function kasutan_send_new_contact_request() {
 	}
 	$user_id = sanitize_text_field($_POST['data']['user']);
 	$source = sanitize_text_field($_POST['data']['source']);
+	$product_id = sanitize_text_field($_POST['data']['product']);
 	$main_advisor_id = sanitize_text_field($_POST['data']['mainAdvisor']);
 	$backup_advisor_id = sanitize_text_field($_POST['data']['backupAdvisor']);
 
 	try {
 
-		$user=get_user_by( 'ID', $user_id);
-		if(!$user) {
-			error_log('AJAX CONTACT REQUEST invalid user_id');
-			echo false;
-			die();
-		}
-
-		$response=false;
-		//TODO verification source cohérente avec product_id, advisors existent bien
-		if($verifications) {
-			$response = kasutan_new_contact_request($source,$user_id,$main_advisor_id,$backup_advisor_id);
-		} else {
-			error_log('AJAX CONTACT REQUEST  invalid action');
-			echo false;
-			die();
-		}
-
-
+		$response = kasutan_new_contact_request($user_id,$main_advisor_id,$backup_advisor_id,$source,$product_id);
+		
 		if($response) {
-			echo $main_advisor_name; // TODO préparer contenu popup
+			echo true; 
 			die();
 		} else {
 			error_log('AJAX CONTACT REQUEST  contact request could not be sent');
@@ -170,3 +226,9 @@ function kasutan_send_new_contact_request() {
 		die();
 	}
 }
+
+
+
+/**************************************************************************
+* 					TODO Prepare popup (including success/failure message)
+***************************************************************************/

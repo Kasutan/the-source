@@ -321,7 +321,7 @@ function kasutan_contact_requests_post_type() {
 		'label'                 => __( 'Contact requests', 'the-source' ),
 		'description'           => __( 'Contact requests', 'the-source' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'custom-fields', 'author' ),
+		'supports'              => array( 'title', 'revisions', 'custom-fields', 'author', 'editor' ),
 		'hierarchical'          => false,
 		'public'                => false,
 		'show_ui'               => true,
