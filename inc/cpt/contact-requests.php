@@ -183,7 +183,17 @@ function kasutan_new_contact_request($user_id,$main_advisor_id,$backup_advisor_i
 		if($backup_advisor_id) update_post_meta($new_post_id,'backup_advisor',$backup_advisor_id);
 	}
 
-	//TODO send emails 
+	//Send emails 
+	$to = $data['main_advisor_email'];
+	$subject = 'New contact request: '.$request_title;
+	$body = $request_content;
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+ 
+	wp_mail( $to, $subject, $body, $headers );
+	if($backup_advisor_email) {
+		$to=$backup_advisor_email;
+		wp_mail( $to, $subject, $body, $headers );
+	}
 
 	return $new_post_id;
 	/*Check*/
