@@ -1228,6 +1228,11 @@ h4,
       content: '•';
       display: inline-block;
       padding: 0 0.5ch; }
+  h2.has-cyan-color,
+  h3.has-cyan-color,
+  h4.has-cyan-color,
+  .h2.has-cyan-color, .h3.has-cyan-color, .h4.has-cyan-color {
+    color: var(--cyan); }
 
 h2, .h2 {
   font-size: 5rem; }
@@ -5174,13 +5179,13 @@ h1.product-title {
   display: -ms-flexbox;
   display: flex; }
   .advisor .portrait {
-    border-radius: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     height: var(--size);
     width: var(--size); }
     .advisor .portrait img {
+      border-radius: 100%;
       -o-object-fit: cover;
       object-fit: cover;
       -o-object-position: center;

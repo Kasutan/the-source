@@ -14,8 +14,18 @@
 *
 */
 function ea_entry_title() {
+	$class='';
+	$subtitle='';
+	if(kasutan_is_account_page()) {
+		$class='has-cyan-color';
+	} elseif(kasutan_is_account_child_page()) {
+		$class='has-cyan-color no-dots';
+		$subtitle='<div class="h3 dots has-cyan-color">My account</div>';
+	}
+
 	if(!is_front_page()) {
-		echo '<h1 class="entry-title">' . get_the_title() . '</h1>';
+		echo $subtitle;
+		printf('<h1 class="entry-title %s">%s</h1>',$class, get_the_title());
 	}
 }
 add_action( 'tha_entry_top', 'ea_entry_title' );

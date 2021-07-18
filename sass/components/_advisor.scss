@@ -4,11 +4,11 @@
 	display: flex;
 
 	.portrait {
-		border-radius: 100%;
 		display: flex;
 		height:var(--size);
 		width:var(--size);
 		img {
+			border-radius: 100%;
 			object-fit:cover;
 			object-position: center;
 		}
