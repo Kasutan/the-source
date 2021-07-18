@@ -192,7 +192,9 @@ function kasutan_scripts() {
 
 	wp_register_script( 'thesource-list',get_template_directory_uri() . '/lib/list/list.min.js', array('jquery'), '1.5.0', true );
 
-	wp_enqueue_script( 'thesource-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'thesource-owl-carousel','thesource-list'), '', true );
+	wp_register_script( 'thesource-modaal',get_template_directory_uri() . '/lib/modaal/modaal.min.js', array('jquery'), '0.4.4', true );
+
+	wp_enqueue_script( 'thesource-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'thesource-owl-carousel','thesource-list','thesource-modaal'), '', true );
 
 	wp_localize_script(
 		'thesource-scripts',

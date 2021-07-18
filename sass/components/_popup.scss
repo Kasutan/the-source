@@ -1,0 +1,90 @@
+.popup {
+	display: none;
+}
+//Cacher le bouton de fermeture natif de Modaal
+#modaal-close {
+	display: none;
+}
+.modaal-wrapper {
+	position: fixed;
+	.popup-close.picto {
+		line-height: 0;
+		padding: 0;
+		position: absolute;
+		right:1.2rem;
+		top:1.2rem;
+	}
+	.popup-success, .popup-failure {
+		display: none;
+	}
+	.modaal-outer-wrapper {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	.modaal-inner-wrapper {
+		display: block;
+		height: auto;
+		margin: 0 var(--padding-x);
+		max-width: 44rem;
+		padding: 0;
+		&.failure {
+			max-width: 54rem;
+		}
+	}
+	.modaal-content-container {
+		padding:0;
+		padding-bottom: 2.5rem;
+	}
+
+	.popup-header {
+		background-image: url("icons/header-fond.svg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		margin-bottom: 1em;
+	}
+
+	p {
+		color:var(--bleu);
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 0;
+		padding: 3.6rem 1rem;
+		text-align:center;
+		.cyan {
+			color:var(--cyan);
+		}
+	}
+
+	.popup-actions {
+		align-items:center;
+		display: flex;
+		justify-content: center;
+		button {
+			background-color: #fff;
+			border-color:var(--bleu);
+			color:var(--bleu);
+			&.cyan {
+				border-color:var(--cyan);
+				color:var(--cyan);
+				margin-right: 5rem;
+				&:disabled {
+					opacity:0.5;
+				}
+			}
+			&.rouge {
+				border-color:var(--rouge);
+				color:var(--rouge);
+			}
+		}
+		
+	}
+
+	button {
+		border-width:2px;
+		font-size: 1.9rem;
+		font-weight: 700;
+		padding:1rem 3rem;
+	}
+}

@@ -112,16 +112,12 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 					<legend>Interested? Let's talk about it</legend>
 					<?php 
 						kasutan_display_advisor($main_advisor,'product'); 
-						//TODO display popup - move send request button to popup
 					?>
 					<p class="info send">Send a Contact Request and I will get in touch with you asap.</p>
-					<button class="send js-send-request" 
-						data-main-advisor="<?php echo $main_advisor;?>"
-						data-backup-advisor="<?php echo $backup_advisor;?>"
-						data-product="<?php echo $post_id;?>"
-						data-user="<?php echo $user_id;?>"
-						data-source="Product"
+					<button class="send js-popup-open" 
 					>Send <strong> a contact request</strong></button>
+					
+					<?php  kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,'Product',$post_id);?>
 
 					<button class="sent cyan" disabled><span class="check"></span><strong>Contact request sent</strong></button>
 					<p class="info sent">Your Contact Request is being treated by our services.</p>

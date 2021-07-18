@@ -2,23 +2,25 @@
 	Modaal - accessible modals - v0.4.4
 	by Humaan, for all humans.
 	http://humaan.com
- */
+*/
 
-// Modaal Variables 
+// Modaal Variables
 // --------------------------------------------------------
 
-$modaal-radius: 0; //5px
+$modaal-overlay-color: rgba(0,0,0, 0.8);
+
+$modaal-radius: 0px; //5px
 $modaal-main-bg: #fff;
-$modaal-main-text: var(--noir-texte);
-$modaal-max-width: 900px;
+$modaal-main-text: #000;
+$modaal-max-width: 1000px;
 $modaal-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 $modaal-padding: 30px;
 $modaal-hover-color: rgba(0,0,0, 0.7);
-$modaal-close-hover-color: var(--bleu);
+$modaal-close-hover-color: #b93d0c;
 
 $modaal-light: #fff;
 $modaal-primary: #555;
-$modaal-grey: #a9a9a9;
+$modaal-grey: #afb7bc;
 
 
 // Modaal Mixins
@@ -48,8 +50,6 @@ $modaal-grey: #a9a9a9;
 }
 
 .modaal-overlay {
-	background-color:var(--noir) !important;
-	opacity: 0.8 !important;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -78,6 +78,9 @@ $modaal-grey: #a9a9a9;
 		-webkit-backface-visibility: hidden;
 	}
 	.modaal-close {
+		border: none;
+		background: transparent;
+		padding: 0;
 		-webkit-appearance: none;
 	}
 
@@ -123,7 +126,7 @@ $modaal-grey: #a9a9a9;
 		vertical-align: top;
 	}
 }
-.modaal-container, .modaal-video-container {
+.modaal-container {
 	position: relative;
 	display: inline-block;
 	width: 100%;
@@ -150,78 +153,390 @@ $modaal-grey: #a9a9a9;
 	}
 }
 
-button.modaal-close {
-	position: absolute;
-	left: calc(50% - 20px);
-	top: -50px;
-	background-color:#fff;
-	border:none;
-	color: var(--cyan);
+.modaal-close {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	color: $modaal-light;
 	cursor: pointer;
 	opacity: 1;
-	width: 40px;
-	height: 40px;
-	padding:10px;
+	width: 50px;
+	height: 50px;
+	background: rgba(0,0,0, 0);
 	border-radius: 100%;
-	transition:none;
-	
+	@include modaal-transition(all);
+	&:focus,
+	&:hover {
+		outline: none;
+		background: #fff;
+		&:before,
+		&:after { background: $modaal-close-hover-color; }
+	}
 	span {
-		background-image: url('icons/croix.svg');
-		background-size: contain;
-		background-repeat: no-repeat;
-		color:transparent;	
+		@include modaal-hidetext;
+	}
+	&:before,
+	&:after {
 		display: block;
-		height:20px;
-		overflow: hidden;
-		width:20px;
+		content: " ";
+		position: absolute;
+		top: 14px;
+		left: 23px;
+		width: 4px;
+		height: 22px;
+		border-radius: 4px;
+		background: #fff;
+		@include modaal-transition(background);
 	}
-
-	@include bp(md) {
-		left:unset;
-		right: -10px;
-		top: -10px;
-		width: 70px;
-		height: 70px;
-		padding:16px;
-
-		span {
-			height:38px;
-			width:38px;
-		}
+	&:before {
+		transform: rotate(-45deg);
 	}
-	
-}
-/*Style pour les popups vidéos*/
-.modaal-video-container {
-	background:transparent;
-}
-.modaal-video-frame {
-	height:500px;
-	max-height:56vw;
-	width: 100%;
-}
-.modaal-video {
-	button.modaal-close {
-		background-color: transparent;
-		left:unset;
+	&:after {
+		transform: rotate(45deg);
+	}
+	.modaal-fullscreen & {
+		background: $modaal-grey;
 		right: 10px;
 		top: 10px;
 	}
-	@include bp(lg) {
-		.modaal-inner-wrapper {
-			display: block;
-			width: unset;
-			max-width: 800px;
-			margin: auto;
+}
+
+.modaal-content-container {
+	padding: $modaal-padding;
+}
+
+
+// Confirm Modaal
+// --------------------------------------------------------
+
+.modaal-confirm-wrap {
+	padding: 30px 0 0;
+	text-align: center;
+	font-size: 0;
+}
+.modaal-confirm-btn {
+	font-size: 14px;
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+
+	// Ok Button
+	&.modaal-ok {
+		padding: 10px 15px;
+		color: $modaal-light;
+		background: $modaal-primary;
+		border-radius: 3px;
+		@include modaal-transition(background);
+		&:hover {
+			background: darken($modaal-primary, 15%);
 		}
-		button.modaal-close {
-			right:-30px;
+	}
+	&.modaal-cancel {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			color: darken($modaal-primary, 15%);
 		}
-		
 	}
 }
 
 
+
+@keyframes instaReveal {
+	0%	{ opacity: 0; }
+	100% { opacity: 1; }
+}
+@-o-keyframes instaReveal {
+	0%	{ opacity: 0; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes instaReveal {
+	0%	{ opacity: 0; }
+	100% { opacity: 1; }
+}
+@-webkit-keyframes instaReveal {
+	0%	{ opacity: 0; }
+	100% { opacity: 1; }
+}
+@-ms-keyframes instaReveal {
+	0%	{ opacity: 0; }
+	100% { opacity: 1; }
+}
+
+// Instagram Photo
+// --------------------------------------------------------
+
+.modaal-instagram {
+	.modaal-container {
+		width: auto;
+		background: transparent;
+		box-shadow: none !important;
+	}
+	.modaal-content-container {
+		padding: 0;
+		background: transparent;
+	}
+	.modaal-content-container > blockquote {
+		width: 1px !important;
+		height: 1px !important;
+		opacity: 0 !important;
+	}
+	iframe {
+		opacity: 0;
+		margin: -6px !important;
+		border-radius: 0 !important;
+		width: 1000px !important;
+		max-width: 800px !important;
+		box-shadow: none !important;
+
+		animation: instaReveal 1s linear forwards;
+	}
+}
+
+
+
+// Gallery
+// --------------------------------------------------------
+.modaal-image {
+	.modaal-inner-wrapper {
+		padding-left: 140px;
+		padding-right: 140px;
+	}
+	.modaal-container {
+		width: auto;
+		max-width: 100%;
+	}
+}
+
+.modaal-gallery-wrap {
+	position: relative;
+	color: $modaal-light;
+}
+.modaal-gallery-item {
+	display: none;
+	img {
+		display: block;
+		//width: 100%;
+	}
+	&.is_active {
+		display: block;
+	}
+}
+.modaal-gallery-label {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	margin: 20px 0 0;
+	font-size: 18px;
+	text-align: center;
+	color: #fff;
+	&:focus {
+	outline: none;
+	}
+}
+.modaal-gallery-control {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 1;
+	cursor: pointer;
+	color: $modaal-light;
+	width: 50px;
+	height: 50px;
+	background: rgba(0,0,0, 0);
+	border: none;
+	border-radius: 100%;
+	@include modaal-transition(all);
+	&.is_hidden {
+		opacity: 0;
+		cursor: default;
+	}
+	&:focus,
+	&:hover {
+		outline: none;
+		background: #fff;
+		&:before,
+		&:after {
+			background: $modaal-grey;
+		}
+	}
+	span {
+		@include modaal-hidetext;
+	}
+
+	&:before,
+	&:after {
+		display: block;
+		content: " ";
+		position: absolute;
+		top: 16px;
+		left: 25px;
+		width: 4px;
+		height: 18px;
+		border-radius: 4px;
+		background: #fff;
+		@include modaal-transition(background);
+	}
+	&:before {
+		margin: -5px 0 0;
+		transform: rotate(-45deg);
+	}
+	&:after {
+		margin: 5px 0 0;
+		transform: rotate(45deg);
+	}
+}
+.modaal-gallery-next {
+	&-inner {
+		left: 100%;
+		margin-left: 40px;
+	}
+	&-outer {
+		right: 45px;
+	}
+}
+.modaal-gallery-prev {
+	&:before,
+	&:after { left: 22px; }
+	&:before {
+		margin: 5px 0 0;
+		transform: rotate(-45deg);
+	}
+	&:after {
+		margin: -5px 0 0;
+		transform: rotate(45deg);
+	}
+
+	&-inner {
+		right: 100%;
+		margin-right: 40px;
+	}
+	&-outer {
+		left: 45px;
+	}
+}
+
+
+// Video
+// --------------------------------------------------------
+.modaal-video-wrap {
+	margin: auto 50px;
+	position: relative;
+}
+
+.modaal-video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+	background: #000;
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// Modaal iFrame
+// --------------------------------------------------------
+.modaal-iframe .modaal-content {
+	width: 100%;
+	height: 100%;
+}
+.modaal-iframe-elem {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+// Responsive styles
+// --------------------------------------------------------
+@media only screen and (min-width: 1400px) {
+	.modaal-video-container {
+		padding-bottom: 0;
+		height: 731px;
+	}
+}
+
+@media only screen and (max-width: 1140px) {
+	.modaal-image {
+		.modaal-inner-wrapper {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+	.modaal-gallery-control {
+		top: auto;
+		bottom: 20px;
+		transform: none;
+		background: rgba(0,0,0, 0.7);;
+		&:before,
+		&:after {
+			background: #fff;
+		}
+	}
+	.modaal-gallery-next {
+		left: auto;
+		right: 20px;
+	}
+	.modaal-gallery-prev {
+		left: 20px;
+		right: auto;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.modaal-instagram iframe {
+		width: 500px !important;
+	}
+}
+@media screen and (max-height: 1100px) {
+	.modaal-instagram iframe {
+		width: 700px !important;
+	}
+}
+@media screen and (max-height: 1000px) {
+	.modaal-inner-wrapper {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	.modaal-instagram iframe {
+		width: 600px !important;
+	}
+}
+@media screen and (max-height: 900px) {
+	.modaal-instagram iframe {
+		width: 500px !important;
+	}
+	.modaal-video-container {
+		max-width: 900px;
+		max-height: 510px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.modaal-instagram iframe {
+		width: 280px !important;
+	}
+}
+@media only screen and (max-height: 820px) {
+	.modaal-gallery-label {
+		display: none;
+	}
+}
 
 
 

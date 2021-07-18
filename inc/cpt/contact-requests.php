@@ -230,5 +230,71 @@ function kasutan_send_new_contact_request() {
 
 
 /**************************************************************************
-* 					TODO Prepare popup (including success/failure message)
+* 					Prepare popup (including success/failure message)
 ***************************************************************************/
+function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$source,$product_id=0) {
+	$advisor_name=get_the_title($main_advisor);
+	
+	if($source==='Product') {
+		$send_message="You are about to send <br>a contact request <br>for this item";
+	} else {
+		$send_message="You are about to send <br>a contact request <br>to ".$advisor_name;
+	}
+
+	$email='';
+	if(function_exists('get_field')) {
+		$email=sanitize_email(get_field('zs_general_email','option'));
+	}
+	if(empty($email)) {
+		$email='team@thesourceworldconnections.com';
+	}
+	
+	$email=antispambot($email);
+
+
+	//always display close button
+	echo '<div id="popup-contact" class="popup">';
+		printf('<button class="popup-close picto">%s<span class="screen-reader-text">Close ppopup</span></button>',kasutan_picto(array('icon'=>'close-popup','size'=>false)));
+
+		//Message and action to send request
+		echo '<div class="popup-send">';
+			echo '<div class="popup-header">';
+				printf('<p>%s</p>',$send_message);
+			echo '</div>';
+			echo '<div class="popup-actions">';
+				?>
+				<button class="send js-send-request cyan" 
+					data-main-advisor="<?php echo $main_advisor;?>"
+					data-backup-advisor="<?php echo $backup_advisor;?>"
+					data-product="<?php echo $product_id;?>"
+					data-user="<?php echo $user_id;?>"
+					data-source="<?php echo $source;?>"
+				>Confirm</button>
+
+				<button class="popup-close rouge">Cancel</button>
+				<?php
+			echo '</div>';
+
+		echo '</div>';
+
+		//Message on success
+		?>
+		<div class="popup-success">
+			<p>Thank you, <br>your contact request is on its way.<br>
+			<span class="cyan"><?php echo $advisor_name;?></span><br>
+			will contact you soon!</p>
+			<div class="popup-actions"><button class="popup-close">Close</button></div>
+		</div>
+		<?php
+
+		//Message on failure
+		?>
+		<div class="popup-failure">
+			<p>Sorry, <br>something went wrong with this contact request.<br>
+			<span class="cyan">Please send us an email<br><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+			<div class="popup-actions"><button class="popup-close">Close</button></div>
+		</div>
+		<?php
+
+	echo '</div>';
+}

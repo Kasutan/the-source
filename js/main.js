@@ -248,6 +248,16 @@
 
 		});
 
+		/****************** Open/close contact request popup *************************/	
+		$('.js-popup-open').modaal({
+			content_source: '#popup-contact',
+			background : '#173a65',
+
+		});
+		$('.popup-close').click(function(e) {
+			$('#modaal-close').click();
+		})
+
 		/****************** Send contact request *************************/	
 		$('.js-send-request').click(function(e){
 			var button=$(this);
@@ -261,7 +271,10 @@
 			var backupAdvisor=$(button).attr('data-backup-advisor');
 			
 
-			//var errorMessage=$(button).parent('formgroup').find('.error');
+			var failureMessage=$('.popup-failure');
+			var successMessage=$('.popup-success');
+			var sendMessage=$('.popup-send');
+			var mainPageFormgroup=$('formgroup.contact-request');
 
 			$.ajax({
 				type: "POST",
@@ -281,10 +294,14 @@
 					//Success
 					console.log('success ajax',response);
 					if (response) {
-						$(button).prop('disabled',false);
+						$(sendMessage).hide();
+						$(successMessage).show();
+						$(mainPageFormgroup).addClass('request-sent');
 					} else {
 						console.log('le php a renvoyé une réponse false');
-						//$(errorMessage).show();
+						$(sendMessage).hide();
+						$(failureMessage).show();
+						$('.modaal-inner-wrapper').addClass('failure');
 					}
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown){
