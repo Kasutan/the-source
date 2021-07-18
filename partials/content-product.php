@@ -26,8 +26,7 @@ if($in_selection) {
 	$attr_checked=$class_selected="";
 }
 
-$request_sent=false; //TODO has the user already sent a request for this item (less than 6 month ago) ?
-//$request_sent=true;
+$request_sent=kasutan_is_product_in_requests($post_id,$user_id); //Is there an active request for this product from this user ?
 if($request_sent) {
 	$class_sent="request-sent";
 } else {

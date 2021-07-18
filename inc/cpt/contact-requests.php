@@ -64,10 +64,22 @@ function kasutan_is_product_in_requests($product_id,$user_id) {
 * @return bool
 */
 function kasutan_is_request_active($request_id) {
-	$response=false;
-	//TODO check date
-	//if $response===false, move request to bin
-	return $response;
+	$request_creation_date=get_the_date('Ymd',$request_id);
+	$request_expiration_date=date('Ymd',strtotime($request_creation_date.' + 6 months'));
+	$today=date('Ymd');
+
+	if($today <= $request_expiration_date) {
+		return true;
+	} else {
+		//Mettre la requête à la corbeille
+		$updated_request = array(
+			'ID'           => $request_id,
+			'post_status'   => 'trash',
+		);
+		wp_update_post($updated_request);
+		return false;
+	}
+
 }
 
 
@@ -195,9 +207,8 @@ function kasutan_new_contact_request($user_id,$main_advisor_id,$backup_advisor_i
 		wp_mail( $to, $subject, $body, $headers );
 	}
 
-	return $new_post_id;
 	/*Check*/
-	//return kasutan_is_product_in_requests($product_id,$user_id);
+	return kasutan_is_product_in_requests($product_id,$user_id);
 }
 
 
