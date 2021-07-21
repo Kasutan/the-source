@@ -169,19 +169,19 @@ function kasutan_fil_ariane() {
 
 	//Afficher le titre de la page courante
 	if(is_page()) : 
-		//Afficher le titre de la page parente s'il y en a une
+		//Afficher le titre et le lien vers la page parente s'il y en a une
 		$current=get_post(get_the_ID());
 		$parent=$current->post_parent; 
 		if($parent) :
-			printf('<span class="current">%s : %s</span>',
-				strip_tags(get_the_title($parent)),
-				strip_tags(get_the_title())
-			);
-		else :
-			printf('<span class="current">%s</span>',
-				strip_tags(get_the_title())
+			printf('<a href="%s">%s</a> > ',
+				get_page_link( $parent),
+				strip_tags(get_the_title($parent))
 			);
 		endif;
+		//titre de la page
+		printf('<span class="current">%s</span>',
+		strip_tags(get_the_title())
+	);
 	elseif(is_single()): //single articles ou ressources
 		printf('<span class="current">%s</span>',
 			strip_tags(get_the_title())
