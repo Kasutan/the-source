@@ -5,6 +5,9 @@ function kasutan_is_premium_member() {
 	if(function_exists('pmpro_hasMembershipLevel') && pmpro_hasMembershipLevel('Premium')) {
 		return true;
 	}
+	if(user_can(wp_get_current_user(  ),'edit_others_posts')){
+		return true;
+	}
 	return false;
 }
 
