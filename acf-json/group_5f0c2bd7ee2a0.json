@@ -67,10 +67,10 @@
         },
         {
             "key": "field_60f40c528da03",
-            "label": "Accounts summary page",
+            "label": "My account main page",
             "name": "zs_page_my_account",
             "type": "post_object",
-            "instructions": "Used for...",
+            "instructions": "The entry page to My account area",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -277,5 +277,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626606697
+    "modified": 1626874465
 }

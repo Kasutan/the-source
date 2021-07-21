@@ -1,0 +1,43 @@
+ul.menu-my-account-links {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 1.6rem;
+	list-style: none;
+	margin: 0 auto var(--margin-y-2);
+	max-width: 31rem;
+	padding: 0;
+
+	a {
+		align-items: center;
+		background-color: var(--bleu-clair);
+		color: var(--bleu);
+		display: flex;
+		font-size: 2.2rem;
+		font-weight: 700;
+		height: 19rem;
+		justify-content: center;
+		padding: 3rem 5rem;
+		text-align: center;
+		transition:color var(--transition);
+		width: 100%;
+
+		&:hover,
+		&:focus {
+			color: var(--cyan);
+			text-decoration: none;
+		}
+	}
+
+
+	@include bp(md) {
+		column-gap: 1.6rem;
+		grid-template-columns: 1fr 1fr;
+		max-width:unset;
+	}
+
+	@include bp(lg) {
+		column-gap: 1.6rem;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+}

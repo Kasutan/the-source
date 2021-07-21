@@ -80,7 +80,8 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 			'the-source' => 'The Source links',
 			'my-account' => 'My account desktop',
 			'my-account-mobile' => 'My account mobile',
-			'footer-legal' => 'Legal links in footer'
+			'footer-legal' => 'Legal links in footer',
+			'my-account-links' => 'Links shown on My account main page'
 		) );
 
 		//Autoriser les shortcodes dans les widgets
