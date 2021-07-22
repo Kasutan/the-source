@@ -21,3 +21,15 @@ function kasutan_my_account_links() {
 		}
 	return ob_get_clean();
 }
+
+add_shortcode( 'change-password', 'kasutan_change_password');
+function kasutan_change_password() {
+	ob_start();
+	if(function_exists('pmpro_change_password_form')) {
+		echo '<div class="change-password">';
+		echo '<h2 class="custom">My password</h2>';
+		pmpro_change_password_form();
+		echo '</div>';
+	}
+	return ob_get_clean();
+}

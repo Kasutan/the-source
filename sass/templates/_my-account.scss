@@ -99,3 +99,110 @@ ul.menu-my-account-links, .email-preferences {
 		}
 	}
 }
+
+/**********************Formulaires de la page Personal information*********************/ 
+.pmpro_member_profile_edit_wrap form.pmpro_form {
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	select {
+		max-width:unset;
+		width:100%;
+	}
+	label {
+		font-size: 2rem;
+		font-weight: 300;
+		margin-bottom: 0.7rem;
+	}
+
+	select {
+		height:5rem;
+		font-weight: 700;
+	}
+	.pmpro_submit {
+		text-align: center;
+	}
+	input[type="submit"] {
+		font-size: 2.2rem;
+		padding:0.5rem 3rem;
+	}
+	.display_name,
+	.pmpro_submit hr,
+	.pmpro_btn-cancel {
+		display: none;
+
+	}
+
+	@include bp(md) {
+		.pmpro_member_profile_edit-fields {
+			display: flex;
+			flex-wrap:wrap;
+		}
+		.pmpro_member_profile_edit-field, .pmpro_checkout-field {
+			flex-basis:50%;
+			padding-right:1.6rem;
+		}
+		#pmpro_baddress1_div {
+			flex-basis:100%;
+		}
+	}
+	@include bp(lg) {
+		.pmpro_member_profile_edit-field, .pmpro_checkout-field {
+			flex-basis:33%;
+		}
+	}
+}
+
+
+.change-password {
+	border-top:solid 1px var(--bleu);
+	margin-top: var(--margin-y-2);
+	padding-top: var(--margin-y-2);
+	
+	h2:not(.custom) {
+		display: none;
+	}
+
+	.pmpro_change_password-fields {
+		input[type="password"],
+		select {
+			width:100%;
+		}
+		label {
+			font-size: 2rem;
+			font-weight: 300;
+			margin-bottom: 0.7rem;
+		}
+
+		.pmpro_change_password-field-pass1 #pass-strength-result {
+			display: none;
+		}
+		.lite {
+			font-size: 1.6rem;
+		}
+
+	}
+	.pmpro_submit {
+		text-align: center;
+		hr,.pmpro_btn-cancel  {
+			display: none;
+		}
+	}
+	input[type="submit"] {
+		font-size: 2.2rem;
+		padding:0.5rem 3rem;
+	}
+
+	@include bp(md) {
+		.pmpro_change_password_wrap {
+			max-width:50%;
+			padding-right:1.6rem;
+		}
+		
+	}
+
+}
+
+#pmpro_account {
+	display: none;
+}

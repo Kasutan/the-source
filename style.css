@@ -2263,8 +2263,9 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: var(--bleu);
-  border: 1px solid var(--bordure);
+  border: 1px solid var(--bleu);
   border-radius: 0;
+  font-size: 2rem;
   font-weight: 700;
   outline-color: var(--bleu);
   min-height: 5rem;
@@ -2285,8 +2286,9 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    border-color: var(--bleu);
-    color: var(--bleu); }
+    border-color: var(--cyan);
+    color: var(--cyan);
+    outline: none; }
   input[type="text"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
   input[type="url"]::-webkit-input-placeholder,
@@ -2369,7 +2371,7 @@ textarea {
     opacity: 1; }
 
 select {
-  border: 1px solid var(--bordure); }
+  border: 1px solid var(--bleu); }
 
 textarea {
   width: 100%; }
@@ -2378,43 +2380,43 @@ textarea {
   input[type='checkbox'] {
     -webkit-appearance: none;
     -moz-appearance: none; }
-  label {
-    --size:1.4rem;
-    --color:var(--bleu);
-    color: var(--color); }
-    label::before, label::after {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border: solid 1px var(--color);
-      border-radius: 100%;
-      content: 'l';
-      color: transparent;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      font-size: 120%;
-      height: var(--size);
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-right: 0.5ch;
-      padding-bottom: 1px;
-      position: relative;
-      text-align: center;
-      top: 1px;
-      width: var(--size); }
-    label::after {
-      display: none;
-      margin-left: 0.5ch;
-      margin-right: 0; }
-  input:focus + label {
-    color: var(--cyan); }
-  input:checked + label {
-    --color:var(--cyan); }
-    input:checked + label::before, input:checked + label::after {
-      color: var(--color);
-      content: '•'; } }
+    input[type='checkbox'] + label {
+      --size:1.4rem;
+      --color:var(--bleu);
+      color: var(--color); }
+      input[type='checkbox'] + label::before, input[type='checkbox'] + label::after {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: solid 1px var(--color);
+        border-radius: 100%;
+        content: 'l';
+        color: transparent;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        font-size: 120%;
+        height: var(--size);
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-right: 0.5ch;
+        padding-bottom: 1px;
+        position: relative;
+        text-align: center;
+        top: 1px;
+        width: var(--size); }
+      input[type='checkbox'] + label::after {
+        display: none;
+        margin-left: 0.5ch;
+        margin-right: 0; }
+    input[type='checkbox']:focus + label {
+      color: var(--cyan); }
+    input[type='checkbox']:checked + label {
+      --color:var(--cyan); }
+      input[type='checkbox']:checked + label::before, input[type='checkbox']:checked + label::after {
+        color: var(--color);
+        content: '•'; } }
 
 /*--------------------------------------------------------------
 ## Search form
@@ -4318,6 +4320,87 @@ ul.menu-my-account-links, .email-preferences {
     display: none; }
   .email-preferences button:disabled {
     opacity: 0.5; }
+
+/**********************Formulaires de la page Personal information*********************/
+.pmpro_member_profile_edit_wrap form.pmpro_form input[type="text"],
+.pmpro_member_profile_edit_wrap form.pmpro_form input[type="email"],
+.pmpro_member_profile_edit_wrap form.pmpro_form input[type="password"],
+.pmpro_member_profile_edit_wrap form.pmpro_form select {
+  max-width: unset;
+  width: 100%; }
+
+.pmpro_member_profile_edit_wrap form.pmpro_form label {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0.7rem; }
+
+.pmpro_member_profile_edit_wrap form.pmpro_form select {
+  height: 5rem;
+  font-weight: 700; }
+
+.pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_submit {
+  text-align: center; }
+
+.pmpro_member_profile_edit_wrap form.pmpro_form input[type="submit"] {
+  font-size: 2.2rem;
+  padding: 0.5rem 3rem; }
+
+.pmpro_member_profile_edit_wrap form.pmpro_form .display_name,
+.pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_submit hr,
+.pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_btn-cancel {
+  display: none; }
+
+@media (min-width: 768px) {
+  .pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_member_profile_edit-fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_member_profile_edit-field, .pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_checkout-field {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    padding-right: 1.6rem; }
+  .pmpro_member_profile_edit_wrap form.pmpro_form #pmpro_baddress1_div {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; } }
+
+@media (min-width: 1024px) {
+  .pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_member_profile_edit-field, .pmpro_member_profile_edit_wrap form.pmpro_form .pmpro_checkout-field {
+    -ms-flex-preferred-size: 33%;
+    flex-basis: 33%; } }
+
+.change-password {
+  border-top: solid 1px var(--bleu);
+  margin-top: var(--margin-y-2);
+  padding-top: var(--margin-y-2); }
+  .change-password h2:not(.custom) {
+    display: none; }
+  .change-password .pmpro_change_password-fields input[type="password"],
+  .change-password .pmpro_change_password-fields select {
+    width: 100%; }
+  .change-password .pmpro_change_password-fields label {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0.7rem; }
+  .change-password .pmpro_change_password-fields .pmpro_change_password-field-pass1 #pass-strength-result {
+    display: none; }
+  .change-password .pmpro_change_password-fields .lite {
+    font-size: 1.6rem; }
+  .change-password .pmpro_submit {
+    text-align: center; }
+    .change-password .pmpro_submit hr, .change-password .pmpro_submit .pmpro_btn-cancel {
+      display: none; }
+  .change-password input[type="submit"] {
+    font-size: 2.2rem;
+    padding: 0.5rem 3rem; }
+  @media (min-width: 768px) {
+    .change-password .pmpro_change_password_wrap {
+      max-width: 50%;
+      padding-right: 1.6rem; } }
+
+#pmpro_account {
+  display: none; }
 
 .archive .actualites, .blog .actualites {
   display: -webkit-box;

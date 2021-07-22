@@ -97,16 +97,18 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: var(--bleu);
-	border: 1px solid var(--bordure);
+	border: 1px solid var(--bleu);
 	border-radius: 0;
+	font-size: 2rem;
 	font-weight: 700;
 	outline-color:var(--bleu);
 	min-height:5rem;
 	padding: 1rem 1.5rem;
 	
 	&:focus {
-		border-color:var(--bleu);
-		color: var(--bleu);
+		border-color:var(--cyan);
+		color: var(--cyan);
+		outline:none;
 	}
 
 	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -125,9 +127,8 @@ textarea {
 	}
 }
 
-
 select {
-	border: 1px solid var(--bordure);
+	border: 1px solid var(--bleu);
 }
 
 textarea {
@@ -140,47 +141,46 @@ textarea {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 
-	}
-
-	label {
-		--size:1.4rem;
-		--color:var(--bleu);
-		color:var(--color);
-		&::before, &::after { // la marque peut être avant ou après le label
-			align-items: center;
-			border: solid 1px var(--color);
-			border-radius: 100%;
-			content:'l';
-			color:transparent;
-			display: inline-flex;
-			font-size: 120%;
-			height:var(--size);
-			justify-content: center;
-			margin-right: 0.5ch;
-			padding-bottom: 1px;
-			position: relative;
-			text-align: center;
-			top: 1px;
-			width:var(--size);
-		}
-		&::after {
-			//par défaut elle est avant
-			display:none;
-			margin-left: 0.5ch;
-			margin-right:0;
-		}
-	}
-	input:focus + label {
-		color:var(--cyan);
-	}
-	input:checked + label {
-		--color:var(--cyan);
-		&::before, &::after {
+		& + label {
+			--size:1.4rem;
+			--color:var(--bleu);
 			color:var(--color);
-			content:'•';
-		} 
-	}
+			&::before, &::after { // la marque peut être avant ou après le label
+				align-items: center;
+				border: solid 1px var(--color);
+				border-radius: 100%;
+				content:'l';
+				color:transparent;
+				display: inline-flex;
+				font-size: 120%;
+				height:var(--size);
+				justify-content: center;
+				margin-right: 0.5ch;
+				padding-bottom: 1px;
+				position: relative;
+				text-align: center;
+				top: 1px;
+				width:var(--size);
+			}
+			&::after {
+				//par défaut elle est avant
+				display:none;
+				margin-left: 0.5ch;
+				margin-right:0;
+			}
+		}
 
+		&:focus + label {
+			color:var(--cyan);
+		}
+		&:checked + label {
+			--color:var(--cyan);
+			&::before, &::after {
+				color:var(--color);
+				content:'•';
+			} 
+		}
+	}
 }
 
 /*--------------------------------------------------------------
