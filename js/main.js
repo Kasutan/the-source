@@ -314,6 +314,59 @@
 
 		});
 
+		/****************** Toggle email option *************************/	
+		$('.js-toggle-option').click(function(e){
+			var button=$(this);
+			$(button).prop('disabled',true);
+
+		
+			var user=$(button).attr('data-user');
+			var slug=$(button).attr('data-slug');
+			var checked=$(button).hasClass('checked');
+			var value=1;
+
+			if(checked) {
+				value=0;	
+			}
+			
+			$.ajax({
+				type: "POST",
+				url: thesourceVars.ajax_url,
+				data: {
+					nonce: thesourceVars.nonce,
+					action: 'kasutan_update_email_preference',
+					data: {
+						user: user,
+						slug: slug,
+						value: value
+					},
+				},
+				success: function(response){
+					//Success
+					console.log('success ajax',response);
+					if (response) {
+						$(button).toggleClass('checked');
+						if(checked) {
+							$(button).attr('title','Activate this option');
+						} else {
+							$(button).attr('title','Deactivate this option');
+						}
+						$(button).prop('disabled',false);
+					} else {
+						console.log('le php a renvoyé une réponse false');
+						
+					}
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					//Error
+					console.log('erreur ajax',errorThrown);
+					//$(errorMessage).show();				
+				},
+				timeout: 60000
+			});
+
+		});
+
 	}); //fin document ready
 })( jQuery );
 
