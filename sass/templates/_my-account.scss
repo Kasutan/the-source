@@ -203,6 +203,46 @@ ul.menu-my-account-links, .email-preferences {
 
 }
 
-#pmpro_account {
+#pmpro_account-profile {
+	//Section masquée sur la page My personal information
 	display: none;
+}
+
+/**********************Tables de la page My membership*********************/ 
+
+#pmpro_account {
+	h3 {
+		margin-bottom: 1em;
+	}
+	.pmpro_box {
+		border:none;
+		padding-top:var(--margin-y-2);
+	}
+	.pmpro_table {
+		th {
+			font-size: 2rem;
+			font-weight: 300;
+			padding-bottom: 0.5rem;
+			text-align:left;
+		}
+		td {
+			font-size: 1.8rem;
+			font-weight: 700;
+			padding:0.5rem;
+		}
+		th, tr:last-of-type td {
+			border-bottom:solid 1px var(--bleu);
+		}
+
+		tbody {
+			tr:first-of-type {
+				background-color: var(--bleu-clair);
+			}
+		}
+	}
+	#pmpro_account-membership > .pmpro_actionlinks {
+		display: none;
+	}
+
+	//TODO positionner en absolute les boutons d'action du membership sous la table
 }

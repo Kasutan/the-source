@@ -33,3 +33,5 @@ function kasutan_change_password() {
 	}
 	return ob_get_clean();
 }
+
+//TODO ajouter une colonne au tableau My invoices avec le lien vers la facture PDF + désactiver le lien sur la date -> imiter le shortode my account shortcodes\pmpro_account.php (ligne 409 et suivantes)
