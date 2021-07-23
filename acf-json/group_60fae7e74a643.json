@@ -1,0 +1,48 @@
+{
+    "key": "group_60fae7e74a643",
+    "title": "Header layout",
+    "fields": [
+        {
+            "key": "field_60fae7f8ff4f4",
+            "label": "Hide regular header",
+            "name": "hide_regular_header",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hide": "hide",
+                "show": "show"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "show",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1627056206
+}

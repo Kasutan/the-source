@@ -97,6 +97,15 @@ add_action( 'acf/init', 'ea_page_layout_metabox' );
 */
 function ea_layout_body_class( $classes ) {
 	$classes[] = ea_page_layout();
+
+
+	if(function_exists('get_field')) {
+		$header_option=esc_attr(get_field('hide_regular_header'));
+		if($header_option==="hide") {
+			$classes[]='hide-header';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'ea_layout_body_class', 5 );

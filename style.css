@@ -602,8 +602,10 @@ body {
   padding-left: var(--padding-x);
   padding-right: var(--padding-x); }
 
-body.pleine-largeur .entry-content > p, body.pleine-largeur .entry-content > ul, body.pleine-largeur .entry-content > ol, body.pleine-largeur .entry-content > .wp-block-buttons {
-  padding: 0 var(--padding-x); }
+body.pleine-largeur .entry-content {
+  padding: 0 var(--margin-x-header); }
+  body.pleine-largeur .entry-content > p, body.pleine-largeur .entry-content > ul, body.pleine-largeur .entry-content > ol, body.pleine-largeur .entry-content > .wp-block-buttons {
+    padding: 0 var(--padding-x); }
 
 body.largeur-normale .entry-content {
   min-height: 50vw;
@@ -3967,6 +3969,20 @@ button.menu-toggle {
   body.archive.js-product-menu-open .archive-header, body.archive.js-product-menu-open .no-results .entry-header {
     margin-bottom: var(--margin-y-2);
     margin-top: var(--submenu-height); } }
+
+body.hide-header .entry-header, body.hide-header .fil-ariane {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
 
 /*--------------------------------------------------------------
 ## Footer

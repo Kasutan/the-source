@@ -95,3 +95,10 @@
 
 	}
 }
+
+
+body.hide-header {
+	.entry-header, .fil-ariane {
+		@include screen-reader-text;
+	}
+}
