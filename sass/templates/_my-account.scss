@@ -210,8 +210,8 @@ ul.menu-my-account-links, .email-preferences {
 
 /**********************Tables de la page My membership*********************/ 
 
-#pmpro_account {
-	h3 {
+#pmpro_account, #pmpro_account-invoices {
+	h3, .pmpro_box h3 {
 		margin-bottom: 1em;
 	}
 	.pmpro_box {
@@ -239,10 +239,73 @@ ul.menu-my-account-links, .email-preferences {
 				background-color: var(--bleu-clair);
 			}
 		}
+
+		a.download {
+			color:var(--bleu);
+			&:hover,&:focus {
+				color:var(--cyan);
+				text-decoration: none;
+			}
+		}
 	}
 	#pmpro_account-membership > .pmpro_actionlinks {
 		display: none;
 	}
 
-	//TODO positionner en absolute les boutons d'action du membership sous la table
+}
+
+//Positionner en absolute les boutons d'action du membership sous la table
+#pmpro_account-membership {
+	&.pmpro_box {
+		padding-bottom: calc(2 * var(--margin-y-2));
+	}
+	table {
+		position: relative;
+		.pmpro_actionlinks {
+			bottom:-6rem;
+			color:transparent;
+			position:absolute;
+			text-align: center;
+			width:100%;
+			a {
+				@include bouton;
+				@include couleurs-bouton;
+				font-size: 2.2rem !important;
+				padding:0 5rem;
+			}
+		}
+	}
+}
+
+/**********************Formulaires de la page My billing information*********************/ 
+
+.pmpro_billing_wrap {
+	//Section masquée 
+	#pmpro_billing_address_fields {
+		display: none;
+	}
+
+	form.pmpro_form label {
+		font-size: 2rem;
+		font-weight: 300;
+		margin-bottom: 0.7rem;
+	}
+
+	.pmpro_submit {
+		text-align: center;
+		hr,.pmpro_btn-cancel  {
+			display: none;
+		}
+	}
+	input[type="submit"] {
+		font-size: 2.2rem;
+		padding:0.5rem 3rem;
+	}
+
+}
+
+.pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV {
+	border-color:var(--bleu);
+	border-radius: 0;
+	color:var(--bleu);
 }

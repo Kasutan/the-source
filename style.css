@@ -4403,32 +4403,195 @@ ul.menu-my-account-links, .email-preferences {
   display: none; }
 
 /**********************Tables de la page My membership*********************/
-#pmpro_account h3 {
+#pmpro_account h3, #pmpro_account .pmpro_box h3, #pmpro_account-invoices h3, #pmpro_account-invoices .pmpro_box h3 {
   margin-bottom: 1em; }
 
-#pmpro_account .pmpro_box {
+#pmpro_account .pmpro_box, #pmpro_account-invoices .pmpro_box {
   border: none;
   padding-top: var(--margin-y-2); }
 
-#pmpro_account .pmpro_table th {
+#pmpro_account .pmpro_table th, #pmpro_account-invoices .pmpro_table th {
   font-size: 2rem;
   font-weight: 300;
   padding-bottom: 0.5rem;
   text-align: left; }
 
-#pmpro_account .pmpro_table td {
+#pmpro_account .pmpro_table td, #pmpro_account-invoices .pmpro_table td {
   font-size: 1.8rem;
   font-weight: 700;
   padding: 0.5rem; }
 
-#pmpro_account .pmpro_table th, #pmpro_account .pmpro_table tr:last-of-type td {
+#pmpro_account .pmpro_table th, #pmpro_account .pmpro_table tr:last-of-type td, #pmpro_account-invoices .pmpro_table th, #pmpro_account-invoices .pmpro_table tr:last-of-type td {
   border-bottom: solid 1px var(--bleu); }
 
-#pmpro_account .pmpro_table tbody tr:first-of-type {
+#pmpro_account .pmpro_table tbody tr:first-of-type, #pmpro_account-invoices .pmpro_table tbody tr:first-of-type {
   background-color: var(--bleu-clair); }
 
-#pmpro_account #pmpro_account-membership > .pmpro_actionlinks {
+#pmpro_account .pmpro_table a.download, #pmpro_account-invoices .pmpro_table a.download {
+  color: var(--bleu); }
+  #pmpro_account .pmpro_table a.download:hover, #pmpro_account .pmpro_table a.download:focus, #pmpro_account-invoices .pmpro_table a.download:hover, #pmpro_account-invoices .pmpro_table a.download:focus {
+    color: var(--cyan);
+    text-decoration: none; }
+
+#pmpro_account #pmpro_account-membership > .pmpro_actionlinks, #pmpro_account-invoices #pmpro_account-membership > .pmpro_actionlinks {
   display: none; }
+
+#pmpro_account-membership.pmpro_box {
+  padding-bottom: calc(2 * var(--margin-y-2)); }
+
+#pmpro_account-membership table {
+  position: relative; }
+  #pmpro_account-membership table .pmpro_actionlinks {
+    bottom: -6rem;
+    color: transparent;
+    position: absolute;
+    text-align: center;
+    width: 100%; }
+    #pmpro_account-membership table .pmpro_actionlinks a {
+      font-size: 1.9rem;
+      border: solid 1px;
+      border-radius: 0;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.6em 1.7em;
+      text-align: center;
+      text-transform: uppercase;
+      -webkit-transition: all var(--transition);
+      transition: all var(--transition);
+      vertical-align: middle;
+      background-color: transparent;
+      border-color: var(--bleu);
+      color: var(--bleu);
+      font-size: 2.2rem !important;
+      padding: 0 5rem; }
+      @media all and (max-width: 360px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.7rem; } }
+      @media all and (max-width: 1440px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.9rem; } }
+      @media all and (max-width: 1364px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.12634rem; } }
+      @media all and (max-width: 1300px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.28871rem; } }
+      @media all and (max-width: 1243px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.41159rem; } }
+      @media all and (max-width: 1191px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.50583rem; } }
+      @media all and (max-width: 1143px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.5777rem; } }
+      @media all and (max-width: 1099px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.63083rem; } }
+      @media all and (max-width: 1057px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.67016rem; } }
+      @media all and (max-width: 1017px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.69729rem; } }
+      @media all and (max-width: 979px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.71372rem; } }
+      @media all and (max-width: 943px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.72089rem; } }
+      @media all and (max-width: 908px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.72003rem; } }
+      @media all and (max-width: 875px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.71215rem; } }
+      @media all and (max-width: 843px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.69796rem; } }
+      @media all and (max-width: 812px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.67805rem; } }
+      @media all and (max-width: 782px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.65303rem; } }
+      @media all and (max-width: 753px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.62344rem; } }
+      @media all and (max-width: 724px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.58856rem; } }
+      @media all and (max-width: 696px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.54985rem; } }
+      @media all and (max-width: 669px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.50785rem; } }
+      @media all and (max-width: 642px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.46125rem; } }
+      @media all and (max-width: 616px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.41203rem; } }
+      @media all and (max-width: 590px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.35856rem; } }
+      @media all and (max-width: 565px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.30312rem; } }
+      @media all and (max-width: 540px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.24375rem; } }
+      @media all and (max-width: 516px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.18305rem; } }
+      @media all and (max-width: 492px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.11871rem; } }
+      @media all and (max-width: 469px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 2.05365rem; } }
+      @media all and (max-width: 446px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.98526rem; } }
+      @media all and (max-width: 424px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.91672rem; } }
+      @media all and (max-width: 402px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.84514rem; } }
+      @media all and (max-width: 380px) {
+        #pmpro_account-membership table .pmpro_actionlinks a {
+          font-size: 1.7705rem; } }
+      #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {
+        text-decoration: none; }
+      #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {
+        background-color: var(--cyan);
+        border-color: var(--cyan);
+        color: var(--blanc); }
+
+/**********************Formulaires de la page My billing information*********************/
+.pmpro_billing_wrap #pmpro_billing_address_fields {
+  display: none; }
+
+.pmpro_billing_wrap form.pmpro_form label {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0.7rem; }
+
+.pmpro_billing_wrap .pmpro_submit {
+  text-align: center; }
+  .pmpro_billing_wrap .pmpro_submit hr, .pmpro_billing_wrap .pmpro_submit .pmpro_btn-cancel {
+    display: none; }
+
+.pmpro_billing_wrap input[type="submit"] {
+  font-size: 2.2rem;
+  padding: 0.5rem 3rem; }
+
+.pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV {
+  border-color: var(--bleu);
+  border-radius: 0;
+  color: var(--bleu); }
 
 .archive .actualites, .blog .actualites {
   display: -webkit-box;
