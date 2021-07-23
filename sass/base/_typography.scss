@@ -4,7 +4,7 @@
 
 html {
 	font-size: 62.5%; /* 1rem = 10px */
-	--taille-texte:1.6rem;
+	--taille-texte:1.6rem;  //Maquette 1.2rem mobile
 	@include bp(sm) {
 		--taille-texte:2rem;
 	}
@@ -19,7 +19,7 @@ textarea {
 	color:  map-get($colors, 'bleu'); //si les variables css ne sont pas supportées
 	color: var(--bleu);
 	font-family: "Open Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	@include fs(1.6rem,2rem); //Maquette 1.2rem mobile
+	font-size:var(--taille-texte);
 	font-weight: 300;
 	line-height: 1.4;
 }

@@ -1,0 +1,102 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.checkout-header {
+	align-items: center;
+	background-color: #f0f7ff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left:var(--margin-x-header);
+	margin-right:var(--margin-x-header);
+	overflow-y: hidden;
+	padding:var(--margin-y-1) var(--padding-x) 10rem;
+	position: relative;
+	--fond:95%;
+
+	.fond {
+		background-color: var(--bleu);
+		clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+		height: 100%;
+		left:0;
+		position: absolute;
+		top:0;
+		width:100%;
+	}
+
+	.h1, .subtitle, .text {
+		position: relative;
+	}
+
+
+	&, .h1, .subtitle {
+		color:var(--blanc);
+	}
+	.h1, .subtitle {
+		margin-top:0;
+	}
+
+	.offers {
+		list-style: none;
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	.offer {
+		--size:8.5rem;
+		align-items: center;
+		display: flex;
+		font-size: 110%;
+		font-weight: 700;
+		line-height: 1.3;
+		height:var(--size);
+		justify-content: center;
+		margin: 1em 0;
+		position: relative;
+		text-align: center;
+		.circle {
+			background-color: var(--blanc);
+			border-radius:100%;
+			height:var(--size);
+			left:calc((100% - var(--size)) / 2);
+			opacity:0.2;
+			position: absolute;
+			width:var(--size);
+		}
+	}
+
+	.text {
+		font-size: 2.3rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.decor {
+		bottom: -8.6rem;
+		left:0;
+		position: absolute;
+		text-align: center;
+		width:100%;
+	}
+	@include bp(sm) {
+		--fond:90%;
+	}
+	@include bp(md) {
+		--fond:85%;
+	}
+	@include bp(lg) {
+		--fond:80%;
+		padding-bottom: 12rem;
+		.decor {
+			bottom:-8.7rem;
+		}
+		.offers {
+			display: flex;
+			justify-content: center;
+			max-width: 90rem;
+		}
+		.offer {
+			flex-basis:33%;
+			padding:0 1rem;
+		}
+	}
+}

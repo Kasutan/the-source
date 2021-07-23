@@ -56,7 +56,6 @@ body {
 //Réglages de largeur selon option choisie en BO ou codée dans la fonction ea_page_layout ou obtenue par le filtre ea_page_layout
 
 body.pleine-largeur .entry-content {
-	padding:0 var(--margin-x-header);
 	> p, > ul, > ol, > .wp-block-buttons {
 		padding: 0 var(--padding-x);
 	}

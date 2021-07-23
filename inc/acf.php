@@ -190,6 +190,13 @@ class BE_ACF_Customizations {
 			'Products block',
 			'Display grid of products in selected category.'
 		);
+
+		/*********Blocs checkout***************/
+		$this->helper_register_block_type(
+			'checkout-header',
+			'Block header for checkout',
+			'Display header on checkout page for a level. Create as many blocks as there are levels.'
+		);
 		
 	}
 }
