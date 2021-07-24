@@ -117,3 +117,99 @@ function kasutan_add_billing_fields_to_profile()
 	foreach($fields as $field)
 		pmprorh_add_registration_field("profile", $field);
 }
+
+/*
+* Add password requirements adapté de l'addon Require strong password
+* https://www.paidmembershipspro.com/add-ons/require-strong-passwords/
+*/
+add_filter( 'pmpro_registration_checks', 'kasutan_strong_password_check' );
+function kasutan_strong_password_check( $pmpro_continue_registration) {
+
+	// Don't load this script at all if user is logged in.
+	if ( is_user_logged_in() ) {
+		return $pmpro_continue_registration;
+	}
+
+	//only bother checking if there are no errors so far
+	if( ! $pmpro_continue_registration )
+		return $pmpro_continue_registration;
+
+	$username = $_REQUEST['username'];
+	$password = $_REQUEST['password'];
+
+	// no password (existing user is checking out)
+	if( empty( $password ) )
+		return $pmpro_continue_registration;
+
+
+	// Don't load this script at all if user is logged in.
+	if ( is_user_logged_in() ) {
+		return $pmpro_continue_registration;
+	}
+
+	$username = $_REQUEST['username'];
+	$password = $_REQUEST['password'];
+
+	// no password (existing user is checking out)
+	if( empty( $password ) )
+		return $pmpro_continue_registration;
+
+	// Run a custom check
+	return kasutan_strong_password_custom_checker( $password, $username );
+	
+}
+
+function kasutan_strong_password_custom_checker( $password, $username ) {
+
+	$pass_ok = true;
+	$msg=array();
+
+	// Check for length (8 characters)
+	if ( strlen( $password ) < 12 ) {
+		$msg[]='Your password must be at least 12 characters long.';
+		$pass_ok=false;
+	}
+
+	// Check for username match	
+	if ( strpos( $password, $username ) !== false ) {
+		$msg[]='Your password must not contain your username.';
+		$pass_ok=false;
+	}
+
+	// Check for lowercase
+	if ( ! preg_match( '/[a-z]/', $password ) ) {
+		$msg[]='Your password must contain at least 1 lowercase letter.';
+		$pass_ok=false;
+	}
+
+	// Check for uppercase
+	if ( ! preg_match( '/[A-Z]/', $password ) ) {
+		$msg[]='Your password must contain at least 1 uppercase letter.';
+		$pass_ok=false;
+	}
+
+	// Check for numbers
+	if ( ! preg_match( '/[0-9]/', $password ) ) {
+		$msg[]='Your password must contain at least 1 number.';
+		$pass_ok=false;
+	}
+
+	// Check for special characters
+	if ( ! preg_match( '/[\W]/', $password ) ) {
+		$msg[]='Your password must contain at least 1 special character.';
+		$pass_ok=false;
+	}
+
+	// Prepare error message (with all errors) if necessary.
+	if(!$pass_ok) {
+		pmpro_setMessage( implode('</br>',$msg), 'pmpro_error' );
+	}
+	return $pass_ok;
+}
+
+// Show hint after password field. Hook as early as possible in case there are other uses of filter
+add_filter( 'pmpro_checkout_after_password', 'kasutan_checkout_after_password', 1 );
+function kasutan_checkout_after_password() {
+	echo '<small id="pmprosp-password-notice">The password should be at least twelve characters long, contain upper and lower case letters, numbers, and symbols.</small>';
+}
+

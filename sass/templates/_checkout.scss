@@ -58,6 +58,17 @@
 		@include bp(lg) {
 			padding-top: 15rem;
 		}
+
+		.pmpro_checkout-h3-msg a {
+			color:var(--bleu);
+			display: inline-block;
+			font-weight: 300;
+			margin-left: 1ch;
+			text-decoration: underline;
+			&:hover, &:focus {
+				color:var(--cyan);
+			}
+		}
 		
 	}
 	#pmpro_billing_address_fields {
@@ -130,16 +141,18 @@
 			width:100%;
 		}
 		#vat-country-info {
-			margin-bottom: 0;
+			margin-bottom: 1rem;
 			max-width:50rem;
 		}
 		#vat_have_number {
+			margin-bottom: 0;
 			input {
 				@include screen-reader-text;
 			}
 			label {
 				opacity:1;
 				font-size: 2rem;
+				top:0;
 			}
 		}
 		#vat_number_validation_tr {
@@ -202,6 +215,9 @@
 		}
 		label {
 			line-height: 1.1;
+			opacity: 1;
+			font-size: 2rem;
+			top:0;
 		}
 		.pmpro_checkout-fields {
 			max-width:48rem;
@@ -216,6 +232,9 @@
 		}
 		label {
 			font-weight: 700;
+			opacity: 1;
+			font-size: 2rem;
+			top:0;
 		}
 		a {
 			color:var(--bleu);
