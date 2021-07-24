@@ -9,14 +9,14 @@
 
 
 	button = document.getElementById( 'menu-toggle' );
-	if ( 'undefined' === typeof button ) {
+	if ( 'undefined' === typeof button || null === button) {
 		return;
 	}
 
 	volet = document.getElementById( 'volet-navigation' );
 
 	// Hide menu toggle button if volet is empty and return early.
-	if ( 'undefined' === typeof volet ) {
+	if ( 'undefined' === typeof volet || null === volet) {
 		button.style.display = 'none';
 		return;
 	}
