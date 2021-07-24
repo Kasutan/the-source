@@ -142,38 +142,26 @@ textarea {
 		-moz-appearance: none;
 
 		& + label {
-			--size:1.4rem;
-			--color:var(--bleu);
-			color:var(--color);
-			&::before, &::after { // la marque peut être avant ou après le label
-				align-items: center;
-				border: solid 1px var(--color);
-				border-radius: 100%;
-				content:'l';
-				color:transparent;
-				display: inline-flex;
-				font-size: 120%;
-				height:var(--size);
-				justify-content: center;
-				margin-right: 0.5ch;
-				padding-bottom: 1px;
-				position: relative;
-				text-align: center;
-				top: 1px;
-				width:var(--size);
-			}
-			&::after {
-				//par défaut elle est avant
-				display:none;
-				margin-left: 0.5ch;
-				margin-right:0;
-			}
+			@include checkbox-label;
 		}
 
 		&:focus + label {
 			color:var(--cyan);
 		}
 		&:checked + label {
+			--color:var(--cyan);
+			&::before, &::after {
+				color:var(--color);
+				content:'•';
+			} 
+		}
+	}
+	label.js-checkbox-label {
+		@include checkbox-label;
+		&.js-focus {
+			color:var(--cyan);
+		}
+		&.js-checked {
 			--color:var(--cyan);
 			&::before, &::after {
 				color:var(--color);

@@ -1808,6 +1808,43 @@ textarea {
       --color:var(--cyan); }
       input[type='checkbox']:checked + label::before, input[type='checkbox']:checked + label::after {
         color: var(--color);
+        content: '•'; }
+  label.js-checkbox-label {
+    --size:1.4rem;
+    --color:var(--bleu);
+    color: var(--color); }
+    label.js-checkbox-label::before, label.js-checkbox-label::after {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: solid 1px var(--color);
+      border-radius: 100%;
+      content: 'l';
+      color: transparent;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      font-size: 120%;
+      height: var(--size);
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-right: 0.5ch;
+      padding-bottom: 1px;
+      position: relative;
+      text-align: center;
+      top: 1px;
+      width: var(--size); }
+    label.js-checkbox-label::after {
+      display: none;
+      margin-left: 0.5ch;
+      margin-right: 0; }
+    label.js-checkbox-label.js-focus {
+      color: var(--cyan); }
+    label.js-checkbox-label.js-checked {
+      --color:var(--cyan); }
+      label.js-checkbox-label.js-checked::before, label.js-checkbox-label.js-checked::after {
+        color: var(--color);
         content: '•'; } }
 
 /*--------------------------------------------------------------
@@ -3521,6 +3558,8 @@ button.menu-toggle {
     display: flex; }
   .pmpro-checkout #pmpro_autorenewal_checkbox label {
     line-height: 1.1; }
+  .pmpro-checkout #pmpro_autorenewal_checkbox .pmpro_checkout-fields {
+    max-width: 48rem; }
 
 .pmpro-checkout #pmpro_tos_fields {
   -webkit-box-align: start;

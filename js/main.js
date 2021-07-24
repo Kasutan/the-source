@@ -367,6 +367,38 @@
 
 		});
 
+
+		/********************************************************************************** 
+		 ************************* CHECKOUT PAGE 
+		 * ******************************************************************************/	
+
+		/************ Fix status visibility on renewal input label ***************/	
+		var renewInput=$('.pmpro_checkout-fields #autorenew');
+		if(renewInput.length > 0) {
+
+			var label=$(renewInput).siblings('label');
+			$(label).addClass('js-checkbox-label');
+			if($(renewInput).prop('checked')) {
+				$(label).addClass('js-checked');
+			}
+
+			$(renewInput).on('change',function(e) {
+				if($(renewInput).prop('checked')) {
+					$(label).addClass('js-checked');
+				} else {
+					$(label).removeClass('js-checked');
+				}
+			});
+			$(renewInput).on('focusin',function(e) {
+				$(label).addClass('js-focus');
+			});
+			$(renewInput).on('focusout',function(e) {
+				$(label).removeClass('js-focus');
+			});
+		}
+
+
+
 	}); //fin document ready
 })( jQuery );
 
