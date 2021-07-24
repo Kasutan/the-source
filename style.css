@@ -1698,8 +1698,8 @@ textarea {
   input[type="color"]::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: var(--bordure);
-    font-weight: 700;
+    color: var(--bleu);
+    font-weight: 300;
     opacity: 1; }
   input[type="text"]::-moz-placeholder,
   input[type="email"]::-moz-placeholder,
@@ -1718,8 +1718,8 @@ textarea {
   input[type="color"]::-moz-placeholder,
   textarea::-moz-placeholder {
     /* Firefox 19+ */
-    color: var(--bordure);
-    font-weight: 700;
+    color: var(--bleu);
+    font-weight: 300;
     opacity: 1; }
   input[type="text"]:-ms-input-placeholder,
   input[type="email"]:-ms-input-placeholder,
@@ -1738,8 +1738,8 @@ textarea {
   input[type="color"]:-ms-input-placeholder,
   textarea:-ms-input-placeholder {
     /* IE 10+ */
-    color: var(--bordure);
-    font-weight: 700;
+    color: var(--bleu);
+    font-weight: 300;
     opacity: 1; }
   input[type="text"]:-moz-placeholder,
   input[type="email"]:-moz-placeholder,
@@ -1758,8 +1758,8 @@ textarea {
   input[type="color"]:-moz-placeholder,
   textarea:-moz-placeholder {
     /* Firefox 18- */
-    color: var(--bordure);
-    font-weight: 700;
+    color: var(--bleu);
+    font-weight: 300;
     opacity: 1; }
 
 select {
@@ -3297,9 +3297,47 @@ button.menu-toggle {
 .pmpro-checkout h2, .pmpro-checkout h3 {
   color: var(--cyan); }
 
-.pmpro-checkout form.pmpro_form label, .pmpro-checkout #loginform label {
-  font-size: 2rem;
+.pmpro-checkout input[type="text"],
+.pmpro-checkout input[type="password"],
+.pmpro-checkout input[type="email"],
+.pmpro-checkout select {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px var(--bleu);
   font-weight: 300; }
+  .pmpro-checkout input[type="text"]#bemail,
+  .pmpro-checkout input[type="password"]#bemail,
+  .pmpro-checkout input[type="email"]#bemail,
+  .pmpro-checkout select#bemail {
+    width: 33rem; }
+  .pmpro-checkout input[type="text"]:focus,
+  .pmpro-checkout input[type="password"]:focus,
+  .pmpro-checkout input[type="email"]:focus,
+  .pmpro-checkout select:focus {
+    border-color: var(--cyan);
+    color: var(--cyan); }
+
+.pmpro-checkout form.pmpro_form label, .pmpro-checkout #loginform label {
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0;
+  padding-left: 1.5rem;
+  position: relative;
+  top: 1.5rem;
+  -webkit-transition: opacity var(--transition);
+  transition: opacity var(--transition); }
+  .pmpro-checkout form.pmpro_form label.floating, .pmpro-checkout #loginform label.floating {
+    opacity: 0.3; }
+
+.pmpro-checkout .pmprosp-tooltip__password {
+  display: none; }
+
+.pmpro-checkout form.pmpro_form .lite {
+  color: var(--bleu); }
+
+.pmpro-checkout select {
+  min-height: 5rem;
+  padding: 1rem 1.5rem; }
 
 .pmpro-checkout .pmpro_form > div {
   -webkit-box-align: center;
@@ -3547,6 +3585,11 @@ button.menu-toggle {
     display: block;
     max-width: unset;
     padding: 2rem 2rem 1px; }
+  .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields label {
+    font-size: 2rem;
+    opacity: 1;
+    padding-left: 1.5rem;
+    top: 0; }
 
 .pmpro-checkout #pmpro_autorenewal_checkbox {
   padding: 0 2rem; }
@@ -3615,6 +3658,11 @@ button.menu-toggle {
       padding-left: 6rem;
       padding-right: 6rem;
       width: 48rem; } }
+
+.pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV {
+  border: none;
+  border-bottom: solid 1px var(--bleu);
+  padding-left: 1.5rem; }
 
 /*--------------------------------------------------------------
 ## Site header

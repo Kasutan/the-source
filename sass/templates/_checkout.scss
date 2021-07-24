@@ -2,9 +2,43 @@
 	h2, h3 {
 		color:var(--cyan);
 	}
-	form.pmpro_form label, #loginform label {
-		font-size: 2rem;
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select {
+		background-color: transparent;
+		border:none;
+		border-bottom:solid 1px var(--bleu);
 		font-weight: 300;
+		&#bemail {
+			width:33rem;
+		}
+		&:focus {
+			border-color:var(--cyan);
+			color:var(--cyan);
+		}
+	}
+	form.pmpro_form label, #loginform label {
+		font-size: 1.4rem;
+		font-weight: 300;
+		opacity:0;
+		padding-left:1.5rem;
+		position:relative;
+		top:1.5rem;
+		transition: opacity var(--transition);
+		&.floating {
+			opacity:0.3;
+		}
+	}
+	.pmprosp-tooltip__password {
+		display: none;
+	}
+	form.pmpro_form .lite {
+		color:var(--bleu);
+	}
+	select {
+		min-height:5rem;
+		padding: 1rem 1.5rem;
 	}
 	.pmpro_form > div {
 		align-items: center;
@@ -94,6 +128,13 @@
 			max-width: unset;
 			padding:2rem 2rem 1px;
 		}
+
+		label {
+			font-size: 2rem;
+			opacity: 1;
+			padding-left:1.5rem;
+			top:0;
+		}
 		
 	}
 
@@ -173,4 +214,11 @@
 			width:48rem;
 		}
 	}
+}
+
+
+.pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_checkout_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#AccountNumber, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#Expiry, .pmpro_billing_gateway-stripe form.pmpro_form #pmpro_payment_information_fields div#CVV {
+	border:none;
+	border-bottom:solid 1px var(--bleu);
+	padding-left:1.5rem;
 }

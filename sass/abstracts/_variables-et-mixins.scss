@@ -138,8 +138,8 @@ $colors: (
 }
 
 @mixin placeholder {
-	color: var(--bordure);
-	font-weight: 700;
+	color: var(--bleu);
+	font-weight: 300;
 	opacity:1;
 }
 

@@ -397,6 +397,18 @@
 			});
 		}
 
+		/************ Show label on input change/focus ***************/	
+		if($('body').hasClass('pmpro-checkout')) {
+			var inputs=$('#pmpro_user_fields, #pmpro_billing_address_fields, #pmpro_vat_table').find('select, input');
+			if(inputs.length > 0) {
+				$(inputs).on('focus change',function(e){
+					var label=$(this).siblings('label');
+					console.log(label);
+					$(label).addClass('floating');
+				});
+			}
+		}
+		
 
 
 	}); //fin document ready
