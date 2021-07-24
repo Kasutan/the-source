@@ -18,6 +18,9 @@
 	} else {
 		$pmpro_checkout_gateway_class = 'pmpro_checkout_gateway-' . $default_gateway;
 	}
+
+	//Ne pas afficher les infos sur le level (elles sont dans le bloc ACF checkout-header)
+	add_filter('pmpro_include_pricing_fields','__return_false');
 ?>
 
 <?php do_action('pmpro_checkout_before_form'); ?>
@@ -48,10 +51,10 @@
 		if ( $include_pricing_fields ) {
 		?>
 		<div id="pmpro_pricing_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_pricing_fields' ); ?>">
-			<h3 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Membership Level', 'paid-memberships-pro' );?></span>
-				<?php if(count($pmpro_levels) > 1) { ?><span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('change', 'paid-memberships-pro' );?></a></span><?php } ?>
-			</h3>
+			<h2 class="dots">
+				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Membership Level', 'paid-memberships-pro' );?></span>
+				<?php if(count($pmpro_levels) > 1) { ?><span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('change', 'paid-memberships-pro' );?></a></span><?php } ?>
+			</h2>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 				<p>
 					<?php printf(__('You have selected the <strong>%s</strong> membership level.', 'paid-memberships-pro' ), $pmpro_level->name);?>
@@ -114,10 +117,10 @@
 	?>
 	<div id="pmpro_user_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_user_fields' ); ?>">
 		
-		<h3 class="dots">
-			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>">My personal information</span>
-		</h3>
-		<p class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><?php _e('Already have an account?', 'paid-memberships-pro' );?> <a href="<?php echo wp_login_url( apply_filters( 'pmpro_checkout_login_redirect', pmpro_url("checkout", "?level=" . $pmpro_level->id . $discount_code_link) ) ); ?>"><?php _e('Log in here', 'paid-memberships-pro' );?></a></p>
+		<h2 class="dots">
+			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>">My personal information</span>
+		</h2>
+		<p class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><?php _e('Already have an account?', 'paid-memberships-pro' );?> <a href="<?php echo wp_login_url( apply_filters( 'pmpro_checkout_login_redirect', pmpro_url("checkout", "?level=" . $pmpro_level->id . $discount_code_link) ) ); ?>"><?php _e('Log in here', 'paid-memberships-pro' );?></a></p>
 
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			
@@ -310,16 +313,13 @@
 	<?php } ?>
 
 	<?php do_action("pmpro_checkout_after_billing_fields"); ?>
-	<?php
-		do_action('pmpro_checkout_boxes');
-	?>
 
 	<?php if(pmpro_getGateway() == "paypal" && empty($pmpro_review) && true == apply_filters('pmpro_include_payment_option_for_paypal', true ) ) { ?>
 	<div id="pmpro_payment_method" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_payment_method' ); ?>" <?php if(!$pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>
 		
-		<h3 class="dots">
-			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Choose your Payment Method', 'paid-memberships-pro' ); ?></span>
-		</h3>
+		<h2 class="dots">
+			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Choose your Payment Method', 'paid-memberships-pro' ); ?></span>
+		</h2>
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			<span class="<?php echo pmpro_get_element_class( 'gateway_paypal' ); ?>">
 				<input type="radio" name="gateway" value="paypal" <?php if(!$gateway || $gateway == "paypal") { ?>checked="checked"<?php } ?> />
@@ -345,10 +345,14 @@
 		if($pmpro_include_payment_information_fields) { ?>
 		<div id="pmpro_payment_information_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_payment_information_fields' ); ?>" <?php if(!$pmpro_requirebilling || apply_filters("pmpro_hide_payment_information_fields", false) ) { ?>style="display: none;"<?php } ?>>
 			
-			<h3 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Payment Information', 'paid-memberships-pro' );?></span>
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><?php printf(__('We Accept %s', 'paid-memberships-pro' ), $pmpro_accepted_credit_cards_string);?></span>
-			</h3>
+			<h2 class="dots">
+				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Payment Method', 'paid-memberships-pro' );?></span>
+				<!--<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><?php printf(__('We Accept %s', 'paid-memberships-pro' ), $pmpro_accepted_credit_cards_string);?></span>-->
+			</h2>
+			<div class="payment-reassurance">
+				<p class="has-cyan-text-color">Checkout with credit card</p>
+				<p><em>logos ici</em></p>
+			</div>
 			<?php $sslseal = pmpro_getOption("sslseal"); ?>
 			<?php if(!empty($sslseal)) { ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields-display-seal' ); ?>">
@@ -423,32 +427,14 @@
 			<?php } ?>
 		</div> <!-- end pmpro_payment_information_fields -->
 	<?php } ?>
-
+	<?php
+		do_action('pmpro_checkout_boxes');
+	?>
 	<?php do_action('pmpro_checkout_after_payment_information_fields'); ?>
 
 	<?php if($tospage && !$pmpro_review) { ?>
 		<div id="pmpro_tos_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_tos_fields' ); ?>">
-			
-			<h3 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php echo esc_html( $tospage->post_title );?></span>
-			</h3>
-			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
-				<div id="pmpro_license" class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
-<?php 
-	/**
-	 * Hook to run formatting filters before displaying the content of your "Terms of Service" page at checkout.
-	 *
-	 * @since 2.4.1
-	 *
-	 * @param string $pmpro_tos_content The content of the post assigned as the Terms of Service page.
-	 * @param string $tospage The post assigned as the Terms of Service page.
-	 *
-	 * @return string $pmpro_tos_content
-	 */
-	$pmpro_tos_content = apply_filters( 'pmpro_tos_content', do_shortcode( $tospage->post_content ), $tospage );
-	echo $pmpro_tos_content;
-?>
-				</div> <!-- end pmpro_license -->
+
 				<?php
 					if ( isset( $_REQUEST['tos'] ) ) {
 						$tos = intval( $_REQUEST['tos'] );
@@ -456,7 +442,7 @@
 						$tos = "";
 					}
 				?>
-				<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label>
+				<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf('I agree to the <a href="%s">%s</a>', get_page_link($tospage),$tospage->post_title);?></label>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_tos_fields -->
 		<?php
@@ -506,7 +492,7 @@
 				?>
 				<span id="pmpro_submit_span">
 					<input type="hidden" name="submit-checkout" value="1" />
-					<input type="submit"  id="pmpro_btn-submit" class="<?php echo pmpro_get_element_class(  'pmpro_btn pmpro_btn-submit-checkout', 'pmpro_btn-submit-checkout' ); ?>" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro' ); } else { _e('Submit and Confirm', 'paid-memberships-pro' );}?> &raquo;" />
+					<input type="submit"  id="pmpro_btn-submit" class="<?php echo pmpro_get_element_class(  'pmpro_btn pmpro_btn-submit-checkout', 'pmpro_btn-submit-checkout' ); ?>" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro' ); } else { _e('Submit and Confirm', 'paid-memberships-pro' );}?>" />
 				</span>
 				<?php
 				}

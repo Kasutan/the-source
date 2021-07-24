@@ -1,0 +1,162 @@
+.pmpro-checkout {
+	h2, h3 {
+		color:var(--cyan);
+	}
+	form.pmpro_form label, #loginform label {
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	.pmpro_form > div, .pmpro_submit {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left:var(--margin-x-header);
+		margin-right:var(--margin-x-header);
+		overflow-y: hidden;
+		padding:0 var(--padding-x);
+	}
+	#pmpro_user_fields {
+		background-color: #f0f7ff;
+		margin-top: -10rem;
+		padding-top:12rem;
+		position: relative;
+		@include bp(lg) {
+			padding-top: 15rem;
+		}
+		
+	}
+	#pmpro_billing_address_fields {
+		padding-bottom:5rem;
+
+		position: relative;
+		--fond:95%;
+		@include bp(lg) {
+			padding-bottom:10rem;
+		}
+		@include bp(xl) {
+			--fond:90%;
+		}
+
+		& > * {
+			position: relative;
+		}
+
+		&::before {
+			background-color: #f0f7ff;
+			content:'';
+			clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+			display: block;
+			height:100%;
+			left:0;
+			position:absolute;
+			top:0;
+			width:100%;
+		}
+	}
+
+	.pmpro_checkout-fields {
+		margin:0 auto;
+		max-width:36rem;
+		position: relative;
+	}
+
+	#pmprosp-password-notice {
+		display: block;
+		line-height: 1.1;
+		margin-bottom: 2rem;
+	}
+
+	form.pmpro_form #pmpro_payment_information_fields {
+		display: block;
+		padding: 0;
+		text-align: center;
+		h3 {
+			@include dots;
+			@include fs(2rem,5rem);
+			display: flex;
+			justify-content: center;
+			margin-bottom: 5rem;
+			position: relative;
+			.pmpro_checkout-h3-msg {
+				position:absolute;
+				font-size: 1.5rem;
+				font-style: normal;
+				font-weight: 700;
+				left:0;
+				text-align: center;
+				top:100%;
+				width:100%;
+			}
+		}
+		.pmpro_checkout-fields {
+			display:block;
+			max-width: unset;
+			padding:2rem 2rem 1px;
+		}
+		
+	}
+
+	#pmpro_autorenewal_checkbox {
+		padding:0 2rem;
+		hr, h3 {
+			display: none;
+		}
+		.pmpro_checkout_field-autorenew {
+			display:flex;
+		}
+		label {
+			line-height: 1.1;
+		}
+	}
+
+	#pmpro_tos_fields {
+		align-items: flex-start;
+		padding:0 2rem 1rem;
+		label {
+			font-weight: 700;
+		}
+		a {
+			color:var(--bleu);
+			text-decoration: underline;
+			&:hover, &:focus {
+				color:var(--cyan);
+			}
+		}
+		input:checked, input:focus { 
+			& + label a {
+				color:var(--cyan);
+			}
+		}
+	}
+	.pmpro_submit {
+		margin-bottom: 4rem;
+		padding-top: 1rem;
+		padding-bottom: 2rem;
+		#pmpro_submit_span{
+			width: 100%;
+		}
+		input[type="submit"].pmpro_btn.pmpro_btn-submit-checkout {
+			background-color: #fff;
+			width:100%;
+			&:hover, &:focus {
+				background-color:var(--cyan);
+			}
+		}
+	}
+
+	form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields, 
+	#pmpro_autorenewal_checkbox,
+	#pmpro_tos_fields,
+	.pmpro_submit {
+		background-color: lightblue;
+		@include bp(sm) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width:48rem;
+			padding-left:6rem;
+			padding-right:6rem;
+			width:48rem;
+		}
+	}
+}

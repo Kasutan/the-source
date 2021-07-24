@@ -11,6 +11,7 @@
 	overflow-y: hidden;
 	padding:var(--margin-y-1) var(--padding-x) 10rem;
 	position: relative;
+	z-index:1;
 	--fond:95%;
 
 	.fond {

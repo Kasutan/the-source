@@ -13,6 +13,14 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 			default:
 				break;
 		}
-	} 
+	} else if($domain == 'pmpro-auto-renewal-checkbox') {
+		switch ($original) {
+			case 'Yes, renew at %s' :
+				return 'I activate automatic renewal at %s';
+				break;
+			default:
+				break;
+		}
+	}
 	return $translated;
 }, 10, 3);

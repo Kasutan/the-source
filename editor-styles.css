@@ -188,7 +188,7 @@ a.wp-block-button__link.has-gris-background-color, a.wp-block-button__link.has-g
   text-transform: uppercase; }
 
 a.wp-block-button__link {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   border: solid 1px;
   border-radius: 0;
   cursor: pointer;
@@ -211,105 +211,9 @@ a.wp-block-button__link {
   text-decoration: none;
   text-transform: uppercase;
   transition: all var(--transition); }
-  @media all and (max-width: 360px) {
-    a.wp-block-button__link {
-      font-size: 1.7rem; } }
-  @media all and (max-width: 1440px) {
+  @media (min-width: 500px) {
     a.wp-block-button__link {
       font-size: 1.9rem; } }
-  @media all and (max-width: 1364px) {
-    a.wp-block-button__link {
-      font-size: 2.12634rem; } }
-  @media all and (max-width: 1300px) {
-    a.wp-block-button__link {
-      font-size: 2.28871rem; } }
-  @media all and (max-width: 1243px) {
-    a.wp-block-button__link {
-      font-size: 2.41159rem; } }
-  @media all and (max-width: 1191px) {
-    a.wp-block-button__link {
-      font-size: 2.50583rem; } }
-  @media all and (max-width: 1143px) {
-    a.wp-block-button__link {
-      font-size: 2.5777rem; } }
-  @media all and (max-width: 1099px) {
-    a.wp-block-button__link {
-      font-size: 2.63083rem; } }
-  @media all and (max-width: 1057px) {
-    a.wp-block-button__link {
-      font-size: 2.67016rem; } }
-  @media all and (max-width: 1017px) {
-    a.wp-block-button__link {
-      font-size: 2.69729rem; } }
-  @media all and (max-width: 979px) {
-    a.wp-block-button__link {
-      font-size: 2.71372rem; } }
-  @media all and (max-width: 943px) {
-    a.wp-block-button__link {
-      font-size: 2.72089rem; } }
-  @media all and (max-width: 908px) {
-    a.wp-block-button__link {
-      font-size: 2.72003rem; } }
-  @media all and (max-width: 875px) {
-    a.wp-block-button__link {
-      font-size: 2.71215rem; } }
-  @media all and (max-width: 843px) {
-    a.wp-block-button__link {
-      font-size: 2.69796rem; } }
-  @media all and (max-width: 812px) {
-    a.wp-block-button__link {
-      font-size: 2.67805rem; } }
-  @media all and (max-width: 782px) {
-    a.wp-block-button__link {
-      font-size: 2.65303rem; } }
-  @media all and (max-width: 753px) {
-    a.wp-block-button__link {
-      font-size: 2.62344rem; } }
-  @media all and (max-width: 724px) {
-    a.wp-block-button__link {
-      font-size: 2.58856rem; } }
-  @media all and (max-width: 696px) {
-    a.wp-block-button__link {
-      font-size: 2.54985rem; } }
-  @media all and (max-width: 669px) {
-    a.wp-block-button__link {
-      font-size: 2.50785rem; } }
-  @media all and (max-width: 642px) {
-    a.wp-block-button__link {
-      font-size: 2.46125rem; } }
-  @media all and (max-width: 616px) {
-    a.wp-block-button__link {
-      font-size: 2.41203rem; } }
-  @media all and (max-width: 590px) {
-    a.wp-block-button__link {
-      font-size: 2.35856rem; } }
-  @media all and (max-width: 565px) {
-    a.wp-block-button__link {
-      font-size: 2.30312rem; } }
-  @media all and (max-width: 540px) {
-    a.wp-block-button__link {
-      font-size: 2.24375rem; } }
-  @media all and (max-width: 516px) {
-    a.wp-block-button__link {
-      font-size: 2.18305rem; } }
-  @media all and (max-width: 492px) {
-    a.wp-block-button__link {
-      font-size: 2.11871rem; } }
-  @media all and (max-width: 469px) {
-    a.wp-block-button__link {
-      font-size: 2.05365rem; } }
-  @media all and (max-width: 446px) {
-    a.wp-block-button__link {
-      font-size: 1.98526rem; } }
-  @media all and (max-width: 424px) {
-    a.wp-block-button__link {
-      font-size: 1.91672rem; } }
-  @media all and (max-width: 402px) {
-    a.wp-block-button__link {
-      font-size: 1.84514rem; } }
-  @media all and (max-width: 380px) {
-    a.wp-block-button__link {
-      font-size: 1.7705rem; } }
   a.wp-block-button__link:hover, a.wp-block-button__link:focus, a.wp-block-button__link:active {
     text-decoration: none; }
   a.wp-block-button__link:hover, a.wp-block-button__link:focus, a.wp-block-button__link:active {
@@ -380,7 +284,7 @@ a.wp-block-button__link {
 .wp-block-button__link,
 .is-style-outline > .wp-block-button__link,
 .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   border: solid 1px;
   border-radius: 0;
   cursor: pointer;
@@ -397,171 +301,11 @@ a.wp-block-button__link {
   border-radius: 0 !important;
   font-size: 19px;
   padding: 6px 17px !important; }
-  @media all and (max-width: 360px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.7rem; } }
-  @media all and (max-width: 1440px) {
+  @media (min-width: 500px) {
     .wp-block-button__link,
     .is-style-outline > .wp-block-button__link,
     .is-style-outline > .wp-block-button__link:not(.has-text-color) {
       font-size: 1.9rem; } }
-  @media all and (max-width: 1364px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.12634rem; } }
-  @media all and (max-width: 1300px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.28871rem; } }
-  @media all and (max-width: 1243px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.41159rem; } }
-  @media all and (max-width: 1191px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.50583rem; } }
-  @media all and (max-width: 1143px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.5777rem; } }
-  @media all and (max-width: 1099px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.63083rem; } }
-  @media all and (max-width: 1057px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.67016rem; } }
-  @media all and (max-width: 1017px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.69729rem; } }
-  @media all and (max-width: 979px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.71372rem; } }
-  @media all and (max-width: 943px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.72089rem; } }
-  @media all and (max-width: 908px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.72003rem; } }
-  @media all and (max-width: 875px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.71215rem; } }
-  @media all and (max-width: 843px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.69796rem; } }
-  @media all and (max-width: 812px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.67805rem; } }
-  @media all and (max-width: 782px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.65303rem; } }
-  @media all and (max-width: 753px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.62344rem; } }
-  @media all and (max-width: 724px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.58856rem; } }
-  @media all and (max-width: 696px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.54985rem; } }
-  @media all and (max-width: 669px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.50785rem; } }
-  @media all and (max-width: 642px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.46125rem; } }
-  @media all and (max-width: 616px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.41203rem; } }
-  @media all and (max-width: 590px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.35856rem; } }
-  @media all and (max-width: 565px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.30312rem; } }
-  @media all and (max-width: 540px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.24375rem; } }
-  @media all and (max-width: 516px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.18305rem; } }
-  @media all and (max-width: 492px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.11871rem; } }
-  @media all and (max-width: 469px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.05365rem; } }
-  @media all and (max-width: 446px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.98526rem; } }
-  @media all and (max-width: 424px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.91672rem; } }
-  @media all and (max-width: 402px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.84514rem; } }
-  @media all and (max-width: 380px) {
-    .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.7705rem; } }
   .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active,
   .is-style-outline > .wp-block-button__link:hover,
   .is-style-outline > .wp-block-button__link:focus,

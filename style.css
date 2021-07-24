@@ -1467,7 +1467,7 @@ a.button,
 a.wp-block-button__link,
 .is-style-outline > a.wp-block-button__link,
 .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   border: solid 1px;
   border-radius: 0;
   cursor: pointer;
@@ -1481,18 +1481,7 @@ a.wp-block-button__link,
   background-color: transparent;
   border-color: var(--bleu);
   color: var(--bleu); }
-  @media all and (max-width: 360px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.7rem; } }
-  @media all and (max-width: 1440px) {
+  @media (min-width: 500px) {
     button,
     input[type="button"],
     .site-container .nf-form-content input[type="button"],
@@ -1503,347 +1492,6 @@ a.wp-block-button__link,
     .is-style-outline > a.wp-block-button__link,
     .is-style-outline > .wp-block-button__link:not(.has-text-color) {
       font-size: 1.9rem; } }
-  @media all and (max-width: 1364px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.12634rem; } }
-  @media all and (max-width: 1300px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.28871rem; } }
-  @media all and (max-width: 1243px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.41159rem; } }
-  @media all and (max-width: 1191px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.50583rem; } }
-  @media all and (max-width: 1143px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.5777rem; } }
-  @media all and (max-width: 1099px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.63083rem; } }
-  @media all and (max-width: 1057px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.67016rem; } }
-  @media all and (max-width: 1017px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.69729rem; } }
-  @media all and (max-width: 979px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.71372rem; } }
-  @media all and (max-width: 943px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.72089rem; } }
-  @media all and (max-width: 908px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.72003rem; } }
-  @media all and (max-width: 875px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.71215rem; } }
-  @media all and (max-width: 843px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.69796rem; } }
-  @media all and (max-width: 812px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.67805rem; } }
-  @media all and (max-width: 782px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.65303rem; } }
-  @media all and (max-width: 753px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.62344rem; } }
-  @media all and (max-width: 724px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.58856rem; } }
-  @media all and (max-width: 696px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.54985rem; } }
-  @media all and (max-width: 669px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.50785rem; } }
-  @media all and (max-width: 642px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.46125rem; } }
-  @media all and (max-width: 616px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.41203rem; } }
-  @media all and (max-width: 590px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.35856rem; } }
-  @media all and (max-width: 565px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.30312rem; } }
-  @media all and (max-width: 540px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.24375rem; } }
-  @media all and (max-width: 516px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.18305rem; } }
-  @media all and (max-width: 492px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.11871rem; } }
-  @media all and (max-width: 469px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 2.05365rem; } }
-  @media all and (max-width: 446px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.98526rem; } }
-  @media all and (max-width: 424px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.91672rem; } }
-  @media all and (max-width: 402px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.84514rem; } }
-  @media all and (max-width: 380px) {
-    button,
-    input[type="button"],
-    .site-container .nf-form-content input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button,
-    a.wp-block-button__link,
-    .is-style-outline > a.wp-block-button__link,
-    .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.7705rem; } }
   button:hover, button:focus, button:active,
   input[type="button"]:hover,
   input[type="button"]:focus,
@@ -3609,6 +3257,315 @@ button.menu-toggle {
   .products .last-cat .card-cat {
     display: none; }
 
+.pmpro-checkout h2, .pmpro-checkout h3 {
+  color: var(--cyan); }
+
+.pmpro-checkout form.pmpro_form label, .pmpro-checkout #loginform label {
+  font-size: 2rem;
+  font-weight: 300; }
+
+.pmpro-checkout .pmpro_form > div, .pmpro-checkout .pmpro_submit {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--margin-x-header);
+  margin-right: var(--margin-x-header);
+  overflow-y: hidden;
+  padding: 0 var(--padding-x); }
+
+.pmpro-checkout #pmpro_user_fields {
+  background-color: #f0f7ff;
+  margin-top: -10rem;
+  padding-top: 12rem;
+  position: relative; }
+  @media (min-width: 1024px) {
+    .pmpro-checkout #pmpro_user_fields {
+      padding-top: 15rem; } }
+
+.pmpro-checkout #pmpro_billing_address_fields {
+  padding-bottom: 5rem;
+  position: relative;
+  --fond:95%; }
+  @media (min-width: 1024px) {
+    .pmpro-checkout #pmpro_billing_address_fields {
+      padding-bottom: 10rem; } }
+  @media (min-width: 1400px) {
+    .pmpro-checkout #pmpro_billing_address_fields {
+      --fond:90%; } }
+  .pmpro-checkout #pmpro_billing_address_fields > * {
+    position: relative; }
+  .pmpro-checkout #pmpro_billing_address_fields::before {
+    background-color: #f0f7ff;
+    content: '';
+    -webkit-clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+    clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+.pmpro-checkout .pmpro_checkout-fields {
+  margin: 0 auto;
+  max-width: 36rem;
+  position: relative; }
+
+.pmpro-checkout #pmprosp-password-notice {
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 2rem; }
+
+.pmpro-checkout form.pmpro_form #pmpro_payment_information_fields {
+  display: block;
+  padding: 0;
+  text-align: center; }
+  .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    position: relative; }
+    .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3::before, .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3::after {
+      content: '•';
+      display: inline-block;
+      padding: 0 0.5ch; }
+    @media all and (max-width: 360px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2rem; } }
+    @media all and (max-width: 1440px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 5rem; } }
+    @media all and (max-width: 1411px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.97824rem; } }
+    @media all and (max-width: 1383px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.95415rem; } }
+    @media all and (max-width: 1355px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.92704rem; } }
+    @media all and (max-width: 1327px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.8969rem; } }
+    @media all and (max-width: 1300px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.86497rem; } }
+    @media all and (max-width: 1273px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.83023rem; } }
+    @media all and (max-width: 1247px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.79412rem; } }
+    @media all and (max-width: 1221px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.7554rem; } }
+    @media all and (max-width: 1195px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.71407rem; } }
+    @media all and (max-width: 1170px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.67188rem; } }
+    @media all and (max-width: 1145px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.62727rem; } }
+    @media all and (max-width: 1120px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.58025rem; } }
+    @media all and (max-width: 1096px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.53284rem; } }
+    @media all and (max-width: 1072px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.48321rem; } }
+    @media all and (max-width: 1048px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.43136rem; } }
+    @media all and (max-width: 1024px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.37728rem; } }
+    @media all and (max-width: 1001px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.32338rem; } }
+    @media all and (max-width: 978px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.26743rem; } }
+    @media all and (max-width: 955px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.20944rem; } }
+    @media all and (max-width: 932px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.14941rem; } }
+    @media all and (max-width: 910px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.09008rem; } }
+    @media all and (max-width: 888px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 4.02889rem; } }
+    @media all and (max-width: 866px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.96583rem; } }
+    @media all and (max-width: 844px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.9009rem; } }
+    @media all and (max-width: 822px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.8341rem; } }
+    @media all and (max-width: 801px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.76859rem; } }
+    @media all and (max-width: 780px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.70139rem; } }
+    @media all and (max-width: 759px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.63248rem; } }
+    @media all and (max-width: 738px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.56187rem; } }
+    @media all and (max-width: 717px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.48957rem; } }
+    @media all and (max-width: 696px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.41556rem; } }
+    @media all and (max-width: 676px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.34349rem; } }
+    @media all and (max-width: 656px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.26988rem; } }
+    @media all and (max-width: 636px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.19472rem; } }
+    @media all and (max-width: 616px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.11802rem; } }
+    @media all and (max-width: 596px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 3.03978rem; } }
+    @media all and (max-width: 576px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.96rem; } }
+    @media all and (max-width: 557px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.88278rem; } }
+    @media all and (max-width: 538px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.80416rem; } }
+    @media all and (max-width: 519px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.72415rem; } }
+    @media all and (max-width: 500px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.64275rem; } }
+    @media all and (max-width: 481px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.55995rem; } }
+    @media all and (max-width: 462px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.47576rem; } }
+    @media all and (max-width: 443px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.39018rem; } }
+    @media all and (max-width: 424px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.30321rem; } }
+    @media all and (max-width: 406px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.21953rem; } }
+    @media all and (max-width: 388px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.1346rem; } }
+    @media all and (max-width: 370px) {
+      .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {
+        font-size: 2.04842rem; } }
+    .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 .pmpro_checkout-h3-msg {
+      position: absolute;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 700;
+      left: 0;
+      text-align: center;
+      top: 100%;
+      width: 100%; }
+  .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields {
+    display: block;
+    max-width: unset;
+    padding: 2rem 2rem 1px; }
+
+.pmpro-checkout #pmpro_autorenewal_checkbox {
+  padding: 0 2rem; }
+  .pmpro-checkout #pmpro_autorenewal_checkbox hr, .pmpro-checkout #pmpro_autorenewal_checkbox h3 {
+    display: none; }
+  .pmpro-checkout #pmpro_autorenewal_checkbox .pmpro_checkout_field-autorenew {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .pmpro-checkout #pmpro_autorenewal_checkbox label {
+    line-height: 1.1; }
+
+.pmpro-checkout #pmpro_tos_fields {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 0 2rem 1rem; }
+  .pmpro-checkout #pmpro_tos_fields label {
+    font-weight: 700; }
+  .pmpro-checkout #pmpro_tos_fields a {
+    color: var(--bleu);
+    text-decoration: underline; }
+    .pmpro-checkout #pmpro_tos_fields a:hover, .pmpro-checkout #pmpro_tos_fields a:focus {
+      color: var(--cyan); }
+  .pmpro-checkout #pmpro_tos_fields input:checked + label a, .pmpro-checkout #pmpro_tos_fields input:focus + label a {
+    color: var(--cyan); }
+
+.pmpro-checkout .pmpro_submit {
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem; }
+  .pmpro-checkout .pmpro_submit #pmpro_submit_span {
+    width: 100%; }
+  .pmpro-checkout .pmpro_submit input[type="submit"].pmpro_btn.pmpro_btn-submit-checkout {
+    background-color: #fff;
+    width: 100%; }
+    .pmpro-checkout .pmpro_submit input[type="submit"].pmpro_btn.pmpro_btn-submit-checkout:hover, .pmpro-checkout .pmpro_submit input[type="submit"].pmpro_btn.pmpro_btn-submit-checkout:focus {
+      background-color: var(--cyan); }
+
+.pmpro-checkout form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields,
+.pmpro-checkout #pmpro_autorenewal_checkbox,
+.pmpro-checkout #pmpro_tos_fields,
+.pmpro-checkout .pmpro_submit {
+  background-color: lightblue; }
+  @media (min-width: 500px) {
+    .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields,
+    .pmpro-checkout #pmpro_autorenewal_checkbox,
+    .pmpro-checkout #pmpro_tos_fields,
+    .pmpro-checkout .pmpro_submit {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 48rem;
+      padding-left: 6rem;
+      padding-right: 6rem;
+      width: 48rem; } }
+
 /*--------------------------------------------------------------
 ## Site header
 --------------------------------------------------------------*/
@@ -4206,7 +4163,7 @@ ul.menu-my-account-links, .email-preferences {
     text-align: center;
     width: 100%; }
     #pmpro_account-membership table .pmpro_actionlinks a {
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       border: solid 1px;
       border-radius: 0;
       cursor: pointer;
@@ -4222,105 +4179,9 @@ ul.menu-my-account-links, .email-preferences {
       color: var(--bleu);
       font-size: 2.2rem !important;
       padding: 0 5rem; }
-      @media all and (max-width: 360px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.7rem; } }
-      @media all and (max-width: 1440px) {
+      @media (min-width: 500px) {
         #pmpro_account-membership table .pmpro_actionlinks a {
           font-size: 1.9rem; } }
-      @media all and (max-width: 1364px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.12634rem; } }
-      @media all and (max-width: 1300px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.28871rem; } }
-      @media all and (max-width: 1243px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.41159rem; } }
-      @media all and (max-width: 1191px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.50583rem; } }
-      @media all and (max-width: 1143px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.5777rem; } }
-      @media all and (max-width: 1099px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.63083rem; } }
-      @media all and (max-width: 1057px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.67016rem; } }
-      @media all and (max-width: 1017px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.69729rem; } }
-      @media all and (max-width: 979px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.71372rem; } }
-      @media all and (max-width: 943px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.72089rem; } }
-      @media all and (max-width: 908px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.72003rem; } }
-      @media all and (max-width: 875px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.71215rem; } }
-      @media all and (max-width: 843px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.69796rem; } }
-      @media all and (max-width: 812px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.67805rem; } }
-      @media all and (max-width: 782px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.65303rem; } }
-      @media all and (max-width: 753px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.62344rem; } }
-      @media all and (max-width: 724px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.58856rem; } }
-      @media all and (max-width: 696px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.54985rem; } }
-      @media all and (max-width: 669px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.50785rem; } }
-      @media all and (max-width: 642px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.46125rem; } }
-      @media all and (max-width: 616px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.41203rem; } }
-      @media all and (max-width: 590px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.35856rem; } }
-      @media all and (max-width: 565px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.30312rem; } }
-      @media all and (max-width: 540px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.24375rem; } }
-      @media all and (max-width: 516px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.18305rem; } }
-      @media all and (max-width: 492px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.11871rem; } }
-      @media all and (max-width: 469px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 2.05365rem; } }
-      @media all and (max-width: 446px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.98526rem; } }
-      @media all and (max-width: 424px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.91672rem; } }
-      @media all and (max-width: 402px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.84514rem; } }
-      @media all and (max-width: 380px) {
-        #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.7705rem; } }
       #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {
         text-decoration: none; }
       #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {
