@@ -13,10 +13,22 @@
 		&#bemail {
 			width:33rem;
 		}
-		&:focus {
+		&:focus, &.js-valid {
 			border-color:var(--cyan);
 			color:var(--cyan);
 		}
+		&.js-valid {
+			background-image:url('icons/check-cyan.svg');
+			background-size:9px;
+			background-repeat: no-repeat;
+			background-position:right;
+			+ .pmpro_asterisk {
+				display: none;
+			}
+		}
+	}
+	select.js-valid {
+		background:none;
 	}
 	form.pmpro_form label, #loginform label {
 		font-size: 1.4rem;

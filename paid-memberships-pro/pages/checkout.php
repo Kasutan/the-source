@@ -133,7 +133,7 @@
 
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bemail', 'pmpro_checkout-field-bemail' ); ?>">
 				<label for="bemail" ><?php _e('Email Address', 'paid-memberships-pro' );?></label>
-				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" placeholder="<?php _e('Email Address', 'paid-memberships-pro' );?>"/>
+				<input required id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" placeholder="<?php _e('Email Address', 'paid-memberships-pro' );?>"/>
 			</div> <!-- end pmpro_checkout-field-bemail -->
 
 			<?php
@@ -154,7 +154,7 @@
 
 <div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-password', 'pmpro_checkout-field-password' ); ?>">
 				<label for="password" class=""><?php _e('Password', 'paid-memberships-pro' );?></label>
-				<input id="password" name="password" type="password" class="<?php echo pmpro_get_element_class( 'input', 'password' ); ?>" size="30" value="<?php echo esc_attr($password); ?>" placeholder="<?php _e('Password', 'paid-memberships-pro' );?>"/>
+				<input required id="password" name="password" type="password" class="<?php echo pmpro_get_element_class( 'input', 'password' ); ?>" size="30" value="<?php echo esc_attr($password); ?>" placeholder="<?php _e('Password', 'paid-memberships-pro' );?>"/>
 			</div> <!-- end pmpro_checkout-field-password -->
 
 			<?php
@@ -199,11 +199,11 @@
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bfirstname', 'pmpro_checkout-field-bfirstname' ); ?>">
 				<label for="bfirstname" class=""><?php _e('First Name', 'paid-memberships-pro' );?></label>
-				<input id="bfirstname" name="bfirstname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bfirstname' ); ?>" size="30" value="<?php echo esc_attr($bfirstname); ?>" placeholder="<?php _e('First Name', 'paid-memberships-pro' );?>" />
+				<input required id="bfirstname" name="bfirstname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bfirstname' ); ?>" size="30" value="<?php echo esc_attr($bfirstname); ?>" placeholder="<?php _e('First Name', 'paid-memberships-pro' );?>" />
 			</div> <!-- end pmpro_checkout-field-bfirstname -->
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-blastname', 'pmpro_checkout-field-blastname' ); ?>">
 				<label for="blastname" class=""><?php _e('Name', 'the-source' );?></label>
-				<input id="blastname" name="blastname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'blastname' ); ?>" size="30" value="<?php echo esc_attr($blastname); ?>" placeholder="<?php _e('Name', 'the-source' );?>"/>
+				<input required id="blastname" name="blastname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'blastname' ); ?>" size="30" value="<?php echo esc_attr($blastname); ?>" placeholder="<?php _e('Name', 'the-source' );?>"/>
 			</div> <!-- end pmpro_checkout-field-blastname -->
 			<?php
 				do_action('pmpro_checkout_after_username');
@@ -211,18 +211,18 @@
 			?>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-baddress1', 'pmpro_checkout-field-baddress1' ); ?>">
 				<label for="baddress1" class=""><?php _e('Address', 'the-source' );?></label>
-				<input id="baddress1" name="baddress1" type="text" class="<?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" size="30" value="<?php echo esc_attr($baddress1); ?>" placeholder="<?php _e('Address', 'the-source' );?>" />
+				<input required id="baddress1" name="baddress1" type="text" class="<?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" size="30" value="<?php echo esc_attr($baddress1); ?>" placeholder="<?php _e('Address', 'the-source' );?>" />
 			</div> <!-- end pmpro_checkout-field-baddress1 -->
 			<?php
 				$longform_address = apply_filters("pmpro_longform_address", true);
 				if($longform_address) { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bzipcode', 'pmpro_checkout-field-bzipcode' ); ?>">
 						<label for="bzipcode" class=""><?php _e('Post Code', 'the-source' );?></label>
-						<input id="bzipcode" name="bzipcode" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bzipcode' ); ?>" size="30" value="<?php echo esc_attr($bzipcode); ?>" placeholder="<?php _e('Post Code', 'the-source' );?>"/>
+						<input required id="bzipcode" name="bzipcode" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bzipcode' ); ?>" size="30" value="<?php echo esc_attr($bzipcode); ?>" placeholder="<?php _e('Post Code', 'the-source' );?>"/>
 					</div> <!-- end pmpro_checkout-field-bzipcode -->
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcity', 'pmpro_checkout-field-bcity' ); ?>">
 					<label for="bcity" class=""><?php _e('City', 'paid-memberships-pro' );?></label>
-					<input id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="30" value="<?php echo esc_attr($bcity); ?>" placeholder="<?php _e('City', 'paid-memberships-pro' );?>"/>
+					<input required id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="30" value="<?php echo esc_attr($bcity); ?>" placeholder="<?php _e('City', 'paid-memberships-pro' );?>"/>
 				</div> <!-- end pmpro_checkout-field-bcity -->
 				<?php } else { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcity_state_zip', 'pmpro_checkout-field-bcity_state_zip' ); ?>">
@@ -264,7 +264,7 @@
 				if($show_country) { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcountry', 'pmpro_checkout-field-bcountry' ); ?>">
 						<label for="bcountry" class=""><?php _e('Country', 'paid-memberships-pro' );?></label>
-						<select name="bcountry" id="bcountry" class="<?php echo pmpro_get_element_class( '', 'bcountry' ); ?>">
+						<select required name="bcountry" id="bcountry" class="<?php echo pmpro_get_element_class( '', 'bcountry' ); ?>">
 						<?php
 							global $pmpro_countries;
 							?><option value="none" selected disabled hidden>
@@ -280,7 +280,7 @@
 				<?php } ?>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bphone', 'pmpro_checkout-field-bphone' ); ?>">
 				<label for="bphone" class=""><?php _e('Phone number', 'the-source' );?></label>
-				<input id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" />
+				<input required id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" />
 			</div> <!-- end pmpro_checkout-field-bphone -->
 			<?php if($skip_account_fields) { ?>
 			<?php

@@ -3310,12 +3310,31 @@ button.menu-toggle {
   .pmpro-checkout input[type="email"]#bemail,
   .pmpro-checkout select#bemail {
     width: 33rem; }
-  .pmpro-checkout input[type="text"]:focus,
+  .pmpro-checkout input[type="text"]:focus, .pmpro-checkout input[type="text"].js-valid,
   .pmpro-checkout input[type="password"]:focus,
+  .pmpro-checkout input[type="password"].js-valid,
   .pmpro-checkout input[type="email"]:focus,
-  .pmpro-checkout select:focus {
+  .pmpro-checkout input[type="email"].js-valid,
+  .pmpro-checkout select:focus,
+  .pmpro-checkout select.js-valid {
     border-color: var(--cyan);
     color: var(--cyan); }
+  .pmpro-checkout input[type="text"].js-valid,
+  .pmpro-checkout input[type="password"].js-valid,
+  .pmpro-checkout input[type="email"].js-valid,
+  .pmpro-checkout select.js-valid {
+    background-image: url("icons/check-cyan.svg");
+    background-size: 9px;
+    background-repeat: no-repeat;
+    background-position: right; }
+    .pmpro-checkout input[type="text"].js-valid + .pmpro_asterisk,
+    .pmpro-checkout input[type="password"].js-valid + .pmpro_asterisk,
+    .pmpro-checkout input[type="email"].js-valid + .pmpro_asterisk,
+    .pmpro-checkout select.js-valid + .pmpro_asterisk {
+      display: none; }
+
+.pmpro-checkout select.js-valid {
+  background: none; }
 
 .pmpro-checkout form.pmpro_form label, .pmpro-checkout #loginform label {
   font-size: 1.4rem;

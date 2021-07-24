@@ -403,10 +403,41 @@
 			if(inputs.length > 0) {
 				$(inputs).on('focus change',function(e){
 					var label=$(this).siblings('label');
-					console.log(label);
 					$(label).addClass('floating');
 				});
 			}
+
+			function validateField(input) {
+				console.log('validate',input);
+				if($(input).attr('type')==='email') {
+					console.log('TODO validate email');
+				} else if($(input).attr('type')==='password') {
+					console.log('TODO validate password');
+				} else if($(input).attr('id')==='bphone') {
+					console.log('TODO validate phone');	
+				} else if($(input).attr('id')==='zs-vat-number') {
+						console.log('TODO validate vat number');
+				} else if($(input).val()) {
+					$(input).addClass('js-valid');
+				} else {
+					$(input).removeClass('js-valid');
+				}
+			}
+			
+			//Vérifier dès le chargement de la page - au cas où des valeurs soient déjà présentes
+			$(inputs).each(function(index,item){
+				validateField(item);
+				//Afficher le label s'il y a une valeur (le placeholder n'est pas visible)
+				if($(item).val()) {
+					$(item).siblings('label').addClass('floating');
+				}
+
+			});
+
+			//Vérifier à la perte de focus
+			$(inputs).on('focusout', function(e) {
+				validateField($(this));
+			});
 		}
 		
 
