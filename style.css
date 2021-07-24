@@ -3401,6 +3401,215 @@ button.menu-toggle {
   line-height: 1.1;
   margin-bottom: 2rem; }
 
+.pmpro-checkout #pmpro_vat_table {
+  text-align: center; }
+  .pmpro-checkout #pmpro_vat_table hr {
+    display: none; }
+  .pmpro-checkout #pmpro_vat_table h3 {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .pmpro-checkout #pmpro_vat_table h3::before, .pmpro-checkout #pmpro_vat_table h3::after {
+      content: '•';
+      display: inline-block;
+      padding: 0 0.5ch; }
+    @media all and (max-width: 360px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2rem; } }
+    @media all and (max-width: 1440px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 5rem; } }
+    @media all and (max-width: 1411px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.97824rem; } }
+    @media all and (max-width: 1383px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.95415rem; } }
+    @media all and (max-width: 1355px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.92704rem; } }
+    @media all and (max-width: 1327px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.8969rem; } }
+    @media all and (max-width: 1300px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.86497rem; } }
+    @media all and (max-width: 1273px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.83023rem; } }
+    @media all and (max-width: 1247px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.79412rem; } }
+    @media all and (max-width: 1221px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.7554rem; } }
+    @media all and (max-width: 1195px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.71407rem; } }
+    @media all and (max-width: 1170px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.67188rem; } }
+    @media all and (max-width: 1145px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.62727rem; } }
+    @media all and (max-width: 1120px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.58025rem; } }
+    @media all and (max-width: 1096px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.53284rem; } }
+    @media all and (max-width: 1072px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.48321rem; } }
+    @media all and (max-width: 1048px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.43136rem; } }
+    @media all and (max-width: 1024px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.37728rem; } }
+    @media all and (max-width: 1001px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.32338rem; } }
+    @media all and (max-width: 978px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.26743rem; } }
+    @media all and (max-width: 955px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.20944rem; } }
+    @media all and (max-width: 932px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.14941rem; } }
+    @media all and (max-width: 910px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.09008rem; } }
+    @media all and (max-width: 888px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 4.02889rem; } }
+    @media all and (max-width: 866px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.96583rem; } }
+    @media all and (max-width: 844px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.9009rem; } }
+    @media all and (max-width: 822px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.8341rem; } }
+    @media all and (max-width: 801px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.76859rem; } }
+    @media all and (max-width: 780px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.70139rem; } }
+    @media all and (max-width: 759px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.63248rem; } }
+    @media all and (max-width: 738px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.56187rem; } }
+    @media all and (max-width: 717px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.48957rem; } }
+    @media all and (max-width: 696px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.41556rem; } }
+    @media all and (max-width: 676px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.34349rem; } }
+    @media all and (max-width: 656px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.26988rem; } }
+    @media all and (max-width: 636px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.19472rem; } }
+    @media all and (max-width: 616px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.11802rem; } }
+    @media all and (max-width: 596px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 3.03978rem; } }
+    @media all and (max-width: 576px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.96rem; } }
+    @media all and (max-width: 557px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.88278rem; } }
+    @media all and (max-width: 538px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.80416rem; } }
+    @media all and (max-width: 519px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.72415rem; } }
+    @media all and (max-width: 500px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.64275rem; } }
+    @media all and (max-width: 481px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.55995rem; } }
+    @media all and (max-width: 462px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.47576rem; } }
+    @media all and (max-width: 443px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.39018rem; } }
+    @media all and (max-width: 424px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.30321rem; } }
+    @media all and (max-width: 406px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.21953rem; } }
+    @media all and (max-width: 388px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.1346rem; } }
+    @media all and (max-width: 370px) {
+      .pmpro-checkout #pmpro_vat_table h3 {
+        font-size: 2.04842rem; } }
+  .pmpro-checkout #pmpro_vat_table #eu_self_id_instructions {
+    color: var(--cyan);
+    font-weight: 700;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase; }
+  .pmpro-checkout #pmpro_vat_table .pmpro_checkout-fields {
+    max-width: unset; }
+  .pmpro-checkout #pmpro_vat_table select, .pmpro-checkout #pmpro_vat_table input, .pmpro-checkout #pmpro_vat_table label {
+    margin: 0 auto;
+    max-width: 36rem;
+    position: relative;
+    width: 100%; }
+  .pmpro-checkout #pmpro_vat_table #vat-country-info {
+    margin-bottom: 0;
+    max-width: 50rem; }
+  .pmpro-checkout #pmpro_vat_table #vat_have_number input {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
+  .pmpro-checkout #pmpro_vat_table #vat_have_number label {
+    opacity: 1;
+    font-size: 2rem; }
+  .pmpro-checkout #pmpro_vat_table #vat_number_validation_tr {
+    margin-bottom: 0; }
+    .pmpro-checkout #pmpro_vat_table #vat_number_validation_tr label {
+      opacity: 1; }
+  .pmpro-checkout #pmpro_vat_table #vat_number_validation_button {
+    margin: 1em auto;
+    width: 20rem; }
+
 .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields {
   display: block;
   padding: 0;

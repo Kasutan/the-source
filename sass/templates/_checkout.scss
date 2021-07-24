@@ -101,6 +101,60 @@
 		margin-bottom: 2rem;
 	}
 
+	#pmpro_vat_table {
+		text-align: center;
+		hr {
+			display: none;
+		}
+		h3 {
+			@include dots;
+			@include fs(2rem,5rem);
+			display: flex;
+			justify-content: center;
+		}
+		
+		#eu_self_id_instructions {
+			color:var(--cyan);
+			font-weight: 700;
+			margin-bottom: 0;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.pmpro_checkout-fields {
+			max-width:unset;
+		}
+		select, input, label {
+			margin: 0 auto;
+			max-width: 36rem;
+			position: relative;
+			width:100%;
+		}
+		#vat-country-info {
+			margin-bottom: 0;
+			max-width:50rem;
+		}
+		#vat_have_number {
+			input {
+				@include screen-reader-text;
+			}
+			label {
+				opacity:1;
+				font-size: 2rem;
+			}
+		}
+		#vat_number_validation_tr {
+			margin-bottom:0;
+			label {
+				opacity:1;
+			}
+		}
+		#vat_number_validation_button {
+			margin:1em auto;
+			width:20rem;
+		}
+
+	}
+
 	form.pmpro_form #pmpro_payment_information_fields {
 		display: block;
 		padding: 0;
