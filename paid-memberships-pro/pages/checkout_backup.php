@@ -20,7 +20,7 @@
 	}
 
 	//Ne pas afficher les infos sur le level (elles sont dans le bloc ACF checkout-header)
-	add_filter('pmpro_include_pricing_fields','__return_false');
+	//add_filter('pmpro_include_pricing_fields','__return_false');
 ?>
 
 <?php do_action('pmpro_checkout_before_form'); ?>
@@ -52,8 +52,8 @@
 		?>
 		<div id="pmpro_pricing_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_pricing_fields' ); ?>">
 			<h2 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Membership Level', 'paid-memberships-pro' );?></span>
-				<?php if(count($pmpro_levels) > 1) { ?><span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('change', 'paid-memberships-pro' );?></a></span><?php } ?>
+				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Membership Level', 'paid-memberships-pro' );?></span>
+				<?php if(count($pmpro_levels) > 1) { ?><span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('change', 'paid-memberships-pro' );?></a></span><?php } ?>
 			</h2>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 				<p>
@@ -118,9 +118,9 @@
 	<div id="pmpro_user_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_user_fields' ); ?>">
 		
 		<h2 class="dots">
-			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>">My personal information</span>
+			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>">My personal information</span>
 		</h2>
-		<p class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><?php _e('Already have an account?', 'paid-memberships-pro' );?> <a href="<?php echo wp_login_url( apply_filters( 'pmpro_checkout_login_redirect', pmpro_url("checkout", "?level=" . $pmpro_level->id . $discount_code_link) ) ); ?>"><?php _e('Log in here', 'paid-memberships-pro' );?></a></p>
+		<p class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><?php _e('Already have an account?', 'paid-memberships-pro' );?> <a href="<?php echo wp_login_url( apply_filters( 'pmpro_checkout_login_redirect', pmpro_url("checkout", "?level=" . $pmpro_level->id . $discount_code_link) ) ); ?>"><?php _e('Log in here', 'paid-memberships-pro' );?></a></p>
 
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			
@@ -133,7 +133,7 @@
 
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bemail', 'pmpro_checkout-field-bemail' ); ?>">
 				<label for="bemail" class="screen-reader-text"><?php _e('Email Address', 'paid-memberships-pro' );?></label>
-				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" placeholder="<?php _e('Email Address', 'paid-memberships-pro' );?>"/>
+				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" placeholder="<?php _e('Email Address', 'paid-memberships-pro' );?>" required />
 			</div> <!-- end pmpro_checkout-field-bemail -->
 
 			<?php
@@ -154,7 +154,7 @@
 
 <div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-password', 'pmpro_checkout-field-password' ); ?>">
 				<label for="password" class="screen-reader-text"><?php _e('Password', 'paid-memberships-pro' );?></label>
-				<input id="password" name="password" type="password" class="<?php echo pmpro_get_element_class( 'input', 'password' ); ?>" size="30" value="<?php echo esc_attr($password); ?>" placeholder="<?php _e('Password', 'paid-memberships-pro' );?>"/>
+				<input id="password" name="password" type="password" class="<?php echo pmpro_get_element_class( 'input', 'password' ); ?>" size="30" value="<?php echo esc_attr($password); ?>" placeholder="<?php _e('Password', 'paid-memberships-pro' );?>" required/>
 			</div> <!-- end pmpro_checkout-field-password -->
 
 			<?php
@@ -175,7 +175,7 @@
 
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_hidden' ); ?>">
 				<label for="fullname"><?php _e('Full Name', 'paid-memberships-pro' );?></label>
-				<input id="fullname" name="fullname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'fullname' ); ?>" size="30" value="" autocomplete="off"/> <strong><?php _e('LEAVE THIS BLANK', 'paid-memberships-pro' );?></strong>
+				<input id="fullname" name="fullname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'fullname' ); ?>" size="30" value="" autocomplete="off" /> <strong><?php _e('LEAVE THIS BLANK', 'paid-memberships-pro' );?></strong>
 			</div> <!-- end pmpro_hidden -->
 
 		</div>  <!-- end pmpro_checkout-fields -->
@@ -199,7 +199,7 @@
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bfirstname', 'pmpro_checkout-field-bfirstname' ); ?>">
 				<label for="bfirstname" class="screen-reader-text"><?php _e('First Name', 'paid-memberships-pro' );?></label>
-				<input id="bfirstname" name="bfirstname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bfirstname' ); ?>" size="30" value="<?php echo esc_attr($bfirstname); ?>" placeholder="<?php _e('First Name', 'paid-memberships-pro' );?>" />
+				<input id="bfirstname" name="bfirstname" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bfirstname' ); ?>" size="30" value="<?php echo esc_attr($bfirstname); ?>" placeholder="<?php _e('First Name', 'paid-memberships-pro' );?>" required/>
 			</div> <!-- end pmpro_checkout-field-bfirstname -->
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-blastname', 'pmpro_checkout-field-blastname' ); ?>">
 				<label for="blastname" class="screen-reader-text"><?php _e('Name', 'the-source' );?></label>
@@ -211,23 +211,23 @@
 			?>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-baddress1', 'pmpro_checkout-field-baddress1' ); ?>">
 				<label for="baddress1" class="screen-reader-text"><?php _e('Address', 'the-source' );?></label>
-				<input id="baddress1" name="baddress1" type="text" class="<?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" size="30" value="<?php echo esc_attr($baddress1); ?>" placeholder="<?php _e('Address', 'the-source' );?>" />
+				<input id="baddress1" name="baddress1" type="text" class="<?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" size="30" value="<?php echo esc_attr($baddress1); ?>" placeholder="<?php _e('Address', 'the-source' );?>" required/>
 			</div> <!-- end pmpro_checkout-field-baddress1 -->
 			<?php
 				$longform_address = apply_filters("pmpro_longform_address", true);
 				if($longform_address) { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bzipcode', 'pmpro_checkout-field-bzipcode' ); ?>">
 						<label for="bzipcode" class="screen-reader-text"><?php _e('Post Code', 'the-source' );?></label>
-						<input id="bzipcode" name="bzipcode" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bzipcode' ); ?>" size="30" value="<?php echo esc_attr($bzipcode); ?>" placeholder="<?php _e('Post Code', 'the-source' );?>"/>
+						<input id="bzipcode" name="bzipcode" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bzipcode' ); ?>" size="30" value="<?php echo esc_attr($bzipcode); ?>" placeholder="<?php _e('Post Code', 'the-source' );?>" required/>
 					</div> <!-- end pmpro_checkout-field-bzipcode -->
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcity', 'pmpro_checkout-field-bcity' ); ?>">
 					<label for="bcity" class="screen-reader-text"><?php _e('City', 'paid-memberships-pro' );?></label>
-					<input id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="30" value="<?php echo esc_attr($bcity); ?>" placeholder="<?php _e('City', 'paid-memberships-pro' );?>"/>
+					<input id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="30" value="<?php echo esc_attr($bcity); ?>" placeholder="<?php _e('City', 'paid-memberships-pro' );?>" required/>
 				</div> <!-- end pmpro_checkout-field-bcity -->
 				<?php } else { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcity_state_zip', 'pmpro_checkout-field-bcity_state_zip' ); ?>">
 						<label for="bcity_state_zip' ); ?>"><?php _e('City, State Zip', 'paid-memberships-pro' );?></label>
-						<input id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="14" value="<?php echo esc_attr($bcity); ?>" />,
+						<input id="bcity" name="bcity" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bcity' ); ?>" size="14" value="<?php echo esc_attr($bcity); ?>" required/>,
 						<?php
 							$state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
 							if($state_dropdowns === true || $state_dropdowns == "names") {
@@ -264,7 +264,7 @@
 				if($show_country) { ?>
 					<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bcountry', 'pmpro_checkout-field-bcountry' ); ?>">
 						<label for="bcountry" class="screen-reader-text"><?php _e('Country', 'paid-memberships-pro' );?></label>
-						<select name="bcountry" id="bcountry" class="<?php echo pmpro_get_element_class( '', 'bcountry' ); ?>">
+						<select name="bcountry" id="bcountry" class="<?php echo pmpro_get_element_class( '', 'bcountry' ); ?>" required>
 						<?php
 							global $pmpro_countries;
 							?><option value="none" selected disabled hidden>
@@ -280,7 +280,7 @@
 				<?php } ?>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bphone', 'pmpro_checkout-field-bphone' ); ?>">
 				<label for="bphone" class="screen-reader-text"><?php _e('Phone number', 'the-source' );?></label>
-				<input id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" />
+				<input id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" required/>
 			</div> <!-- end pmpro_checkout-field-bphone -->
 			<?php if($skip_account_fields) { ?>
 			<?php
@@ -295,7 +295,7 @@
 			?>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bemail', 'pmpro_checkout-field-bemail' ); ?>">
 				<label for="bemail"><?php _e('Email Address', 'paid-memberships-pro' );?></label>
-				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" />
+				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="<?php echo pmpro_get_element_class( 'input', 'bemail' ); ?>" size="30" value="<?php echo esc_attr($bemail); ?>" required/>
 			</div> <!-- end pmpro_checkout-field-bemail -->
 			<?php
 				$pmpro_checkout_confirm_email = apply_filters("pmpro_checkout_confirm_email", true);
@@ -318,7 +318,7 @@
 	<div id="pmpro_payment_method" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_payment_method' ); ?>" <?php if(!$pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>
 		
 		<h2 class="dots">
-			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Choose your Payment Method', 'paid-memberships-pro' ); ?></span>
+			<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Choose your Payment Method', 'paid-memberships-pro' ); ?></span>
 		</h2>
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 			<span class="<?php echo pmpro_get_element_class( 'gateway_paypal' ); ?>">
@@ -346,9 +346,13 @@
 		<div id="pmpro_payment_information_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_payment_information_fields' ); ?>" <?php if(!$pmpro_requirebilling || apply_filters("pmpro_hide_payment_information_fields", false) ) { ?>style="display: none;"<?php } ?>>
 			
 			<h2 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('Payment Information', 'paid-memberships-pro' );?></span>
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><?php printf(__('We Accept %s', 'paid-memberships-pro' ), $pmpro_accepted_credit_cards_string);?></span>
+				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-name' ); ?>"><?php _e('Payment Method', 'paid-memberships-pro' );?></span>
+				<!--<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h2-msg' ); ?>"><?php printf(__('We Accept %s', 'paid-memberships-pro' ), $pmpro_accepted_credit_cards_string);?></span>-->
 			</h2>
+			<div class="payment-reassurance">
+				<p class="has-cyan-text-color">Checkout with credit card</p>
+				<p><em>logos ici</em></p>
+			</div>
 			<?php $sslseal = pmpro_getOption("sslseal"); ?>
 			<?php if(!empty($sslseal)) { ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields-display-seal' ); ?>">
@@ -430,27 +434,7 @@
 
 	<?php if($tospage && !$pmpro_review) { ?>
 		<div id="pmpro_tos_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_tos_fields' ); ?>">
-			
-			<h2 class="dots">
-				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php echo esc_html( $tospage->post_title );?></span>
-			</h2>
-			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
-				<div id="pmpro_license" class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
-<?php 
-	/**
-	* Hook to run formatting filters before displaying the content of your "Terms of Service" page at checkout.
-	*
-	* @since 2.4.1
-	*
-	* @param string $pmpro_tos_content The content of the post assigned as the Terms of Service page.
-	* @param string $tospage The post assigned as the Terms of Service page.
-	*
-	* @return string $pmpro_tos_content
-	*/
-	$pmpro_tos_content = apply_filters( 'pmpro_tos_content', do_shortcode( $tospage->post_content ), $tospage );
-	echo $pmpro_tos_content;
-?>
-				</div> <!-- end pmpro_license -->
+
 				<?php
 					if ( isset( $_REQUEST['tos'] ) ) {
 						$tos = intval( $_REQUEST['tos'] );
