@@ -309,6 +309,12 @@
 			width:48rem;
 		}
 	}
+
+	//Fix pas de champs billing ou payment -> fond bleu pleine page
+	#pmpro_level-2 {
+		background-color: var(--fond);
+		//padding-bottom: 1px;
+	}
 }
 
 
