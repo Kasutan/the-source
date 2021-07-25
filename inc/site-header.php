@@ -85,7 +85,7 @@ function kasutan_header_right() {
 				} else {
 					$login_url=wp_login_url(get_permalink());
 				}
-				printf('Already a member? <a href="%s" class="login-link">Just sign in</a>',$login_url);
+				printf('<div class="circle"></div><div class="signin">Already a member?</br> <a href="%s" class="login-link">Just sign in</a></div>',$login_url);
 			}
 		echo '</nav>';
 		return;

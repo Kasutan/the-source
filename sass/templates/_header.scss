@@ -30,10 +30,13 @@
 
 
 .site-title {
-	margin:1rem 5rem;
+	margin:1rem;
 	position: relative;
 	text-align: center;
 	width:14.2rem;
+	@include bp(sm) {
+		margin:1rem 5rem;
+	}
 	@include bp(md) {
 		margin:1rem 3.5rem;
 		width:25vw;

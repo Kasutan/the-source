@@ -110,6 +110,49 @@ p.fil-ariane {
 }
 
 /*--------------------------------------------------------------
+## Signin link
+--------------------------------------------------------------*/
+.header-right {
+	position: relative;
+	--size:5rem;
+	@include bp(md) {
+		--size:7rem;
+	}
+	@include bp(lg) {
+		--size:9rem;
+	}
+	.circle {
+		background-color: var(--fond);
+		border-radius:100%;
+		height:var(--size);
+		position: absolute;
+		right:0;
+		width:var(--size);
+	}
+}
+.signin {
+	font-size: 1.4rem;
+	padding-right: 2px;
+	position:relative;
+	text-align: right;
+	
+	a {
+		font-weight:300;
+	}
+
+	@include bp(md) {
+		font-size: 1.6rem;
+		padding-right: 0;
+		br {
+			display: none;
+		}
+	}
+	@include bp(lg) {
+		font-size: 2rem;
+	}
+}
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 //Reset styles menus

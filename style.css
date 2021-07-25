@@ -2096,6 +2096,43 @@ p.fil-ariane {
         text-decoration: none !important; } }
 
 /*--------------------------------------------------------------
+## Signin link
+--------------------------------------------------------------*/
+.header-right {
+  position: relative;
+  --size:5rem; }
+  @media (min-width: 768px) {
+    .header-right {
+      --size:7rem; } }
+  @media (min-width: 1024px) {
+    .header-right {
+      --size:9rem; } }
+  .header-right .circle {
+    background-color: var(--fond);
+    border-radius: 100%;
+    height: var(--size);
+    position: absolute;
+    right: 0;
+    width: var(--size); }
+
+.signin {
+  font-size: 1.4rem;
+  padding-right: 2px;
+  position: relative;
+  text-align: right; }
+  .signin a {
+    font-weight: 300; }
+  @media (min-width: 768px) {
+    .signin {
+      font-size: 1.6rem;
+      padding-right: 0; }
+      .signin br {
+        display: none; } }
+  @media (min-width: 1024px) {
+    .signin {
+      font-size: 2rem; } }
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .nav-menu {
@@ -3966,10 +4003,13 @@ button.menu-toggle {
     flex-grow: 0; }
 
 .site-title {
-  margin: 1rem 5rem;
+  margin: 1rem;
   position: relative;
   text-align: center;
   width: 14.2rem; }
+  @media (min-width: 500px) {
+    .site-title {
+      margin: 1rem 5rem; } }
   @media (min-width: 768px) {
     .site-title {
       margin: 1rem 3.5rem;
