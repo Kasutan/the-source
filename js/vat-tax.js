@@ -81,11 +81,13 @@
 		$('#vat_number_message').bind('DOMSubtreeModified', function(event) {
 			if($(this).hasClass('pmpro_success')) {
 				$('#vat-country-info, .js-vat-eu-rate').html('Total price is €'+price+' including €0 VAT (valid EU VAT number).');
+				$('#zs-vat-number').addClass('js-valid');
 			} else {
 				var selected=$('#eucountry').val();
 				var priceTTC=displayPriceTTC(selected);
 				$('#vat-country-info').html('Total price is '+priceTTC+'.<br> If you have a EU VAT number, VAT will not be added to your membership price. <br>Please fill in the form below to validate your VAT number. '); //TODO isoler messages
 				$('.js-vat-eu-rate').html('Total price is '+priceTTC+'.');
+				$('#zs-vat-number').removeClass('js-valid');
 			}
 		});
 

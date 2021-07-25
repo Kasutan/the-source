@@ -408,25 +408,30 @@
 			}
 
 			function validateField(input) {
-				console.log('validate',input);
+				var val=$(input).val();
 				if($(input).attr('type')==='email') {
-					console.log('TODO validate email');
+					return validateEmail(val);
 				} else if($(input).attr('type')==='password') {
-					console.log('TODO validate password');
+					return validatePassword(val);
 				} else if($(input).attr('id')==='bphone') {
-					console.log('TODO validate phone');	
+					return validatePhone(val);
 				} else if($(input).attr('id')==='zs-vat-number') {
-						console.log('TODO validate vat number');
+					//VAT number is validated elsewhere
+					return false;
 				} else if($(input).val()) {
-					$(input).addClass('js-valid');
+					return true;
 				} else {
-					$(input).removeClass('js-valid');
+					return false;
 				}
 			}
 			
 			//Vérifier dès le chargement de la page - au cas où des valeurs soient déjà présentes
 			$(inputs).each(function(index,item){
-				validateField(item);
+				if(validateField(item)) {
+					$(item).addClass('js-valid');
+				} else {
+					$(item).removeClass('js-valid');
+				}
 				//Afficher le label s'il y a une valeur (le placeholder n'est pas visible)
 				if($(item).val()) {
 					$(item).siblings('label').addClass('floating');
@@ -434,10 +439,41 @@
 
 			});
 
-			//Vérifier à la perte de focus
+			//Vérifier à la perte de focus - là on signale aussi si l'input est invalide pour les champs requis
 			$(inputs).on('focusout', function(e) {
 				validateField($(this));
+				if(validateField($(this))) {
+					$(this).removeClass('js-invalid');
+					$(this).addClass('js-valid');
+				} else {
+					$(this).removeClass('js-valid');
+					if($(this).attr('required')) {
+						$(this).addClass('js-invalid');
+					}
+				}
 			});
+
+
+			function validateEmail(email) {
+				const res = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return res.test(String(email).toLowerCase());
+			}
+
+			function validatePassword(text) 
+			{ 
+				var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{12,1000}$/;
+				return text.match(passw);
+			}
+
+			/*--------------------------------------------------------------
+			# https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
+			# Numéro international https://www.regextester.com/97440
+			--------------------------------------------------------------*/
+			function validatePhone(text) 
+			{ 
+				var internationalPhoneRegex=/^(([+][0-9]{1,3}))\s*[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{2}){3,4}$/;
+				return text.match(internationalPhoneRegex);
+			}
 		}
 		
 

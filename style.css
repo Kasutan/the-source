@@ -3332,9 +3332,19 @@ button.menu-toggle {
     .pmpro-checkout input[type="email"].js-valid + .pmpro_asterisk,
     .pmpro-checkout select.js-valid + .pmpro_asterisk {
       display: none; }
+  .pmpro-checkout input[type="text"].js-invalid,
+  .pmpro-checkout input[type="password"].js-invalid,
+  .pmpro-checkout input[type="email"].js-invalid,
+  .pmpro-checkout select.js-invalid {
+    background-image: url("icons/croix-rouge.svg");
+    background-size: 9px;
+    background-repeat: no-repeat;
+    background-position: right;
+    border-color: var(--rouge);
+    color: var(--rouge); }
 
-.pmpro-checkout select.js-valid {
-  background: none; }
+.pmpro-checkout select.js-valid, .pmpro-checkout select.js-invalid {
+  background-position: 92%; }
 
 .pmpro-checkout form.pmpro_form label, .pmpro-checkout #loginform label {
   font-size: 1.4rem;

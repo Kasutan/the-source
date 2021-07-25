@@ -26,9 +26,19 @@
 				display: none;
 			}
 		}
+		&.js-invalid {
+			background-image:url('icons/croix-rouge.svg');
+			background-size:9px;
+			background-repeat: no-repeat;
+			background-position:right;
+			border-color:var(--rouge);
+			color:var(--rouge);
+		}
 	}
-	select.js-valid {
-		background:none;
+	select {
+		&.js-valid, &.js-invalid {
+			background-position:92%;
+		}
 	}
 	form.pmpro_form label, #loginform label {
 		font-size: 1.4rem;

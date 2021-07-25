@@ -281,6 +281,7 @@
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bphone', 'pmpro_checkout-field-bphone' ); ?>">
 				<label for="bphone" class=""><?php _e('Phone number', 'the-source' );?></label>
 				<input required id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" />
+				<br/><small>Please include your country code starting with "+". Example +34 123 34 67 89 </small>
 			</div> <!-- end pmpro_checkout-field-bphone -->
 			<?php if($skip_account_fields) { ?>
 			<?php

@@ -210,6 +210,8 @@ function kasutan_strong_password_custom_checker( $password, $username ) {
 // Show hint after password field. Hook as early as possible in case there are other uses of filter
 add_filter( 'pmpro_checkout_after_password', 'kasutan_checkout_after_password', 1 );
 function kasutan_checkout_after_password() {
-	echo '<small id="pmprosp-password-notice">The password should be at least twelve characters long, contain upper and lower case letters, numbers, and symbols.</small>';
+	echo '<small id="pmprosp-password-notice">The password should be at least twelve characters long, contain upper and lower case letters, numbers, and symbols like !@#$;%^&*.</small>';
 }
+
+//SI NECESSAIRE : bloquer la validation si le numéro de téléphone n'est pas au bon format ?
 
