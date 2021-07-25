@@ -4146,6 +4146,74 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
         width: 1ch;
         margin: 0 1ch; }
 
+.pmpro-login .site-header {
+  display: none; }
+
+.pmpro-login .site-inner {
+  padding: 10rem 0; }
+
+.pmpro-login .wp-block-site-logo {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%; }
+
+.pmpro-login .login-section {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 3rem; }
+  .pmpro-login .login-section h2 {
+    font-size: 3rem;
+    margin-bottom: 2em; }
+  .pmpro-login .login-section #loginform label {
+    font-size: 2rem;
+    font-weight: 300; }
+  .pmpro-login .login-section #loginform input[type="text"], .pmpro-login .login-section #loginform input[type="password"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px var(--bleu);
+    max-width: unset;
+    width: 100%; }
+  .pmpro-login .login-section #loginform .login-submit {
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    text-align: center; }
+  .pmpro-login .login-section #loginform input[type="submit"] {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    display: inline-block;
+    font-weight: 700;
+    width: 20rem; }
+    .pmpro-login .login-section #loginform input[type="submit"]:hover, .pmpro-login .login-section #loginform input[type="submit"]:focus {
+      background-color: var(--cyan); }
+  .pmpro-login .login-section hr {
+    display: none; }
+  .pmpro-login .login-section .pmpro_actions_nav a {
+    color: var(--bleu);
+    font-weight: 300; }
+  .pmpro-login .login-section .pmpro_logged_in_welcome_wrap {
+    padding-bottom: 3rem;
+    text-align: center; }
+    .pmpro-login .login-section .pmpro_logged_in_welcome_wrap h3 {
+      font-size: 2rem; }
+    .pmpro-login .login-section .pmpro_logged_in_welcome_wrap .pmpro_member_log_out a {
+      color: var(--bleu);
+      font-weight: 300;
+      text-decoration: underline; }
+      .pmpro-login .login-section .pmpro_logged_in_welcome_wrap .pmpro_member_log_out a:hover, .pmpro-login .login-section .pmpro_logged_in_welcome_wrap .pmpro_member_log_out a:focus {
+        color: var(--cyan); }
+
+@media (min-width: 1024px) {
+  .pmpro-login .site-inner {
+    padding-top: 17rem;
+    padding-bottom: 20rem; } }
+
 .loop {
   list-style: none;
   margin: 0;

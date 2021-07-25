@@ -477,6 +477,35 @@
 		}
 		
 
+		/********************************************************************************** 
+		************************* LOGIN PAGE 
+		* ******************************************************************************/	
+
+		/************ Fix status visibility on Remember me checkbox label ***************/	
+		var rememberInput=$('body.pmpro-login #rememberme');
+		if(rememberInput.length > 0) {
+
+			var label=$(rememberInput).parent('label');
+			$(label).addClass('js-checkbox-label');
+			if($(rememberInput).prop('checked')) {
+				$(label).addClass('js-checked');
+			}
+
+			$(rememberInput).on('change',function(e) {
+				if($(rememberInput).prop('checked')) {
+					$(label).addClass('js-checked');
+				} else {
+					$(label).removeClass('js-checked');
+				}
+			});
+			$(rememberInput).on('focusin',function(e) {
+				$(label).addClass('js-focus');
+			});
+			$(rememberInput).on('focusout',function(e) {
+				$(label).removeClass('js-focus');
+			});
+		}
+
 
 	}); //fin document ready
 })( jQuery );

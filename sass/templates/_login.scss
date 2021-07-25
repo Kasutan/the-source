@@ -1,0 +1,85 @@
+.pmpro-login {
+	.site-header {
+		display: none;
+	}
+	.site-inner {
+		padding:10rem 0;
+	}
+	.wp-block-site-logo {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		max-width:100%;
+	}
+	.login-section {
+		margin:0 auto;
+		max-width:40rem;
+		padding:3rem;
+		h2 {
+			font-size: 3rem;
+			margin-bottom: 2em;
+		}
+		#loginform {
+			label {
+				font-size: 2rem;
+				font-weight: 300;
+			}
+			input[type="text"], input[type="password"] {
+				background-color: transparent;
+				border:none;
+				border-bottom:solid 1px var(--bleu);
+				max-width: unset;
+				width:100%
+			}
+			.login-submit {
+				margin-bottom: 0.5rem;
+				margin-top: 2rem;
+				text-align: center;
+			}
+			input[type="submit"] {
+				background-color: var(--bleu);
+				color:var(--blanc);
+				display: inline-block;
+				font-weight: 700;
+				width:20rem;
+				&:hover, &:focus {
+					background-color: var(--cyan);
+				}
+			}
+		}
+		hr {
+			display: none;
+		}
+		.pmpro_actions_nav {
+			a {
+				color:var(--bleu);
+				font-weight: 300;
+			}
+		}
+
+		.pmpro_logged_in_welcome_wrap {
+			h3 {
+				font-size: 2rem;
+			}
+			padding-bottom: 3rem;
+			text-align: center;
+			.pmpro_member_log_out {
+				a {
+					color:var(--bleu);
+					font-weight: 300;
+					text-decoration: underline;
+					&:hover, &:focus {
+						color:var(--cyan);
+					}
+				}
+			}
+		}
+	}
+
+	@include bp(lg) {
+		.site-inner {
+			padding-top:17rem;
+			padding-bottom:20rem;
+		}
+	}
+}
