@@ -1,0 +1,162 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.home-inspiration {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left:var(--margin-x-header);
+	margin-right:var(--margin-x-header);
+	margin-top: 1rem;
+	padding:var(--margin-y-1) var(--padding-x) 4rem;
+	position: relative;
+	z-index:1;
+	--a:17.6rem;
+	--b:14rem;
+
+	.fond {
+		background-color: var(--bleu);
+		clip-path: polygon(100% 0, 100% var(--a), 50% var(--b), 0 var(--a), 0 0);
+		height: 100%;
+		left:0;
+		position: absolute;
+		top:0;
+		width:100%;
+	}
+
+	.h1, .offers, .surtitre, .name {
+		position: relative; // pour passer devant les fonds
+	}
+
+
+	&, .h1, .offers,.surtitre, .name, .button {
+		color:var(--blanc);
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	.h1 {
+		margin-top:0;
+		margin-bottom: 3.7rem;
+	}
+
+	.offers {
+		list-style: none;
+		margin:0;
+		padding:0 2rem;
+		width:100%;
+	}
+	.offer {
+		align-items: center;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		height:11rem;
+		margin: 0 0 1rem;
+		padding-top: 1.6rem;
+		overflow-y: hidden;
+		position: relative;
+		text-align: center;
+	}
+	.filtre {
+		background-color: var(--cyan);
+		opacity:0.7;
+		@include fond;
+	}
+
+	.surtitre {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+	.name {
+		font-size: 1.7rem;
+		line-height: 1.9rem;
+	}
+
+
+	.button {
+		display: none;
+	}
+
+	.decor {
+		--size:7.2rem;
+		bottom: -3.7rem;
+		height:var(--size);
+		left:calc((100% - var(--size)) / 2);
+		position: absolute;
+		text-align: center;
+		width:var(--size);
+		svg {
+			max-height:100%;
+			max-width:100%;
+		}
+	}
+	
+	@include bp(md) {
+		--a:20rem;
+	}
+	@include bp(lg) {
+		--a:57rem;
+		--b:50rem;
+		padding-bottom: 8rem;
+		.h1 {
+			margin-bottom: 5.7rem;
+		}
+		.decor {
+			--size:16.3rem;
+			bottom: -8.6rem;
+		}
+		.button {
+			@include bouton;
+			background-color: var(--cyan);
+			border:none;
+			display: inline-block;
+			opacity:0;
+			padding:0.5rem 3rem;
+
+		}
+		.offer {
+			height:46rem;
+			padding-top: 20%;
+		}
+
+		.surtitre {
+			font-size: 2.2rem;
+			margin-bottom: 1rem;
+		}
+		.name {
+			font-size: 4rem;
+			line-height: 4.5rem;
+			margin-bottom: 7rem;
+		}
+
+		.offers {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			> li {
+				border:solid 5px transparent;
+				flex-basis:33%;
+				margin: 0 1rem;
+				transition: all var(--transition);
+
+				&:hover, &:focus-within {
+					border-color:var(--blanc);
+					a {
+						text-decoration: none;
+					}
+					.filtre {
+						background-color: var(--bleu);
+						opacity: 1;
+					}
+					.button {
+						opacity: 1;
+						position: relative;
+					}
+				}
+
+			}
+		}
+	}
+}

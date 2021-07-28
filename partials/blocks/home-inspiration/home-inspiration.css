@@ -1,0 +1,169 @@
+.home-inspiration {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--margin-x-header);
+  margin-right: var(--margin-x-header);
+  margin-top: 1rem;
+  padding: var(--margin-y-1) var(--padding-x) 4rem;
+  position: relative;
+  z-index: 1;
+  --a:17.6rem;
+  --b:14rem; }
+  .home-inspiration .fond {
+    background-color: var(--bleu);
+    -webkit-clip-path: polygon(100% 0, 100% var(--a), 50% var(--b), 0 var(--a), 0 0);
+    clip-path: polygon(100% 0, 100% var(--a), 50% var(--b), 0 var(--a), 0 0);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  .home-inspiration .h1, .home-inspiration .offers, .home-inspiration .surtitre, .home-inspiration .name {
+    position: relative; }
+  .home-inspiration, .home-inspiration .h1, .home-inspiration .offers, .home-inspiration .surtitre, .home-inspiration .name, .home-inspiration .button {
+    color: var(--blanc);
+    text-transform: uppercase;
+    text-decoration: none; }
+  .home-inspiration .h1 {
+    margin-top: 0;
+    margin-bottom: 3.7rem; }
+  .home-inspiration .offers {
+    list-style: none;
+    margin: 0;
+    padding: 0 2rem;
+    width: 100%; }
+  .home-inspiration .offer {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 11rem;
+    margin: 0 0 1rem;
+    padding-top: 1.6rem;
+    overflow-y: hidden;
+    position: relative;
+    text-align: center; }
+  .home-inspiration .filtre {
+    background-color: var(--cyan);
+    opacity: 0.7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%; }
+  .home-inspiration .surtitre {
+    font-size: 1rem;
+    font-weight: 300; }
+  .home-inspiration .name {
+    font-size: 1.7rem;
+    line-height: 1.9rem; }
+  .home-inspiration .button {
+    display: none; }
+  .home-inspiration .decor {
+    --size:7.2rem;
+    bottom: -3.7rem;
+    height: var(--size);
+    left: calc((100% - var(--size)) / 2);
+    position: absolute;
+    text-align: center;
+    width: var(--size); }
+    .home-inspiration .decor svg {
+      max-height: 100%;
+      max-width: 100%; }
+  @media (min-width: 768px) {
+    .home-inspiration {
+      --a:20rem; } }
+  @media (min-width: 1024px) {
+    .home-inspiration {
+      --a:57rem;
+      --b:50rem;
+      padding-bottom: 8rem; }
+      .home-inspiration .h1 {
+        margin-bottom: 5.7rem; }
+      .home-inspiration .decor {
+        --size:16.3rem;
+        bottom: -8.6rem; }
+      .home-inspiration .button {
+        font-size: 1.5rem;
+        border: solid 1px;
+        border-radius: 0;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0.6em 1.7em;
+        text-align: center;
+        text-transform: uppercase;
+        -webkit-transition: all var(--transition);
+        transition: all var(--transition);
+        vertical-align: middle;
+        background-color: var(--cyan);
+        border: none;
+        display: inline-block;
+        opacity: 0;
+        padding: 0.5rem 3rem; } }
+    @media (min-width: 1024px) and (min-width: 500px) {
+      .home-inspiration .button {
+        font-size: 1.9rem; } }
+  @media (min-width: 1024px) {
+        .home-inspiration .button:hover, .home-inspiration .button:focus, .home-inspiration .button:active {
+          text-decoration: none; }
+      .home-inspiration .offer {
+        height: 46rem;
+        padding-top: 20%; }
+      .home-inspiration .surtitre {
+        font-size: 2.2rem;
+        margin-bottom: 1rem; }
+      .home-inspiration .name {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        margin-bottom: 7rem; }
+      .home-inspiration .offers {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .home-inspiration .offers > li {
+          border: solid 5px transparent;
+          -ms-flex-preferred-size: 33%;
+          flex-basis: 33%;
+          margin: 0 1rem;
+          -webkit-transition: all var(--transition);
+          transition: all var(--transition); }
+          .home-inspiration .offers > li:hover, .home-inspiration .offers > li:focus-within {
+            border-color: var(--blanc); }
+            .home-inspiration .offers > li:hover a, .home-inspiration .offers > li:focus-within a {
+              text-decoration: none; }
+            .home-inspiration .offers > li:hover .filtre, .home-inspiration .offers > li:focus-within .filtre {
+              background-color: var(--bleu);
+              opacity: 1; }
+            .home-inspiration .offers > li:hover .button, .home-inspiration .offers > li:focus-within .button {
+              opacity: 1;
+              position: relative; } }

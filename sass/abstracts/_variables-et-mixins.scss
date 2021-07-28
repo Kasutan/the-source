@@ -184,6 +184,25 @@ $colors: (
 	padding-right:$x;
 }
 
+
+@mixin fond {
+	display: flex;
+	position: absolute;
+	height:100%;
+	left:0;
+	top:0;
+	width:100%;
+}
+
+@mixin fond-image {
+	@include fond;
+	img {
+		object-fit: cover;
+		object-position: top left;
+		width:100%;
+	}
+}
+
 //TODO supprimer après avoir remplacé toutes les occurences par la nouvelle mixin
 @mixin oldfs($px) {
 	font-size:calc(#{$px} * var(--taille-texte) / 20);

@@ -197,6 +197,13 @@ class BE_ACF_Customizations {
 			'Block header for checkout',
 			'Display header on checkout page for a level. Create as many blocks as there are levels.'
 		);
+
+		/*********Blocs Home***************/
+		$this->helper_register_block_type(
+			'home-inspiration',
+			'Block header for premium home page',
+			'Display header on home for premium members. "Seek inspiration" with 3 themes. For each theme: name, image and link.'
+		);
 		
 	}
 }
