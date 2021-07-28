@@ -5618,6 +5618,9 @@ h1.product-title {
     .product-related .siblings .button {
       margin: 0 1rem 2rem; } }
 
+.pmpro-confirmation .pmpro_confirmation_wrap {
+  display: none; }
+
 .pmpro-confirmation .entry-content {
   margin-left: var(--margin-x-header);
   margin-right: var(--margin-x-header);
@@ -5641,6 +5644,9 @@ h1.product-title {
     color: var(--blanc); }
   .pmpro-confirmation .confirmation-thankyou h3 {
     text-transform: uppercase; }
+  .pmpro-confirmation .confirmation-thankyou .confirmation-message {
+    font-size: 2.6rem;
+    text-align: center; }
 
 .pmpro-confirmation .confirmation-enjoy {
   padding: 0 2rem 5rem; }
