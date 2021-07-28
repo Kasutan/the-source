@@ -1,0 +1,67 @@
+.pmpro-confirmation {
+	//Masquer bloc natif PMPRO
+	.pmpro_confirmation_wrap {
+		//display: none;
+	}
+	.entry-content {
+		margin-left: var(--margin-x-header);
+		margin-right: var(--margin-x-header);
+		position: relative;
+	}
+
+	@include bp(xl) {
+		h2 {
+			font-size: 7rem;
+		}
+	}
+	
+	.confirmation-thankyou {
+		--pointe:92%;
+		clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+		margin-bottom: var(--margin-y-2);
+		margin-top: 1rem;
+		padding: 5rem 2rem 10rem;
+		@include bp(xl) {
+			padding-bottom:14rem;
+		}
+
+		h2, h3 {
+			color:var(--blanc);
+		}
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+	.confirmation-enjoy {
+		padding:0 2rem 5rem;
+		.wp-block-columns {
+			margin-top: var(--margin-y-1);
+		}
+		a {
+			font-weight: 300;
+			strong {
+				font-weight: 700;
+			}
+		}
+		@include bp(md) {
+			.wp-block-column:first-of-type {
+				border-right: solid 1px var(--bordure);
+			}
+			.wp-block-column:not(:first-child) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.confirmation-thankyou, .confirmation-enjoy {
+		@include bp(md) {
+			@include padding-x(5rem);
+		}
+		@include bp(lg) {
+			@include padding-x(0);
+			.wp-block-group__inner-container {
+				@include max-width(85rem);
+			}
+		}
+	}
+}

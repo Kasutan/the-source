@@ -5618,6 +5618,59 @@ h1.product-title {
     .product-related .siblings .button {
       margin: 0 1rem 2rem; } }
 
+.pmpro-confirmation .entry-content {
+  margin-left: var(--margin-x-header);
+  margin-right: var(--margin-x-header);
+  position: relative; }
+
+@media (min-width: 1400px) {
+  .pmpro-confirmation h2 {
+    font-size: 7rem; } }
+
+.pmpro-confirmation .confirmation-thankyou {
+  --pointe:92%;
+  -webkit-clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+  clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+  margin-bottom: var(--margin-y-2);
+  margin-top: 1rem;
+  padding: 5rem 2rem 10rem; }
+  @media (min-width: 1400px) {
+    .pmpro-confirmation .confirmation-thankyou {
+      padding-bottom: 14rem; } }
+  .pmpro-confirmation .confirmation-thankyou h2, .pmpro-confirmation .confirmation-thankyou h3 {
+    color: var(--blanc); }
+  .pmpro-confirmation .confirmation-thankyou h3 {
+    text-transform: uppercase; }
+
+.pmpro-confirmation .confirmation-enjoy {
+  padding: 0 2rem 5rem; }
+  .pmpro-confirmation .confirmation-enjoy .wp-block-columns {
+    margin-top: var(--margin-y-1); }
+  .pmpro-confirmation .confirmation-enjoy a {
+    font-weight: 300; }
+    .pmpro-confirmation .confirmation-enjoy a strong {
+      font-weight: 700; }
+  @media (min-width: 768px) {
+    .pmpro-confirmation .confirmation-enjoy .wp-block-column:first-of-type {
+      border-right: solid 1px var(--bordure); }
+    .pmpro-confirmation .confirmation-enjoy .wp-block-column:not(:first-child) {
+      margin-left: 0; } }
+
+@media (min-width: 768px) {
+  .pmpro-confirmation .confirmation-thankyou, .pmpro-confirmation .confirmation-enjoy {
+    padding-left: 5rem;
+    padding-right: 5rem; } }
+
+@media (min-width: 1024px) {
+  .pmpro-confirmation .confirmation-thankyou, .pmpro-confirmation .confirmation-enjoy {
+    padding-left: 0;
+    padding-right: 0; }
+    .pmpro-confirmation .confirmation-thankyou .wp-block-group__inner-container, .pmpro-confirmation .confirmation-enjoy .wp-block-group__inner-container {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 85rem; } }
+
 .advisor {
   --size: 4.7rem;
   -webkit-box-align: center;
