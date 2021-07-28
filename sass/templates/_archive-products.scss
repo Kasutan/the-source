@@ -11,13 +11,26 @@
 			padding:0;
 		}
 	}
-	&.acf {
+	&.acf.page-products {
 		padding:0;
 		.product-grid {
 			padding:0;
 		}
 		.pagination {
 			display: none;
+		}
+	}
+	&.acf.home-products {
+		.title, .above-title {
+			text-align: center;
+		}
+		.above-title {
+			font-size: 1.8rem;
+			opacity: 0.2;
+			text-transform: uppercase;
+			@include bp(lg) {
+				font-size: 3rem;
+			}
 		}
 	}
 	@include bp(lg) {
@@ -35,7 +48,7 @@
 				flex-basis:75%;
 			}
 		}
-		&.acf {
+		&.acf.page-products {
 			flex-wrap: wrap;
 			
 			.text-center {

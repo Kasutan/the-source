@@ -204,6 +204,12 @@ class BE_ACF_Customizations {
 			'Block header for premium home page',
 			'Display header on home for premium members. "Seek inspiration" with 3 themes. For each theme: name, image and link.'
 		);
+
+		$this->helper_register_block_type(
+			'home-products',
+			'Products block for premium home page',
+			'Display row of 4 most recent products in selected category, without filter.'
+		);
 		
 	}
 }
