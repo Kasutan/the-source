@@ -289,6 +289,33 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 
 
 /**
+* Display product card - read only
+* @param int $post_id
+* @param object $term
+*/
+function kasutan_display_readonly_product_card($post_id,$term) {
+	
+	echo '<li class="product">';
+		if(has_post_thumbnail( $post_id )) {
+			$img=get_the_post_thumbnail( $post_id, 'medium');
+		} else {
+			$img=sprintf('<img src="%s/icons/default.svg" alt="default image" height="308" width="308"/>',get_stylesheet_directory_uri(  ));
+		}
+		printf('<div class="card-image">%s</div>',$img);
+
+		echo '<div class="card-info">';
+			printf('<div class="card-title"><h3>%s</h3></div>',get_the_title( $post_id ));
+			
+			printf('<div class="card-cat">%s</p></a>',$term->name);
+			
+		echo '</div>'; //fin .card-info
+
+		
+	echo '</li>';
+}
+
+
+/**
 * Get categories for menu
 * @param string $taxonomy
 * @return string $output

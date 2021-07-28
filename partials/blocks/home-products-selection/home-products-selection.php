@@ -1,6 +1,6 @@
 <?php 
 /**
-* Template pour le bloc home-products
+* Template pour le bloc home-products-selection
 *
 * @param   array $block The block settings and attributes.
 * @param   string $content The block inner HTML (empty).
@@ -18,29 +18,11 @@ if(function_exists('get_field')) :
 	if( !empty( $block['anchor'] ) )
 		$anchor = ' id="' . sanitize_title( $block['anchor'] ) . '"';
 	
-
-	$cat_assets=get_field('cat_assets');
-	$cat_companies=get_field('cat_companies');
-	$cat_projects=get_field('cat_projects');
-	if($cat_assets) {
-		$taxonomy='cat_assets';
-		$term_id=$cat_assets;
-	} elseif($cat_companies) {
-		$taxonomy='cat_companies';
-		$term_id=$cat_companies;
-	} elseif ($cat_projects){
-		$taxonomy='cat_projects';
-		$term_id=$cat_projects;
-	} else {
-		return;
-	}
-	$term=get_term($term_id,$taxonomy);
-	$term_slug=$term->slug;
-	$title=$term->name;
 	$user_id=get_current_user_id(  );
 	$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
 	
 	$above_title=wp_kses_post(get_field('above_title'));
+	$title=wp_kses_post(get_field('title'));
 
 	
 	//Simple conteneur pour la mise en page grille
@@ -50,18 +32,14 @@ if(function_exists('get_field')) :
 	echo '<ul class="product-grid nb-col-4">';
 	
 
-	$products=kasutan_get_all_products($taxonomy,$term,4);
+	$products=get_field('products');
 	foreach($products as $product_id) {
+		$post_type=get_post_type($product_id);
 		$cat=kasutan_get_closest_cat_for_product($product_id,$post_type);
-		kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'acf');
+		kasutan_display_readonly_product_card($product_id,$cat);
 	}
 
 	echo '</ul>';
-
-	printf('<div class="text-center"><a href="%s" class="button browse-all">Browse <span>%s</span></a></div>',
-		get_term_link($term,$taxonomy),
-		$term->name
-	);
 
 	echo '</section>';
 

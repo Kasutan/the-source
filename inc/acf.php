@@ -210,6 +210,12 @@ class BE_ACF_Customizations {
 			'Products block for premium home page',
 			'Display row of 4 most recent products in selected category, without filter.'
 		);
+
+		$this->helper_register_block_type(
+			'home-products-selection',
+			'Products block for free trial home page',
+			'Display grid of hand-picked products.'
+		);
 		
 	}
 }
