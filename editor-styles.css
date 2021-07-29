@@ -274,12 +274,11 @@ hr.wp-block-separator {
   background-color: var(--bleu);
   border: 0;
   height: 2px;
-  margin: var(--margin-y-2) 0; }
-  hr.wp-block-separator.small {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 10.5rem; }
+  margin: var(--margin-y-2) 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10.5rem; }
 
 .wp-block-button__link,
 .is-style-outline > .wp-block-button__link,

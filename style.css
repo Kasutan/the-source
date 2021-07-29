@@ -5778,7 +5778,8 @@ h1.product-title {
   .pmpro-confirmation .confirmation-thankyou hr.wp-block-separator {
     background-color: #FAFAFA;
     height: 1px;
-    margin: 3rem 0; }
+    margin: 3rem 0;
+    max-width: unset; }
 
 .pmpro-confirmation .confirmation-enjoy {
   padding: 0 2rem 5rem; }
@@ -6058,12 +6059,11 @@ hr.wp-block-separator {
   background-color: var(--bleu);
   border: 0;
   height: 2px;
-  margin: var(--margin-y-2) 0; }
-  hr.wp-block-separator.small {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 10.5rem; }
+  margin: var(--margin-y-2) 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10.5rem; }
 
 .filtre {
   display: -webkit-box;

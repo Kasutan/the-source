@@ -51,7 +51,5 @@ hr.wp-block-separator {
 	border: 0;
 	height: 2px;
 	margin: var(--margin-y-2) 0;
-	&.small {
-		@include max-width(10.5rem);
-	}
+	@include max-width(10.5rem);
 }
