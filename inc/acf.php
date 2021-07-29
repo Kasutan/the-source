@@ -144,7 +144,7 @@ class BE_ACF_Customizations {
 		);
 	}
 
-	function helper_register_block_type($slug,$titre,$description,$icon='admin-generic',$js=false,$keywords=[] ){
+	function helper_register_block_type($slug,$titre,$description,$icon='admin-generic',$js=false,$css=true,$keywords=[] ){
 		$keywords_from_slug=explode('-',$slug);
 		$keywords=array_merge($keywords,$keywords_from_slug, array('the-source'));
 		$args=[
@@ -152,7 +152,6 @@ class BE_ACF_Customizations {
 			'title'           => $titre,
 			'description'     => $description,
 			'render_template' => 'partials/blocks/'.$slug.'/'.$slug.'.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/'.$slug.'/'.$slug.'.css',
 			'category'        => 'the-source',
 			'icon'            => $icon, 
 			'mode'			=> "edit",
@@ -166,6 +165,9 @@ class BE_ACF_Customizations {
 		];
 		if($js) {
 			$args['enqueue_script']=get_stylesheet_directory_uri() . '/partials/blocks/'.$slug.'/'.$slug.'.js';
+		}
+		if($css) {
+			$args['enqueue_style']=get_stylesheet_directory_uri() . '/partials/blocks/'.$slug.'/'.$slug.'.css';
 		}
 		acf_register_block_type( $args);
 	}
@@ -223,7 +225,15 @@ class BE_ACF_Customizations {
 			'Experts block for About page',
 			'Display a portrait for each selected expert.'
 		);
-		
+
+		$this->helper_register_block_type(
+			'faq-experts',
+			'Experts block for FAQ page',
+			'Display a portrait for each selected expert/advisor, with their area of expertise.',
+			'admin-generic',
+			false,
+			false
+		);
 		
 	}
 }

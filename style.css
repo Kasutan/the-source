@@ -6058,6 +6058,15 @@ h1.product-title {
       .advisor.advisor-about {
         padding-left: 4rem;
         padding-right: 4rem; } }
+  .advisor.advisor-faq {
+    margin-bottom: 3rem; }
+    .advisor.advisor-faq .portrait {
+      margin-bottom: 1.3rem; }
+    .advisor.advisor-faq .title {
+      margin-bottom: var(--margin-y-2);
+      text-align: center; }
+    .advisor.advisor-faq .area {
+      margin-bottom: 1.6rem; }
 
 .advisors {
   display: -webkit-box;
@@ -6066,7 +6075,7 @@ h1.product-title {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0 0 var(--margin-y-3);
+  margin: 0;
   padding: 0; }
   .advisors.grid-4 {
     -webkit-box-pack: justify;
@@ -6078,7 +6087,8 @@ h1.product-title {
   .advisors.grid-2 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    margin-bottom: var(--margin-y-3); }
     .advisors.grid-2 .advisor {
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%; }
@@ -6094,6 +6104,26 @@ h1.product-title {
     .advisors.grid-4 .advisor {
       -ms-flex-preferred-size: 23%;
       flex-basis: 23%; } }
+
+.faq-experts {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#F0F7FF));
+  background: linear-gradient(#fff, #F0F7FF);
+  margin: 0 var(--margin-x-header) var(--margin-y-2);
+  padding: 2rem 0; }
+  .faq-experts h2.title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85rem;
+    margin-bottom: var(--margin-y-2); }
+  @media (min-width: 1024px) {
+    .faq-experts {
+      padding: 4rem; } }
+  @media (min-width: 1400px) {
+    .faq-experts .advisors {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 120rem; } }
 
 .wp-block-columns.antennes-regionales {
   -webkit-box-align: center;
