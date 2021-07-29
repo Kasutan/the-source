@@ -46,10 +46,12 @@
 	}
 }
 
-/*Galeries créées avec Meow Gallery*/
-.mgl-masonry-container, .mgl-tiles-container, .mgl-justified-container, .mgl-square-container, 
-.mgl-cascade-container {
-	@include bleed;
-	padding:0 var(--padding-x-grille);
-	margin-bottom:var(--margin-y);
+hr.wp-block-separator {
+	background-color: var(--bleu);
+	border: 0;
+	height: 2px;
+	margin: var(--margin-y-2) 0;
+	&.small {
+		@include max-width(10.5rem);
+	}
 }

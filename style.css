@@ -1590,12 +1590,6 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
-hr {
-  background-color: var(--bordure);
-  border: 0;
-  height: 1px;
-  margin-top: 2em; }
-
 ul:not([class]),
 ol:not([class]) {
   margin: 0 0 1.5em 0;
@@ -5781,6 +5775,10 @@ h1.product-title {
   .pmpro-confirmation .confirmation-thankyou .confirmation-message {
     font-size: 2.6rem;
     text-align: center; }
+  .pmpro-confirmation .confirmation-thankyou hr.wp-block-separator {
+    background-color: #FAFAFA;
+    height: 1px;
+    margin: 3rem 0; }
 
 .pmpro-confirmation .confirmation-enjoy {
   padding: 0 2rem 5rem; }
@@ -6056,15 +6054,16 @@ h1.product-title {
   .wp-block-image.alignwide figcaption {
     text-align: right; }
 
-/*Galeries créées avec Meow Gallery*/
-.mgl-masonry-container, .mgl-tiles-container, .mgl-justified-container, .mgl-square-container,
-.mgl-cascade-container {
-  width: 100vw;
-  margin-left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  padding: 0 var(--padding-x-grille);
-  margin-bottom: var(--margin-y); }
+hr.wp-block-separator {
+  background-color: var(--bleu);
+  border: 0;
+  height: 2px;
+  margin: var(--margin-y-2) 0; }
+  hr.wp-block-separator.small {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 10.5rem; }
 
 .filtre {
   display: -webkit-box;
