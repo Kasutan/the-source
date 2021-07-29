@@ -1854,6 +1854,125 @@ textarea {
         content: '•'; } }
 
 /*--------------------------------------------------------------
+## Ninja forms
+--------------------------------------------------------------*/
+.nf-form-wrap .nf-form-fields-required {
+  font-size: 70%;
+  margin: 4rem 0 2rem; }
+
+.nf-form-wrap .ninja-forms-req-symbol {
+  color: var(--bleu); }
+
+.nf-form-wrap .nf-field-label label {
+  font-weight: 300; }
+
+.nf-form-wrap .submit-wrap {
+  text-align: center; }
+  .nf-form-wrap .submit-wrap input[type="button"] {
+    font-weight: 700;
+    min-width: 24.6rem;
+    padding: 0.5rem 3rem; }
+
+.nf-form-wrap input[type="text"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="email"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="url"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="password"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="search"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="number"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="tel"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="range"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="date"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="month"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="week"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="time"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="datetime"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="datetime-local"]::-webkit-input-placeholder,
+.nf-form-wrap input[type="color"]::-webkit-input-placeholder,
+.nf-form-wrap textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--bordure);
+  font-weight: 700; }
+
+.nf-form-wrap input[type="text"]::-moz-placeholder,
+.nf-form-wrap input[type="email"]::-moz-placeholder,
+.nf-form-wrap input[type="url"]::-moz-placeholder,
+.nf-form-wrap input[type="password"]::-moz-placeholder,
+.nf-form-wrap input[type="search"]::-moz-placeholder,
+.nf-form-wrap input[type="number"]::-moz-placeholder,
+.nf-form-wrap input[type="tel"]::-moz-placeholder,
+.nf-form-wrap input[type="range"]::-moz-placeholder,
+.nf-form-wrap input[type="date"]::-moz-placeholder,
+.nf-form-wrap input[type="month"]::-moz-placeholder,
+.nf-form-wrap input[type="week"]::-moz-placeholder,
+.nf-form-wrap input[type="time"]::-moz-placeholder,
+.nf-form-wrap input[type="datetime"]::-moz-placeholder,
+.nf-form-wrap input[type="datetime-local"]::-moz-placeholder,
+.nf-form-wrap input[type="color"]::-moz-placeholder,
+.nf-form-wrap textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--bordure);
+  font-weight: 700; }
+
+.nf-form-wrap input[type="text"]:-ms-input-placeholder,
+.nf-form-wrap input[type="email"]:-ms-input-placeholder,
+.nf-form-wrap input[type="url"]:-ms-input-placeholder,
+.nf-form-wrap input[type="password"]:-ms-input-placeholder,
+.nf-form-wrap input[type="search"]:-ms-input-placeholder,
+.nf-form-wrap input[type="number"]:-ms-input-placeholder,
+.nf-form-wrap input[type="tel"]:-ms-input-placeholder,
+.nf-form-wrap input[type="range"]:-ms-input-placeholder,
+.nf-form-wrap input[type="date"]:-ms-input-placeholder,
+.nf-form-wrap input[type="month"]:-ms-input-placeholder,
+.nf-form-wrap input[type="week"]:-ms-input-placeholder,
+.nf-form-wrap input[type="time"]:-ms-input-placeholder,
+.nf-form-wrap input[type="datetime"]:-ms-input-placeholder,
+.nf-form-wrap input[type="datetime-local"]:-ms-input-placeholder,
+.nf-form-wrap input[type="color"]:-ms-input-placeholder,
+.nf-form-wrap textarea:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--bordure);
+  font-weight: 700; }
+
+.nf-form-wrap input[type="text"]:-moz-placeholder,
+.nf-form-wrap input[type="email"]:-moz-placeholder,
+.nf-form-wrap input[type="url"]:-moz-placeholder,
+.nf-form-wrap input[type="password"]:-moz-placeholder,
+.nf-form-wrap input[type="search"]:-moz-placeholder,
+.nf-form-wrap input[type="number"]:-moz-placeholder,
+.nf-form-wrap input[type="tel"]:-moz-placeholder,
+.nf-form-wrap input[type="range"]:-moz-placeholder,
+.nf-form-wrap input[type="date"]:-moz-placeholder,
+.nf-form-wrap input[type="month"]:-moz-placeholder,
+.nf-form-wrap input[type="week"]:-moz-placeholder,
+.nf-form-wrap input[type="time"]:-moz-placeholder,
+.nf-form-wrap input[type="datetime"]:-moz-placeholder,
+.nf-form-wrap input[type="datetime-local"]:-moz-placeholder,
+.nf-form-wrap input[type="color"]:-moz-placeholder,
+.nf-form-wrap textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--bordure);
+  font-weight: 700; }
+
+@media (min-width: 1024px) {
+  .nf-form-wrap nf-fields-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .nf-form-wrap nf-fields-wrap > nf-field {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+    .nf-form-wrap nf-fields-wrap nf-field:first-of-type, .nf-form-wrap nf-fields-wrap nf-field:nth-of-type(2) {
+      -ms-flex-preferred-size: 45%;
+      flex-basis: 45%; }
+  .nf-form-wrap .submit-wrap {
+    margin-top: 6rem; } }
+
+/*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/
 .search-form {

@@ -143,6 +143,11 @@ $colors: (
 	opacity:1;
 }
 
+@mixin ninja-placeholder {
+	color: var(--bordure);
+	font-weight: 700;
+}
+
 @mixin object-fit {
 	object-fit: cover;
 	object-position: center;

@@ -170,7 +170,81 @@ textarea {
 		}
 	}
 }
+/*--------------------------------------------------------------
+## Ninja forms
+--------------------------------------------------------------*/
+.nf-form-wrap {
+	.nf-form-fields-required {
+		font-size: 70%;
+		margin: 4rem 0 2rem;
+	}
+	.ninja-forms-req-symbol {
+		color:var(--bleu);
+	}
+	.nf-field-label label {
+		font-weight: 300;
+	}
+	.submit-wrap {
+		text-align: center;
+		input[type="button"] {
+			font-weight: 700;
+			min-width: 24.6rem;
+			padding:0.5rem 3rem;
+		}
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea {
 
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			@include ninja-placeholder;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+			@include ninja-placeholder;
+
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+			@include ninja-placeholder;
+
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+			@include ninja-placeholder;
+		}
+	}
+	
+	@include bp(lg) {
+		nf-fields-wrap {
+			display: flex;
+			flex-wrap:wrap;
+			justify-content: space-between;
+			& > nf-field {
+				flex-basis:100%;
+			}
+			nf-field {
+				&:first-of-type, &:nth-of-type(2) {
+					flex-basis:45%;
+				}
+			}
+		}
+		.submit-wrap { 
+			margin-top: 6rem;
+		}
+	}
+	
+}
 /*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/
