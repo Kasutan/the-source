@@ -7,12 +7,27 @@ function kasutan_display_advisor($post_id,$context) {
 		return;
 	}
 	$name=get_the_title($post_id);
-	printf('<div class="advisor advisor-%s">',$context);
+
 	if($context==='product') {
-		$portrait=get_the_post_thumbnail( $post_id, 'thumbnail');
-		printf('<div class="portrait">%s</div>',$portrait);
-		echo '<div class="text"><p class="above-name">Your advisor</p>';
-		printf('<p class="name">%s</p></div>',$name);
+		printf('<div class="advisor advisor-%s">',$context);
+			$portrait=get_the_post_thumbnail( $post_id, 'thumbnail');
+			printf('<div class="portrait">%s</div>',$portrait);
+			echo '<div class="text"><p class="above-name">Your advisor</p>';
+			printf('<p class="name">%s</p></div>',$name);
+		echo '</div>';
+	} elseif($context==='about') {
+		$portrait=get_the_post_thumbnail( $post_id, 'medium');
+		$role=wp_kses_post(get_field('title',$post_id));
+		$email=antispambot(esc_attr(get_field('email',$post_id)));
+		printf('<li class="advisor advisor-%s">',$context);
+			printf('<div class="portrait">%s</div>',$portrait);
+			printf('<p class="name">%s</p>',$name);
+			if($role) printf('<p class="role">%s</p>',$role);
+			printf('<div class="bio">%s</div>',get_the_content(null, false,$post_id));
+			printf('<a href="mailto:%s?subject=The Source - contact an expert" title="Send an email to %s">%s</a>',$email,$name,kasutan_picto(array('icon'=>'send-message','size'=>false)));
+
+		echo '</li>';
+	} elseif ($context==='faq') {
+		$area=wp_kses_post(get_field('title'));
 	}
-	echo '</div>';
 }

@@ -216,6 +216,14 @@ class BE_ACF_Customizations {
 			'Products block for free trial home page',
 			'Display grid of hand-picked products.'
 		);
+
+		/*********Blocs Advisors***************/
+		$this->helper_register_block_type(
+			'about-experts',
+			'Experts block for About page',
+			'Display a portrait for each selected expert.'
+		);
+		
 		
 	}
 }

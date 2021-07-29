@@ -11,6 +11,7 @@ body {
 :root {
 	--margin-y-1: 2rem;
 	--margin-y-2: 3.5rem;
+	--margin-y-3: calc(2* var(--margin-y-2));
 	--padding-x:15px;
 	--margin-x-header:9px;
 	--padding-x-largeur-reduite:var(--padding-x);
