@@ -234,6 +234,16 @@ class BE_ACF_Customizations {
 			false,
 			false
 		);
+
+		/*********Blocs FAQ***************/
+		$this->helper_register_block_type(
+			'faq-answers',
+			'Questions/answers block for FAQ page',
+			'Use one block by theme.',
+			'admin-generic',
+			true,
+			true
+		);
 		
 	}
 }
