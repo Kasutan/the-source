@@ -266,3 +266,9 @@ function ea_template_hierarchy( $template ) {
 	return $template;
 }
 add_filter( 'template_include', 'ea_template_hierarchy' );
+
+/**
+* Désactiver la loupe SEO press en front
+*
+*/
+add_filter('seopress_can_enqueue_universal_metabox', '__return_false');
