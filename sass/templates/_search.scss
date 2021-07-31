@@ -11,12 +11,14 @@
 	}
 }
 
-.no-results{
-	min-height:50vh;
-	.entry-header {
-		padding:0 var(--padding-x);	
-	}
-	.entry-content {
-		padding:0 var(--padding-x-largeur-reduite);	
+body, body.largeur-normale {
+	.no-results {
+		min-height:50vh;
+		.entry-header {
+			padding:0 var(--padding-x);	
+		}
+		.entry-content {
+			padding:0 var(--padding-x-largeur-reduite);	
+		}
 	}
 }

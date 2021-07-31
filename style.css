@@ -2042,7 +2042,7 @@ textarea {
   margin-bottom: 0;
   margin-left: 14px;
   padding: 0;
-  height: 40px;
+  height: 5rem;
   min-width: unset;
   text-align: center;
   width: 49px; }
@@ -4941,11 +4941,11 @@ ul.menu-my-account-links, .email-preferences {
   margin-bottom: var(--margin-y-2);
   text-align: left; }
 
-.no-results {
+body .no-results, body.largeur-normale .no-results {
   min-height: 50vh; }
-  .no-results .entry-header {
+  body .no-results .entry-header, body.largeur-normale .no-results .entry-header {
     padding: 0 var(--padding-x); }
-  .no-results .entry-content {
+  body .no-results .entry-content, body.largeur-normale .no-results .entry-content {
     padding: 0 var(--padding-x-largeur-reduite); }
 
 .single-title {
