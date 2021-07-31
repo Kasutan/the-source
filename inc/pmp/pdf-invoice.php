@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function kasutan_pmpro_pdf_vat_add_on_variables( $data_array, $user, $order_data ) {
 
 	$order_notes=$order_data->notes;
-	error_log('order notes '.$order_notes);
+	//error_log('order notes '.$order_notes);
 	$data_array['{{notes}}'] = $order_data->notes;
 
 	$user_id=$user->ID;
 	$user_company=get_user_meta($user_id,'zs-company',true);
-	error_log('company : '.$user_company);
+	//error_log('company : '.$user_company);
 	$data_array['{{company}}'] =$user_company;
 
 	if ( function_exists( 'pmprovat_iso2vat' ) ) {

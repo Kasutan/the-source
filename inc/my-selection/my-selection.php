@@ -91,7 +91,7 @@ function kasutan_remove_product_from_selection($product_id,$user_id) {
 }
 
 /**
-*  TODO Shortode for display on account page
+*  Shortode for display on account page
 *
 * @param int $user_id
 */

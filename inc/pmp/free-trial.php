@@ -93,13 +93,13 @@ function kasutan_can_generate_pdf_on_added_order($answer,$order) {
 add_filter('pmpropdf_can_attach_pdf_email','kasutan_pmpropdf_can_attach_pdf_email',10,2);
 
 function kasutan_pmpropdf_can_attach_pdf_email($answer,$email) {
-	error_log('attach pdf ?');
-	error_log('email template : '.$email->template);
+	//error_log('attach pdf ?');
+	//error_log('email template : '.$email->template);
 	if($email->template ==="checkout_free") {
-		error_log('free checkout, do not attach pdf');
+		//error_log('free checkout, do not attach pdf');
 		$answer=0;
 	}
-	error_log($answer);
+	//error_log($answer);
 	return $answer;
 }
 
@@ -111,40 +111,40 @@ function kasutan_pmpropdf_can_attach_pdf_email($answer,$email) {
 */
 add_filter('pmpro_email_template','kasutan_email_templates',10,2);
 function kasutan_email_templates($template,$email_instance) {
-	error_log('kasutan_email_templates');
+	//error_log('kasutan_email_templates');
 	if($template==='membership_expiring') {
-		error_log('envoi email avec template initial '.$template);
+		//error_log('envoi email avec template initial '.$template);
 		$data=$email_instance->data;
 		ob_start();
 		print_r($email_instance->data);
-		error_log(ob_get_clean());
+		//error_log(ob_get_clean());
 		if($data['membership_id']==2) {
 			$new_template='free_'.$template;
-			error_log('level gratuit = envoi à la place du template '.$new_template);
+			//error_log('level gratuit = envoi à la place du template '.$new_template);
 			$template=$new_template;
 		}
 		
 	} else if($template==='membership_expired') {
-		error_log('envoi email avec template initial '.$template);
+		//error_log('envoi email avec template initial '.$template);
 		$data=$email_instance->data;
 		ob_start();
 		print_r($email_instance->data);
-		error_log(ob_get_clean());
+		//error_log(ob_get_clean());
 		$user_email=$data['user_email'];
-		error_log('email envoyé à '.$user_email);
+		//error_log('email envoyé à '.$user_email);
 		$user=get_user_by('email',$user_email);
 		$used_trial = get_user_meta( $user->ID, "pmpro_trial_level_used_2", true );
 		$got_trial_expired_email=get_user_meta( $user->ID, "pmpro_trial_expired_email_sent", true );
 		if($used_trial=="1" && $got_trial_expired_email=="0") {
 			//this user registered for a trial level and did not yet get the expired email for this trial
-			error_log('this user registered for a trial level and did not yet get the expired email for this trial');
+			//error_log('this user registered for a trial level and did not yet get the expired email for this trial');
 			$new_template='free_'.$template;
-			error_log('envoi à la place du template '.$new_template);
+			//error_log('envoi à la place du template '.$new_template);
 			update_user_meta($user->ID, "pmpro_trial_expired_email_sent", "1");
 			$template=$new_template;
 		}
 		
 	} 
-	error_log('template retourné par pmpro_email_template');
+	//error_log('template retourné par pmpro_email_template');
 	return $template;
 }

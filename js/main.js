@@ -10,7 +10,6 @@
 		var productTypes=['exceptional_assets','virtuous_companies','philantropy'];
 		productTypes.forEach(function(value,index) {
 			if($('body').hasClass('single-'+value)) {
-				console.log('on est sur un single ',value);
 				$('body').addClass('js-product-menu-open');
 				$('.menu-item.'+value).addClass('current-menu-item');
 			}
@@ -19,7 +18,6 @@
 		var productTaxonomies=['cat_assets','cat_projects','cat_companies'];
 		productTaxonomies.forEach(function(value,index) {
 			if($('body').hasClass('tax-'+value)) {
-				console.log('on est sur une archive ',value);
 				$('body').addClass('js-product-menu-open');
 				$('.menu-item.'+value).addClass('current-menu-item');
 			}
@@ -94,15 +92,10 @@
 		if($(".liste-filtrable").length>0) {
 
 			$(".liste-filtrable").each(function(item){
-				console.log($(this));
 				var section=$(this);
 				var filtre=$(this).find('.filtre');
 				var liste=$(this).find('ul.list');
 				var id=$(this).attr('id');
-				console.log(section);
-				console.log(filtre);
-				console.log(liste);
-				console.log(id);
 
 				var page=parseInt($(section).attr('data-pagination'));
 				if(typeof(page)!==NaN && page > 0) {
@@ -118,7 +111,6 @@
 					
 				}
 				var listeFiltrable = new List(id, optionsListe);
-				console.log(listeFiltrable);
 
 				//reset filtre au chargement de la page
 				$(filtre).find("input:checked").prop('checked',false);
@@ -142,7 +134,6 @@
 								$(checkedInputs).each(function(){
 									selectedValues+=' '+$(this).val();
 								});
-								console.log(selectedValues);
 								//on filtre la liste pour ne garder que les éléments dont le term se trouve dans selectedValues
 								listeFiltrable.filter(function(item) {
 									return (selectedValues.indexOf(item.values().term) >= 0);
@@ -224,7 +215,6 @@
 				},
 				success: function(response){
 					//Success
-					console.log('success ajax',response);
 					if (response) {
 						$(input).prop('disabled',false);
 						//update span with count in header
@@ -292,7 +282,6 @@
 				},
 				success: function(response){
 					//Success
-					console.log('success ajax',response);
 					if (response) {
 						$(sendMessage).hide();
 						$(successMessage).show();
@@ -343,7 +332,6 @@
 				},
 				success: function(response){
 					//Success
-					console.log('success ajax',response);
 					if (response) {
 						$(button).toggleClass('checked');
 						if(checked) {
