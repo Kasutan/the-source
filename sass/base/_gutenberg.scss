@@ -18,7 +18,7 @@ a.wp-block-button__link {
 	text-transform: uppercase;
 	transition: all var(--transition);
 
-	&:hover, &:focus, &:active {
+	&:hover, &:focus, &:active, &:visited {
 		background: var(--bleu);
 		outline: none;
 		text-decoration: none;
