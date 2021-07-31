@@ -36,14 +36,14 @@ echo '<div class="site-container">';
 			$logo_tag='h1';
 		}
 			if(has_custom_logo()) {
-				printf('<%s class="site-title">%s<span class="screen-reader-text">%s</span></%s>',
+				printf('<%s class="site-title no-dots">%s<span class="screen-reader-text">%s</span></%s>',
 					$logo_tag,
 					get_custom_logo(),	
 					get_bloginfo( 'name'),
 					$logo_tag,	
 				);
 			} else {
-				printf('<%s class="site-title">%s</%s>',
+				printf('<%s class="site-title no-dots">%s</%s>',
 					$logo_tag,
 					get_bloginfo( 'name'),
 					$logo_tag,	

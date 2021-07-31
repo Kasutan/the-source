@@ -4591,6 +4591,9 @@ li.product {
       --color:var(--rouge);
       color: var(--rouge); }
 
+.home .pmpro_actions_nav {
+  display: none; }
+
 ul.menu-my-account-links, .email-preferences {
   display: grid;
   grid-template-columns: 1fr;
