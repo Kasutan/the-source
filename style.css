@@ -2559,6 +2559,7 @@ button.menu-toggle {
           margin-left: 2rem;
           margin-right: 2rem; } }
   .nav-menu.desktop.menu-my-account > li {
+    padding: 1.5rem 0;
     position: relative; }
     .nav-menu.desktop.menu-my-account > li a {
       color: var(--cyan);
@@ -2580,7 +2581,7 @@ button.menu-toggle {
       margin-top: 0px;
       position: absolute;
       top: 90%;
-      top: calc(100% - 0.5rem);
+      top: calc(100% + 1rem);
       left: -999em;
       z-index: 10; }
     .nav-menu.desktop.menu-my-account > li:hover .sub-menu, .nav-menu.desktop.menu-my-account > li.focus .sub-menu, .nav-menu.desktop.menu-my-account > li:focus-within .sub-menu {
@@ -2604,6 +2605,25 @@ button.menu-toggle {
     list-style: none;
     margin: 0;
     padding: 1.8rem 2.5rem; }
+    .nav-menu.desktop.menu-my-account .sub-menu::before {
+      content: '';
+      display: block;
+      height: 14px;
+      left: 0;
+      position: absolute;
+      top: -14px;
+      width: 100%; }
+    .nav-menu.desktop.menu-my-account .sub-menu::after {
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 14px solid var(--cyan);
+      content: '';
+      display: inline-block;
+      height: 0;
+      position: absolute;
+      right: 47px;
+      top: -14px;
+      width: 0; }
     .nav-menu.desktop.menu-my-account .sub-menu li {
       margin-bottom: 0.5rem;
       position: relative;
@@ -2613,12 +2633,19 @@ button.menu-toggle {
       font-size: 2rem;
       left: 0;
       line-height: 1.1;
+      font-weight: 700;
       position: relative;
       -webkit-transition: left var(--transition);
       transition: left var(--transition);
       text-transform: unset; }
       .nav-menu.desktop.menu-my-account .sub-menu a:hover, .nav-menu.desktop.menu-my-account .sub-menu a:focus {
         left: 0.5rem; }
+      .nav-menu.desktop.menu-my-account .sub-menu a[href*="logout"] {
+        background-image: url("icons/logout.svg");
+        background-position: left 3px;
+        background-repeat: no-repeat;
+        background-size: 1.6rem;
+        padding-left: 2.2rem; }
 
 /*Animations*/
 @-webkit-keyframes animTrait {
@@ -4957,7 +4984,6 @@ body .no-results, body.largeur-normale .no-results {
     padding: 0 var(--padding-x-largeur-reduite); }
 
 .single-title {
-  font-size: calc(42 * var(--taille-texte) / 20);
   margin-bottom: 0;
   text-align: left;
   text-transform: unset; }
@@ -6525,7 +6551,6 @@ hr.wp-block-separator {
       bottom: -3.7rem; } }
 
 a.page {
-  font-size: calc(30 * var(--taille-texte) / 20);
   color: var(--bleu);
   margin: 0 0.5rem;
   padding: 1rem;

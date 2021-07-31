@@ -467,6 +467,7 @@ button.menu-toggle {
 
 	&.menu-my-account { //affichage du sous-menu my account
 		& > li {
+			padding:1.5rem 0;
 			a {
 				color:var(--cyan);
 				position: relative;
@@ -490,7 +491,7 @@ button.menu-toggle {
 				margin-top:0px;
 				position: absolute;
 				top: 90%;
-				top: calc(100% - 0.5rem);
+				top: calc(100% + 1rem);
 				left: -999em;
 				z-index: 10;
 			}
@@ -511,12 +512,36 @@ button.menu-toggle {
 		}
 
 		//Style sous-menu my account
-		//TODO 1 triangle et picto déconnexion + baisser le sous-menu 
 		.sub-menu {
 			background: linear-gradient(var(--cyan), var(--bleu));
 			list-style:none;
 			margin:0;
 			padding:1.8rem 2.5rem;
+
+			//extension invisible pour maintenir le sous-menu ouvert au déplacement de la souris du lien parent vers le sous-menu
+			&::before {
+				content:'';
+				display: block;
+				height:14px;
+				left:0;
+				position: absolute;
+				top:-14px;
+				width:100%;
+			}
+			//triangle décoratif
+			&::after {
+				border-left: 14px solid transparent;
+				border-right: 14px solid transparent;
+				border-bottom: 14px solid var(--cyan);
+				content:'';
+				display:inline-block;
+				height: 0;
+				position:absolute;
+				right:47px;
+				top:-14px;
+				width: 0;
+			}
+			
 			li {
 				margin-bottom: 0.5rem;
 				position: relative;
@@ -527,11 +552,21 @@ button.menu-toggle {
 				font-size: 2rem;
 				left:0;
 				line-height:1.1;
+				font-weight: 700;
 				position: relative;
 				transition: left var(--transition);
 				text-transform: unset;
 				&:hover, &:focus {
 					left:0.5rem;
+				}
+
+				//target logout link, add an icon
+				&[href*="logout"] {
+					background-image:url('icons/logout.svg');
+					background-position: left 3px;
+					background-repeat:no-repeat;
+					background-size: 1.6rem;
+					padding-left: 2.2rem;
 				}
 			}
 		}

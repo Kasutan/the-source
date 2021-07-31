@@ -208,10 +208,6 @@ $colors: (
 	}
 }
 
-//TODO supprimer après avoir remplacé toutes les occurences par la nouvelle mixin
-@mixin oldfs($px) {
-	font-size:calc(#{$px} * var(--taille-texte) / 20);
-}
 
 @mixin fs($min-font-size, $max-font-size) {
 	$font-size-step: 0.1rem;
