@@ -205,12 +205,16 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 
 		//Si $title on est sur un bloc acf, pas de tri
 		if(!$title) {
-			echo '<button class="mobile-sort">Sort <span class="screen-reader-text">by date</span></button>';
+			echo '<button class="sort mobile-sort" data-sort="published">Sort <span class="screen-reader-text">by date</span></button>';
 		}
 
 	echo '</div>';
 
-	//TODO menu déroulant pour trier, position absolute en desktop
+	//Bouton pour trier, position absolute en desktop
+	//TODO remplacer par un menu déroulant
+	if(!$title) {
+		echo '<div class="desktop-sort"><button class="sort" data-sort="published" data-default-order="desc">Sort by date</button></div>';
+	}
 	
 	printf('<form class="filtre %s" id="filtre-%s">',$taxonomy,$parent_slug);
 		if($title) {
@@ -230,7 +234,7 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 				$nom
 			);
 		endforeach;
-		//TODO boutons mobile display = , reset = monter toutes les catégories + fermer volet
+		//Boutons mobile display = , reset = monter toutes les catégories + fermer volet
 		?> <div class="boutons-internes hide-for-lg">
 			<button class="ferme-filtre">Display</button>
 			<button class="reset">Reset</button>
@@ -293,12 +297,13 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 			<?php
 			
 			printf('<a href="%s" class="card-cat">%s</p></a>',get_term_link($term,$taxonomy),$term->name);
-			if($context==="archive" || $context==='acf') {
-				//span hidden pour filtre par catégorie et tri alphabétique
-				printf('<span class="screen-reader-text term">%s</span>',$term->slug);
-			}
+			
 		echo '</div>'; //fin .card-info
-
+		if($context==="archive" || $context==='acf') {
+			//span hidden pour filtre par catégorie et tri par date
+			printf('<span class="screen-reader-text term">%s</span>',$term->slug);
+			printf('<span class="screen-reader-text published">%s</span>',get_the_date('Ymd',$post_id));
+		}
 		
 	echo '</li>';
 }

@@ -102,3 +102,22 @@
 	color:var(--cyan);
 	font-weight: 700;
 }
+
+/*******Sort**********/
+.desktop-sort {
+	display: none;
+}
+@include bp(lg) {
+	.desktop-sort {
+		display: flex;
+		justify-content: flex-end;
+		padding-right: var(--padding-x);
+		position: absolute;
+		right:0;
+		top: -5rem;
+		button {
+			padding:2px 1rem;
+			text-transform: unset;
+		}
+	}
+}

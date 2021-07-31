@@ -100,15 +100,14 @@
 				var page=parseInt($(section).attr('data-pagination'));
 				if(typeof(page)!==NaN && page > 0) {
 					var optionsListe = {
-						valueNames: ['term'],
+						valueNames: ['term','published','card-title'],
 						page: page, 
 						pagination: true
 					};
 				} else {
 					var optionsListe = {
-						valueNames: ['term']
+						valueNames: ['term','published','card-title']
 					};
-					
 				}
 				var listeFiltrable = new List(id, optionsListe);
 
@@ -149,7 +148,8 @@
 				});
 
 
-				//TODO script tri
+				//TODO script tri fonction de l'option choisie dans le menu déroulant
+				//https://listjs.com/api/#sort
 
 			});
 
