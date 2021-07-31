@@ -4271,6 +4271,7 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background-color: var(--fond);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4280,7 +4281,7 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
     height: 4.5rem;
     position: absolute;
     right: 1rem;
-    top: -3rem;
+    top: -5rem;
     width: 4.5rem;
     z-index: 1; }
     .site-footer .backtotop svg {

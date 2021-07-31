@@ -13,12 +13,13 @@
 	
 	.backtotop {
 		align-items: center;
+		background-color: var(--fond);
 		display: flex;
 		justify-content: center;
 		height:4.5rem;
 		position: absolute;
 		right:1rem;
-		top : -3rem;
+		top : -5rem;
 		width:4.5rem;
 		z-index:1;
 
