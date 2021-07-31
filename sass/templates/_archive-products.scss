@@ -21,6 +21,10 @@
 		}
 	}
 	&.acf.home-products {
+		padding:3rem 0 5rem;
+		&:nth-of-type(2n+1) {
+			background-color:#F3F5F7;
+		}
 		.title, .above-title {
 			text-align: center;
 		}

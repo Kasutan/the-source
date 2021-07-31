@@ -3361,15 +3361,19 @@ button.menu-toggle {
       padding: 0; }
     .products.acf.page-products .pagination {
       display: none; }
-  .products.acf.home-products .title, .products.acf.home-products .above-title {
-    text-align: center; }
-  .products.acf.home-products .above-title {
-    font-size: 1.8rem;
-    opacity: 0.2;
-    text-transform: uppercase; }
-    @media (min-width: 1024px) {
-      .products.acf.home-products .above-title {
-        font-size: 3rem; } }
+  .products.acf.home-products {
+    padding: 3rem 0 5rem; }
+    .products.acf.home-products:nth-of-type(2n+1) {
+      background-color: #F3F5F7; }
+    .products.acf.home-products .title, .products.acf.home-products .above-title {
+      text-align: center; }
+    .products.acf.home-products .above-title {
+      font-size: 1.8rem;
+      opacity: 0.2;
+      text-transform: uppercase; }
+      @media (min-width: 1024px) {
+        .products.acf.home-products .above-title {
+          font-size: 3rem; } }
   @media (min-width: 1024px) {
     .products {
       margin-bottom: 9rem; }
