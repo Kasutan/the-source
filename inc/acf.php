@@ -190,7 +190,10 @@ class BE_ACF_Customizations {
 		$this->helper_register_block_type(
 			'products',
 			'Products block',
-			'Display grid of products in selected category.'
+			'Display grid of products in selected category.',
+			'admin-generic',
+			false,
+			false
 		);
 
 		/*********Blocs checkout***************/
@@ -210,20 +213,28 @@ class BE_ACF_Customizations {
 		$this->helper_register_block_type(
 			'home-products',
 			'Products block for premium home page',
-			'Display row of 4 most recent products in selected category, without filter.'
+			'Display row of 4 most recent products in selected category, without filter.',
+			'admin-generic',
+			false,
+			false
 		);
 
 		$this->helper_register_block_type(
 			'home-products-selection',
 			'Products block for free trial home page',
-			'Display grid of hand-picked products.'
+			'Display grid of hand-picked products.',
+			'admin-generic',
+			false,
+			false
 		);
 
 		/*********Blocs Advisors***************/
 		$this->helper_register_block_type(
 			'about-experts',
 			'Experts block for About page',
-			'Display a portrait for each selected expert.'
+			'Display a portrait for each selected expert.','admin-generic',
+			false,
+			false
 		);
 
 		$this->helper_register_block_type(
