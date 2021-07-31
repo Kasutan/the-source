@@ -88,7 +88,7 @@
 		
 
 
-		/****************** Filtre articles, producteurs et produits *************************/	
+		/****************** Filtre produits *************************/	
 		if($(".liste-filtrable").length>0) {
 
 			$(".liste-filtrable").each(function(item){
@@ -148,8 +148,27 @@
 				
 				});
 
+
+				//TODO script tri
+
 			});
-		
+
+
+			/*Boutons mobile*/
+			$('.ouvre-filtre').click(function(){
+				$(this).attr('aria-hidden','false');
+				$(this).parents('.liste-filtrable').find('.filtre').addClass('toggled');
+			});
+			$('.ferme-filtre, .reset').on('click',function(e){
+				e.preventDefault(); //sinon rechargement page déclenché par list.js ?
+				var filtre=$(this).parents('.filtre');
+				if($(this).hasClass('reset')) {
+					$(filtre).find("input:checked").prop('checked',false);
+					$(filtre).trigger('change');
+				}
+				$(this).parents('.liste-filtrable').find('.ouvre-filtre').attr('aria-hidden','true');
+				$(filtre).removeClass('toggled');
+			});
 		}
 
 

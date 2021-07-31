@@ -199,8 +199,19 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 	if(empty($terms)) {
 		return;
 	}
-	//TODO boutons mobile filter = ouvre volet et sort -> quelle action ?
-	//TODO si $title on est sur un bloc acf, pas de tri
+	//Boutons mobile filter = ouvre volet et sort -> trier par date (toggle sens de tri à chaque clic)
+	echo '<div class="boutons-filtre-mobile hide-for-lg">';
+		printf('<button class="ouvre-filtre" aria-hidden="true" aria-controls="filtre-%s">Filter</button>',$parent_slug);
+
+		//Si $title on est sur un bloc acf, pas de tri
+		if(!$title) {
+			echo '<button class="mobile-sort">Sort <span class="screen-reader-text">by date</span></button>';
+		}
+
+	echo '</div>';
+
+	//TODO menu déroulant pour trier, position absolute en desktop
+	
 	printf('<form class="filtre %s" id="filtre-%s">',$taxonomy,$parent_slug);
 		if($title) {
 			printf('<p class="filtre-titre">%s</p>',$title);
@@ -219,7 +230,12 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 				$nom
 			);
 		endforeach;
-		//TODO boutons mobile display = fermer volet, reset = monter tout + fermer volet
+		//TODO boutons mobile display = , reset = monter toutes les catégories + fermer volet
+		?> <div class="boutons-internes hide-for-lg">
+			<button class="ferme-filtre">Display</button>
+			<button class="reset">Reset</button>
+		</div>
+		<?php
 	echo '</form>';
 }
 
