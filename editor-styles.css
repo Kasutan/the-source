@@ -212,7 +212,7 @@ a.wp-block-button__link {
   transition: all var(--transition); }
   @media (min-width: 500px) {
     a.wp-block-button__link {
-      font-size: 1.9rem; } }
+      font-size: 2rem; } }
   a.wp-block-button__link:hover, a.wp-block-button__link:focus, a.wp-block-button__link:active {
     text-decoration: none; }
   a.wp-block-button__link:hover, a.wp-block-button__link:focus, a.wp-block-button__link:active, a.wp-block-button__link:visited {
@@ -304,7 +304,7 @@ hr.wp-block-separator {
     .wp-block-button__link,
     .is-style-outline > .wp-block-button__link,
     .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.9rem; } }
+      font-size: 2rem; } }
   .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active,
   .is-style-outline > .wp-block-button__link:hover,
   .is-style-outline > .wp-block-button__link:focus,

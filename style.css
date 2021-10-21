@@ -742,7 +742,7 @@ html {
   --taille-texte:1.6rem; }
   @media (min-width: 500px) {
     html {
-      --taille-texte:2rem; } }
+      --taille-texte:1.8rem; } }
 
 body,
 button,
@@ -763,7 +763,7 @@ textarea {
 
 h1, .h1 {
   color: var(--bleu);
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 700;
   margin: auto 0;
   padding: 0;
@@ -774,184 +774,172 @@ h1, .h1 {
       font-size: 2.2rem; } }
   @media all and (max-width: 1440px) {
     h1, .h1 {
-      font-size: 7rem; } }
-  @media all and (max-width: 1419px) {
+      font-size: 6rem; } }
+  @media all and (max-width: 1416px) {
     h1, .h1 {
-      font-size: 6.93241rem; } }
-  @media all and (max-width: 1399px) {
+      font-size: 5.96119rem; } }
+  @media all and (max-width: 1392px) {
     h1, .h1 {
-      font-size: 6.86708rem; } }
-  @media all and (max-width: 1379px) {
+      font-size: 5.9203rem; } }
+  @media all and (max-width: 1368px) {
     h1, .h1 {
-      font-size: 6.80083rem; } }
-  @media all and (max-width: 1359px) {
+      font-size: 5.87733rem; } }
+  @media all and (max-width: 1345px) {
     h1, .h1 {
-      font-size: 6.73366rem; } }
-  @media all and (max-width: 1339px) {
+      font-size: 5.83421rem; } }
+  @media all and (max-width: 1322px) {
     h1, .h1 {
-      font-size: 6.66555rem; } }
-  @media all and (max-width: 1319px) {
-    h1, .h1 {
-      font-size: 6.59653rem; } }
+      font-size: 5.78919rem; } }
   @media all and (max-width: 1299px) {
     h1, .h1 {
-      font-size: 6.52657rem; } }
-  @media all and (max-width: 1279px) {
+      font-size: 5.74226rem; } }
+  @media all and (max-width: 1276px) {
     h1, .h1 {
-      font-size: 6.45569rem; } }
-  @media all and (max-width: 1259px) {
+      font-size: 5.69343rem; } }
+  @media all and (max-width: 1254px) {
     h1, .h1 {
-      font-size: 6.38389rem; } }
-  @media all and (max-width: 1239px) {
+      font-size: 5.64494rem; } }
+  @media all and (max-width: 1232px) {
     h1, .h1 {
-      font-size: 6.31116rem; } }
-  @media all and (max-width: 1219px) {
+      font-size: 5.5947rem; } }
+  @media all and (max-width: 1210px) {
     h1, .h1 {
-      font-size: 6.2375rem; } }
-  @media all and (max-width: 1199px) {
+      font-size: 5.54272rem; } }
+  @media all and (max-width: 1188px) {
     h1, .h1 {
-      font-size: 6.16292rem; } }
-  @media all and (max-width: 1180px) {
+      font-size: 5.489rem; } }
+  @media all and (max-width: 1166px) {
     h1, .h1 {
-      font-size: 6.0912rem; } }
-  @media all and (max-width: 1161px) {
+      font-size: 5.43354rem; } }
+  @media all and (max-width: 1145px) {
     h1, .h1 {
-      font-size: 6.01866rem; } }
-  @media all and (max-width: 1142px) {
+      font-size: 5.37897rem; } }
+  @media all and (max-width: 1124px) {
     h1, .h1 {
-      font-size: 5.94527rem; } }
-  @media all and (max-width: 1123px) {
+      font-size: 5.32281rem; } }
+  @media all and (max-width: 1103px) {
     h1, .h1 {
-      font-size: 5.87105rem; } }
-  @media all and (max-width: 1104px) {
+      font-size: 5.26507rem; } }
+  @media all and (max-width: 1082px) {
     h1, .h1 {
-      font-size: 5.796rem; } }
-  @media all and (max-width: 1085px) {
+      font-size: 5.20573rem; } }
+  @media all and (max-width: 1061px) {
     h1, .h1 {
-      font-size: 5.72011rem; } }
-  @media all and (max-width: 1066px) {
+      font-size: 5.14481rem; } }
+  @media all and (max-width: 1040px) {
     h1, .h1 {
-      font-size: 5.64338rem; } }
-  @media all and (max-width: 1047px) {
+      font-size: 5.0823rem; } }
+  @media all and (max-width: 1020px) {
     h1, .h1 {
-      font-size: 5.56582rem; } }
-  @media all and (max-width: 1028px) {
+      font-size: 5.0213rem; } }
+  @media all and (max-width: 1000px) {
     h1, .h1 {
-      font-size: 5.48743rem; } }
-  @media all and (max-width: 1009px) {
+      font-size: 4.95885rem; } }
+  @media all and (max-width: 980px) {
     h1, .h1 {
-      font-size: 5.40819rem; } }
-  @media all and (max-width: 990px) {
+      font-size: 4.89496rem; } }
+  @media all and (max-width: 960px) {
     h1, .h1 {
-      font-size: 5.32813rem; } }
-  @media all and (max-width: 971px) {
+      font-size: 4.82963rem; } }
+  @media all and (max-width: 940px) {
     h1, .h1 {
-      font-size: 5.24722rem; } }
-  @media all and (max-width: 952px) {
+      font-size: 4.76286rem; } }
+  @media all and (max-width: 920px) {
     h1, .h1 {
-      font-size: 5.16548rem; } }
-  @media all and (max-width: 934px) {
+      font-size: 4.69465rem; } }
+  @media all and (max-width: 900px) {
     h1, .h1 {
-      font-size: 5.08727rem; } }
-  @media all and (max-width: 916px) {
+      font-size: 4.625rem; } }
+  @media all and (max-width: 881px) {
     h1, .h1 {
-      font-size: 5.00831rem; } }
-  @media all and (max-width: 898px) {
-    h1, .h1 {
-      font-size: 4.92861rem; } }
-  @media all and (max-width: 880px) {
-    h1, .h1 {
-      font-size: 4.84815rem; } }
+      font-size: 4.5575rem; } }
   @media all and (max-width: 862px) {
     h1, .h1 {
-      font-size: 4.76694rem; } }
-  @media all and (max-width: 844px) {
+      font-size: 4.4887rem; } }
+  @media all and (max-width: 843px) {
     h1, .h1 {
-      font-size: 4.68498rem; } }
-  @media all and (max-width: 826px) {
+      font-size: 4.41859rem; } }
+  @media all and (max-width: 824px) {
     h1, .h1 {
-      font-size: 4.60227rem; } }
-  @media all and (max-width: 808px) {
+      font-size: 4.34719rem; } }
+  @media all and (max-width: 805px) {
     h1, .h1 {
-      font-size: 4.51881rem; } }
-  @media all and (max-width: 790px) {
+      font-size: 4.27449rem; } }
+  @media all and (max-width: 786px) {
     h1, .h1 {
-      font-size: 4.43461rem; } }
-  @media all and (max-width: 772px) {
+      font-size: 4.20049rem; } }
+  @media all and (max-width: 767px) {
     h1, .h1 {
-      font-size: 4.34965rem; } }
-  @media all and (max-width: 754px) {
+      font-size: 4.12519rem; } }
+  @media all and (max-width: 748px) {
     h1, .h1 {
-      font-size: 4.26394rem; } }
-  @media all and (max-width: 736px) {
+      font-size: 4.04859rem; } }
+  @media all and (max-width: 730px) {
     h1, .h1 {
-      font-size: 4.17748rem; } }
-  @media all and (max-width: 718px) {
+      font-size: 3.97482rem; } }
+  @media all and (max-width: 712px) {
     h1, .h1 {
-      font-size: 4.09027rem; } }
-  @media all and (max-width: 700px) {
+      font-size: 3.89988rem; } }
+  @media all and (max-width: 694px) {
     h1, .h1 {
-      font-size: 4.00231rem; } }
-  @media all and (max-width: 683px) {
+      font-size: 3.82378rem; } }
+  @media all and (max-width: 676px) {
     h1, .h1 {
-      font-size: 3.91855rem; } }
-  @media all and (max-width: 666px) {
+      font-size: 3.74651rem; } }
+  @media all and (max-width: 658px) {
     h1, .h1 {
-      font-size: 3.83413rem; } }
-  @media all and (max-width: 649px) {
+      font-size: 3.66808rem; } }
+  @media all and (max-width: 640px) {
     h1, .h1 {
-      font-size: 3.74903rem; } }
-  @media all and (max-width: 632px) {
+      font-size: 3.58848rem; } }
+  @media all and (max-width: 622px) {
     h1, .h1 {
-      font-size: 3.66326rem; } }
-  @media all and (max-width: 615px) {
+      font-size: 3.50771rem; } }
+  @media all and (max-width: 604px) {
     h1, .h1 {
-      font-size: 3.57682rem; } }
-  @media all and (max-width: 598px) {
+      font-size: 3.42577rem; } }
+  @media all and (max-width: 586px) {
     h1, .h1 {
-      font-size: 3.48972rem; } }
-  @media all and (max-width: 581px) {
+      font-size: 3.34267rem; } }
+  @media all and (max-width: 568px) {
     h1, .h1 {
-      font-size: 3.40194rem; } }
-  @media all and (max-width: 564px) {
+      font-size: 3.2584rem; } }
+  @media all and (max-width: 551px) {
     h1, .h1 {
-      font-size: 3.3135rem; } }
-  @media all and (max-width: 547px) {
+      font-size: 3.17775rem; } }
+  @media all and (max-width: 534px) {
     h1, .h1 {
-      font-size: 3.22439rem; } }
-  @media all and (max-width: 530px) {
+      font-size: 3.09605rem; } }
+  @media all and (max-width: 517px) {
     h1, .h1 {
-      font-size: 3.13461rem; } }
-  @media all and (max-width: 513px) {
+      font-size: 3.01331rem; } }
+  @media all and (max-width: 500px) {
     h1, .h1 {
-      font-size: 3.04416rem; } }
-  @media all and (max-width: 496px) {
+      font-size: 2.92953rem; } }
+  @media all and (max-width: 483px) {
     h1, .h1 {
-      font-size: 2.95304rem; } }
-  @media all and (max-width: 479px) {
+      font-size: 2.84471rem; } }
+  @media all and (max-width: 466px) {
     h1, .h1 {
-      font-size: 2.86125rem; } }
-  @media all and (max-width: 462px) {
+      font-size: 2.75884rem; } }
+  @media all and (max-width: 449px) {
     h1, .h1 {
-      font-size: 2.76879rem; } }
-  @media all and (max-width: 445px) {
+      font-size: 2.67194rem; } }
+  @media all and (max-width: 432px) {
     h1, .h1 {
-      font-size: 2.67567rem; } }
-  @media all and (max-width: 428px) {
+      font-size: 2.584rem; } }
+  @media all and (max-width: 415px) {
     h1, .h1 {
-      font-size: 2.58187rem; } }
-  @media all and (max-width: 411px) {
+      font-size: 2.49502rem; } }
+  @media all and (max-width: 398px) {
     h1, .h1 {
-      font-size: 2.48741rem; } }
-  @media all and (max-width: 394px) {
+      font-size: 2.40499rem; } }
+  @media all and (max-width: 381px) {
     h1, .h1 {
-      font-size: 2.39227rem; } }
-  @media all and (max-width: 378px) {
+      font-size: 2.31393rem; } }
+  @media all and (max-width: 365px) {
     h1, .h1 {
-      font-size: 2.30213rem; } }
-  @media all and (max-width: 362px) {
-    h1, .h1 {
-      font-size: 2.21138rem; } }
+      font-size: 2.22727rem; } }
   h1:not(.archive-title):not(.no-dots), .h1:not(.archive-title):not(.no-dots) {
     display: block;
     text-align: center;
@@ -993,157 +981,151 @@ h4,
     color: var(--cyan); }
 
 h2, .h2 {
-  font-size: 5rem; }
+  font-size: 4.5rem; }
   @media all and (max-width: 360px) {
     h2, .h2 {
       font-size: 2rem; } }
   @media all and (max-width: 1440px) {
     h2, .h2 {
-      font-size: 5rem; } }
-  @media all and (max-width: 1411px) {
+      font-size: 4.5rem; } }
+  @media all and (max-width: 1408px) {
     h2, .h2 {
-      font-size: 4.97824rem; } }
-  @media all and (max-width: 1383px) {
+      font-size: 4.5014rem; } }
+  @media all and (max-width: 1377px) {
     h2, .h2 {
-      font-size: 4.95415rem; } }
-  @media all and (max-width: 1355px) {
+      font-size: 4.49836rem; } }
+  @media all and (max-width: 1346px) {
     h2, .h2 {
-      font-size: 4.92704rem; } }
-  @media all and (max-width: 1327px) {
+      font-size: 4.49099rem; } }
+  @media all and (max-width: 1316px) {
     h2, .h2 {
-      font-size: 4.8969rem; } }
-  @media all and (max-width: 1300px) {
+      font-size: 4.47975rem; } }
+  @media all and (max-width: 1287px) {
     h2, .h2 {
-      font-size: 4.86497rem; } }
-  @media all and (max-width: 1273px) {
+      font-size: 4.46503rem; } }
+  @media all and (max-width: 1258px) {
     h2, .h2 {
-      font-size: 4.83023rem; } }
-  @media all and (max-width: 1247px) {
+      font-size: 4.44652rem; } }
+  @media all and (max-width: 1230px) {
     h2, .h2 {
-      font-size: 4.79412rem; } }
-  @media all and (max-width: 1221px) {
+      font-size: 4.42506rem; } }
+  @media all and (max-width: 1202px) {
     h2, .h2 {
-      font-size: 4.7554rem; } }
-  @media all and (max-width: 1195px) {
+      font-size: 4.40007rem; } }
+  @media all and (max-width: 1175px) {
     h2, .h2 {
-      font-size: 4.71407rem; } }
-  @media all and (max-width: 1170px) {
+      font-size: 4.37263rem; } }
+  @media all and (max-width: 1148px) {
     h2, .h2 {
-      font-size: 4.67188rem; } }
-  @media all and (max-width: 1145px) {
+      font-size: 4.34191rem; } }
+  @media all and (max-width: 1122px) {
     h2, .h2 {
-      font-size: 4.62727rem; } }
-  @media all and (max-width: 1120px) {
-    h2, .h2 {
-      font-size: 4.58025rem; } }
+      font-size: 4.30922rem; } }
   @media all and (max-width: 1096px) {
     h2, .h2 {
-      font-size: 4.53284rem; } }
-  @media all and (max-width: 1072px) {
+      font-size: 4.2735rem; } }
+  @media all and (max-width: 1070px) {
     h2, .h2 {
-      font-size: 4.48321rem; } }
-  @media all and (max-width: 1048px) {
+      font-size: 4.23473rem; } }
+  @media all and (max-width: 1045px) {
     h2, .h2 {
-      font-size: 4.43136rem; } }
-  @media all and (max-width: 1024px) {
+      font-size: 4.19458rem; } }
+  @media all and (max-width: 1020px) {
     h2, .h2 {
-      font-size: 4.37728rem; } }
-  @media all and (max-width: 1001px) {
+      font-size: 4.15162rem; } }
+  @media all and (max-width: 995px) {
     h2, .h2 {
-      font-size: 4.32338rem; } }
-  @media all and (max-width: 978px) {
+      font-size: 4.10585rem; } }
+  @media all and (max-width: 971px) {
     h2, .h2 {
-      font-size: 4.26743rem; } }
-  @media all and (max-width: 955px) {
+      font-size: 4.05926rem; } }
+  @media all and (max-width: 947px) {
     h2, .h2 {
-      font-size: 4.20944rem; } }
-  @media all and (max-width: 932px) {
+      font-size: 4.01007rem; } }
+  @media all and (max-width: 923px) {
     h2, .h2 {
-      font-size: 4.14941rem; } }
-  @media all and (max-width: 910px) {
+      font-size: 3.9583rem; } }
+  @media all and (max-width: 900px) {
     h2, .h2 {
-      font-size: 4.09008rem; } }
-  @media all and (max-width: 888px) {
+      font-size: 3.90625rem; } }
+  @media all and (max-width: 877px) {
     h2, .h2 {
-      font-size: 4.02889rem; } }
-  @media all and (max-width: 866px) {
+      font-size: 3.85182rem; } }
+  @media all and (max-width: 854px) {
     h2, .h2 {
-      font-size: 3.96583rem; } }
-  @media all and (max-width: 844px) {
+      font-size: 3.79501rem; } }
+  @media all and (max-width: 831px) {
     h2, .h2 {
-      font-size: 3.9009rem; } }
-  @media all and (max-width: 822px) {
+      font-size: 3.73581rem; } }
+  @media all and (max-width: 809px) {
     h2, .h2 {
-      font-size: 3.8341rem; } }
-  @media all and (max-width: 801px) {
+      font-size: 3.67697rem; } }
+  @media all and (max-width: 787px) {
     h2, .h2 {
-      font-size: 3.76859rem; } }
-  @media all and (max-width: 780px) {
+      font-size: 3.61594rem; } }
+  @media all and (max-width: 765px) {
     h2, .h2 {
-      font-size: 3.70139rem; } }
-  @media all and (max-width: 759px) {
+      font-size: 3.55273rem; } }
+  @media all and (max-width: 743px) {
     h2, .h2 {
-      font-size: 3.63248rem; } }
-  @media all and (max-width: 738px) {
+      font-size: 3.48735rem; } }
+  @media all and (max-width: 722px) {
     h2, .h2 {
-      font-size: 3.56187rem; } }
-  @media all and (max-width: 717px) {
+      font-size: 3.42291rem; } }
+  @media all and (max-width: 701px) {
     h2, .h2 {
-      font-size: 3.48957rem; } }
-  @media all and (max-width: 696px) {
+      font-size: 3.35648rem; } }
+  @media all and (max-width: 680px) {
     h2, .h2 {
-      font-size: 3.41556rem; } }
-  @media all and (max-width: 676px) {
+      font-size: 3.28807rem; } }
+  @media all and (max-width: 659px) {
     h2, .h2 {
-      font-size: 3.34349rem; } }
-  @media all and (max-width: 656px) {
+      font-size: 3.21767rem; } }
+  @media all and (max-width: 639px) {
     h2, .h2 {
-      font-size: 3.26988rem; } }
-  @media all and (max-width: 636px) {
+      font-size: 3.14878rem; } }
+  @media all and (max-width: 619px) {
     h2, .h2 {
-      font-size: 3.19472rem; } }
-  @media all and (max-width: 616px) {
+      font-size: 3.07808rem; } }
+  @media all and (max-width: 599px) {
     h2, .h2 {
-      font-size: 3.11802rem; } }
-  @media all and (max-width: 596px) {
+      font-size: 3.00559rem; } }
+  @media all and (max-width: 579px) {
     h2, .h2 {
-      font-size: 3.03978rem; } }
-  @media all and (max-width: 576px) {
+      font-size: 2.9313rem; } }
+  @media all and (max-width: 559px) {
     h2, .h2 {
-      font-size: 2.96rem; } }
-  @media all and (max-width: 557px) {
+      font-size: 2.85521rem; } }
+  @media all and (max-width: 539px) {
     h2, .h2 {
-      font-size: 2.88278rem; } }
-  @media all and (max-width: 538px) {
+      font-size: 2.77731rem; } }
+  @media all and (max-width: 520px) {
     h2, .h2 {
-      font-size: 2.80416rem; } }
-  @media all and (max-width: 519px) {
+      font-size: 2.70165rem; } }
+  @media all and (max-width: 501px) {
     h2, .h2 {
-      font-size: 2.72415rem; } }
-  @media all and (max-width: 500px) {
+      font-size: 2.62435rem; } }
+  @media all and (max-width: 482px) {
     h2, .h2 {
-      font-size: 2.64275rem; } }
-  @media all and (max-width: 481px) {
+      font-size: 2.54544rem; } }
+  @media all and (max-width: 463px) {
     h2, .h2 {
-      font-size: 2.55995rem; } }
-  @media all and (max-width: 462px) {
+      font-size: 2.4649rem; } }
+  @media all and (max-width: 444px) {
     h2, .h2 {
-      font-size: 2.47576rem; } }
-  @media all and (max-width: 443px) {
+      font-size: 2.38273rem; } }
+  @media all and (max-width: 425px) {
     h2, .h2 {
-      font-size: 2.39018rem; } }
-  @media all and (max-width: 424px) {
+      font-size: 2.29894rem; } }
+  @media all and (max-width: 407px) {
     h2, .h2 {
-      font-size: 2.30321rem; } }
-  @media all and (max-width: 406px) {
+      font-size: 2.21806rem; } }
+  @media all and (max-width: 389px) {
     h2, .h2 {
-      font-size: 2.21953rem; } }
-  @media all and (max-width: 388px) {
+      font-size: 2.13572rem; } }
+  @media all and (max-width: 371px) {
     h2, .h2 {
-      font-size: 2.1346rem; } }
-  @media all and (max-width: 370px) {
-    h2, .h2 {
-      font-size: 2.04842rem; } }
+      font-size: 2.05193rem; } }
 
 p + h2, p + .h2 {
   margin-top: 2em; }
@@ -1501,7 +1483,7 @@ a.wp-block-button__link,
     a.wp-block-button__link,
     .is-style-outline > a.wp-block-button__link,
     .is-style-outline > .wp-block-button__link:not(.has-text-color) {
-      font-size: 1.9rem; } }
+      font-size: 2rem; } }
   button:hover, button:focus, button:active,
   input[type="button"]:hover,
   input[type="button"]:focus,
@@ -2251,14 +2233,17 @@ p.fil-ariane {
       -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
       font-size: 1.6rem;
-      font-weight: 300;
-      top: 3px; }
+      font-weight: 700;
+      top: 5px; }
       .site-header a.selection .count {
-        --diametre:2.5rem;
-        background-color: transparent;
+        --diametre:1.8rem;
+        background-color: var(--cyan);
         border: solid 1px var(--cyan);
-        color: var(--cyan);
-        margin-left: 7px; }
+        color: var(--blanc);
+        margin-left: 7px;
+        line-height: 1.8rem;
+        font-size: 1.5rem;
+        margin-top: 5px; }
       .site-header a.selection:hover, .site-header a.selection:focus {
         text-decoration: none !important; } }
 
@@ -2366,7 +2351,7 @@ button.menu-toggle {
 .site-header .nav-menu .menu-item a {
   color: var(--bleu);
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase; }
@@ -2630,7 +2615,7 @@ button.menu-toggle {
       text-align: center; }
     .nav-menu.desktop.menu-my-account .sub-menu a {
       color: var(--blanc);
-      font-size: 2rem;
+      font-size: 1.8rem;
       left: 0;
       line-height: 1.1;
       font-weight: 700;
@@ -4266,7 +4251,7 @@ button.menu-toggle {
   padding: var(--margin-y-2) var(--padding-x); }
   @media (min-width: 1400px) {
     .page .entry-header, .archive-header {
-      min-height: 30rem; } }
+      min-height: 28rem; } }
 
 @media (min-width: 1024px) {
   body.archive.js-product-menu-open .archive-header, body.archive.js-product-menu-open .no-results .entry-header {
@@ -4292,7 +4277,7 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
 --------------------------------------------------------------*/
 .site-footer {
   background-color: var(--bleu-clair);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding: 2.3rem 1rem;
   position: relative; }
   .site-footer .backtotop {
@@ -4482,7 +4467,7 @@ li.product {
       object-fit: cover;
       width: 100%; }
   li.product .card-title h3, li.product .card-cat {
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 0; }
     @media all and (max-width: 360px) {
@@ -4490,82 +4475,76 @@ li.product {
         font-size: 1.1rem; } }
     @media all and (max-width: 1440px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.4rem; } }
-    @media all and (max-width: 1380px) {
+        font-size: 2rem; } }
+    @media all and (max-width: 1368px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.40648rem; } }
-    @media all and (max-width: 1323px) {
+        font-size: 2.052rem; } }
+    @media all and (max-width: 1301px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.40406rem; } }
-    @media all and (max-width: 1268px) {
+        font-size: 2.08602rem; } }
+    @media all and (max-width: 1239px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.39381rem; } }
-    @media all and (max-width: 1215px) {
+        font-size: 2.10515rem; } }
+    @media all and (max-width: 1180px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.37656rem; } }
-    @media all and (max-width: 1164px) {
+        font-size: 2.11235rem; } }
+    @media all and (max-width: 1124px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.35315rem; } }
-    @media all and (max-width: 1115px) {
+        font-size: 2.10923rem; } }
+    @media all and (max-width: 1071px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.32435rem; } }
-    @media all and (max-width: 1067px) {
-      li.product .card-title h3, li.product .card-cat {
-        font-size: 2.29015rem; } }
+        font-size: 2.09738rem; } }
     @media all and (max-width: 1020px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.25093rem; } }
-    @media all and (max-width: 975px) {
+        font-size: 2.07778rem; } }
+    @media all and (max-width: 971px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.20804rem; } }
-    @media all and (max-width: 931px) {
+        font-size: 2.05139rem; } }
+    @media all and (max-width: 924px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.16108rem; } }
-    @media all and (max-width: 888px) {
+        font-size: 2.01911rem; } }
+    @media all and (max-width: 878px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.11037rem; } }
-    @media all and (max-width: 846px) {
+        font-size: 1.98092rem; } }
+    @media all and (max-width: 834px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 2.05625rem; } }
-    @media all and (max-width: 805px) {
+        font-size: 1.93828rem; } }
+    @media all and (max-width: 791px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.99904rem; } }
-    @media all and (max-width: 765px) {
+        font-size: 1.89083rem; } }
+    @media all and (max-width: 749px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.93906rem; } }
-    @media all and (max-width: 726px) {
+        font-size: 1.83898rem; } }
+    @media all and (max-width: 708px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.87662rem; } }
-    @media all and (max-width: 687px) {
+        font-size: 1.78311rem; } }
+    @media all and (max-width: 668px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.81027rem; } }
-    @media all and (max-width: 649px) {
+        font-size: 1.7236rem; } }
+    @media all and (max-width: 629px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.74185rem; } }
-    @media all and (max-width: 612px) {
+        font-size: 1.66083rem; } }
+    @media all and (max-width: 591px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.67167rem; } }
-    @media all and (max-width: 575px) {
+        font-size: 1.59515rem; } }
+    @media all and (max-width: 554px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.59796rem; } }
-    @media all and (max-width: 539px) {
+        font-size: 1.52692rem; } }
+    @media all and (max-width: 518px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.52287rem; } }
-    @media all and (max-width: 504px) {
+        font-size: 1.45648rem; } }
+    @media all and (max-width: 482px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.44667rem; } }
-    @media all and (max-width: 469px) {
+        font-size: 1.38203rem; } }
+    @media all and (max-width: 447px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.36731rem; } }
-    @media all and (max-width: 435px) {
+        font-size: 1.30582rem; } }
+    @media all and (max-width: 413px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.28721rem; } }
-    @media all and (max-width: 401px) {
+        font-size: 1.22817rem; } }
+    @media all and (max-width: 379px) {
       li.product .card-title h3, li.product .card-cat {
-        font-size: 1.20413rem; } }
-    @media all and (max-width: 368px) {
-      li.product .card-title h3, li.product .card-cat {
-        font-size: 1.12066rem; } }
+        font-size: 1.14694rem; } }
   li.product .card-cat {
     color: var(--cyan);
     font-weight: 300; }
@@ -4857,7 +4836,7 @@ ul.menu-my-account-links, .email-preferences {
       padding: 0 5rem; }
       @media (min-width: 500px) {
         #pmpro_account-membership table .pmpro_actionlinks a {
-          font-size: 1.9rem; } }
+          font-size: 2rem; } }
       #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {
         text-decoration: none; }
       #pmpro_account-membership table .pmpro_actionlinks a:hover, #pmpro_account-membership table .pmpro_actionlinks a:focus, #pmpro_account-membership table .pmpro_actionlinks a:active {

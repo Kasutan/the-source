@@ -6,7 +6,7 @@ html {
 	font-size: 62.5%; /* 1rem = 10px */
 	--taille-texte:1.6rem;  //Maquette 1.2rem mobile
 	@include bp(sm) {
-		--taille-texte:2rem;
+		--taille-texte:1.8rem;
 	}
 }
 
@@ -31,7 +31,7 @@ textarea {
 
 h1, .h1 {
 	color:var(--bleu);
-	@include fs(2.2rem,7rem);
+	@include fs(2.2rem,6rem);
 	font-weight: 700;
 	margin:auto 0;
 	padding:0;
@@ -65,7 +65,7 @@ h4,
 
 
 h2, .h2 {
-	@include fs(2rem,5rem);
+	@include fs(2rem,4.5rem);
 }
 p + h2, p + .h2 {
 	margin-top:2em;

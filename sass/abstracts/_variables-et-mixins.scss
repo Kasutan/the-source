@@ -55,7 +55,7 @@ $colors: (
 @mixin bouton {
 	font-size:1.5rem;
 	@include bp(sm) {
-		font-size: 1.9rem;
+		font-size: 2rem;
 	}
 	border: solid 1px;
 	border-radius: 0;
