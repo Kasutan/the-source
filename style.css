@@ -4463,6 +4463,7 @@ li.product {
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 0.5rem;
+    overflow: hidden;
     width: 100%; }
     li.product .card-image img {
       -o-object-fit: cover;
