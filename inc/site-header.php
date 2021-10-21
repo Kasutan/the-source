@@ -32,7 +32,7 @@ function kasutan_menu_left() {
 		
 		?>
 		<button class="menu-toggle picto" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
-			<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu', 'size'=>false));?>
+			<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu', 'size'=>'35'));?>
 			<?php echo kasutan_picto(array('icon'=>'close', 'class' => 'fermer-menu','size'=>'23'));?>
 		</button>
 		<div class="volet-navigation"  id="volet-navigation">
