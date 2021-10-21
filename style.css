@@ -2437,7 +2437,7 @@ button.menu-toggle {
     padding-top: 1rem;
     padding-left: 4rem;
     position: relative;
-    top: 6px; }
+    top: 4px; }
     .nav-menu.desktop.menu-products .menu-item {
       max-width: 13rem;
       padding: 1rem; }
@@ -2464,8 +2464,7 @@ button.menu-toggle {
         top: 100%; }
     @media (min-width: 1400px) {
       .nav-menu.desktop.menu-products {
-        padding-top: 3rem;
-        top: 7px; }
+        padding-top: 3rem; }
         .nav-menu.desktop.menu-products .menu-item {
           padding-top: 1.5rem; }
         .nav-menu.desktop.menu-products .current-menu-item {
@@ -2543,6 +2542,9 @@ button.menu-toggle {
         .nav-menu.desktop.menu-the-source .menu-item {
           margin-left: 2rem;
           margin-right: 2rem; } }
+    @media (min-width: 1400px) {
+      .nav-menu.desktop.menu-the-source {
+        padding-top: 3rem; } }
   .nav-menu.desktop.menu-my-account > li {
     padding: 1.5rem 0;
     position: relative; }
