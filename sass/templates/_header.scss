@@ -50,6 +50,12 @@
 		margin: 3.4rem 5.5rem 2.5rem;
 
 	}
+	@media (max-width: 550px) {
+		margin: .75rem;
+		position: relative;
+		text-align: center;
+		width: 18rem;
+	}
 }
 
 .custom-logo-link {

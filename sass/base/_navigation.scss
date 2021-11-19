@@ -174,7 +174,8 @@ p.fil-ariane {
 }
 
 button.menu-toggle {
-	display: block;
+	display: flex;
+	align-items: center;
 	&:focus {
 		outline: none;
 	}
@@ -222,6 +223,7 @@ button.menu-toggle {
 	background:transparent;
 	border:0;
 	margin:0;
+	margin-left:9px;
 	min-width:unset;
 	padding:0 1rem;
 	&:hover, &:focus, &:active {
@@ -278,14 +280,17 @@ button.menu-toggle {
 		justify-content: space-between;
 
 		&.js-ouvert, &.current-menu-item, &.focus, & a:focus {
-			button.ouvrir-sous-menu svg path {
-				fill:var(--cyan);
+			button.ouvrir-sous-menu svg {
+				transform: rotate(180deg);
+				path {
+					fill:var(--cyan);
+				}
 			}
 		}
 	}
 
 	button.ouvrir-sous-menu {
-		padding:0 1rem;
+		padding:0 2rem;
 		svg path {
 			fill:var(--bleu);
 		}
@@ -314,7 +319,7 @@ button.menu-toggle {
 		li {
 			margin-bottom: 0rem;
 			a {
-				font-size: 1.3rem;
+				font-size: 1.5rem;
 				font-weight: 300;
 				text-decoration: none;
 				text-transform: unset;

@@ -30,9 +30,8 @@
 
 //Vignette produit
 li.product {
-	--taille-label: 6rem;
+	--taille-label: 3.5rem;
 	.card-image {
-		display:flex;
 		margin-bottom:0.5rem;
 		overflow: hidden;
 		width:100%;
@@ -42,13 +41,15 @@ li.product {
 		}
 	}
 	.card-title h3, .card-cat {
-		@include fs(1.1rem,2.0rem);
+		@include fs(1.5rem,2.0rem);
 		line-height: 1.1;
 		margin-bottom: 0;
+		transition: color 0.3s ease-in-out ;
 	}	
 	.card-cat {
 		color:var(--cyan);
 		font-weight: 300;
+		text-decoration: none;
 	}
 	.card-info {
 		align-items: flex-start;
@@ -58,9 +59,11 @@ li.product {
 
 	}
 	.card-title {
-		flex-basis:calc(100% - var(--taille-label) - 1rem );
+		flex-basis:calc(100% - var(--taille-label) - 0.5rem );
 		margin-bottom:0.5rem;
+		text-decoration: none;
 		&:hover, &:focus {
+			text-decoration: none;
 			h3 {
 				color:var(--cyan);
 			}
@@ -73,7 +76,7 @@ li.product {
 		position:relative;
 		width:var(--taille-label);
 		label {
-			font-size:0.8rem;
+			font-size:1.35rem;
 			font-weight: 300;
 			line-height:1;
 			height:1.7rem;

@@ -73,7 +73,9 @@
     height: 100%;
     left: 0;
     top: 0;
-    width: 100%; }
+    width: 100%;
+    -webkit-transform: none;
+    transform: none; }
   .home-inspiration .surtitre {
     font-size: 1rem;
     font-weight: 300; }
@@ -125,7 +127,7 @@
         padding: 0.5rem 3rem; } }
     @media (min-width: 1024px) and (min-width: 500px) {
       .home-inspiration .button {
-        font-size: 1.9rem; } }
+        font-size: 2rem; } }
   @media (min-width: 1024px) {
         .home-inspiration .button:hover, .home-inspiration .button:focus, .home-inspiration .button:active {
           text-decoration: none; }

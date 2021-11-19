@@ -1,0 +1,43 @@
+--bleu-clair: #EAF2FA;
+--fond: #EAF2FA;
+
+@media (max-width: 550px) {
+
+	/*Logo*/
+	.site-title {
+		margin: .75rem;
+		position: relative;
+		text-align: center;
+		width: 18rem;
+	}
+	
+	
+	li.product .card-title h3, li.product .card-cat {
+		font-size:  1.5rem !important;
+	}
+	
+	li.product .to-selection label{
+		font-size:  1.35rem !important;
+	}
+	
+	.card-title {
+		width: 70% !important;
+	}
+	
+	#liste-filtrable-watches {
+		background-color: #EAF2FA !important;
+	}
+	
+	
+	/* My account */
+	
+	.pmpro_member_profile_edit_wrap form.pmpro_form label {
+		font-size: 1.5rem !important;
+	}
+	.pmpro_member_profile_edit_wrap form.pmpro_form input {
+		font-size: 1.5rem !important;
+	}
+	.pmpro_member_profile_edit_wrap form.pmpro_form input .pmpro_btn {
+		font-size: 2rem !important;
+	}
+	}

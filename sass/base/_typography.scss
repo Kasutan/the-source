@@ -78,6 +78,19 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 }
 
+@media screen and (max-width:550px) {
+	.archive-header {
+		.h2.dots {
+			font-size :1.6rem;
+			margin-bottom: 0;
+		}
+		h1 {
+			font-size:2.3rem;
+		}
+	}
+}
+
+
 p {
 	margin-bottom: 1em;
 	margin-top:0;

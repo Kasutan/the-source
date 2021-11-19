@@ -203,6 +203,18 @@ ul.menu-my-account-links, .email-preferences {
 
 }
 
+@media screen and (max-width:550px) {
+	.pmpro_member_profile_edit_wrap form.pmpro_form , .change-password {
+		label, input, .pmpro_change_password-fields label {
+			font-size: 1.5rem;
+		}
+		input.pmpro_btn, input[type="submit"] {
+			font-size: 2rem;
+		}
+	}
+	
+}
+
 #pmpro_account-profile {
 	//Section masquée sur la page My personal information
 	display: none;

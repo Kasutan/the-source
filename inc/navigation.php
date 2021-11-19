@@ -24,7 +24,7 @@ class kasutan_products_menu_walker extends Walker_Nav_Menu
 		$taxonomy=$item->description; //taxonomy slug stored as description for the menu item
 		if(in_array($taxonomy,$product_taxonomies)) {
 
-			$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'triangle','size'=> false)) );
+			$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'triangle','size'=> 12)) );
 			
 			$output.=kasutan_get_categories_for_menu($taxonomy);
 		}
