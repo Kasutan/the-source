@@ -186,8 +186,13 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 		echo '<section class="product-related">';
 			echo '<div class="sep"></div>';
 			if($related) {
+				if(count($related) > 3) {
+					$class="product-grid nb-col-3";
+				} else {
+					$class="product-flex";
+				}
 				printf('<h2>In the same category: <span>%s</span></h2>',$cat->name);
-				echo '<ul class="product-grid nb-col-3">';
+				printf('<ul class="%s">',$class);
 					foreach($related as $product_id) {
 						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
 					}

@@ -1,5 +1,6 @@
 //Liste de produits 
 //column masonry : https://w3bits.com/css-masonry/
+// Attention avec Chrome, la répartition du contenu dans les colonnes ne se passe pas comme sur Firefox. Possibilité d'utiliser column-fill:balance mais en imposant une hauteur 
 //left-to-right masonry : https://w3bits.com/css-grid-masonry/
 //js masonry with order : https://masonry.desandro.com/options.html
 .product-grid {
@@ -28,9 +29,33 @@
 	} 
 }
 
+//Quand il y a moins de produits, on utilise flex
+.product-flex {
+	align-items:flex-start;
+	display:flex;
+	column-gap: 1rem;
+	list-style:none;
+	margin:0;
+	padding:0;
+	li.product {
+		flex-basis:50%;
+		margin-bottom: 1rem;
+	}
+	@include bp(md) {
+		column-gap: 1.6rem;
+		li.product {
+			flex-basis:33%;
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
 //Vignette produit
 li.product {
-	--taille-label: 3.5rem;
+	--taille-label: 3.9rem;
+	@include bp (md) { 
+		--taille-label: 4.7rem;
+	}
 	.card-image {
 		margin-bottom:0.5rem;
 		overflow: hidden;
