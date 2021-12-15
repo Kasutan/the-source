@@ -228,6 +228,12 @@ class BE_ACF_Customizations {
 			false
 		);
 
+		$this->helper_register_block_type(
+			'home-upgrade',
+			'Block upgrade for free trial home page',
+			'Display upgrade incentive on free trial home page.'
+		);
+
 		/*********Blocs Advisors***************/
 		$this->helper_register_block_type(
 			'about-experts',

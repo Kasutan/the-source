@@ -1,0 +1,100 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.home-upgrade {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: var(--margin-y-1);
+	margin-left:var(--margin-x-header);
+	margin-right:var(--margin-x-header);
+	margin-top: 1rem;
+	overflow-y: hidden;
+	padding: 8rem var(--padding-x) var(--margin-y-1);
+	position: relative;
+	z-index:1;
+	--fond:5%;
+
+	.fond {
+		background-color: var(--bleu);
+		clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--fond));
+		height: 100%;
+		left:0;
+		position: absolute;
+		top:0;
+		width:100%;
+	}
+
+	.h1, .subtitle, .text, .button {
+		position: relative;
+	}
+
+
+	&, .h1, .subtitle {
+		color:var(--blanc);
+	}
+	.h1, .subtitle {
+		margin-top:0;
+	}
+
+	.offers {
+		list-style: none;
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	.offer {
+		--size:8.5rem;
+		align-items: center;
+		display: flex;
+		font-size: 110%;
+		font-weight: 700;
+		line-height: 1.3;
+		height:var(--size);
+		justify-content: center;
+		margin: 1em 0;
+		position: relative;
+		text-align: center;
+		.circle {
+			background-color: var(--blanc);
+			border-radius:100%;
+			height:var(--size);
+			left:calc((100% - var(--size)) / 2);
+			opacity:0.2;
+			position: absolute;
+			width:var(--size);
+		}
+	}
+
+	.text {
+		font-size: 2.3rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.button {
+		font-weight: normal;
+		strong {
+			font-weight: 700;
+		}
+	}
+
+
+	@include bp(sm) {
+		--fond:10%;
+		padding-top:8rem;
+	}
+
+	@include bp(lg) {
+	
+		.offers {
+			display: flex;
+			justify-content: center;
+			max-width: 90rem;
+		}
+		.offer {
+			flex-basis:33%;
+			padding:0 1rem;
+		}
+	}
+}

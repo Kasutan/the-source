@@ -1625,6 +1625,46 @@ a.wp-block-button__link,
     font-weight: 300;
     padding: 1rem 2rem;
     text-transform: unset; }
+  button.white,
+  input[type="button"].white,
+  .site-container .nf-form-content input[type="button"].white,
+  input[type="reset"].white,
+  input[type="submit"].white,
+  a.button.white,
+  a.wp-block-button__link.white,
+  .is-style-outline > a.wp-block-button__link.white,
+  .is-style-outline > .wp-block-button__link:not(.has-text-color).white {
+    background-color: var(--blanc);
+    border-color: var(--blanc);
+    color: var(--bleu); }
+    button.white:hover, button.white:focus, button.white:active,
+    input[type="button"].white:hover,
+    input[type="button"].white:focus,
+    input[type="button"].white:active,
+    .site-container .nf-form-content input[type="button"].white:hover,
+    .site-container .nf-form-content input[type="button"].white:focus,
+    .site-container .nf-form-content input[type="button"].white:active,
+    input[type="reset"].white:hover,
+    input[type="reset"].white:focus,
+    input[type="reset"].white:active,
+    input[type="submit"].white:hover,
+    input[type="submit"].white:focus,
+    input[type="submit"].white:active,
+    a.button.white:hover,
+    a.button.white:focus,
+    a.button.white:active,
+    a.wp-block-button__link.white:hover,
+    a.wp-block-button__link.white:focus,
+    a.wp-block-button__link.white:active,
+    .is-style-outline > a.wp-block-button__link.white:hover,
+    .is-style-outline > a.wp-block-button__link.white:focus,
+    .is-style-outline > a.wp-block-button__link.white:active,
+    .is-style-outline > .wp-block-button__link:not(.has-text-color).white:hover,
+    .is-style-outline > .wp-block-button__link:not(.has-text-color).white:focus,
+    .is-style-outline > .wp-block-button__link:not(.has-text-color).white:active {
+      background-color: transparent;
+      border-color: var(--blanc);
+      color: var(--blanc); }
 
 html {
   -webkit-box-sizing: border-box;

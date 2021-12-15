@@ -24,4 +24,14 @@ a.wp-block-button__link,
 		padding:1rem 2rem;
 		text-transform: unset;
 	}
+	&.white {
+		background-color: var(--blanc);
+		border-color:var(--blanc);
+		color:var(--bleu);
+		&:hover, &:focus, &:active {
+			background-color: transparent;
+			border-color:var(--blanc);
+			color:var(--blanc);
+		}
+	}
 }
