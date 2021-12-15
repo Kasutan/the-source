@@ -398,6 +398,17 @@ template {
   margin-right: auto;
   max-width: 85rem; }
 
+.pointe {
+  --pointe:92%;
+  -webkit-clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+  clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+  margin-bottom: var(--margin-y-2);
+  margin-top: 1rem;
+  padding: 5rem 2rem 10rem; }
+  @media (min-width: 1400px) {
+    .pointe {
+      padding-bottom: 14rem; } }
+
 :root {
   --blanc: #fff;
   --rouge: #eb1118;
@@ -3397,7 +3408,7 @@ button.menu-toggle {
   .products.acf.home-products {
     padding: 3rem 0 5rem; }
     .products.acf.home-products:nth-of-type(2n+1) {
-      background-color: #F3F5F7; }
+      background-color: var(--fond); }
     .products.acf.home-products .title, .products.acf.home-products .above-title {
       text-align: center; }
     .products.acf.home-products .above-title {

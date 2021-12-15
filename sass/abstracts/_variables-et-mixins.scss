@@ -208,6 +208,17 @@ $colors: (
 	}
 }
 
+@mixin pointe {
+	--pointe:92%;
+	clip-path: polygon(100% 0, 100% var(--pointe), 50% 100%, 0 var(--pointe), 0 0);
+	margin-bottom: var(--margin-y-2);
+	margin-top: 1rem;
+	padding: 5rem 2rem 10rem;
+	@include bp(xl) {
+		padding-bottom:14rem;
+	}
+}
+
 
 @mixin fs($min-font-size, $max-font-size) {
 	$font-size-step: 0.1rem;
