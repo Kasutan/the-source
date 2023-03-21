@@ -201,11 +201,11 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 	}
 	//Boutons mobile filter = ouvre volet et sort -> trier par date (toggle sens de tri à chaque clic)
 	echo '<div class="boutons-filtre-mobile hide-for-lg">';
-		printf('<button class="ouvre-filtre" aria-hidden="true" aria-controls="filtre-%s">Filter</button>',$parent_slug);
+		printf('<button class="ouvre-filtre" aria-hidden="true" aria-controls="filtre-%s">%s</button>', $parent_slug, esc_html__('Filter','the-source'));
 
 		//Si $title on est sur un bloc acf, pas de tri
 		if(!$title) {
-			echo '<button class="sort mobile-sort" data-sort="published">Sort <span class="screen-reader-text">by date</span></button>';
+			echo '<button class="sort mobile-sort" data-sort="published">'.esc_html__('Sort','the-source').' <span class="screen-reader-text">'.esc_html__('by date','the-source').'</span></button>';
 		}
 
 	echo '</div>';
@@ -213,14 +213,17 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 	//Bouton pour trier, position absolute en desktop
 	//TODO remplacer par un menu déroulant
 	if(!$title) {
-		echo '<div class="desktop-sort"><button class="sort" data-sort="published" data-default-order="desc">Sort by date</button></div>';
+		printf('<div class="desktop-sort"><button class="sort" data-sort="published" data-default-order="desc">%s</button></div>',esc_html__('Sort by date','the-source'));
 	}
 	
 	printf('<form class="filtre %s" id="filtre-%s">',$taxonomy,$parent_slug);
 		if($title) {
 			printf('<p class="filtre-titre">%s</p>',$title);
 		} else {
-			echo '<p class="filtre-titre">Filter<span class="show-for-lg"> by</span></p>';
+			printf('<p class="filtre-titre">%s<span class="show-for-lg"> %s</span></p>',
+				esc_html__('Filter','the-source'),
+				esc_html__('by','the-source')
+			);
 		}
 		foreach($terms as $term) : 
 			$nom=$term->name;
@@ -236,8 +239,8 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 		endforeach;
 		//Boutons mobile display = , reset = monter toutes les catégories + fermer volet
 		?> <div class="boutons-internes hide-for-lg">
-			<button class="ferme-filtre">Display</button>
-			<button class="reset">Reset</button>
+			<button class="ferme-filtre"><?php esc_html_e('Display','the-source'); ?></button>
+			<button class="reset"><?php esc_html_e('Reset','the-source'); ?></button>
 		</div>
 		<?php
 	echo '</form>';
@@ -281,18 +284,18 @@ function kasutan_display_product_card($post_id,$term,$taxonomy,$user_id,$context
 						data-product="<?php echo $post_id;?>"
 						data-user="<?php echo $user_id;?>"
 					><label for="js-to-selection-<?php echo $post_id;?>">
-					<span class="add">Save</span>
+					<span class="add"><?php esc_html_e('Save','the-source'); ?></span>
 					<?php 
 						if($context==="my-selection") {
-							echo '<span class="remove">Remove</span>';
+							printf('<span class="remove">%s</span>',esc_html__('Remove','the-source'));
 						} else {
-							echo '<span class="remove">Saved</span>';
+							printf('<span class="remove">%s</span>',esc_html__('Saved','the-source'));
 						}
 					
 					?>
-					<span class="screen-reader-text"><?php echo get_the_title( $post_id );?> to my selection</span>
+					<span class="screen-reader-text"><?php echo get_the_title( $post_id );?> <?php esc_html_e('to my selection','the-source'); ?></span>
 				</label>
-				<p class="error" hidden>There was an error, your selection was not updated. Please try again later or contact us.</p>
+				<p class="error" hidden><?php esc_html_e('There was an error, your selection was not updated. Please try again later or contact us.','the-source'); ?></p>
 			</formgroup>
 			<?php
 			
@@ -356,7 +359,9 @@ function kasutan_get_categories_for_menu($taxonomy) {
 			
 			$output.=sprintf('<li><a href="%s">%s</a>',$link,$term->name);
 				if($term->slug==='mechanical-dreams') {
-					$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button>',kasutan_picto(array('icon'=>'triangle', 'size'=>false)) );
+					$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">%s</span><span class="picto-angle">%s</span></button>',
+					esc_html__('Toggle submenu','the-source'),
+					kasutan_picto(array('icon'=>'triangle', 'size'=>false)) );
 					$args=array(
 						'taxonomy' => $taxonomy, 
 						'hide_empty' => false, //TODO changer en prod

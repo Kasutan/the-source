@@ -20,7 +20,7 @@ function ea_entry_title() {
 		$class='has-cyan-color';
 	} elseif(kasutan_is_account_child_page()) {
 		$class='has-cyan-color no-dots';
-		$subtitle='<div class="h3 dots has-cyan-color">My account</div>';
+		$subtitle=sprintf('<div class="h3 dots has-cyan-color">%s</div>',esc_html__('My account','the-source'));
 	}
 
 	if(!is_front_page()) {
@@ -117,7 +117,7 @@ function kasutan_fil_ariane() {
 	echo '<p class="fil-ariane">';
 
 	//Pour tous les contenus : afficher en premier le lien vers l'accueil du site
-	printf('<a href="/">Home</a> > ');
+	printf('<a href="/">%s</a> > ',esc_html__('Home','the-source'));
 
 	//Pour les fiches produit
 	if(kasutan_is_single_for_product()) {
@@ -193,11 +193,11 @@ function kasutan_fil_ariane() {
 	elseif (is_tax()) : //custom tax archive
 		echo '<span class="current">'.strip_tags($queried_object->name).'</span>';
 	elseif (is_home()) :
-		echo '<span class="current">Blog</span>';
+		printf('<span class="current">%s</span>',esc_html__('Blog','the-source'));
 	elseif (is_search()) :
-		echo '<span class="current">Search : '.get_search_query().'</span>';
+		printf('<span class="current">%s '.get_search_query().'</span>',esc_html__('Search:','the-source'));
 	elseif (is_404()) :
-		echo '<span class="current">Page not found</span>';
+		printf('<span class="current">%s</span>',esc_html__('Page not found','the-source'));
 
 	endif;
 

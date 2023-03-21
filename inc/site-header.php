@@ -78,14 +78,18 @@ function kasutan_header_right() {
 	if(!kasutan_is_premium_member()) {
 		echo '<nav class="header-right">';
 			if(is_user_logged_in(  )) {
-				printf('<a href="%s">Logout</a>',wp_logout_url(get_permalink()));
+				printf('<a href="%s">%s</a>',wp_logout_url(get_permalink()),esc_html__('Logout','the-source'));
 			} else {
 				if(function_exists('pmpro_getOption')) {
 					$login_url=get_page_link(pmpro_getOption('login_page_id'));
 				} else {
 					$login_url=wp_login_url(get_permalink());
 				}
-				printf('<div class="circle"></div><div class="signin">Already a member?</br> <a href="%s" class="login-link">Just sign in</a></div>',$login_url);
+				printf('<div class="circle"></div><div class="signin">%s</br> <a href="%s" class="login-link">%s</a></div>',
+					esc_html__('Already a member?','the-source'),
+					$login_url,
+					esc_html__('Just sign in','the-source')
+				);
 			}
 		echo '</nav>';
 		return;
@@ -102,9 +106,9 @@ function kasutan_header_right() {
 
 		$page_selection=kasutan_get_page_ID('selection');
 		$user_id=get_current_user_id(  );
-		$count=kasutan_count_selection($user_id);
+		$count=kasutan_count_selection($user_id); //BONUS compter uniquement les items dans la langue actuelle ?
 		if($page_selection) {
-			printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">Saved items</span></a>',get_page_link($page_selection),$count);
+			printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">%s</span></a>',get_page_link($page_selection),$count,esc_html__('Saved items','the-source'));
 		}
 
 		

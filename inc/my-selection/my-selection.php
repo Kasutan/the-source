@@ -100,7 +100,7 @@ function kasutan_display_selection() {
 	$user_id=get_current_user_id(  );
 	$selected=kasutan_get_products_in_selection($user_id);
 	if(empty($selected)) {
-		return '<p>Your selection is empty;</p>';
+		return sprintf('<p>%s</p>',esc_html__('Your selection is empty.','the-source'));
 	}
 
 	ob_start();

@@ -24,7 +24,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 }
 tha_body_top();
 echo '<div class="site-container">';
-	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'ea-starter' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'the-source' ) . '</a>';
 
 	tha_header_before();
 	echo '<header class="site-header" role="banner">';

@@ -1,6 +1,9 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+
+//TODO à revoir et traduire si besoin
+
 /*
 * Enqueue script for displaying VAT extra info on checkout page.
 *

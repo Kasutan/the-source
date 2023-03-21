@@ -16,10 +16,10 @@ function kasutan_my_email_preferences() {
 		$slug=$option['slug'];
 		if(kasutan_get_email_option_for_user($slug,$user_meta)) {
 			$class='checked';
-			$label="Deactivate this option";
+			$label=esc_html__('Deactivate this option','the-source');
 		} else {
 			$class='';
-			$label="Activate this option";
+			$label=esc_html__('Activate this option','the-source');
 		}
 		printf('<button class="js-toggle-option %s" data-slug="%s"  data-user="%s" title="%s">',$class,$slug,$user_id, $label);
 			printf('<div class="name">%s</div><div class="picto check">%s</div><div class="picto croix">%s</div>',
@@ -94,7 +94,7 @@ function kasutan_pmprorh_init_2() {
 			)
 		);
 	}
-
+	//TODO besoin de traduire ?
 	// Add the fields inside the checkout page.
 	foreach ( $fields as $field ) {
 		pmprorh_add_registration_field(

@@ -20,7 +20,7 @@ function kasutan_confirmation_message() {
 		$confirmation_message.=$level_message;
 	
 	$confirmation_message = apply_filters("pmpro_confirmation_message", $confirmation_message, $pmpro_invoice);
-
+	//TODO traduire ce message : l'enregistrer dans les chaines de WPML
 	printf('<div class="confirmation-message">%s</div>',wp_kses_post( $confirmation_message ));
 
 	return ob_get_clean();

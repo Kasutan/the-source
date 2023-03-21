@@ -257,9 +257,9 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 	$advisor_name=get_the_title($main_advisor);
 	
 	if($source==='Product') {
-		$send_message="You are about to send <br>a contact request <br>for this item";
+		$send_message=__('You are about to send <br>a contact request <br>for this item','the-source');
 	} else {
-		$send_message="You are about to send <br>a contact request <br>to ".$advisor_name;
+		$send_message=__('You are about to send <br>a contact request <br>to','the-source').' '.$advisor_name;
 	}
 
 	$email='';
@@ -267,7 +267,7 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 		$email=sanitize_email(get_field('zs_general_email','option'));
 	}
 	if(empty($email)) {
-		$email='team@thesourceworldconnections.com';
+		$email='team@thesourceworldconnection.com';
 	}
 	
 	$email=antispambot($email);
@@ -275,7 +275,10 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 
 	//always display close button
 	echo '<div id="popup-contact" class="popup">';
-		printf('<button class="popup-close picto">%s<span class="screen-reader-text">Close ppopup</span></button>',kasutan_picto(array('icon'=>'close-popup','size'=>false)));
+		printf('<button class="popup-close picto">%s<span class="screen-reader-text">%s</span></button>',
+			kasutan_picto(array('icon'=>'close-popup','size'=>false)),
+			esc_html__('Close popup','the-source')
+		);
 
 		//Message and action to send request
 		echo '<div class="popup-send">';
@@ -290,9 +293,9 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 					data-product="<?php echo $product_id;?>"
 					data-user="<?php echo $user_id;?>"
 					data-source="<?php echo $source;?>"
-				>Confirm</button>
+				><?php esc_html_e('Confirm','the-source');?></button>
 
-				<button class="popup-close rouge">Cancel</button>
+				<button class="popup-close rouge"><?php esc_html_e('Cancel','the-source');?></button>
 				<?php
 			echo '</div>';
 
@@ -301,19 +304,19 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 		//Message on success
 		?>
 		<div class="popup-success">
-			<p>Thank you, <br>your contact request is on its way.<br>
+			<p><?php _e('Thank you, <br>your contact request is on its way.','the-source');?><br>
 			<span class="cyan"><?php echo $advisor_name;?></span><br>
-			will contact you soon!</p>
-			<div class="popup-actions"><button class="popup-close">Close</button></div>
+			<?php esc_html__('will contact you soon!','the-source');?></p>
+			<div class="popup-actions"><button class="popup-close"><?php esc_html_e('Close','the-source');?></button></div>
 		</div>
 		<?php
 
 		//Message on failure
 		?>
 		<div class="popup-failure">
-			<p>Sorry, <br>something went wrong with this contact request.<br>
-			<span class="cyan">Please send us an email<br><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
-			<div class="popup-actions"><button class="popup-close">Close</button></div>
+			<p><?php _e('Sorry, <br>something went wrong with this contact request.','the-source'); ?><br>
+			<span class="cyan"><?php esc_html_e('Please send us an email','the-source'); ?><br><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+			<div class="popup-actions"><button class="popup-close"><?php esc_html_e('Close','the-source'); ?></button></div>
 		</div>
 		<?php
 

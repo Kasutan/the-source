@@ -53,14 +53,14 @@ function kasutan_pmprorh_init() {
 		'zs-company',							// input name, will also be used as meta key
 		'text',								// type of field
 		array(
-			'label'		=> 'Company',		// custom field label
+			'label'		=> esc_html__('Company','the-source'),		// custom field label
 			'size'		=> 30,				// input size
 			'class'		=> 'company',		// custom class
 			'profile'	=> true,			// show in user profile
 			'required'	=> false,			// make this field required
 			'memberslistcsv' => true,
 			'showrequired' => true,
-			'html_attributes' => array('placeholder' => 'Company' )
+			'html_attributes' => array('placeholder' => esc_html__('Company','the-source') )
 		)
 	);
 	$fields[] = new PMProRH_Field(
@@ -107,11 +107,11 @@ function kasutan_add_billing_fields_to_profile()
 	
 	//define the fields
 	$fields = array();
-	$fields[] = new PMProRH_Field("pmpro_baddress1", "text", array("label"=>"Address", "size"=>40, "profile"=>true, "required"=>false));
-	$fields[] = new PMProRH_Field("pmpro_bcity", "text", array("label"=>"City", "size"=>40, "profile"=>true, "required"=>false));
-	$fields[] = new PMProRH_Field("pmpro_bzipcode", "text", array("label"=>"Zip Code", "size"=>10, "profile"=>true, "required"=>false));
-	$fields[] = new PMProRH_Field("pmpro_bcountry", "select", array("label"=>"Country", "profile"=>true, "required"=>false, "options"=>array_merge(array(""=>"Country"), $pmpro_countries)));
-	$fields[] = new PMProRH_Field("pmpro_bphone", "text", array("label"=>"Phone number", "size"=>40, "profile"=>true, "required"=>false));	
+	$fields[] = new PMProRH_Field("pmpro_baddress1", "text", array("label"=>esc_html__('Address','the-source'), "size"=>40, "profile"=>true, "required"=>false));
+	$fields[] = new PMProRH_Field("pmpro_bcity", "text", array("label"=>esc_html__('City','the-source'), "size"=>40, "profile"=>true, "required"=>false));
+	$fields[] = new PMProRH_Field("pmpro_bzipcode", "text", array("label"=>esc_html__('Zip Code','the-source'), "size"=>10, "profile"=>true, "required"=>false));
+	$fields[] = new PMProRH_Field("pmpro_bcountry", "select", array("label"=>esc_html__('Country','the-source'), "profile"=>true, "required"=>false, "options"=>array_merge(array(""=>"Country"), $pmpro_countries)));
+	$fields[] = new PMProRH_Field("pmpro_bphone", "text", array("label"=>esc_html__('Phone number','the-source'), "size"=>40, "profile"=>true, "required"=>false));	
 	
 	//add the fields into a new checkout_boxes are of the checkout page
 	foreach($fields as $field)
@@ -166,37 +166,37 @@ function kasutan_strong_password_custom_checker( $password, $username ) {
 
 	// Check for length (8 characters)
 	if ( strlen( $password ) < 12 ) {
-		$msg[]='Your password must be at least 12 characters long.';
+		$msg[]=esc_html__('Your password must be at least 12 characters long.','the-source');
 		$pass_ok=false;
 	}
 
 	// Check for username match	
 	if ( strpos( $password, $username ) !== false ) {
-		$msg[]='Your password must not contain your username.';
+		$msg[]=esc_html__('Your password must not contain your username.','the-source');
 		$pass_ok=false;
 	}
 
 	// Check for lowercase
 	if ( ! preg_match( '/[a-z]/', $password ) ) {
-		$msg[]='Your password must contain at least 1 lowercase letter.';
+		$msg[]=esc_html__('Your password must contain at least 1 lowercase letter.','the-source');
 		$pass_ok=false;
 	}
 
 	// Check for uppercase
 	if ( ! preg_match( '/[A-Z]/', $password ) ) {
-		$msg[]='Your password must contain at least 1 uppercase letter.';
+		$msg[]=esc_html__('Your password must contain at least 1 uppercase letter.','the-source');
 		$pass_ok=false;
 	}
 
 	// Check for numbers
 	if ( ! preg_match( '/[0-9]/', $password ) ) {
-		$msg[]='Your password must contain at least 1 number.';
+		$msg[]=esc_html__('Your password must contain at least 1 number.','the-source');
 		$pass_ok=false;
 	}
 
 	// Check for special characters
 	if ( ! preg_match( '/[\W]/', $password ) ) {
-		$msg[]='Your password must contain at least 1 special character.';
+		$msg[]=esc_html__('Your password must contain at least 1 special character.','the-source');
 		$pass_ok=false;
 	}
 
@@ -210,7 +210,7 @@ function kasutan_strong_password_custom_checker( $password, $username ) {
 // Show hint after password field. Hook as early as possible in case there are other uses of filter
 add_filter( 'pmpro_checkout_after_password', 'kasutan_checkout_after_password', 1 );
 function kasutan_checkout_after_password() {
-	echo '<small id="pmprosp-password-notice">The password should be at least twelve characters long, contain upper and lower case letters, numbers, and symbols like !@#$;%^&*.</small>';
+	printf('<small id="pmprosp-password-notice">%s</small>',__('The password should be at least twelve characters long, contain upper and lower case letters, numbers, and symbols like !@#$;%^&*.','the-source'));
 }
 
 //SI NECESSAIRE : bloquer la validation si le numéro de téléphone n'est pas au bon format ?

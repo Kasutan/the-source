@@ -42,13 +42,13 @@ function ea_archive_header() {
 			if($parent) $subtitle=$parent->name;
 		}
 	} elseif( is_home() ) {
-		$title = 'News';
+		$title = __('News','the-source');
 
 	} elseif( is_search() ) {
-		$title = 'Search results';
+		$title = __('Search results','the-source');
 
 	} elseif( is_archive() ) {
-		$subtitle='News';
+		$subtitle=__('News','the-source');
 		$title = get_the_archive_title();
 	}
 
@@ -113,8 +113,9 @@ function kasutan_loop_wrap_after() {
 			$parent_id=$queried_object->parent;
 			$parent=get_term($parent_id,$taxonomy);
 			if($parent) {
-				printf('<div class="text-center"><a href="%s" class="button browse-all">Browse all <span>%s</span></a></div>',
+				printf('<div class="text-center"><a href="%s" class="button browse-all">%s <span>%s</span></a></div>',
 					get_term_link($parent,$taxonomy),
+					__('Browse all','the-source'),
 					$parent->name
 				);
 			}

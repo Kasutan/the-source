@@ -27,7 +27,7 @@ function kasutan_change_password() {
 	ob_start();
 	if(function_exists('pmpro_change_password_form')) {
 		echo '<div class="change-password">';
-		echo '<h2 class="custom">My password</h2>';
+		printf('<h2 class="custom">%s</h2>',esc_html__('My password','the-source'));
 		pmpro_change_password_form();
 		echo '</div>';
 	}
@@ -48,7 +48,7 @@ function kasutan_my_invoices() {
 		?>
 		<div id="pmpro_account-invoices" class="<?php echo pmpro_get_element_class( 'pmpro_box', 'pmpro_account-invoices' ); ?>">
 
-			<h3>My invoices</h3>
+			<h3><?php esc_html_e('My invoices','the-source'); ?></h3>
 
 			<table class="<?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
 
@@ -136,7 +136,7 @@ function kasutan_my_invoices() {
 
 							<td><?php echo $display_status; ?></td>
 
-							<td><?php printf('<a href="%s" class="download">Invoice [PDF]</a>',$download_url); ?></td>
+							<td><?php printf('<a href="%s" class="download">%s [PDF]</a>', $download_url, esc_html__('Invoice','the-source')); ?></td>
 
 						</tr>
 

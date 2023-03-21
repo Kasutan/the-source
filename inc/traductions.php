@@ -1,4 +1,5 @@
 <?php
+//TODO supprimer ?
 
 add_filter( 'gettext', function($translated, $original, $domain) {
 

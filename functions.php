@@ -79,7 +79,7 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 
 		register_nav_menus( array(
 			'products' => 'Product categories',
-			'the-source' => 'The Source links',
+			'ea-starter' => 'The Source links',
 			'my-account' => 'My account desktop',
 			'my-account-mobile' => 'My account mobile',
 			'footer-legal' => 'Legal links in footer',
@@ -132,22 +132,22 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		*/
 		add_theme_support( 'editor-font-sizes', array(
 			array(
-				'name' => __( 'Small', 'the-source' ),
+				'name' => __( 'Small', 'ea-starter' ),
 				'size' => 14,
 				'slug' => 'small'
 			),
 			array(
-				'name' => __( 'Normal', 'the-source' ),
+				'name' => __( 'Normal', 'ea-starter' ),
 				'size' => 20,
 				'slug' => 'normal'
 			),
 			array(
-				'name' => __( 'Big', 'the-source' ),
+				'name' => __( 'Big', 'ea-starter' ),
 				'size' => 30,
 				'slug' => 'big'
 			),
 			array(
-				'name' => __( 'Huge', 'the-source' ),
+				'name' => __( 'Huge', 'ea-starter' ),
 				'size' => 60,
 				'slug' => 'huge'
 			)

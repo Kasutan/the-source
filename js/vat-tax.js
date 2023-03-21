@@ -1,5 +1,7 @@
 (function($) {
 	$( document ).ready(function() {
+		//TODO à revoir et traduire si besoin
+
 		//Append html divs to show feedback
 		$('#vat_confirm_country').after('<p id="vat-country-info"></p>');
 		var seller=VatVars.seller_country;

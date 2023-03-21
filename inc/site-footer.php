@@ -8,7 +8,10 @@
 */
 add_action( 'tha_footer_bottom', 'kasutan_copyright' );
 function kasutan_copyright() {
-	echo '<a class="backtotop" href="#main-content"><span class="screen-reader-text">Back to top</span>' . kasutan_picto( array( 'icon' => 'backtotop' , 'size' => false) ) . '</a>';
+	printf('<a class="backtotop" href="#main-content"><span class="screen-reader-text">%s</span>%s</a>',
+		esc_html__('Back to top','the-source'),
+		kasutan_picto( array( 'icon' => 'backtotop' , 'size' => false) )
+	);
 
 	echo '<div class="copyright">';
 		printf('<span class="annee">&copy; %s %s</span>',date('Y'), get_option('blogname'));
