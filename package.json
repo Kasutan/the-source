@@ -1,21 +1,38 @@
 {
-  "name": "lapeyre",
-  "version": "1.0.0",
-  "description": "Theme pour Lapeyre base sur underscore",
-  "main": "gulpfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^3.2.1",
-    "gulp-sourcemaps": "^2.6.5"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Magalie Castaing",
-  "license": "ISC"
+	"name": "the-source",
+	"version": "2.0.0",
+	"description": "Thème pour The Source (création mars 2021)",
+	"main": "gulpfile.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"dependencies": {
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-v4": "^4.0.0-alpha.5",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-clean-css": "^4.3.0"
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"sass": "^1.57.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": ""
+	},
+	"homepage": "",
+	"browserslist": [
+		"defaults and supports es6-module",
+		"maintained node versions"
+	]
 }
