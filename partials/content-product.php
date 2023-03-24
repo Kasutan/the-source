@@ -88,7 +88,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 					printf('<p class="price"><strong>%s</strong></p>',$price);
 				}
 				if($intro) {
-					$intro.=' <a href="#product-details">More details↴</a>';
+					$intro.=sprintf(' <a href="#product-details">%s↴</a>',esc_html__('More details','the-source'));
 					printf('<div class="intro">%s</div>',$intro);
 				}
 
@@ -99,27 +99,27 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 						data-user="<?php echo $user_id;?>"
 					>
 					<label for="js-to-selection">
-						<span class="add">Save this item in my selection</span>
-						<span class="remove">Saved in my selection</span>
+						<span class="add"><?php esc_html_e('Save this item in my selection','the-source'); ?></span>
+						<span class="remove"><?php esc_html_e('Saved in my selection','the-source'); ?></span>
 					</label>
 
-					<p class="error" hidden>There was an error, your selection was not updated. Please try again later or contact us.</p>
+					<p class="error" hidden><?php esc_html_e('There was an error, your selection was not updated. Please try again later or contact us.','the-source'); ?></p>
 				</formgroup>
 
 				<?php if($main_advisor && function_exists('kasutan_display_advisor')) : ?>
 				<formgroup class="contact-request <?php echo $class_sent;?>" >
-					<legend>Interested? Let's talk about it</legend>
+					<legend><?php esc_html_e("Interested? Let's talk about it",'the-source'); ?></legend>
 					<?php 
 						kasutan_display_advisor($main_advisor,'product'); 
 					?>
-					<p class="info send">Send a Contact Request and I will get in touch with you asap.</p>
+					<p class="info send"><?php esc_html_e('Send a Contact Request and I will get in touch with you asap.','the-source'); ?></p>
 					<button class="send js-popup-open" 
-					>Send <strong> a contact request</strong></button>
+					><?php esc_html_e('Send','the-source'); ?> <strong> <?php esc_html_e('a contact request','the-source'); ?></strong></button>
 					
 					<?php  kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,'Product',$post_id);?>
 
-					<button class="sent cyan" disabled><span class="check"></span><strong>Contact request sent</strong></button>
-					<p class="info sent">Your Contact Request is being treated by our services.</p>
+					<button class="sent cyan" disabled><span class="check"></span><strong><?php esc_html_e('Contact request sent','the-source'); ?></strong></button>
+					<p class="info sent"><?php esc_html_e('Your Contact Request is being treated by our services.','the-source'); ?></p>
 
 				</formgroup>
 
@@ -133,7 +133,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 		if(have_rows('icons') || have_rows('table') || $details) : 
 			echo '<section class="product-details" id="product-details">';
 					echo '<div class="sep"></div>';
-					echo '<h2 class="line">Details</h2>';
+					printf('<h2 class="line">%s</h2>',esc_html__('Details','the-source'));
 					
 					if(have_rows('icons')) {
 						echo '<ul class="icons show-for-md">';
@@ -191,7 +191,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 				} else {
 					$class="product-flex";
 				}
-				printf('<h2>In the same category: <span>%s</span></h2>',$cat->name);
+				printf('<h2>%s <span>%s</span></h2>',esc_html__('In the same category:','the-source'),$cat->name);
 				printf('<ul class="%s">',$class);
 					foreach($related as $product_id) {
 						kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'related');
@@ -200,13 +200,15 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 			}
 
 			echo '<div class="browse-buttons">';
-				printf('<a class="button" href="%s">Browse <strong>%s</strong></a>',
+				printf('<a class="button" href="%s">%s <strong>%s</strong></a>',
 					get_term_link($cat,$taxonomy),
+					esc_html__('Browse','the-source'),
 					$cat->name
 				);
 				if($cat_parent) {
-					printf('<a class="button" href="%s">Browse <strong>%s</strong></a>',
+					printf('<a class="button" href="%s">%s <strong>%s</strong></a>',
 						get_term_link($cat_parent,$taxonomy),
+						esc_html__('Browse','the-source'),
 						$cat_parent->name
 					);
 				}
@@ -214,7 +216,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 			echo '</div>';
 
 			if($cat_siblings) {
-				echo '<p class="siblings-title show-for-md">Quick access to:</p>';
+				printf('<p class="siblings-title show-for-md">%s</p>',esc_html__('Quick access to:','the-source'));
 				echo '<nav class="siblings show-for-md">';
 					foreach($cat_siblings as $term) {
 						printf('<a class="button small" href="%s">%s</a>',

@@ -64,8 +64,9 @@ if(function_exists('get_field')) :
 	echo '</ul>';
 	echo '<ul class="pagination"></ul>'; //caché mais nécessaire pour que list.js fonctionne
 
-	printf('<div class="text-center"><a href="%s" class="button browse-all">Browse <span>%s</span></a></div>',
+	printf('<div class="text-center"><a href="%s" class="button browse-all">%s <span>%s</span></a></div>',
 		get_term_link($term,$taxonomy),
+		esc_html__('Browse','the-source'),
 		$term->name
 	);
 

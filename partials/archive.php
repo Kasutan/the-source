@@ -17,7 +17,11 @@ echo '<li class="post-summary">';
 		printf('<p class="entry-date">%s</p>',get_the_date('d/m/Y'));
 		ea_post_summary_title();
 		the_excerpt();
-		printf('<a href="%s" class="suite">Lire la suite<span class="screen-reader-text">de %s</span><span class="chevrons-suite">>>></span></a>',get_the_permalink(),get_the_title());
+		printf('<a href="%s" class="suite">%s<span class="screen-reader-text">%s </span><span class="chevrons-suite">>>></span></a>',
+			get_the_permalink(),
+			esc_html__('Continue reading','the-source'),
+			get_the_title()
+		);
 	echo '</div>';
 
 echo '</li>';

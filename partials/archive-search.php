@@ -6,9 +6,9 @@
 
 $post_type=get_post_type();
 if($post_type==='product') {
-	$label_suite="Voir le produit";
+	$label_suite=esc_html__('Open product page','the-source');
 } else {
-	$label_suite="Lire la suite";
+	$label_suite=esc_html__('Continue reading','the-source');
 }
 printf('<li class="post-summary %s">',$post_type);
 
@@ -26,7 +26,7 @@ printf('<li class="post-summary %s">',$post_type);
 			global $product;
 			printf('<p class="price">%s</p>', $product->get_price_html());
 		} 
-		printf('<a href="%s" class="suite">%s<span class="screen-reader-text">de %s</span><span class="chevrons-suite">>>></span></a>',get_the_permalink(),$label_suite,get_the_title());
+		printf('<a href="%s" class="suite">%s<span class="screen-reader-text">%s </span><span class="chevrons-suite">>>></span></a>',get_the_permalink(),$label_suite,get_the_title());
 	echo '</div>';
 
 echo '</li>';

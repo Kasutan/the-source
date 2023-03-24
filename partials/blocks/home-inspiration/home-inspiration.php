@@ -34,9 +34,9 @@ if(function_exists('get_field') && function_exists('pmpro_hasMembershipLevel')) 
 				printf('<li><a class="offer" href="%s" style="background-image:url(%s)">',$link,wp_get_attachment_url( $image ));
 					
 					echo '<div class="filtre"></div>';
-					echo '<div class="surtitre">Invest in</div>';
+					printf('<div class="surtitre">%s</div>',esc_html__('Invest in','the-source'));
 					printf('<h3 class="name">%s</h3>',$name);
-					printf('<div class="button">Browse</div>');
+					printf('<div class="button">%s</div>',esc_html__('Browse','the-source'));
 					printf('<div class="decor">%s</div>',kasutan_picto(array('icon'=>'sunrise-white','size'=>163)));
 				echo '</a></li>';
 					
