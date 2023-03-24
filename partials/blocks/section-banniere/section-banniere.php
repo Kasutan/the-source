@@ -27,7 +27,7 @@ if(function_exists('get_field')) :
 	$onglet_bouton=esc_attr( get_field('onglet_bouton') );
 	$target_attr='';
 	if($onglet_bouton==='blank') {
-		$target_attr=sprintf(' target="_blank" rel="noopener noreferrer" title="%s"',esc_html__('Ouvre un nouvel onglet','the-source'));
+		$target_attr=sprintf(' target="_blank" rel="noopener noreferrer" title="%s"',esc_html__('Open a new tab','the-source'));
 	}
 	
 
