@@ -45,6 +45,21 @@
 				}
 			});
 		}
+
+
+		/********* Modifier label language switcher dans menu mobile **********/
+		var lsItem=$('.volet-navigation .menu-my-account.mobile .wpml-ls-item');
+		if(lsItem.length > 0) {
+			var lien=$(lsItem).find('a');
+			var span=$(lien).find('.wpml-ls-display');
+			if($(lien).attr('title')==="FR") {
+				$(span).html('Version française');
+			} else if($(lien).attr('title')==="EN") {
+				$(span).html('English version');
+			}
+		}
+
+
 		/********* Desktop : neutraliser clic pour lien de menu parent **********/
 		/*
 		var liensParents=$('.volet-navigation .menu-item-has-children > a');

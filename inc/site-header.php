@@ -91,6 +91,7 @@ function kasutan_header_right() {
 					esc_html__('Just sign in','the-source')
 				);
 			}
+			do_action('wpml_add_language_selector');
 		echo '</nav>';
 		return;
 	}
@@ -103,6 +104,8 @@ function kasutan_header_right() {
 		if( has_nav_menu( 'my-account' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'my-account', 'menu_id' => 'menu-my-account', 'container'=>false, 'menu_class' => 'menu-my-account nav-menu desktop' ) );
 		}
+
+		do_action('wpml_add_language_selector');
 
 		$page_selection=kasutan_get_page_ID('selection');
 		$user_id=get_current_user_id(  );

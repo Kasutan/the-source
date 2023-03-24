@@ -270,7 +270,7 @@ button.menu-toggle {
 			border-bottom:none;
 		}
 	}
-
+	
 	.menu-item {
 		align-items: center;
 		display: flex;
@@ -286,6 +286,12 @@ button.menu-toggle {
 					fill:var(--cyan);
 				}
 			}
+		}
+
+		&.wpml-ls-menu-item {
+			border-top: solid 1px var(--bleu);
+			margin-top: 0.9rem;
+			padding-top:0.9rem;
 		}
 	}
 

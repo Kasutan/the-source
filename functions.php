@@ -79,7 +79,7 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 
 		register_nav_menus( array(
 			'products' => 'Product categories',
-			'ea-starter' => 'The Source links',
+			'the-source' => 'The Source links',
 			'my-account' => 'My account desktop',
 			'my-account-mobile' => 'My account mobile',
 			'footer-legal' => 'Legal links in footer',

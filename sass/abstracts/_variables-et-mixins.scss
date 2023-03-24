@@ -234,24 +234,24 @@ $colors: (
 		@warn "parameter to responsive-font-size: font-size-step must be greater than 0";
 	}
 	@else {
-		$min-scale-factor: $min-font-size / $min-screen-width / 1rem * 1px;
-		$max-scale-factor: $max-font-size / $max-screen-width / 1rem * 1px;
+		$min-scale-factor: calc($min-font-size / $min-screen-width / 1rem * 1px);
+		$max-scale-factor: calc($max-font-size / $max-screen-width / 1rem * 1px);
 
 		$screen-width: round($max-screen-width);
 		$font-size: $max-font-size;
 
 		@while $screen-width >= $min-screen-width {
 
-			$progress: ($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width);
-			$scale-factor: $min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor);
+			$progress: calc(($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width));
+			$scale-factor: calc($min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor));
 
-			$font-size: $screen-width * $scale-factor / 1px * 1rem;
+			$font-size: calc($screen-width * $scale-factor / 1px * 1rem);
 
 			@media all and (max-width: $screen-width) {
 				font-size: $font-size;
 			}
 
-			$screen-width-step: $font-size-step / $scale-factor / 1rem * 1px;
+			$screen-width-step: calc($font-size-step / $scale-factor / 1rem * 1px);
 			@if $screen-width-step < 1px {
 				$screen-width-step: 1px;
 			}

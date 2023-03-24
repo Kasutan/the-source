@@ -1,0 +1,41 @@
+.wpml-ls-statics-shortcode_actions {
+	//TODO masquer en mobile non connecté
+	width: unset;
+	ul {
+		padding-left:0;
+	}
+	& > ul > li::before {
+		display: none;
+	}
+	a.wpml-ls-item-toggle {
+		padding-right: 25px;
+		font-weight: 400;
+		&::before {
+			display: none; 
+		}
+		&::after {
+			background-image: url("icons/triangle-outline.svg");
+			background-position: center 60%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			border:none;
+			content: "";
+			display: inline-block;
+			height: 1rem;
+			margin-left: 0.6rem;
+			width: 0.7rem;
+		}
+	}
+	a.wpml-ls-link {
+		font-weight: 400;
+		padding-top: 2px;
+		&, &:visited {
+			color:#fff;
+			
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
