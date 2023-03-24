@@ -118,7 +118,7 @@
 	<div id="pmpro_user_fields" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_user_fields' ); ?>">
 
 		<h2 class="dots">
-		<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>">My personal information</span>
+		<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php esc_html_e('My personal information','the-source'); ?></span>
 		</h2>
 		<p class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-msg' ); ?>"><?php _e('Already have an account?', 'paid-memberships-pro' );?> <a href="<?php echo wp_login_url( apply_filters( 'pmpro_checkout_login_redirect', pmpro_url("checkout", "?level=" . $pmpro_level->id . $discount_code_link) ) ); ?>"><?php _e('Log in here', 'paid-memberships-pro' );?></a></p>
 
@@ -283,7 +283,7 @@
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-bphone', 'pmpro_checkout-field-bphone' ); ?>">
 				<label for="bphone"><?php _e('Phone number', 'the-source' );?></label>
 				<input required id="bphone" name="bphone" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bphone' ); ?>" size="30" value="<?php echo esc_attr(formatPhone($bphone)); ?>" placeholder="<?php _e('Phone number', 'the-source' );?>" />
-				<br/><small>Please include your country code starting with "+". Example +34 123 34 67 89 </small>
+				<br/><small><?php esc_html_e('Please include your country code starting with "+". Example +34 123 34 67 89','the-source'); ?> </small>
 			</div> <!-- end pmpro_checkout-field-bphone -->
 			<?php if($skip_account_fields) { ?>
 			<?php
