@@ -378,28 +378,33 @@ button.menu-toggle {
 			padding: 0;
 		}
 		.current-menu-item {
-			background-color: var(--blanc);
-			border:solid 1px var(--noir);
 			border-bottom: 0;
 			padding-bottom: 2rem;
 			.sub-menu {
 				background-color: var(--blanc);
 				border-bottom: solid 1px var(--bleu);
+				border-top: solid 1px var(--bleu);
 				display: flex;
 				height:4.6rem;
 				left:0;
 				position: absolute;
 				width:calc(100vw - 2 * var(--margin-x-header));
-				top:100%;
+				top:130%;
+				&::after {
+					background-color: var(--blanc);
+					bottom: -11px;
+					content: " ";
+					height: 10px;
+					left: 0;
+					width: 100%;
+					position: absolute;
+				}
 			}
 		}
 
 		@include bp(xl) {
 			.menu-item {
 				padding-top: 1.5rem;
-			}
-			.current-menu-item {
-				padding-bottom: 3.5rem;
 			}
 		}
 
