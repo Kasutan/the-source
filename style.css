@@ -2889,7 +2889,7 @@ p.fil-ariane, p.fil-ariane a, p.fil-ariane span {
     border: solid 1px var(--cyan);
     color: var(--blanc);
     margin-left: 7px;
-    line-height: 1rem;
+    line-height: 1;
     font-size: 1.5rem;
     margin-top: 5px;
   }
@@ -3149,9 +3149,6 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   top: 100%;
 }
 @media (min-width: 1400px) {
-  .nav-menu.desktop.menu-products {
-    padding-top: 3rem;
-  }
   .nav-menu.desktop.menu-products .menu-item {
     padding-top: 1.5rem;
   }
@@ -3224,11 +3221,6 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   .nav-menu.desktop.menu-the-source .menu-item {
     margin-left: 2rem;
     margin-right: 2rem;
-  }
-}
-@media (min-width: 1400px) {
-  .nav-menu.desktop.menu-the-source {
-    padding-top: 3rem;
   }
 }
 .nav-menu.desktop.menu-my-account > li {
