@@ -14,7 +14,7 @@
 			display: none; 
 		}
 		&::after {
-			background-image: url("icons/triangle-outline.svg");
+			background-image: url("icons/triangle-plein.svg");
 			background-position: center 60%;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -36,6 +36,12 @@
 		&:hover {
 			text-decoration: none;
 		}
+	}
+}
+
+@media screen and (max-width:1023px) {
+	.logged-in .wpml-ls-statics-shortcode_actions {
+		display: none;
 	}
 }
 

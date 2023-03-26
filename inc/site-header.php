@@ -7,7 +7,13 @@
 add_action('tha_header_left','kasutan_menu_left');
 function kasutan_menu_left() {
 	if(!kasutan_is_premium_member()) {
-		echo '<nav class="header-left"></nav>';
+		echo '<nav class="header-left">';
+		?>
+			<svg xmlns="http://www.w3.org/2000/svg" width="8.748" height="15.002" viewBox="0 0 8.748 15.002">
+			<path d="M86.983,39.846l5.908-5.908a.473.473,0,0,0,0-.691l-.752-.752a.472.472,0,0,0-.691,0l-7,7a.473.473,0,0,0,0,.692l7,7a.472.472,0,0,0,.691,0l.752-.751a.473.473,0,0,0,0-.692Z" transform="translate(-84.293 -32.345)" fill="#173a65"/>
+			</svg>
+		<?php
+		printf('<a href="/" class="retour-home">%s</a></nav>',esc_html__('Homepage','the-source'));
 		return;
 	}
 	echo '<nav class="header-left">';
@@ -85,10 +91,10 @@ function kasutan_header_right() {
 				} else {
 					$login_url=wp_login_url(get_permalink());
 				}
-				printf('<div class="circle"></div><div class="signin">%s</br> <a href="%s" class="login-link">%s</a></div>',
+				printf('<div class="signin"><span class="desktop">%s</span> <a href="%s" class="login-link">%s</a></div>',
 					esc_html__('Already a member?','the-source'),
 					$login_url,
-					esc_html__('Just sign in','the-source')
+					esc_html__('Sign in','the-source')
 				);
 			}
 			do_action('wpml_add_language_selector');

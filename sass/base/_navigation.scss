@@ -97,12 +97,12 @@ p.fil-ariane {
 		font-weight: 700;
 		top:5px;
 		.count {
-			--diametre:1.8rem;
+			--diametre:2rem;
 			background-color: var(--cyan);
 			border:solid 1px var(--cyan);
 			color:var(--blanc);
 			margin-left: 7px;
-			line-height:  1.8rem;
+			line-height:  1rem;
 			font-size:  1.5rem;
 			margin-top: 5px;
 		}
@@ -113,7 +113,7 @@ p.fil-ariane {
 }
 
 /*--------------------------------------------------------------
-## Signin link
+## Signin link et autres liens en-tête
 --------------------------------------------------------------*/
 .header-right {
 	position: relative;
@@ -124,32 +124,37 @@ p.fil-ariane {
 	@include bp(lg) {
 		--size:9rem;
 	}
-	.circle {
-		background-color: var(--fond);
-		border-radius:100%;
-		height:var(--size);
-		position: absolute;
-		right:0;
-		width:var(--size);
-	}
 }
 .signin {
-	font-size: 1.4rem;
-	padding-right: 2px;
+	border-right:solid 1px var(--bordure);
+	font-size: 1.8rem;
+	padding:4px 10px 2px 0;
 	position:relative;
 	text-align: right;
 	
+	.desktop {
+		display: none;
+	}
+
 	a {
 		font-weight:300;
 	}
 
+
 	@include bp(md) {
-		font-size: 1.6rem;
-		padding-right: 0;
-		br {
-			display: none;
+		.desktop {
+			display: inline-block;
 		}
 	}
+	@include bp(lg) {
+		font-size: 2rem;
+	}
+}
+
+a.retour-home {
+	display: inline-block;
+	font-weight: 300;
+	padding-left:10px;
 	@include bp(lg) {
 		font-size: 2rem;
 	}
@@ -491,7 +496,7 @@ button.menu-toggle {
 				text-transform: unset;
 			}
 			> a::after {
-				background-image:url('icons/triangle-outline.svg');
+				background-image:url('icons/triangle-plein.svg');
 				background-position: center 60%;
 				background-repeat:no-repeat;
 				background-size: contain;
