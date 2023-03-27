@@ -14,7 +14,6 @@
  */
 function ea_default_loop() {
 
-	if ( have_posts() ) :
 		$queried_object = get_queried_object();
 
 		tha_content_while_before();
@@ -39,9 +38,11 @@ function ea_default_loop() {
 		}
 		if(!$special_loop) : 
 
-			do_action('kasutan_loop_wrap_before');
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			
+			if ( have_posts() ) :
+				do_action('kasutan_loop_wrap_before');
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
 					tha_entry_before();
 
@@ -58,22 +59,23 @@ function ea_default_loop() {
 						get_template_part( 'partials/' . $partial, $context );
 					}
 					tha_entry_after();
-			endwhile;
-			
-			do_action('kasutan_loop_wrap_after');
+				endwhile;
+				do_action('kasutan_loop_wrap_after');
+
+			else :
+				if($taxonomy) {
+					//On est sur une page archive produits qui ne contient aucun produit
+					printf('<p class="text-center">%s</p>',__(' No products are currently available in this category for the moment.','the-source'));
+				} else {
+					get_template_part( 'partials/archive', 'none' );
+				}
+				
+
+			endif;
 		
 		endif;
 
 		tha_content_while_after();
-
-	else :
-
-		tha_entry_before();
-		$context = apply_filters( 'ea_empty_loop_partial_context', 'none' );
-		get_template_part( 'partials/archive', $context );
-		tha_entry_after();
-
-	endif;
 
 }
 

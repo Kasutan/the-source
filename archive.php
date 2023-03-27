@@ -112,7 +112,7 @@ function kasutan_loop_wrap_after() {
 		if($taxonomy && !$direct_children) {
 			$parent_id=$queried_object->parent;
 			$parent=get_term($parent_id,$taxonomy);
-			if($parent) {
+			if($parent && !is_wp_error( $parent )) {
 				printf('<div class="text-center"><a href="%s" class="button browse-all">%s <span>%s</span></a></div>',
 					get_term_link($parent,$taxonomy),
 					__('Browse all','the-source'),

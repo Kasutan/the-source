@@ -43,32 +43,43 @@ if(function_exists('get_field')) :
 
 	$mobile_title=sprintf('<h2 class="dots">%s</h2>',$title);
 
-	if($direct_children) {
-		printf('<section id="liste-filtrable-%s" class="liste-filtrable products acf page-products" data-pagination="6">',$term_slug);
+	$products=kasutan_get_all_products($taxonomy,$term,6);
+
+
+	if(empty($products)) {
+		//Simple conteneur pour le titre et un message
+		echo '<section class="products acf page-products">';
+		echo $mobile_title; 
+		printf('<p class="text-center">%s</p>',__(' No products are currently available in this category for the moment.','the-source'));
+
+	} else if($direct_children) {
+		printf('<section id="liste-filtrable-%s" class="liste-filtrable products acf page-products avec-produits" data-pagination="6">',$term_slug);
 			echo $mobile_title; 
 			kasutan_display_product_cat_filter($taxonomy,$direct_children,$term_slug,$title);
 			printf('<ul class="list product-grid nb-col-3" id="ul-%s">',$term_slug);
 	} else {
 		//Simple conteneur pour la mise en page grille
-		echo '<section class="products acf page-products">';
+		echo '<section class="products acf page-products avec-produits">';
 		echo $mobile_title; 
 		echo '<ul class="product-grid nb-col-4 last-cat">';
 	}
 
-	$products=kasutan_get_all_products($taxonomy,$term,6);
-	foreach($products as $product_id) {
-		$cat=kasutan_get_closest_cat_for_product($product_id,$post_type);
-		kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'acf');
+	if(!empty($products)) {
+		foreach($products as $product_id) {
+			$cat=kasutan_get_closest_cat_for_product($product_id,$post_type);
+			kasutan_display_product_card($product_id,$cat,$taxonomy,$user_id,'acf');
+		}
+
+		echo '</ul>';
+		echo '<ul class="pagination"></ul>'; //caché mais nécessaire pour que list.js fonctionne
+
+		printf('<div class="text-center"><a href="%s" class="button browse-all">%s <span>%s</span></a></div>',
+			get_term_link($term,$taxonomy),
+			esc_html__('Browse','the-source'),
+			$term->name
+		);
 	}
-
-	echo '</ul>';
-	echo '<ul class="pagination"></ul>'; //caché mais nécessaire pour que list.js fonctionne
-
-	printf('<div class="text-center"><a href="%s" class="button browse-all">%s <span>%s</span></a></div>',
-		get_term_link($term,$taxonomy),
-		esc_html__('Browse','the-source'),
-		$term->name
-	);
+	
 
 	echo '</section>';
 

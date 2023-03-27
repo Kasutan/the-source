@@ -4107,7 +4107,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   .products.acf.page-products .text-center {
     flex-basis: 100%;
   }
-  .products.acf.page-products h2 {
+  .products.acf.page-products.avec-produits h2 {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);

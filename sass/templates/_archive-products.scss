@@ -62,7 +62,7 @@
 			.text-center {
 				flex-basis:100%;
 			}
-			h2 {
+			&.avec-produits h2 {
 				@include screen-reader-text;
 			}
 		}
