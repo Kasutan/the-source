@@ -7913,8 +7913,11 @@ hr.wp-block-separator {
   padding: 0 0 1.5rem;
 }
 .boutons-filtre-mobile button {
-  flex-basis: 50%;
+  flex-basis: 100%;
   font-weight: 700;
+}
+.boutons-filtre-mobile button.sort {
+  display: none;
 }
 
 .filtre {
@@ -8368,7 +8371,6 @@ hr.wp-block-separator {
 
 @media (min-width: 1024px) {
   .desktop-sort {
-    display: flex;
     justify-content: flex-end;
     padding-right: var(--padding-x);
     position: absolute;
