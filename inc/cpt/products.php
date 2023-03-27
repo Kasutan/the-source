@@ -167,7 +167,7 @@ function kasutan_get_cat_siblings($parent_id,$term_id,$taxonomy) {
 	$args=array(
 		'taxonomy' => $taxonomy, 
 		'orderby' => 'name', //default
-		'hide_empty' => false, //TODO changer en prod
+		'hide_empty' => false, //TODO changer en prod ?
 		'exclude' => $term_id,
 		'parent' => $parent_id
 	);
@@ -211,7 +211,6 @@ function kasutan_display_product_cat_filter($taxonomy,$terms,$parent_slug,$title
 	echo '</div>';
 
 	//Bouton pour trier, position absolute en desktop
-	//TODO remplacer par un menu déroulant
 	if(!$title) {
 		printf('<div class="desktop-sort"><button class="sort" data-sort="published" data-default-order="desc">%s</button></div>',esc_html__('Sort by date','the-source'));
 	}
@@ -348,7 +347,7 @@ function kasutan_get_categories_for_menu($taxonomy) {
 	$output='';
 	$args=array(
 		'taxonomy' => $taxonomy, 
-		'hide_empty' => false, //TODO changer en prod
+		'hide_empty' => false, 
 		'parent' => 0
 	);
 	$terms=get_terms($args);
@@ -364,7 +363,7 @@ function kasutan_get_categories_for_menu($taxonomy) {
 					kasutan_picto(array('icon'=>'triangle', 'size'=>false)) );
 					$args=array(
 						'taxonomy' => $taxonomy, 
-						'hide_empty' => false, //TODO changer en prod
+						'hide_empty' => false, 
 						'parent' => $term->term_id
 					);
 					$children=get_terms($args);
