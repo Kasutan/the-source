@@ -8,12 +8,16 @@ add_action('tha_header_left','kasutan_menu_left');
 function kasutan_menu_left() {
 	if(!kasutan_is_premium_member()) {
 		echo '<nav class="header-left">';
-		?>
-			<svg xmlns="http://www.w3.org/2000/svg" width="8.748" height="15.002" viewBox="0 0 8.748 15.002">
-			<path d="M86.983,39.846l5.908-5.908a.473.473,0,0,0,0-.691l-.752-.752a.472.472,0,0,0-.691,0l-7,7a.473.473,0,0,0,0,.692l7,7a.472.472,0,0,0,.691,0l.752-.751a.473.473,0,0,0,0-.692Z" transform="translate(-84.293 -32.345)" fill="#173a65"/>
-			</svg>
-		<?php
-		printf('<a href="/" class="retour-home">%s</a></nav>',esc_html__('Homepage','the-source'));
+			if(!is_front_page(  )) {
+			?>
+				<svg xmlns="http://www.w3.org/2000/svg" width="8.748" height="15.002" viewBox="0 0 8.748 15.002">
+				<path d="M86.983,39.846l5.908-5.908a.473.473,0,0,0,0-.691l-.752-.752a.472.472,0,0,0-.691,0l-7,7a.473.473,0,0,0,0,.692l7,7a.472.472,0,0,0,.691,0l.752-.751a.473.473,0,0,0,0-.692Z" transform="translate(-84.293 -32.345)" fill="#173a65"/>
+				</svg>
+			<?php
+			$home_url = apply_filters( 'wpml_home_url', get_option( 'home' ) );
+			printf('<a href="%s" class="retour-home">%s</a>',$home_url,esc_html__('Homepage','the-source'));
+			}
+		echo '</nav>';		
 		return;
 	}
 	echo '<nav class="header-left">';
