@@ -25,10 +25,14 @@
 			margin-left: 0.6rem;
 			width: 0.7rem;
 		}
+		&:hover, &:focus, &:focus-within {
+			text-decoration: none;
+		}
 	}
 	a.wpml-ls-link {
 		font-weight: 400;
 		padding-top: 2px;
+
 		&, &:visited {
 			color:#fff;
 			

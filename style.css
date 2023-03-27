@@ -8456,6 +8456,9 @@ hr.wp-block-separator {
   margin-left: 0.6rem;
   width: 0.7rem;
 }
+.wpml-ls-statics-shortcode_actions a.wpml-ls-item-toggle:hover, .wpml-ls-statics-shortcode_actions a.wpml-ls-item-toggle:focus, .wpml-ls-statics-shortcode_actions a.wpml-ls-item-toggle:focus-within {
+  text-decoration: none;
+}
 .wpml-ls-statics-shortcode_actions a.wpml-ls-link {
   font-weight: 400;
   padding-top: 2px;
