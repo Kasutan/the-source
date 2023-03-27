@@ -1192,11 +1192,12 @@ h1:not(.archive-title):not(.no-dots), .h1:not(.archive-title):not(.no-dots) {
   display: block;
   text-align: center;
   text-transform: uppercase;
-}
-h1:not(.archive-title):not(.no-dots)::before, h1:not(.archive-title):not(.no-dots)::after, .h1:not(.archive-title):not(.no-dots)::before, .h1:not(.archive-title):not(.no-dots)::after {
-  content: "•";
-  display: inline-block;
-  padding: 0 0.5ch;
+  /*
+  &::before, &::after {
+  	content:'•';
+  	display: inline-block;
+  	padding:0 0.5ch;
+  }*/
 }
 
 h2,
@@ -1215,17 +1216,12 @@ h4.dots,
   display: block;
   text-align: center;
   text-transform: uppercase;
-}
-h2.dots::before, h2.dots::after,
-h3.dots::before,
-h3.dots::after,
-h4.dots::before,
-h4.dots::after,
-.h2.dots::before,
-.h2.dots::after, .h3.dots::before, .h3.dots::after, .h4.dots::before, .h4.dots::after {
-  content: "•";
-  display: inline-block;
-  padding: 0 0.5ch;
+  /*
+  &::before, &::after {
+  	content:'•';
+  	display: inline-block;
+  	padding:0 0.5ch;
+  }*/
 }
 h2.has-cyan-color,
 h3.has-cyan-color,
@@ -4453,14 +4449,15 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   display: block;
   text-align: center;
   text-transform: uppercase;
+  /*
+  &::before, &::after {
+  	content:'•';
+  	display: inline-block;
+  	padding:0 0.5ch;
+  }*/
   font-size: 5rem;
   display: flex;
   justify-content: center;
-}
-.pmpro-checkout #pmpro_vat_table h3::before, .pmpro-checkout #pmpro_vat_table h3::after {
-  content: "•";
-  display: inline-block;
-  padding: 0 0.5ch;
 }
 @media all and (max-width: 360px) {
   .pmpro-checkout #pmpro_vat_table h3 {
@@ -4773,16 +4770,17 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   display: block;
   text-align: center;
   text-transform: uppercase;
+  /*
+  &::before, &::after {
+  	content:'•';
+  	display: inline-block;
+  	padding:0 0.5ch;
+  }*/
   font-size: 5rem;
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
   position: relative;
-}
-.pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3::before, .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3::after {
-  content: "•";
-  display: inline-block;
-  padding: 0 0.5ch;
 }
 @media all and (max-width: 360px) {
   .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields h3 {

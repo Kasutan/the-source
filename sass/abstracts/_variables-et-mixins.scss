@@ -158,11 +158,12 @@ $colors: (
 	display: block;
 	text-align: center;
 	text-transform: uppercase;
+	/*
 	&::before, &::after {
 		content:'•';
 		display: inline-block;
 		padding:0 0.5ch;
-	}
+	}*/
 }
 
 @mixin line {
