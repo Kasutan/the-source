@@ -23,7 +23,7 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 	} else if($domain == 'pmpro-auto-renewal-checkbox') {
 		switch ($original) {
 			case 'Yes, renew at %s' :
-				return 'I activate automatic renewal at %s';
+				return esc_html__('I activate automatic renewal at %s','the-source');
 				break;
 			default:
 				break;
