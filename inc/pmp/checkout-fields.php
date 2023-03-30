@@ -78,6 +78,39 @@ function kasutan_pmprorh_init() {
 			'hint' => 'Without country code, numbers only '
 		)
 	);
+
+	$fields[] = new PMProRH_Field(
+		'zs-canal',							// input name, will also be used as meta key
+		'select',								// type of field
+		array(
+			'label'		=> esc_html__('How did you hear about The Source?','the-source'),		// custom field label
+			'size'		=> 30,				// input size
+			'class'		=> 'canal',		// custom class
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> true,			
+			'placehoder' => '',
+			'options' =>array("null"=> esc_html__('How did you hear about The Source?','the-source'),"social-media" => esc_html__('Social media','the-source'), "online-search"=>esc_html__('Online search','the-source'), "print-advertising"=>esc_html__("Print advertising",'the-source'),'newsletter'=>esc_html__('Newsletter','the-source'),'word-of-mouth'=>esc_html__('Word-of-mouth','the-source'),'other'=>esc_html__('Other:','the-source')),
+			'memberslistcsv' => true,
+			'html_attributes' => array( ),
+			'hint' => ''
+		)
+	);
+
+	$fields[] = new PMProRH_Field(
+		'zs-canal-other',							// input name, will also be used as meta key
+		'text',								// type of field
+		array(
+			'label'		=> esc_html__('Other:','the-source'),		// custom field label
+			'size'		=> 30,				// input size
+			'class'		=> 'canal-other',		// custom class
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> false,			
+			'placehoder' => '',
+			'memberslistcsv' => true,
+			'html_attributes' => array('placeholder' => esc_html__('Other...','the-source')),
+			'hint' => ''
+		)
+	);
 	
 
 	// Add the fields inside the checkout page.

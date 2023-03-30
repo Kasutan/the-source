@@ -437,6 +437,10 @@
 					return validatePassword(val);
 				} else if($(input).attr('id')==='bphone') {
 					return validatePhone(val);
+				} else if($(input).attr('id')==='zs-canal') {
+					return false;
+				} else if($(input).attr('id')==='zs-canal-other') {
+					return false;
 				} else if($(input).attr('id')==='zs-vat-number') {
 					//VAT number is validated elsewhere
 					return false;
@@ -461,19 +465,77 @@
 
 			});
 
+			//Masquer ou afficher le champ other canal
+			if($('#zs-canal').val()==="other") {
+				$('#zs-canal-other_div').show();
+			} else {
+				$('#zs-canal-other_div').hide();
+			}
+
 			//Vérifier à la perte de focus - là on signale aussi si l'input est invalide pour les champs requis
 			$(inputs).on('focusout', function(e) {
-				validateField($(this));
+				//validateField($(this));
 				if(validateField($(this))) {
 					$(this).removeClass('js-invalid');
 					$(this).addClass('js-valid');
-				} else {
+				} else if(!$(this).hasClass('canal')){
 					$(this).removeClass('js-valid');
 					if($(this).attr('required')) {
 						$(this).addClass('js-invalid');
 					}
 				}
 			});
+
+			//Disable la première option du select canal (elle sert de label en fait)
+			$('#zs-canal').find('option[value="null"]').prop("disabled",true);
+			$('#zs-canal').find('option[value="null"]').attr("disabled",true);
+			$('#zs-canal').attr("required",true);
+			$('#zs-canal').prop("required",true);
+			//TODO bloquer validation formulaire si aucune valeur n'a été choisie
+
+			//Vérif spéciale pour select canal - on signale invalide dès le changement de valeur
+			$('#zs-canal').on('change',function(e){
+				let val=$(this).val();
+				if(val==="null") {
+					$(this).removeClass('js-valid');
+					$(this).addClass('js-invalid');
+				} else if(val==="other") {
+					$('#zs-canal-other_div').show();
+					if($('#zs-canal-other').val()=='') {
+						$('#zs-canal-other').removeClass('js-valid');
+						$('#zs-canal-other').addClass('js-invalid');
+					} else {
+						$(this).removeClass('js-invalid');
+						$(this).addClass('js-valid');
+					}
+				} else {
+					$('#zs-canal-other_div').hide();
+					$(this).removeClass('js-invalid');
+					$(this).addClass('js-valid');
+				}
+			})
+
+
+			//Vérif spéciale pour champ canal-other - sa valeur impacte la validité du champ select
+			$('#zs-canal-other').on('focusout',function(e){
+				let val=$(this).val();
+				let select=$('#zs-canal');
+				if(select.val()!=="other") {
+					return;
+				}
+				if(val=="") {
+					$(select).removeClass('js-valid');
+					$(select).addClass('js-invalid');
+					$(this).removeClass('js-valid');
+					$(this).addClass('js-invalid');
+				} else {
+					$(select).removeClass('js-invalid');
+					$(select).addClass('js-valid');
+					$(this).removeClass('js-invalid');
+					$(this).addClass('js-valid');
+				}
+
+			})
 
 
 			function validateEmail(email) {
@@ -487,6 +549,8 @@
 				return text.match(passw);
 			}
 
+
+
 			/*--------------------------------------------------------------
 			# https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
 			# Numéro international https://www.regextester.com/97440
@@ -496,6 +560,7 @@
 				var internationalPhoneRegex=/^(([+][0-9]{1,3}))\s*[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{2}){3,4}$/;
 				return text.match(internationalPhoneRegex);
 			}
+
 		}
 		
 
