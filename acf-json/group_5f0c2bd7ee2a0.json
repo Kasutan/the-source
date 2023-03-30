@@ -3,11 +3,12 @@
     "title": "The Source settings",
     "fields": [
         {
-            "key": "field_609a9ba534b7b",
-            "label": "Message x",
-            "name": "zs_message_x",
-            "type": "textarea",
-            "instructions": "This message is shown ...",
+            "key": "field_642594e703793",
+            "label": "Tax rate for Swiss members",
+            "name": "zs_tax_ch",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Use . as decimal separator. Example: 7.7",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,16 +16,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
+            "wpml_cf_preferences": 0,
+            "default_value": "7.7",
             "maxlength": "",
-            "rows": 2,
-            "new_lines": "br"
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_608ac16ae3a8c",
             "label": "Mechanical dreams Page",
             "name": "zs_page_mechanical_dreams",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "Used for displaying a special template",
             "required": 1,
@@ -47,6 +50,7 @@
             "key": "field_5f2439218c9df",
             "label": "Contact page",
             "name": "zs_page_contact",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "Used for...",
             "required": 1,
@@ -69,6 +73,7 @@
             "key": "field_60f40c528da03",
             "label": "My account main page",
             "name": "zs_page_my_account",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "The entry page to My account area",
             "required": 1,
@@ -91,6 +96,7 @@
             "key": "field_60f3218ea760c",
             "label": "General purposes contact email",
             "name": "zs_contact_email",
+            "aria-label": "",
             "type": "email",
             "instructions": "Used as a backup if contact requests from product pages fail",
             "required": 1,
@@ -109,6 +115,7 @@
             "key": "field_60e5a0a7f9170",
             "label": "My selection page",
             "name": "zs_page_selection",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "Used for link in header",
             "required": 1,
@@ -131,6 +138,7 @@
             "key": "field_60a0e771c0bde",
             "label": "Default product image",
             "name": "zs_default_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -155,6 +163,7 @@
             "key": "field_60d9d14178f0f",
             "label": "Exceptional assets page",
             "name": "zs_page_exceptional_assets",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "",
             "required": 1,
@@ -177,6 +186,7 @@
             "key": "field_60d9d18aab42b",
             "label": "Virtuous companies page",
             "name": "zs_page_virtuous_companies",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "",
             "required": 1,
@@ -199,6 +209,7 @@
             "key": "field_60d9d1b48ffe8",
             "label": "Philantropic projetcs page",
             "name": "zs_page_philantropy",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "",
             "required": 1,
@@ -221,6 +232,7 @@
             "key": "field_60dadd7ab8b16",
             "label": "Public pages",
             "name": "zs_public_pages",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "Pages that will be accessible to everyone",
             "required": 1,
@@ -243,6 +255,7 @@
             "key": "field_60dadd98b8b17",
             "label": "Free page",
             "name": "zs_free_page",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "Page that will be accessible to members with an active \"Free\" membership",
             "required": 1,
@@ -258,6 +271,71 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_60f82fd317e10",
+            "label": "Email preferences options",
+            "name": "zs_email_options",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Options available on \"My email preferences\" page.\r\nYou may change the display names as often as you like, but changing the option slugs is not recommended once members have started to choose options. The slug is used for keeping track of members preferences and organizing mailing lists, and will not be shown to the member.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_60f8300f17e11",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add option",
+            "sub_fields": [
+                {
+                    "key": "field_60f8300f17e11",
+                    "label": "Option display name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_60f82fd317e10"
+                },
+                {
+                    "key": "field_60f8309dceba5",
+                    "label": "Option slug",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Lowercase text without spaces or accented characters.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_60f82fd317e10"
+                }
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -277,5 +355,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626874465
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1680185284
 }
