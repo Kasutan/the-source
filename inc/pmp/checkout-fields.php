@@ -63,21 +63,7 @@ function kasutan_pmprorh_init() {
 			'html_attributes' => array('placeholder' => esc_html__('Company','the-source') )
 		)
 	);
-	$fields[] = new PMProRH_Field(
-		'zs-vat-number',							// input name, will also be used as meta key
-		'text',								// type of field
-		array(
-			'label'		=> 'VAT number',		// custom field label
-			'size'		=> 30,				// input size
-			'class'		=> 'vat-number',		// custom class
-			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
-			'required'	=> false,			
-			'placehoder' => 'VAT number',
-			'memberslistcsv' => true,
-			'html_attributes' => array('placeholder' => 'VAT number' ),
-			'hint' => 'Without country code, numbers only '
-		)
-	);
+	
 
 	$fields[] = new PMProRH_Field(
 		'zs-canal',							// input name, will also be used as meta key

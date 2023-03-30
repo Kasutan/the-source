@@ -421,7 +421,7 @@
 
 		/************ Show label on input change/focus ***************/	
 		if($('body').hasClass('pmpro-checkout')) {
-			var inputs=$('#pmpro_user_fields, #pmpro_billing_address_fields, #pmpro_vat_table').find('select, input');
+			var inputs=$('#pmpro_user_fields, #pmpro_billing_address_fields').find('select, input');
 			if(inputs.length > 0) {
 				$(inputs).on('focus change',function(e){
 					var label=$(this).siblings('label');
@@ -440,9 +440,6 @@
 				} else if($(input).attr('id')==='zs-canal') {
 					return false;
 				} else if($(input).attr('id')==='zs-canal-other') {
-					return false;
-				} else if($(input).attr('id')==='zs-vat-number') {
-					//VAT number is validated elsewhere
 					return false;
 				} else if($(input).val()) {
 					return true;
