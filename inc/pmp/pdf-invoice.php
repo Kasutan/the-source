@@ -3,36 +3,50 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
 * This adds {{vat_number}}, {{vat_rate}}, {{vat_country}} to PDF templates.
-* Requires VAT Add On installed and active - https://www.paidmembershipspro.com/add-ons/vat-tax/
-* https://gist.github.com/andrewlimaza/2451fa80a89eaaf857ca42ee08bd473c
 */
  
-function kasutan_pmpro_pdf_vat_add_on_variables( $data_array, $user, $order_data ) {
+function kasutan_pmpro_pdf_custom_variables( $data_array, $user, $order_data ) {
+	error_log('kasutan_pmpro_pdf_custom_variables');
+	//$order_notes=$order_data->notes;
 
-	$order_notes=$order_data->notes;
-	//error_log('order notes '.$order_notes);
 	$data_array['{{notes}}'] = $order_data->notes;
 
 	$user_id=$user->ID;
 	$user_company=get_user_meta($user_id,'zs-company',true);
-	//error_log('company : '.$user_company);
+	$country=trim( strtolower($order_data->billing_country));
 	$data_array['{{company}}'] =$user_company;
 
-	if ( function_exists( 'pmprovat_iso2vat' ) ) {
-		$vat_number=pmpro_getMatches( "/{EU_VAT_NUMBER:([^}]*)}/", $order_data->notes, true );
-		$vat_country=pmprovat_iso2vat(pmpro_getMatches( "/{EU_VAT_COUNTRY:([^}]*)}/", $order_data->notes, true ) );
-		if($vat_number && $vat_country) {
-			$data_array['{{vat_number}}'] = 'VAT '.$vat_country.$vat_number;
-			$data_array['{{vat_country}}']=$vat_country;
-		} else {
-			$data_array['{{vat_number}}'] = '';
-			$vat_country='';
-		}
-		
-		$rate=pmpro_getMatches( "/{EU_VAT_TAX_RATE:([^}]*)}/", $order_data->notes, true );
-		$rate_display=100*$rate.'%';
-		$data_array['{{vat_rate}}'] = $rate_display;
+	if ( ! empty( $order_data->billing_name ) ) {
+		$data_array['{{name}}'] = $order_data->billing_name;
+
+		$billing_details = $order_data->billing_name . "<br>";
+		$billing_details .= $order_data->billing_street . "<br>";
+		$billing_details .= $order_data->billing_zip . " " . $order_data->billing_city . ", " . $order_data->billing_country . "<br>";
+		$billing_details .= $order_data->billing_phone;
+		error_log($billing_details);
+		$data_array['{{address}}']=$billing_details;
 	}
+
+	$date=$data_array['{{invoice_date}}'];
+	$date=date('d/m/Y',strtotime($date));
+	$data_array['{{invoice_date}}']=$date;
+
+	$taxe_label=esc_attr(get_option('options_zs_tax_label'));
+	error_log('taxe_label');
+	error_log($taxe_label);
+	if($country=='ch' && $taxe_label) {
+		$data_array['{{tax_rate}}'] = $taxe_label;
+	} else {
+		$data_array['{{tax_rate}}'] = 'Franchise de TVA';
+	}
+
+	$tax=$data_array['{{tax}}'];
+	if($tax=='CHF 0.00') {
+		$data_array['{{tax}}']='';
+	}
+
+
+
 	return $data_array;
 }
-add_filter( 'pmpro_pdf_invoice_custom_variables', 'kasutan_pmpro_pdf_vat_add_on_variables', 10, 3 );
+add_filter( 'pmpro_pdf_invoice_custom_variables', 'kasutan_pmpro_pdf_custom_variables', 10, 3 );
