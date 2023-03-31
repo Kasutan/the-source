@@ -5099,24 +5099,26 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   margin: 0;
   max-width: unset;
 }
-.pmpro-checkout .pmpro_form > .pmpro_submit {
+.pmpro-checkout .pmpro_form > div.pmpro_submit {
   margin: 0 auto 4rem;
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
-.pmpro-checkout .pmpro_form > .pmpro_submit #pmpro_submit_span {
+.pmpro-checkout .pmpro_form > div.pmpro_submit #pmpro_submit_span {
   width: 100%;
 }
-.pmpro-checkout .pmpro_form > .pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout {
+.pmpro-checkout .pmpro_form > div.pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout {
   background-color: #fff;
   width: 100%;
 }
-.pmpro-checkout .pmpro_form > .pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout:hover, .pmpro-checkout .pmpro_form > .pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout:focus {
+.pmpro-checkout .pmpro_form > div.pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout:hover, .pmpro-checkout .pmpro_form > div.pmpro_submit input[type=submit].pmpro_btn.pmpro_btn-submit-checkout:focus {
   background-color: var(--cyan);
 }
 @media (min-width: 1024px) {
-  .pmpro-checkout .pmpro_form > .pmpro_submit {
+  .pmpro-checkout .pmpro_form > div.pmpro_submit {
     margin-bottom: 8rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
   }
 }
 .pmpro-checkout form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields,

@@ -276,7 +276,7 @@
 			max-width:unset;
 		}
 	}
-	.pmpro_form > .pmpro_submit {
+	.pmpro_form > div.pmpro_submit {
 		margin:0 auto 4rem;
 		padding-top: 1rem;
 		padding-bottom: 2rem;
@@ -292,6 +292,9 @@
 		}
 		@include bp(lg) {
 			margin-bottom: 8rem;
+			padding-right:6rem;
+			padding-left:6rem;
+
 		}
 	}
 
