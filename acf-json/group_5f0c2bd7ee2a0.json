@@ -24,35 +24,57 @@
             "append": ""
         },
         {
-            "key": "field_608ac16ae3a8c",
-            "label": "Mechanical dreams Page",
-            "name": "zs_page_mechanical_dreams",
+            "key": "field_642688c5e2e06",
+            "label": "Tax label for Swiss members (displayed on invoices)",
+            "name": "zs_tax_label",
             "aria-label": "",
-            "type": "post_object",
-            "instructions": "Used for displaying a special template",
-            "required": 1,
+            "type": "text",
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "default_value": "TVA  (CHE 459.245.813)   7.7 %",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_608ac16ae3a8c",
+            "label": "Mechanical dreams Page",
+            "name": "zs_page_mechanical_dreams",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Used for displaying a special template",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
             "post_type": [
                 "page"
             ],
             "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
             "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
             "ui": 1
         },
         {
-            "key": "field_5f2439218c9df",
-            "label": "Contact page",
-            "name": "zs_page_contact",
+            "key": "field_60f40c528da03",
+            "label": "My account main page",
+            "name": "zs_page_my_account",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "Used for...",
+            "instructions": "The entry page to My account area",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -70,12 +92,12 @@
             "ui": 1
         },
         {
-            "key": "field_60f40c528da03",
-            "label": "My account main page",
-            "name": "zs_page_my_account",
+            "key": "field_5f2439218c9df",
+            "label": "Contact page",
+            "name": "zs_page_contact",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "The entry page to My account area",
+            "instructions": "Used for...",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -252,27 +274,6 @@
             "ui": 1
         },
         {
-            "key": "field_60dadd98b8b17",
-            "label": "Free page",
-            "name": "zs_free_page",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "Page that will be accessible to members with an active \"Free\" membership",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": "",
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_60f82fd317e10",
             "label": "Email preferences options",
             "name": "zs_email_options",
@@ -357,5 +358,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1680185284
+    "modified": 1680515155
 }

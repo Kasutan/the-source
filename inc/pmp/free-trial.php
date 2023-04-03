@@ -37,7 +37,7 @@ function kasutan_pmpro_registration_checks($value)
 		//yup, don't let them checkout
 		if( $already ) {
 			global $pmpro_msg, $pmpro_msgt;
-			$pmpro_msg = "You have already used up your trial membership. Please select a premium membership to checkout.";
+			$pmpro_msg = "You have already used up your discovery membership. Please select a premium membership to checkout.";
 			$pmpro_msgt = "pmpro_error";
 			
 			$value = false;
@@ -58,7 +58,7 @@ function kasutan_pmpro_level_expiration_text($text, $level)
 		$used_trial = get_user_meta( $current_user->ID, "pmpro_trial_level_used_{$level->id}", true );
 
 		if ( ! empty( $used_trial ) ) {
-			$text = "You have already used up your trial membership. Please select a premium membership to checkout.";
+			$text = "You have already used up your Discovery membership. Please select a premium membership to checkout.";
 		}
 	}
 	

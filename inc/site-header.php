@@ -6,7 +6,7 @@
 */
 add_action('tha_header_left','kasutan_menu_left');
 function kasutan_menu_left() {
-	if(!kasutan_is_premium_member()) {
+	if(!kasutan_is_member()) {
 		echo '<nav class="header-left">';
 			if(!is_front_page(  )) {
 			?>
@@ -85,7 +85,7 @@ function kasutan_menu_left() {
 */
 add_action('tha_header_right','kasutan_header_right');
 function kasutan_header_right() {
-	if(!kasutan_is_premium_member()) {
+	if(!kasutan_is_member()) {
 		echo '<nav class="header-right">';
 			if(is_user_logged_in(  )) {
 				printf('<a href="%s">%s</a>',wp_logout_url(get_permalink()),esc_html__('Logout','the-source'));
