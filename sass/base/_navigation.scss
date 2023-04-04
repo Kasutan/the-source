@@ -389,7 +389,7 @@ button.menu-toggle {
 				left:0;
 				position: absolute;
 				width:calc(100vw - 2 * var(--margin-x-header));
-				top:130%;
+				top:100%;
 				&::after {
 					background-color: var(--blanc);
 					bottom: -11px;
@@ -405,6 +405,9 @@ button.menu-toggle {
 		@include bp(xl) {
 			.menu-item {
 				padding-top: 1.5rem;
+			}
+			&.menu-products .current-menu-item .sub-menu {
+				top:130%;
 			}
 		}
 

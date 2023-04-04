@@ -35,7 +35,16 @@ echo '<div class="site-container">';
 		if(is_front_page()) {
 			$logo_tag='h1';
 		}
-			if(has_custom_logo()) {
+			if(function_exists('get_field') && $logo_url=esc_url(get_field('zs_logo','options'))) {
+				printf('<%s class="site-title no-dots"><a href="%s" class="custom-logo-link" rel="home"><img src="%s" class="custom-logo" alt="The Source" decoding="async" loading="lazy" width="330" height="104"></a><span class="screen-reader-text">%s</span></%s>',
+					$logo_tag,
+					apply_filters( 'wpml_home_url', get_option( 'home' ) ),
+					$logo_url,
+					get_bloginfo( 'name'),
+					$logo_tag,	
+				);
+			}
+			else if(has_custom_logo()) {
 				printf('<%s class="site-title no-dots">%s<span class="screen-reader-text">%s</span></%s>',
 					$logo_tag,
 					get_custom_logo(),	
