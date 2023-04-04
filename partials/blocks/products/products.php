@@ -50,7 +50,7 @@ if(function_exists('get_field')) :
 		//Simple conteneur pour le titre et un message
 		echo '<section class="products acf page-products">';
 		echo $mobile_title; 
-		printf('<p class="text-center">%s</p>',__(' No products are currently available in this category for the moment.','the-source'));
+		printf('<p class="text-center">%s</p>',__(' Exceptional assets will soon be listed on the Source. Please come back later to visit this page again.','the-source'));
 
 	} else if($direct_children) {
 		printf('<section id="liste-filtrable-%s" class="liste-filtrable products acf page-products avec-produits" data-pagination="6">',$term_slug);

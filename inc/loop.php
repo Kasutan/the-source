@@ -65,7 +65,7 @@ function ea_default_loop() {
 			else :
 				if($taxonomy) {
 					//On est sur une page archive produits qui ne contient aucun produit
-					printf('<p class="text-center">%s</p>',__(' No products are currently available in this category for the moment.','the-source'));
+					printf('<p class="text-center">%s</p>',__(' Exceptional assets will soon be listed on the Source. Please come back later to visit this page again.','the-source'));
 				} else {
 					get_template_part( 'partials/archive', 'none' );
 				}
