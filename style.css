@@ -7374,6 +7374,7 @@ h1.product-title {
   margin-bottom: var(--margin-y-2);
   margin-top: 1rem;
   padding: 5rem 2rem 10rem;
+  --pointe:95%;
 }
 @media (min-width: 1400px) {
   .pmpro-confirmation .confirmation-thankyou {
@@ -7383,18 +7384,12 @@ h1.product-title {
 .pmpro-confirmation .confirmation-thankyou h2, .pmpro-confirmation .confirmation-thankyou h3 {
   color: var(--blanc);
 }
-.pmpro-confirmation .confirmation-thankyou h3 {
-  text-transform: uppercase;
+.pmpro-confirmation .confirmation-thankyou h2 {
+  margin-bottom: 0.5em;
+  text-transform: unset;
 }
-.pmpro-confirmation .confirmation-thankyou .confirmation-message {
-  font-size: 2.6rem;
-  text-align: center;
-}
-.pmpro-confirmation .confirmation-thankyou hr.wp-block-separator {
-  background-color: #FAFAFA;
-  height: 1px;
-  margin: 3rem 0;
-  max-width: unset;
+.pmpro-confirmation .confirmation-thankyou p.has-big-font-size {
+  margin-bottom: 2em;
 }
 .pmpro-confirmation .confirmation-enjoy {
   padding: 0 2rem 5rem;
