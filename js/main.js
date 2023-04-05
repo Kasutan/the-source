@@ -188,7 +188,7 @@
 
 
 		/****************** Product carousel *************************/	
-		var owl = $(".owl-carousel");
+		var owl = $(".product-carousel.owl-carousel");
 		owl.owlCarousel({
 			loop:true,
 			nav : false,

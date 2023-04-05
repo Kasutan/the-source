@@ -236,6 +236,11 @@ class BE_ACF_Customizations {
 
 		/*********Blocs Home public***************/
 		$this->helper_register_block_type(
+			'home-slider',
+			'Block slider for public home page',
+			'Fullscreen section with a text, two sliders (mobile and desktop) and a fixed link to checkout page',
+		);
+		$this->helper_register_block_type(
 			'home-liste',
 			'Block list for public home page',
 			'A list of features with title and text for each feature'
