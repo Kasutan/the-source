@@ -24,4 +24,60 @@
 		margin:0 auto;
 		max-width: 106.4rem;
 	}
+
+	.home-contact {
+		--pt:4rem;
+		padding:var(--pt) 0;
+		text-align: center;
+		h2 {
+			text-transform: uppercase;
+			margin-bottom: 3rem;
+			padding-bottom: 0.5em;
+			position: relative;
+		
+			&::after {
+				background-color: var(--gris);
+				bottom: 0;
+				content:' ';
+				height:3px;
+				left:calc(50% - 5rem);
+				opacity: 0.3;
+				position:absolute;
+				width:10rem;
+			}
+		}
+		.home-contact-intro {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-bottom: 2rem;
+		}
+
+		.nf-form-fields-required {
+			display: none;
+		}
+		
+		nf-fields-wrap {
+			display: block;
+		}
+
+		.nf-after-field .nf-error-msg {
+			text-align: left;
+		}
+
+		input[type="submit"] {
+			font-weight: 700;
+		}
+
+		@include bp(sm) {
+			input[type="submit"] {
+				min-width: 38rem;
+			}
+		}
+
+		@include bp(lg) {
+			--pt:8rem;
+			margin:0 auto;
+			max-width:85rem;
+		}
+	}
 }

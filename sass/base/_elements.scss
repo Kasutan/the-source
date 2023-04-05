@@ -218,6 +218,34 @@ textarea {
 			@include ninja-placeholder;
 		}
 	}
+
+	textarea {
+		background-color: #F8FAFB;
+	}
+
+	//Checkbox pour accepter l'utilisation des données personnelles
+	.check-data {
+		border-bottom: solid 1px var(--bleu);
+		padding-bottom: 1rem;
+		.nf-field-label {
+			padding-left: 5px;
+		}
+		input[type='checkbox'] {
+			border: 1px solid #707070;
+			width: 16px;
+			height: 16px;
+			color: var(--bleu);
+			display: inline-block;
+
+			&:checked {
+				background-color: var(--bleu-clair);
+				background-image: url('icons/check-bleu.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+	}
 	
 	@include bp(lg) {
 		nf-fields-wrap {
