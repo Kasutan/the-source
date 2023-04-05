@@ -247,6 +247,12 @@ class BE_ACF_Customizations {
 			'A quote, a picture and the names of the co-founders'
 		);
 
+		$this->helper_register_block_type(
+			'home-ethics',
+			'Block business ethics for public home page',
+			'Section with a title, 4 blocks and a bottom text.'
+		);
+
 		/*********Blocs Advisors***************/
 		$this->helper_register_block_type(
 			'about-experts',

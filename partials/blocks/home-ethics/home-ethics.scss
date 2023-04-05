@@ -1,0 +1,68 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.home-ethics {
+	--padding-v:12rem;
+	background: transparent linear-gradient(180deg, #FFFFFF 0%, #EAF2FA 100%);
+	color:var(--bleu);
+	transform:translateX(calc(-1 * var(--padding-x)));
+	margin-bottom: 4rem;
+	padding:4rem var(--padding-x) var(--padding-v);
+	text-align: center;
+	width:100vw;
+
+	@include bp(lg) {
+		--padding-v:15rem;
+	}
+
+	.titre-section {
+		text-transform: uppercase;
+		margin-bottom: 3rem;
+		padding-bottom: 0.5em;
+		position: relative;
+		strong {
+			color:var(--cyan);
+		}
+		&::after {
+			background-color: var(--gris);
+			bottom: 0;
+			content:' ';
+			height:3px;
+			left:calc(50% - 5rem);
+			opacity: 0.3;
+			position:absolute;
+			width:10rem;
+		}
+	}
+
+	.items {
+		list-style: none;
+		padding: 0;
+		@include bp(md) {
+			column-gap:2rem;
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+		}
+		@include bp(lg) {
+			grid-template-columns: repeat(4,1fr);
+		}
+		@include bp(xl) {
+			column-gap:4rem;
+		}
+	}
+	.item {
+		margin:0 auto 2rem;
+		max-width: 30rem;
+	}
+	.titre {
+		font-size: 2.2rem;
+	}
+
+	.texte {
+		font-size: 2rem;
+	}
+	
+	
+	
+
+	
+}
