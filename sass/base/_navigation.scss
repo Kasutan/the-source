@@ -125,7 +125,7 @@ p.fil-ariane {
 		--size:9rem;
 	}
 }
-.signin {
+.signin, .faq-link {
 	border-right:solid 1px var(--bordure);
 	font-size: 1.8rem;
 	padding:4px 10px 2px 0;
@@ -150,7 +150,13 @@ p.fil-ariane {
 		font-size: 2rem;
 	}
 }
-
+.faq-link {
+	display: none;
+	margin-right: 10px;
+	@include bp(sm) {
+		display: inline-block;
+	}
+}
 a.retour-home {
 	display: inline-block;
 	font-weight: 300;

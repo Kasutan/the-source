@@ -2936,27 +2936,37 @@ p.fil-ariane, p.fil-ariane a, p.fil-ariane span {
   }
 }
 
-.signin {
+.signin, .faq-link {
   border-right: solid 1px var(--bordure);
   font-size: 1.8rem;
   padding: 4px 10px 2px 0;
   position: relative;
   text-align: right;
 }
-.signin .desktop {
+.signin .desktop, .faq-link .desktop {
   display: none;
 }
-.signin a {
+.signin a, .faq-link a {
   font-weight: 300;
 }
 @media (min-width: 768px) {
-  .signin .desktop {
+  .signin .desktop, .faq-link .desktop {
     display: inline-block;
   }
 }
 @media (min-width: 1024px) {
-  .signin {
+  .signin, .faq-link {
     font-size: 2rem;
+  }
+}
+
+.faq-link {
+  display: none;
+  margin-right: 10px;
+}
+@media (min-width: 500px) {
+  .faq-link {
+    display: inline-block;
   }
 }
 

@@ -90,6 +90,9 @@ function kasutan_header_right() {
 			if(is_user_logged_in(  )) {
 				printf('<a href="%s">%s</a>',wp_logout_url(get_permalink()),esc_html__('Logout','the-source'));
 			} else {
+				if(is_front_page() && function_exists('get_field') && !empty($faq=get_field('zs_lien_faq','option'))) {
+					printf('<div class="faq-link"><a href="%s">%s</a></div>',$faq['url'],$faq['title']);
+				}
 				if(function_exists('pmpro_getOption')) {
 					$login_url=get_page_link(pmpro_getOption('login_page_id'));
 				} else {

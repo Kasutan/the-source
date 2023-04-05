@@ -93,11 +93,11 @@
         },
         {
             "key": "field_5f2439218c9df",
-            "label": "Contact page",
-            "name": "zs_page_contact",
+            "label": "FAQ page",
+            "name": "zs_lien_faq",
             "aria-label": "",
-            "type": "post_object",
-            "instructions": "Used for...",
+            "type": "link",
+            "instructions": "A link to the FAQ page is displayed in the header of the public home page.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -105,14 +105,8 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "wpml_cf_preferences": 0,
+            "return_format": "array"
         },
         {
             "key": "field_60f3218ea760c",
@@ -337,6 +331,32 @@
                 }
             ],
             "rows_per_page": 20
+        },
+        {
+            "key": "field_642bd99077973",
+            "label": "Logo shown in header",
+            "name": "zs_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -358,5 +378,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1680515155
+    "modified": 1680717046
 }
