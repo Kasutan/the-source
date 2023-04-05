@@ -311,11 +311,13 @@
 					<input type="hidden" name="bconfirmemail_copy" value="1" />
 				<?php } ?>
 			<?php } ?>
+
+			<?php do_action("pmpro_checkout_after_billing_fields"); ?>
+
 		</div> <!-- end pmpro_checkout-fields -->
 	</div> <!--end pmpro_billing_address_fields -->
-	<?php } ?>
+	<?php }?>
 
-	<?php do_action("pmpro_checkout_after_billing_fields"); ?>
 
 	<?php if(pmpro_getGateway() == "paypal" && empty($pmpro_review) && true == apply_filters('pmpro_include_payment_option_for_paypal', true ) ) { ?>
 	<div id="pmpro_payment_method" class="<?php echo pmpro_get_element_class( 'pmpro_checkout', 'pmpro_payment_method' ); ?>" <?php if(!$pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>

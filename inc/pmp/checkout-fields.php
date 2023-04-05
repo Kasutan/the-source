@@ -64,6 +64,29 @@ function kasutan_pmprorh_init() {
 		)
 	);
 	
+	
+
+	// Add the fields inside the checkout page.
+	foreach ( $fields as $field ) {
+		pmprorh_add_registration_field(
+			'after_username',				// location on checkout page
+			$field							// PMProRH_Field object
+		);
+	}
+
+	// That's it. See the PMPro Register Helper readme for more information and examples.
+}
+
+add_action( 'init', 'kasutan_pmprorh_init_canal_fields' );
+function kasutan_pmprorh_init_canal_fields() {
+	// Don't break if Register Helper is not loaded.
+	if ( ! function_exists( 'pmprorh_add_registration_field' ) ) {
+		return false;
+	}
+
+	// Define the fields.
+	$fields = array();
+	
 
 	$fields[] = new PMProRH_Field(
 		'zs-canal',							// input name, will also be used as meta key
@@ -73,7 +96,7 @@ function kasutan_pmprorh_init() {
 			'size'		=> 30,				// input size
 			'class'		=> 'canal',		// custom class
 			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
-			'required'	=> true,			
+			'required'	=> false,			
 			'placehoder' => '',
 			'options' =>array("null"=> esc_html__('How did you hear about The Source?','the-source'),"social-media" => esc_html__('Social media','the-source'), "online-search"=>esc_html__('Online search','the-source'), "print-advertising"=>esc_html__("Print advertising",'the-source'),'newsletter'=>esc_html__('Newsletter','the-source'),'word-of-mouth'=>esc_html__('Word-of-mouth','the-source'),'other'=>esc_html__('Other:','the-source')),
 			'memberslistcsv' => true,
@@ -102,7 +125,7 @@ function kasutan_pmprorh_init() {
 	// Add the fields inside the checkout page.
 	foreach ( $fields as $field ) {
 		pmprorh_add_registration_field(
-			'after_username',				// location on checkout page
+			'after_billing_fields',				// location on checkout page
 			$field							// PMProRH_Field object
 		);
 	}

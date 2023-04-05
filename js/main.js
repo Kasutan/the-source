@@ -486,9 +486,7 @@
 			//Disable la première option du select canal (elle sert de label en fait)
 			$('#zs-canal').find('option[value="null"]').prop("disabled",true);
 			$('#zs-canal').find('option[value="null"]').attr("disabled",true);
-			$('#zs-canal').attr("required",true);
-			$('#zs-canal').prop("required",true);
-			//TODO bloquer validation formulaire si aucune valeur n'a été choisie
+			
 
 			//Vérif spéciale pour select canal - on signale invalide dès le changement de valeur
 			$('#zs-canal').on('change',function(e){
@@ -500,14 +498,11 @@
 					$('#zs-canal-other_div').show();
 					if($('#zs-canal-other').val()=='') {
 						$('#zs-canal-other').removeClass('js-valid');
-						$('#zs-canal-other').addClass('js-invalid');
 					} else {
-						$(this).removeClass('js-invalid');
 						$(this).addClass('js-valid');
 					}
 				} else {
 					$('#zs-canal-other_div').hide();
-					$(this).removeClass('js-invalid');
 					$(this).addClass('js-valid');
 				}
 			})
@@ -522,13 +517,9 @@
 				}
 				if(val=="") {
 					$(select).removeClass('js-valid');
-					$(select).addClass('js-invalid');
 					$(this).removeClass('js-valid');
-					$(this).addClass('js-invalid');
 				} else {
-					$(select).removeClass('js-invalid');
 					$(select).addClass('js-valid');
-					$(this).removeClass('js-invalid');
 					$(this).addClass('js-valid');
 				}
 

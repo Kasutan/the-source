@@ -4303,6 +4303,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   border: none;
   border-bottom: solid 1px var(--bleu);
   font-weight: 300;
+  width: 100%;
 }
 .pmpro-checkout input[type=text]#bemail,
 .pmpro-checkout input[type=password]#bemail,
