@@ -1,6 +1,6 @@
 {
     "key": "group_642d4ac6453ea",
-    "title": "Block list for public home page (copy)",
+    "title": "Block quote for public home page",
     "fields": [
         {
             "key": "field_642d4ac65163a",
@@ -130,5 +130,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1680690147
+    "modified": 1680707948
 }
