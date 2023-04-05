@@ -1,0 +1,50 @@
+.home-quote {
+  --fond:95%;
+  background: transparent linear-gradient(180deg, #FFFFFF 0%, #EAF2FA 100%);
+  color: var(--bleu);
+  -webkit-clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+          clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
+  font-size: 2.2rem;
+  transform: translateX(calc(-1 * var(--padding-x)));
+  margin-bottom: 4rem;
+  padding: 4rem var(--padding-x);
+  text-align: center;
+  width: 100vw;
+}
+.home-quote q {
+  display: block;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+.home-quote q strong {
+  color: var(--cyan);
+}
+.home-quote q::before, .home-quote q::after {
+  display: none;
+}
+.home-quote .image {
+  margin-bottom: 1.4rem;
+  width: 25rem;
+}
+.home-quote .image img {
+  border-radius: 50%;
+}
+.home-quote .name {
+  margin-bottom: 0;
+}
+.home-quote > * {
+  max-width: 43rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .home-quote {
+    padding-bottom: 8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .home-quote {
+    margin-bottom: 6rem;
+    padding-bottom: 11rem;
+  }
+}

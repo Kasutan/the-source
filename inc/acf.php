@@ -241,6 +241,12 @@ class BE_ACF_Customizations {
 			'A list of features with title and text for each feature'
 		);
 
+		$this->helper_register_block_type(
+			'home-quote',
+			'Block quote for public home page',
+			'A quote, a picture and the names of the co-founders'
+		);
+
 		/*********Blocs Advisors***************/
 		$this->helper_register_block_type(
 			'about-experts',
