@@ -5740,6 +5740,25 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
 .home .pmpro_actions_nav {
   display: none;
 }
+.home .home-aim {
+  margin: 0 auto;
+  max-width: 85rem;
+}
+.home .home-sunrise {
+  margin: 5rem auto;
+  max-width: 62rem;
+}
+.home .home-sunrise img {
+  object-fit: contain;
+}
+.home .home-sunrise p.has-large-font-size {
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+.home figure.is-type-video {
+  margin: 0 auto;
+  max-width: 106.4rem;
+}
 
 ul.menu-my-account-links, .email-preferences {
   display: grid;

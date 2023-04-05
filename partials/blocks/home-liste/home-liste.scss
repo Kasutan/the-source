@@ -1,0 +1,34 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.home-liste {
+	margin:5.5rem auto;
+	padding-left:3rem;
+	.titre {
+		font-size: 2.2rem;
+		font-weight: 700;
+		position: relative;
+		strong {
+			color:var(--cyan);
+		}
+		&::before {
+			content:' ';
+			width: 1.4rem;
+			left: -3rem;
+			height: 3px;
+			background: var(--bleu);
+			position: absolute;
+			top: 1.5rem;
+			border-radius: 100px;
+		}
+	}
+	.texte {
+		color:var(--bleu);
+		font-size: 2rem;
+		margin-bottom: 2.4rem;
+	}
+	@include bp(lg) {
+		margin:5.5rem auto;
+		max-width: 85rem;
+		padding-left: 0;
+	}
+}

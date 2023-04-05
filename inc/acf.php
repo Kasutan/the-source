@@ -203,7 +203,7 @@ class BE_ACF_Customizations {
 			'Display header on checkout page for a level. Create as many blocks as there are levels.'
 		);
 
-		/*********Blocs Home***************/
+		/*********Blocs Home connecté***************/
 		$this->helper_register_block_type(
 			'home-inspiration',
 			'Block header for premium home page',
@@ -232,6 +232,13 @@ class BE_ACF_Customizations {
 			'home-upgrade',
 			'Block upgrade for free trial home page',
 			'Display upgrade incentive on free trial home page.'
+		);
+
+		/*********Blocs Home public***************/
+		$this->helper_register_block_type(
+			'home-liste',
+			'Block list for public home page',
+			'A list of features with title and text for each feature'
 		);
 
 		/*********Blocs Advisors***************/

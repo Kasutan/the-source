@@ -2,4 +2,26 @@
 	.pmpro_actions_nav {
 		display: none;
 	}
+
+	.home-aim {
+		margin:0 auto;
+		max-width: 85rem;
+	}
+
+	.home-sunrise {
+		margin:5rem auto;
+		max-width: 62rem;
+		img {
+			object-fit: contain;
+		}
+		p.has-large-font-size {
+			margin-bottom: 1.4rem;
+			text-transform: uppercase;
+		}
+	}
+
+	figure.is-type-video {
+		margin:0 auto;
+		max-width: 106.4rem;
+	}
 }
