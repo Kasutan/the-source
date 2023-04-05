@@ -24,6 +24,7 @@ if(function_exists('get_field') && function_exists('pmpro_hasMembershipLevel')) 
 		$title=wp_kses_post(get_field('title'));
 		$subtitle=wp_kses_post(get_field('subtitle'));
 		$text=wp_kses_post(get_field('text'));
+		$small_text=wp_kses_post(get_field('small_text'));
 
 		printf('<section class="checkout-header acf %s"%s>',$className,$anchor);
 			echo '<div class="fond"></div>';
@@ -33,13 +34,16 @@ if(function_exists('get_field') && function_exists('pmpro_hasMembershipLevel')) 
 			if(have_rows('offers')) : 
 				echo '<ul class="offers">';
 				while(have_rows('offers')) : the_row();
-					printf('<li class="offer"><div class="circle"></div>%s</li>',
+					printf('<li class="offer"><div class="picto"><svg xmlns="http://www.w3.org/2000/svg" width="19.256" height="13.634" viewBox="0 0 19.256 13.634">
+					<path d="M18652.3,3162.5a63.8,63.8,0,0,1,4.8,6.4l10.8-6.4" transform="translate(-18861.984 1449.051) rotate(-14)" fill="none" stroke="#fff" stroke-width="3"/>
+					</svg></div><span>%s</span></li>',
 						wp_kses_post(get_sub_field('offer'))
 					);
 						
 				endwhile;
 				echo '</ul>';
 			endif;
+			printf('<p class="small-text">%s</p>',$small_text);
 
 			printf('<p class="text">%s</p>',$text);
 

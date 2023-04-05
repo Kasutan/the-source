@@ -6,6 +6,7 @@
             "key": "field_60faf0fcd7b23",
             "label": "Block header for checkout",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -23,25 +24,28 @@
             "key": "field_60faef9697d1c",
             "label": "Level ID",
             "name": "level",
+            "aria-label": "",
             "type": "text",
-            "instructions": "This header will be shown on checkout page if the visitor has selected the level with this ID.\r\nLevel IDs can be found here: https:\/\/thesourceworldconnections.com\/wp-admin\/admin.php?page=pmpro-membershiplevels",
-            "required": 1,
-            "conditional_logic": 0,
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "0": false,
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_60faed7544db9",
             "label": "Title",
             "name": "title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -61,6 +65,7 @@
             "key": "field_60faed8a44dba",
             "label": "Subtitle",
             "name": "subtitle",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -80,6 +85,7 @@
             "key": "field_60faed9a44dbb",
             "label": "Offers",
             "name": "offers",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 1,
@@ -99,6 +105,7 @@
                     "key": "field_60faedc644dbc",
                     "label": "Offer",
                     "name": "offer",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 1,
@@ -112,14 +119,38 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 2,
-                    "new_lines": "br"
+                    "new_lines": "br",
+                    "parent_repeater": "field_60faed9a44dbb"
                 }
-            ]
+            ],
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_642d0c7e6de19",
+            "label": "Small text",
+            "name": "small_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br"
         },
         {
             "key": "field_60faee2744dbd",
             "label": "Text",
             "name": "text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 1,
@@ -153,5 +184,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627058521
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1680673951
 }

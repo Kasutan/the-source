@@ -1,16 +1,7 @@
 .home-upgrade {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: var(--margin-y-1);
   margin-left: var(--margin-x-header);
@@ -20,75 +11,80 @@
   padding: 8rem var(--padding-x) var(--margin-y-1);
   position: relative;
   z-index: 1;
-  --fond:5%; }
-  .home-upgrade .fond {
-    background-color: var(--bleu);
-    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--fond));
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--fond));
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-  .home-upgrade .h1, .home-upgrade .subtitle, .home-upgrade .text, .home-upgrade .button {
-    position: relative; }
-  .home-upgrade, .home-upgrade .h1, .home-upgrade .subtitle {
-    color: var(--blanc); }
-  .home-upgrade .h1, .home-upgrade .subtitle {
-    margin-top: 0; }
+  --fond:5%;
+}
+.home-upgrade .fond {
+  background-color: var(--bleu);
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--fond));
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--fond));
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.home-upgrade .h1, .home-upgrade .subtitle, .home-upgrade .text, .home-upgrade .button {
+  position: relative;
+}
+.home-upgrade, .home-upgrade .h1, .home-upgrade .subtitle {
+  color: var(--blanc);
+}
+.home-upgrade .h1, .home-upgrade .subtitle {
+  margin-top: 0;
+}
+.home-upgrade .offers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.home-upgrade .offer {
+  --size:8.5rem;
+  align-items: center;
+  display: flex;
+  font-size: 110%;
+  font-weight: 700;
+  line-height: 1.3;
+  height: var(--size);
+  justify-content: center;
+  margin: 1em 0;
+  position: relative;
+  text-align: center;
+}
+.home-upgrade .offer .circle {
+  background-color: var(--blanc);
+  border-radius: 100%;
+  height: var(--size);
+  left: calc((100% - var(--size)) / 2);
+  opacity: 0.2;
+  position: absolute;
+  width: var(--size);
+}
+.home-upgrade .text {
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.home-upgrade .button {
+  font-weight: normal;
+}
+.home-upgrade .button strong {
+  font-weight: 700;
+}
+@media (min-width: 500px) {
+  .home-upgrade {
+    --fond:10%;
+    padding-top: 8rem;
+  }
+}
+@media (min-width: 1024px) {
   .home-upgrade .offers {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%; }
-  .home-upgrade .offer {
-    --size:8.5rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    font-size: 110%;
-    font-weight: 700;
-    line-height: 1.3;
-    height: var(--size);
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    margin: 1em 0;
-    position: relative;
-    text-align: center; }
-    .home-upgrade .offer .circle {
-      background-color: var(--blanc);
-      border-radius: 100%;
-      height: var(--size);
-      left: calc((100% - var(--size)) / 2);
-      opacity: 0.2;
-      position: absolute;
-      width: var(--size); }
-  .home-upgrade .text {
-    font-size: 2.3rem;
-    font-weight: 700;
-    text-align: center; }
-  .home-upgrade .button {
-    font-weight: normal; }
-    .home-upgrade .button strong {
-      font-weight: 700; }
-  @media (min-width: 500px) {
-    .home-upgrade {
-      --fond:10%;
-      padding-top: 8rem; } }
-  @media (min-width: 1024px) {
-    .home-upgrade .offers {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      max-width: 90rem; }
-    .home-upgrade .offer {
-      -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
-      padding: 0 1rem; } }
+    max-width: 90rem;
+  }
+  .home-upgrade .offer {
+    flex-basis: 33%;
+    padding: 0 1rem;
+  }
+}
