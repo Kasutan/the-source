@@ -127,6 +127,10 @@
 		}
 	}
 
+	#zs-com_div .pmpro_asterisk {
+		display: none;
+	}
+
 	.pmpro_checkout-fields {
 		margin:0 auto;
 		max-width:36rem;
@@ -251,7 +255,7 @@
 			top:0;
 		}
 		.pmpro_checkout-fields {
-			max-width:48rem;
+			width:100%;
 		}
 	}
 

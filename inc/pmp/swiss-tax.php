@@ -31,10 +31,15 @@ function customtax_pmpro_level_cost_text( $cost, $level ) {
 		$info=sprintf(esc_html__('Members in Switzerland will be charged a %s tax.','the-source'),$taxeCH);
 		$cost.=sprintf(' <span id="info-tax-CF">%s</span>',$info);
 	}
+
+	//Adapter format (quelles que soient les taxes)
+	$cost=str_replace('CHF','',$cost);
+	$cost=str_replace('.00','',$cost);
+	$cost=str_replace('/Year.','CHF<sup>/year</sup>',$cost);
  
 	return $cost;
 }
-add_filter( 'pmpro_level_cost_text', 'customtax_pmpro_level_cost_text', 10, 2 );
+add_filter( 'pmpro_level_cost_text', 'customtax_pmpro_level_cost_text', 20, 2 );
 
 // update tax calculation if buyer is in Switzerland
 function customtax_region_tax_check() {

@@ -537,8 +537,6 @@
 				return text.match(passw);
 			}
 
-
-
 			/*--------------------------------------------------------------
 			# https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
 			# Numéro international https://www.regextester.com/97440
@@ -548,6 +546,23 @@
 				var internationalPhoneRegex=/^(([+][0-9]{1,3}))\s*[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{2}){3,4}$/;
 				return text.match(internationalPhoneRegex);
 			}
+
+
+			//Toggle info tax selon pays choisi
+			//au chargement de la page
+			toggleInfoTax();
+			//Quand on change de pays
+			$('#bcountry').change(function() {
+				toggleInfoTax();
+			})
+			function toggleInfoTax() {
+				if($('#bcountry').val()=='CH') {
+					$('#info-tax-CF').show();
+				} else {
+					$('#info-tax-CF').hide();
+				}
+			}
+
 
 		}
 		

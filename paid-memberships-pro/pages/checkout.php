@@ -464,9 +464,9 @@
 					}
 				?>
 				<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf('%s <a href="%s">%s</a>', 
-					esc_html__('I agree to the','the-source'),
+					esc_html__('I agree will all','the-source'),
 					get_page_link($tospage),
-					esc_html__('Terms of use','the-source'));?></label>
+					esc_html__('Terms & Conditions','the-source'));?></label>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_tos_fields -->
 		<?php
