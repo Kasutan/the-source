@@ -253,6 +253,12 @@ class BE_ACF_Customizations {
 			'Section with a title, 4 blocks and a bottom text.'
 		);
 
+		$this->helper_register_block_type(
+			'home-join',
+			'Block Join The Source for public home page',
+			'Section with a title, subtitle, 3 features and a button to checkout page.'
+		);
+
 		/*********Blocs Advisors***************/
 		$this->helper_register_block_type(
 			'about-experts',

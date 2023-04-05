@@ -1,0 +1,99 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.home-join {
+	--pointe:5%;
+	--mt:-10rem;
+	--pt:12rem;
+
+	align-items: center;
+	background-color: var(--bleu);
+	clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--pointe));
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: var(--mt);
+	padding:var(--pt) var(--padding-x) 10rem;
+	position: relative;
+	transform: translateX(calc(-1 * var(--padding-x)));
+	width:100vw;
+	z-index:1;
+
+
+	a.button {
+		font-weight: 300;
+		font-size:2.2rem;
+		span {
+			font-weight: 700;
+		}
+	}
+	
+
+	&, .h1, .subtitle {
+		color:var(--blanc);
+		position: relative;
+	}
+	.h1, .subtitle {
+		margin-top:0;
+	}
+	.h1 {
+		margin-bottom: 1.4rem;
+	}
+
+	.subtitle {
+		margin-bottom: 6rem;
+	}
+
+	.offers {
+		list-style: none;
+		margin:0 0 6.5rem;
+		padding:0;
+		width:100%;
+	}
+	.offer {
+		--size:8.5rem;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		font-size: 110%;
+		font-weight: 700;
+		line-height: 1.3;
+		height:var(--size);
+		justify-content: center;
+		margin: 1em 0;
+		position: relative;
+		text-align: center;
+		.picto {
+			border: 2px solid #FFFFFF;
+			border-radius:100%;
+			height:23px;
+			width:23px;
+			svg {
+				position: relative;
+				top: -3px;
+				width: 70%;
+			}
+		}
+	}
+	
+	
+	@include bp(sm) {
+		--fond:90%;
+	}
+	@include bp(md) {
+		--fond:85%;
+	}
+	@include bp(lg) {
+		--fond:95%;
+		padding-bottom: 12rem;
+	
+		.offers {
+			display: flex;
+			justify-content: center;
+			max-width: 90rem;
+		}
+		.offer {
+			flex-basis:33%;
+			padding:0 1rem;
+		}
+	}
+}
