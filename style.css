@@ -4362,6 +4362,10 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 .pmpro-checkout form.pmpro_form label.floating, .pmpro-checkout #loginform label.floating {
   opacity: 0.3;
 }
+.pmpro-checkout form.pmpro_form label[for=zs-com], .pmpro-checkout #loginform label[for=zs-com] {
+  font-size: 2rem;
+  opacity: 1;
+}
 .pmpro-checkout .pmprosp-tooltip__password {
   display: none;
 }
@@ -4437,6 +4441,9 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   margin: 0 auto;
   max-width: 36rem;
   position: relative;
+}
+.pmpro-checkout .pmpro_checkout-fields div.pmpro_checkout-field-bphone {
+  margin-bottom: 2em;
 }
 .pmpro-checkout #pmprosp-password-notice {
   display: block;

@@ -120,6 +120,21 @@ function kasutan_pmprorh_init_canal_fields() {
 			'hint' => ''
 		)
 	);
+
+	$fields[] = new PMProRH_Field(
+		'zs-com',							// input name, will also be used as meta key
+		'checkbox',								// type of field
+		array(
+			'label'		=> esc_html__('I accept to receive commercial communications by The Source only','the-source'),		// custom field label
+			'size'		=> 30,				// input size
+			'class'		=> 'com',		// custom class
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> true,			
+			'placehoder' => '',
+			'memberslistcsv' => true,
+			'hint' => ''
+		)
+	);
 	
 
 	// Add the fields inside the checkout page.

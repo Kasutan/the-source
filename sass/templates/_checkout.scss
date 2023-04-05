@@ -52,6 +52,10 @@
 		&.floating {
 			opacity:0.3;
 		}
+		&[for="zs-com"] {
+			font-size:2rem;
+			opacity:1;
+		}
 	}
 	.pmprosp-tooltip__password {
 		display: none;
@@ -127,6 +131,10 @@
 		margin:0 auto;
 		max-width:36rem;
 		position: relative;
+
+		div.pmpro_checkout-field-bphone {
+			margin-bottom: 2em;
+		}
 	}
 
 	#pmprosp-password-notice {
