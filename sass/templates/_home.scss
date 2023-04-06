@@ -1,4 +1,10 @@
 .home {
+	.site-header {
+		border-bottom: none;
+	}
+	.site-footer {
+		padding-bottom: 8rem; //footer toujours visible même avec bouton Join sticky
+	}
 	.pmpro_actions_nav {
 		display: none;
 	}

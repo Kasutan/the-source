@@ -10,9 +10,7 @@
 			nav : true,
 			dots : false,
 			autoplay:false,
-			autoplayTimeout:3000,
-			autoplaySpeed:1500,
-			autoplayHoverPause:true,
+			navSpeed:2000,
 			items: 1,
 			checkVisible: false
 		});
@@ -23,16 +21,21 @@
 			nav : true,
 			dots : false,
 			autoplay:false,
-			autoplayTimeout:3000,
-			autoplaySpeed:1500,
-			autoplayHoverPause:true,
+			navSpeed:2000,
 			items: 1,
 			checkVisible: false
 		});
 	}
 	
 
-	//sticky link
+	//Get header height to set slider height to full screen
+	let root = document.documentElement;
+	let height=$('.site-header').outerHeight();
+	root.style.setProperty('--hauteur-header', height+ "px");
+
+
+
+
 
 	}); //fin document ready
 })( jQuery );

@@ -1,14 +1,95 @@
 @import "./././sass/abstracts/variables-et-mixins";
+:root {
+	--hauteur-header :10.5rem;
 
+}
 .home-slider {
-	--padding-v:12rem;
-	background: transparent linear-gradient(180deg, #FFFFFF 0%, #EAF2FA 100%);
-	color:var(--bleu);
-	transform:translateX(calc(-1 * var(--padding-x)));
-	margin-bottom: 4rem;
-	padding:4rem var(--padding-x) var(--padding-v);
+	height:calc(100vh - 5.4rem - var(--hauteur-header));
+	margin-left:calc(-1 * var(--padding-x));
+	margin-bottom: 8rem;
+	position:relative;
 	text-align: center;
 	width:100vw;
+
+	.slider-wrap, .owl-stage-outer, .owl-stage, .owl-item, .image {
+		height:100%;
+	}
+	.image img {
+		height:100%;
+		object-fit: cover;
+		width:100%;
+	}
+	.owl-carousel {
+		background-color: var(--cyan);
+		height:100%;
+		margin-bottom: 0;
+		position: relative;
+		width:100%;
+	}
+
+	.owl-nav {
+		align-items: center;
+		color:#fff;
+		display: flex;
+		font-size:2rem;
+		font-weight: 700;
+		justify-content: space-between;
+		height:100%;
+		left:0;
+		padding:0 0.5rem;
+		position:absolute;
+		top:0;
+		width:100%;
+		@include bp(lg) {
+			font-size:3rem;
+			padding:0 2rem;
+			width:calc(100% - 2rem); //Pour la scrollbar - essayer de la mesurer ?
+		}
+
+		
+	}
+	.owl-carousel .owl-nav button {
+		&.owl-next, &.owl-prev {
+			background-image: url('angle.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			color:transparent;
+			padding:0 2rem !important;
+
+		}
+		&.owl-prev {
+			transform: rotateZ(180deg);
+		}
+	}
+
+	.slider-overlay {
+		background-color: var(--bleu);
+		height:100%;
+		left:0;
+		opacity: 0.5;
+		position:absolute;
+		top:0;
+		width:100%;
+	}
+
+	.texte {
+		align-items: center;
+		color:#fff;
+		display: flex;
+		@include fs(2rem,4.6rem);
+		font-weight: 700;
+		height:100%;
+		justify-content: center;
+		left:0;
+		margin-bottom: 0;
+		padding:0 5rem;
+		pointer-events: none; //permettre la navigation avec les boutons à travers le texte
+		position:absolute;
+		top:0;
+		width:100%;
+		z-index:1;
+	}
 
 	a.button.join-link {
 		background-color: var(--bleu);
@@ -16,63 +97,13 @@
 		font-weight: 700;
 		bottom: 0;
 		left:0;
-		position:fixed;
+		position:fixed; // positionné dans le viewport SAUF si un parent a une propriété translate !
 		width:100%;
+		z-index:10;
 	}
 
 	@include bp(lg) {
-		--padding-v:15rem;
 	}
-
-	.titre-section {
-		text-transform: uppercase;
-		margin-bottom: 3rem;
-		padding-bottom: 0.5em;
-		position: relative;
-		strong {
-			color:var(--cyan);
-		}
-		&::after {
-			background-color: var(--gris);
-			bottom: 0;
-			content:' ';
-			height:3px;
-			left:calc(50% - 5rem);
-			opacity: 0.3;
-			position:absolute;
-			width:10rem;
-		}
-	}
-
-	.items {
-		list-style: none;
-		padding: 0;
-		@include bp(md) {
-			column-gap:2rem;
-			display: grid;
-			grid-template-columns: repeat(2,1fr);
-		}
-		@include bp(lg) {
-			grid-template-columns: repeat(4,1fr);
-		}
-		@include bp(xl) {
-			column-gap:4rem;
-		}
-	}
-	.item {
-		margin:0 auto 2rem;
-		max-width: 30rem;
-	}
-	.titre {
-		font-size: 2.2rem;
-	}
-
-	.texte {
-		font-size: 2rem;
-	}
-	
-	
-	
 
 	
 }

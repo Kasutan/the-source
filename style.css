@@ -5771,6 +5771,12 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   color: var(--rouge);
 }
 
+.home .site-header {
+  border-bottom: none;
+}
+.home .site-footer {
+  padding-bottom: 8rem;
+}
 .home .pmpro_actions_nav {
   display: none;
 }
