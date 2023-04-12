@@ -419,8 +419,17 @@
 			});
 		}
 
-		/************ Show label on input change/focus ***************/	
+
+
 		if($('body').hasClass('pmpro-checkout')) {
+
+			/************ Autofill language input (hidden with CSS) ***************/	
+
+			var lang=$('html').attr('lang');
+			$('#zs-lang').val(lang);
+
+			/************ Show label on input change/focus ***************/	
+
 			var inputs=$('#pmpro_user_fields, #pmpro_billing_address_fields').find('select, input');
 			if(inputs.length > 0) {
 				$(inputs).on('focus change',function(e){

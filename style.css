@@ -4471,7 +4471,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   top: 0;
   width: 100%;
 }
-.pmpro-checkout #zs-com_div .pmpro_asterisk {
+.pmpro-checkout #zs-com_div .pmpro_asterisk, .pmpro-checkout #zs-lang_div {
   display: none;
 }
 .pmpro-checkout .pmpro_checkout-fields {

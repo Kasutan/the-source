@@ -135,6 +135,22 @@ function kasutan_pmprorh_init_canal_fields() {
 			'hint' => ''
 		)
 	);
+
+	$fields[] = new PMProRH_Field(
+		'zs-lang',							// input name, will also be used as meta key
+		'text',								// type of field
+		array(
+			'label'		=> esc_html__('Preferred language ','the-source'),		// custom field label
+			'size'		=> 30,				// input size
+			'class'		=> 'lang',		// custom class
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> false,			
+			'hidden'	=> true,			
+			'placehoder' => '',
+			'memberslistcsv' => true,
+			'hint' => ''
+		)
+	);
 	
 
 	// Add the fields inside the checkout page.
