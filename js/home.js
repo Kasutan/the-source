@@ -10,9 +10,10 @@
 			nav : true,
 			dots : false,
 			autoplay:false,
-			navSpeed:2000,
+			navSpeed:1500,
 			items: 1,
-			checkVisible: false
+			checkVisible: false,
+			touchDrag : true
 		});
 	} else {
 		var owl = $(".home-slider .owl-carousel.desktop");

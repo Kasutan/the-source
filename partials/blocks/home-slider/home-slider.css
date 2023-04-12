@@ -19,7 +19,6 @@
   width: 100%;
 }
 .home-slider .owl-carousel {
-  background-color: var(--cyan);
   height: 100%;
   margin-bottom: 0;
   position: relative;
@@ -335,6 +334,7 @@
   bottom: 0;
   left: 0;
   position: fixed;
+  text-decoration: none;
   width: 100%;
   z-index: 10;
 }
