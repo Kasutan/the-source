@@ -176,7 +176,7 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 		if($iframe_url) : 
 		echo '<section class="product-video">';
 			echo '<div class="sep"></div>';
-			echo '<h2>Video presentation</h2>';
+			echo '<h2>'.__('Video presentation','the-source').'</h2>';
 			?>
 			<iframe src="<?php echo $iframe_url;?>" width="640" height="316" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 			<?php 

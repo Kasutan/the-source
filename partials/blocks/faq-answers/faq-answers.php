@@ -23,7 +23,7 @@ if(function_exists('get_field') && function_exists('pmpro_hasMembershipLevel')) 
 
 		printf('<section class="faq-answers acf %s" id="%s">',$className,$id);
 			echo '<div class="bloc-titre">';
-				printf('<p class="surtitre">About</p>');
+				printf('<p class="surtitre">%s</p>',esc_html__('About','the-source'));
 				printf('<h2 class="titre no-dots">%s</h2>',$title);
 			echo '</div>';
 			echo '<ul class="accordion" data-open-first="false">';
