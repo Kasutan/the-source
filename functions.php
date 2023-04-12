@@ -24,6 +24,7 @@ include_once( get_template_directory() . '/inc/pmp/my-account.php' );
 include_once( get_template_directory() . '/inc/pmp/email-preferences.php' );
 include_once( get_template_directory() . '/inc/pmp/confirmation.php' );
 //include_once( get_template_directory() . '/inc/pmp/my-account.php' );
+include_once( get_template_directory() . '/inc/pmp/email-filters.php' );
 
 
 // Theme
