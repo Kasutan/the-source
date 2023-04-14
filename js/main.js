@@ -213,12 +213,61 @@
 			titreDejaAjoute=true;
 		})
 
+		//https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html
 		var boutonsToggleGallery=$('.product-top .gallery-open, .product-top .gallery-close');
+		var boutonToggleFullscreen=$('.product-top .gallery-fullscreen');
 		if(boutonsToggleGallery.length > 0) {
 			$(boutonsToggleGallery).click(function(e) {
 				$('.product-top').toggleClass('js-gallery-opened');
-				//TODO recalculate owl carousel quand on ouvre la galerie + focus trap ? + action bouton fullscreen
+
+				//TODO recalculate owl carousel quand on ouvre la galerie + focus trap ?
+				owl.trigger('refresh.owl.carousel');
+				owl.trigger('stop.owl.autoplay');
+				
+				setTimeout(function() {
+					
+					console.log('refresh');
+				},1000);
+
+				//TODO fermer quand on clique sur ESC
+
 			})
+		}
+
+
+		//Fullscreen
+		//https://stackoverflow.com/questions/47110189/full-screen-on-button-click-using-jquery
+		if(boutonToggleFullscreen.length > 0) {
+			$(boutonToggleFullscreen).click(function(e) {
+				console.log('toggle fullscreen');
+				toggleFullScreen(document.body);
+
+			})
+		}
+
+		function toggleFullScreen(elem) {
+			// ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+			if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+				if (elem.requestFullScreen) {
+					elem.requestFullScreen();
+				} else if (elem.mozRequestFullScreen) {
+					elem.mozRequestFullScreen();
+				} else if (elem.webkitRequestFullScreen) {
+					elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+				} else if (elem.msRequestFullscreen) {
+					elem.msRequestFullscreen();
+				}
+			} else {
+				if (document.cancelFullScreen) {
+					document.cancelFullScreen();
+				} else if (document.mozCancelFullScreen) {
+					document.mozCancelFullScreen();
+				} else if (document.webkitCancelFullScreen) {
+					document.webkitCancelFullScreen();
+				} else if (document.msExitFullscreen) {
+					document.msExitFullscreen();
+				}
+			}
 		}
 		
 
