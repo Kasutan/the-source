@@ -1,4 +1,9 @@
+body.hide-scrollbar {
+	overflow: hidden;
+}
+
 .single-product {
+	--top-buttons:3rem;
 	.entry-content {
 		padding:0 var(--padding-x);
 	}
@@ -69,17 +74,21 @@ h1.product-title {
 	}
 	.product-gallery {
 		position: relative;
+
 		&:hover {
+			//Le bouton avec la loupe apparaît au survol
 			.gallery-open {
 				opacity:1;
 			}
 		}
 
-		//TODO cacher les flèches
+		//Cacher les flèches
+		.owl-nav {
+			display: none;
+		}
 	}
 	&.js-gallery-opened {
 
-		//TODO cacher les dots et afficher + styler les flèches
 		
 		.placeholder-gallery {
 			display: block;
@@ -99,9 +108,14 @@ h1.product-title {
 			align-items: center;
 			.owl-carousel {
 				--height:80vh;
+				--width:Min(calc(1.39 * var(--height)), 80vw);
 				max-height: var(--height);
-				max-width: calc(1.39 * var(--height)); //desktop TODO adapter mobile ou max cette valeur et 80vw
+				max-width: var(--width); 
 				margin: auto;
+
+				.owl-stage-outer {
+					max-height: var(--height);
+				}
 			}
 		}
 		.gallery-open {
@@ -111,12 +125,53 @@ h1.product-title {
 			display: block;
 			padding:1rem;
 			position:absolute;
-			top:5rem; //TODO ajuster selon présence admin topbar
+			top:var(--top-buttons); 
 			right:3rem;
 			width:4.1rem; 
+			z-index: 1;
 		}
 		.gallery-fullscreen {
 			right:6rem;
+		}
+
+		//Cacher les dots et afficher + styler les flèches
+		.owl-dots {
+			display: none;
+		}
+
+		.owl-nav {
+			align-items: center;
+			color:#fff;
+			display: flex;
+			font-size:2rem;
+			font-weight: 700;
+			justify-content: space-between;
+			height:100%;
+			left:calc((100% - 100vw) / 2);
+			padding:0 0.5rem;
+			position:absolute;
+			top:0;
+			width:100vw;
+			@include bp(lg) {
+				font-size:3rem;
+				padding:0 2rem;
+			}
+		}
+
+		.owl-carousel .owl-nav button {
+			&.owl-next, &.owl-prev {
+				background-image: url('icons/angle-blanc.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				color:transparent;
+				padding:0 2rem !important;
+				width:5rem;
+
+			}
+			&.owl-prev {
+				transform: rotateZ(180deg);
+			}
 		}
 	}
 }
@@ -225,6 +280,10 @@ h1.product-title {
 		display: block;
 		margin-bottom: 1.6rem;
 	}
+}
+
+body.admin-bar .single-product {
+	--top-buttons:8rem;
 }
 
 /***************Product-details*************/ 

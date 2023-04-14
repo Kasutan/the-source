@@ -191,7 +191,7 @@
 		var owl = $(".product-carousel.owl-carousel");
 		owl.owlCarousel({
 			loop:true,
-			nav : false, // TODO flèches pour la version agrandie
+			nav : true,
 			dots : true,
 			autoplay:true,
 			autoplayTimeout:3000,
@@ -219,19 +219,25 @@
 		if(boutonsToggleGallery.length > 0) {
 			$(boutonsToggleGallery).click(function(e) {
 				$('.product-top').toggleClass('js-gallery-opened');
+				$('body').toggleClass('hide-scrollbar');
 
-				//TODO recalculate owl carousel quand on ouvre la galerie + focus trap ?
+				//Recalculer owl carousel quand on ouvre/ferme la galerie
 				owl.trigger('refresh.owl.carousel');
 				owl.trigger('stop.owl.autoplay');
-				
-				setTimeout(function() {
-					
-					console.log('refresh');
-				},1000);
-
-				//TODO fermer quand on clique sur ESC
 
 			})
+
+			//Fermer quand on clique sur ESC
+			$(document).on(
+				'keydown',
+				function(event) {
+					if(event.key == "Escape" && $('.product-top').hasClass('js-gallery-opened')) {
+						$('.product-top').removeClass('js-gallery-opened');
+						$('body').removeClass('hide-scrollbar');
+						owl.trigger('refresh.owl.carousel');
+					}
+				}
+			);
 		}
 
 
@@ -239,8 +245,8 @@
 		//https://stackoverflow.com/questions/47110189/full-screen-on-button-click-using-jquery
 		if(boutonToggleFullscreen.length > 0) {
 			$(boutonToggleFullscreen).click(function(e) {
-				console.log('toggle fullscreen');
 				toggleFullScreen(document.body);
+				owl.trigger('stop.owl.autoplay');
 
 			})
 		}
