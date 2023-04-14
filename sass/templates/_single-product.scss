@@ -40,6 +40,87 @@ h1.product-title {
 	}
 }
 
+.product-top {
+	align-items: flex-start;
+	.placeholder-gallery {
+		display: none;
+	}
+	.gallery-open {
+		--c:10rem;
+		position: absolute;
+		top:  calc(50% - var(--c)/2);
+		left: calc(50% - var(--c)/2);
+		z-index: 5;
+		background-color: rgba(255,255,255,0.5);
+		display: flex;
+		width: var(--c);
+		height: var(--c);
+		align-items: center;
+		justify-content: center;
+		border-radius:  calc(2 * var(--c));
+		opacity: 0;
+		transition:opacity 0.3s ease-in-out;
+		svg {
+			border:none;
+		}
+	}
+	.gallery-close, .gallery-fullscreen {
+		display: none;
+	}
+	.product-gallery {
+		position: relative;
+		&:hover {
+			.gallery-open {
+				opacity:1;
+			}
+		}
+
+		//TODO cacher les flèches
+	}
+	&.js-gallery-opened {
+
+		//TODO cacher les dots et afficher + styler les flèches
+		
+		.placeholder-gallery {
+			display: block;
+		}
+
+		.product-gallery {
+			position: fixed;
+			top: 0;
+			width: 100vw;
+			left: 0;
+			height: 100vh;
+			max-width: unset;
+			max-height: unset;
+			background: rgba(23,58,101,0.8);
+			z-index: 15;
+			display: flex;
+			align-items: center;
+			.owl-carousel {
+				--height:80vh;
+				max-height: var(--height);
+				max-width: calc(1.39 * var(--height)); //desktop TODO adapter mobile ou max cette valeur et 80vw
+				margin: auto;
+			}
+		}
+		.gallery-open {
+			display: none;
+		}
+		.gallery-close, .gallery-fullscreen {
+			display: block;
+			padding:1rem;
+			position:absolute;
+			top:5rem;
+			right:3rem;
+			width:4.1rem;
+		}
+		.gallery-fullscreen {
+			right:6rem;
+		}
+	}
+}
+
 .to-selection {
 	display: block;
 	margin:1.2rem 0 1.6rem;
@@ -132,7 +213,7 @@ h1.product-title {
 		display: flex;
 	}
 
-	.product-gallery, .product-main {
+	.product-gallery, .product-main, .placeholder-gallery {
 		flex-basis:50%;
 		max-width: 50%;
 	}

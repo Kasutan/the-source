@@ -191,7 +191,7 @@
 		var owl = $(".product-carousel.owl-carousel");
 		owl.owlCarousel({
 			loop:true,
-			nav : false,
+			nav : false, // TODO flèches pour la version agrandie
 			dots : true,
 			autoplay:true,
 			autoplayTimeout:3000,
@@ -212,6 +212,15 @@
 			});
 			titreDejaAjoute=true;
 		})
+
+		var boutonsToggleGallery=$('.product-top .gallery-open, .product-top .gallery-close');
+		if(boutonsToggleGallery.length > 0) {
+			$(boutonsToggleGallery).click(function(e) {
+				$('.product-top').toggleClass('js-gallery-opened');
+				//TODO recalculate owl carousel quand on ouvre la galerie + focus trap ? + action bouton fullscreen
+			})
+		}
+		
 
 		/****************** Toggle my selection *************************/	
 		$('.js-to-selection').change(function(e){

@@ -62,16 +62,40 @@ echo '<article class="single-product ' . join( ' ', get_post_class() ) . '">';
 	echo '<div class="entry-content">';
 		echo '<section class="product-top">';
 			printf('<h1 class="no-dots product-title hide-for-lg">%s</h1>',get_the_title());
+			if($images) {
+				//placeholder visible uniquement quand on agrandit le carousel
+				printf('<div class="placeholder-gallery">%s</div>',wp_get_attachment_image( $images[0], 'medium_large'));
+			}
 			echo '<div class="product-gallery">';
 				if($images) {
+					
 					echo '<div class="product-carousel owl-carousel">';
 					foreach ($images as $image_id) {
 						echo '<div class="slide">';
-								echo wp_get_attachment_image( $image_id, 'medium_large');
+								echo wp_get_attachment_image( $image_id, 'large');
 						echo '</div>';
 					}
 					echo '</div>';
-					//TODO loupe qui ouvre une galerie plein écran https://humaan.com/modaal/ ou recalculate owl carousel, taille d'image large
+
+					//Loupe pour agrandir la galerie
+
+					//Pictos de contrôle dans la galerie ouverte en grand
+					printf('<button class="gallery-open picto">%s<span class="screen-reader-text">%s</span></button>',
+						kasutan_picto(array('icon'=>'loupe-bleu','size'=>false)),
+						esc_html__('Open gallery','the-source')
+					);
+
+					printf('<button class="gallery-fullscreen picto">%s<span class="screen-reader-text">%s</span></button>',
+						kasutan_picto(array('icon'=>'fullscreen-blanc','size'=>false)),
+						esc_html__('Toggle fullscreen gallery','the-source')
+					);
+
+					printf('<button class="gallery-close picto">%s<span class="screen-reader-text">%s</span></button>',
+						kasutan_picto(array('icon'=>'close-blanc','size'=>false)),
+						esc_html__('Close gallery','the-source')
+					);
+					
+
 				} else if(has_post_thumbnail()) {
 					the_post_thumbnail( 'large');
 				} else {
