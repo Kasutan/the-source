@@ -3,7 +3,7 @@ body.hide-scrollbar {
 }
 
 .single-product {
-	--top-buttons:3rem;
+	--top-buttons:1rem;
 	.entry-content {
 		padding:0 var(--padding-x);
 	}
@@ -75,10 +75,23 @@ h1.product-title {
 	.product-gallery {
 		position: relative;
 
+		.owl-item {
+			overflow: hidden;
+			img {
+				transform-origin:center;
+				transition: transform  0.3s ease-in-out;
+			}
+		}
 		&:hover {
 			//Le bouton avec la loupe apparaît au survol
 			.gallery-open {
 				opacity:1;
+			}
+			//On zoome légèrement sur l'image
+			.owl-item {
+				img {
+					transform:scale(1.2);
+				}
 			}
 		}
 
@@ -117,6 +130,10 @@ h1.product-title {
 					max-height: var(--height);
 				}
 			}
+
+			.owl-item img {
+				transform: unset; // pas d'effet au zoom au survol de l'image
+			}
 		}
 		.gallery-open {
 			display: none;
@@ -126,12 +143,12 @@ h1.product-title {
 			padding:1rem;
 			position:absolute;
 			top:var(--top-buttons); 
-			right:3rem;
+			right:1rem;
 			width:4.1rem; 
-			z-index: 1;
+			z-index: 1; //pour passer devant owl-nav si chevauchement
 		}
 		.gallery-fullscreen {
-			right:6rem;
+			right:5rem;
 		}
 
 		//Cacher les dots et afficher + styler les flèches
