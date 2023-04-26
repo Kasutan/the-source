@@ -92,6 +92,30 @@
             "ui": 1
         },
         {
+            "key": "field_6448f15f6cdc6",
+            "label": "Checkout page",
+            "name": "zs_page_checkout",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
             "key": "field_5f2439218c9df",
             "label": "FAQ page",
             "name": "zs_lien_faq",
@@ -378,5 +402,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1680717046
+    "modified": 1682502025
 }

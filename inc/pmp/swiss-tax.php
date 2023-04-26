@@ -21,21 +21,34 @@ function customtax_pmpro_tax( $tax, $values, $order ) {
 
 //Add an information about the tax
 function customtax_pmpro_level_cost_text( $cost, $level ) {
+	$is_checkout=false;
+	
 	// only applicable for levels > 1
 	$taxeCH=false;
 	if(function_exists('get_field')) {
 		$taxeCH=esc_attr(get_field('zs_tax_ch','option'));
+		$checkout_page_id=esc_attr(get_field('zs_page_checkout','option'));
+		if(get_the_ID()==$checkout_page_id) {
+			$is_checkout=true;
+		}
 	}
+
+
+
 	if($taxeCH) {
 		$taxeCH.='%';
 		$info=sprintf(esc_html__('Members in Switzerland will be charged a %s tax.','the-source'),$taxeCH);
 		$cost.=sprintf(' <span id="info-tax-CF">%s</span>',$info);
 	}
 
-	//Adapter format (quelles que soient les taxes)
-	$cost=str_replace('CHF','',$cost);
-	$cost=str_replace('.00','',$cost);
-	$cost=str_replace('/Year.','CHF<sup>/year</sup>',$cost);
+	//Adapter format (quelles que soient les taxes, mais seulement pour la page checkout)
+	if($is_checkout) {
+		$cost=str_replace('CHF','',$cost);
+		$cost=str_replace('.00','',$cost);
+		$cost=str_replace('/Year.','CHF<sup>/year</sup>.',$cost);
+		$cost=str_replace('par année.','CHF<sup>/an</sup>.',$cost);
+	}
+	
  
 	return $cost;
 }
