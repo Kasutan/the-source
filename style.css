@@ -8021,10 +8021,6 @@ body.admin-bar .single-product {
   position: absolute;
   top: calc(-0.5 * var(--size));
 }
-.advisor.advisor-about .bio {
-  margin-bottom: var(--margin-y-1);
-  text-align: center;
-}
 @media (min-width: 1024px) {
   .advisor.advisor-about {
     padding-left: 4rem;

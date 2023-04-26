@@ -23,13 +23,13 @@ function kasutan_display_advisor($post_id,$context) {
 			printf('<div class="portrait">%s</div>',$portrait);
 			printf('<p class="name">%s</p>',$name);
 			if($role) printf('<p class="role">%s</p>',$role);
-			printf('<div class="bio">%s</div>',get_the_content(null, false,$post_id));
+			printf('<div class="bio">%s</div>',apply_filters('the_content',get_the_content(null, false,$post_id)));
 			printf('<a href="mailto:%s?subject=%s" title="%s %s">%s</a>',
 				$email,
 				esc_html__('The Source - contact an expert','the-source'),
 				esc_html__('Send an email to','the-source'),
 				$name,
-				kasutan_picto(array('icon'=>'send-message','size'=>false))
+				$email
 			);
 
 		echo '</li>';

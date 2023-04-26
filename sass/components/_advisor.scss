@@ -70,10 +70,7 @@
 			position: absolute;
 			top:calc(-0.5 * var(--size));
 		}
-		.bio {
-			margin-bottom: var(--margin-y-1);
-			text-align: center;
-		}
+		
 		@include bp(lg) {
 			padding-left:4rem;
 			padding-right:4rem;
