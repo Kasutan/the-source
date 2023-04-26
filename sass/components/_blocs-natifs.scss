@@ -53,3 +53,15 @@ hr.wp-block-separator {
 	margin: var(--margin-y-2) 0;
 	@include max-width(10.5rem);
 }
+
+.video-desktop {
+	display: none;
+}
+@include bp(lg) {
+	.video-mobile {
+		display: none;
+	}
+	.video-desktop {
+		display: block;
+	}
+}

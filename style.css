@@ -8163,6 +8163,18 @@ hr.wp-block-separator {
   max-width: 10.5rem;
 }
 
+.video-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .video-mobile {
+    display: none;
+  }
+  .video-desktop {
+    display: block;
+  }
+}
 .boutons-filtre-mobile {
   display: flex;
   justify-content: center;
