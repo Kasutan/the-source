@@ -154,7 +154,11 @@
 		}
 		h3 {
 			@include dots;
-			@include fs(2rem,5rem);
+			//@include fs(2rem,5rem);
+			font-size: 2rem;
+			@include bp(lg) {
+				font-size: 5rem;
+			}
 			display: flex;
 			justify-content: center;
 		}
@@ -209,7 +213,11 @@
 		text-align: center;
 		h3 {
 			@include dots;
-			@include fs(2rem,5rem);
+			//@include fs(2rem,5rem);
+			font-size: 2rem;
+			@include bp(lg) {
+				font-size: 5rem;
+			}
 			display: flex;
 			justify-content: center;
 			margin-bottom: 5rem;

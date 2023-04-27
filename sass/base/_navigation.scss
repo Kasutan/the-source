@@ -54,7 +54,11 @@ p.fil-ariane {
 		}
 	}
 	&, a, span {
-		@include fs(1.2rem,1.8rem);
+		//@include fs(1.2rem,1.8rem);
+		font-size: 1.2rem;
+		@include bp(lg) {
+			font-size: 1.8rem;
+		}
 	}
 }
 @include bp(lg) {

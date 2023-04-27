@@ -68,7 +68,11 @@
 	}
 }
 .filtre-titre {
-	@include fs(1.5rem,3.8rem);
+	//@include fs(1.5rem,3.8rem);
+	font-size: 1.5rem;
+	@include bp(lg) {
+		font-size: 3.8rem;
+	}
 	border-bottom:solid 1px var(--bordure);
 	color:var(--bleu);
 	font-weight: 700;
@@ -90,7 +94,11 @@
 
 .filtre-label {
 	cursor: pointer;
-	@include fs(1.5rem,2rem);
+	//@include fs(1.5rem,2rem);
+	font-size: 1.5rem;
+	@include bp(lg) {
+		font-size: 2rem;
+	}
 	line-height: 4rem;
 	&::before {
 		display: none;

@@ -31,7 +31,11 @@ textarea {
 
 h1, .h1 {
 	color:var(--bleu);
-	@include fs(2.2rem,6rem);
+	//@include fs(2.2rem,6rem);
+	font-size: 2.2rem;
+	@include bp(lg) {
+		font-size: 6rem;
+	}
 	font-weight: 700;
 	margin:auto 0;
 	padding:0;
@@ -65,16 +69,28 @@ h4,
 
 
 h2, .h2 {
-	@include fs(2rem,4.5rem);
+	//@include fs(2rem,4.5rem);
+	font-size: 2rem;
+	@include bp(lg) {
+		font-size: 4.5rem;
+	}
 }
 p + h2, p + .h2 {
 	margin-top:2em;
 }
 h3, .h3 {
-	@include fs(1.7rem,4rem);
+	//@include fs(1.7rem,4rem);
+	font-size: 1.7rem;
+	@include bp(lg) {
+		font-size: 4rem;
+	}
 }
 h4, .h4, h5, .h5, h6, .h6 {
-	@include fs(1.6rem,3rem);
+	//@include fs(1.6rem,3rem);
+	font-size: 1.6rem;
+	@include bp(lg) {
+		font-size: 3rem;
+	}
 
 }
 
