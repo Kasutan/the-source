@@ -26,9 +26,19 @@
 		}
 	}
 
+	.wp-block-cover, .wp-block-cover-image {
+		min-height: 300px;
+	}
+
 	figure.is-type-video {
+		background: #EAF2FA;
 		margin:0 auto;
 		max-width: 106.4rem;
+		padding:1rem;
+		@include bp(lg) {
+			padding:3rem;
+		}
+
 	}
 
 	.home-contact {

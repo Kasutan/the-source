@@ -896,7 +896,7 @@ textarea {
 
 h1, .h1 {
   color: var(--bleu);
-  font-size: 2.2rem;
+  font-size: 4rem;
   font-weight: 700;
   margin: auto 0;
   padding: 0;
@@ -950,11 +950,11 @@ h4.has-cyan-color,
   color: var(--cyan);
 }
 
-h2, .h2 {
-  font-size: 2rem;
+h2, .h2, .has-large-font-size, .titre {
+  font-size: 3rem;
 }
 @media (min-width: 1024px) {
-  h2, .h2 {
+  h2, .h2, .has-large-font-size, .titre {
     font-size: 4.5rem;
   }
 }
@@ -963,11 +963,11 @@ p + h2, p + .h2 {
   margin-top: 2em;
 }
 
-h3, .h3 {
-  font-size: 1.7rem;
+h3, .h3, .titre {
+  font-size: 2rem;
 }
 @media (min-width: 1024px) {
-  h3, .h3 {
+  h3, .h3, .titre {
     font-size: 4rem;
   }
 }
@@ -988,6 +988,11 @@ h4, .h4, h5, .h5, h6, .h6 {
   }
   .archive-header h1 {
     font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  p, p.texte {
+    font-size: 1.8rem !important;
   }
 }
 p {
@@ -1858,7 +1863,7 @@ p.fil-ariane, p.fil-ariane a, p.fil-ariane span {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  font-size: 1.3rem;
   position: absolute;
   right: var(--margin-x-header);
   text-align: center;
@@ -2106,8 +2111,9 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   margin-bottom: 0rem;
 }
 .volet-navigation .nav-menu .sub-menu li a, .volet-navigation .nav-menu .sub-menu-2 li a {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 300;
+  line-height: 1.5;
   text-decoration: none;
   text-transform: unset;
 }
@@ -3736,8 +3742,11 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
 .pmpro-login .signin {
   display: none;
 }
+.pmpro-login .site-main {
+  min-height: unset;
+}
 .pmpro-login .site-inner {
-  padding: 10rem 0;
+  padding: 10vh 0;
 }
 .pmpro-login .wp-block-site-logo {
   align-items: center;
@@ -3801,12 +3810,6 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
 }
 .pmpro-login .login-section .pmpro_logged_in_welcome_wrap .pmpro_member_log_out a:hover, .pmpro-login .login-section .pmpro_logged_in_welcome_wrap .pmpro_member_log_out a:focus {
   color: var(--cyan);
-}
-@media (min-width: 1024px) {
-  .pmpro-login .site-inner {
-    padding-top: 17rem;
-    padding-bottom: 20rem;
-  }
 }
 
 .loop {
@@ -3995,9 +3998,19 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   margin-bottom: 1.4rem;
   text-transform: uppercase;
 }
+.home .wp-block-cover, .home .wp-block-cover-image {
+  min-height: 300px;
+}
 .home figure.is-type-video {
+  background: #EAF2FA;
   margin: 0 auto;
   max-width: 106.4rem;
+  padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .home figure.is-type-video {
+    padding: 3rem;
+  }
 }
 .home .home-contact {
   --pt:4rem;

@@ -29,10 +29,12 @@ textarea {
 	color: var(--blanc);
 }
 
+
+
 h1, .h1 {
 	color:var(--bleu);
 	//@include fs(2.2rem,6rem);
-	font-size: 2.2rem;
+	font-size: 4rem;
 	@include bp(lg) {
 		font-size: 6rem;
 	}
@@ -68,9 +70,9 @@ h4,
 }
 
 
-h2, .h2 {
+h2, .h2, .has-large-font-size, .titre {
 	//@include fs(2rem,4.5rem);
-	font-size: 2rem;
+	font-size: 3rem;
 	@include bp(lg) {
 		font-size: 4.5rem;
 	}
@@ -78,9 +80,9 @@ h2, .h2 {
 p + h2, p + .h2 {
 	margin-top:2em;
 }
-h3, .h3 {
+h3, .h3, .titre {
 	//@include fs(1.7rem,4rem);
-	font-size: 1.7rem;
+	font-size: 2rem;
 	@include bp(lg) {
 		font-size: 4rem;
 	}
@@ -106,6 +108,11 @@ h4, .h4, h5, .h5, h6, .h6 {
 	}
 }
 
+@media screen and (max-width:768px) {
+	p,	p.texte {
+		font-size: 1.8rem !important;	
+	}
+}
 
 p {
 	margin-bottom: 1em;

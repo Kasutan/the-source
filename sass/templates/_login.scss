@@ -2,8 +2,11 @@
 	.signin {
 		display: none;
 	}
+	.site-main {
+		min-height: unset;
+	}
 	.site-inner {
-		padding:10rem 0;
+		padding:10vh 0;
 	}
 	.wp-block-site-logo {
 		align-items: center;
@@ -76,10 +79,4 @@
 		}
 	}
 
-	@include bp(lg) {
-		.site-inner {
-			padding-top:17rem;
-			padding-bottom:20rem;
-		}
-	}
 }
