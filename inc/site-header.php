@@ -101,7 +101,7 @@ function kasutan_header_right() {
 				printf('<div class="signin"><span class="desktop">%s</span> <a href="%s" class="login-link">%s</a></div>',
 					esc_html__('Already a member?','the-source'),
 					$login_url,
-					esc_html__('Sign in','the-source')
+					esc_html__('Log in','the-source')
 				);
 			}
 			do_action('wpml_add_language_selector');
