@@ -3691,9 +3691,15 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
   }
 }
 .site-footer .copyright {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
+}
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer ul li::before {
+  display: none;
 }
 .site-footer a {
   color: var(--bleu);
@@ -3706,21 +3712,25 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
   color: var(--bleu);
   text-decoration: underline;
 }
-.site-footer ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.site-footer ul li {
-  position: relative;
-}
-.site-footer ul li::before {
-  content: "•";
-  color: var(--bleu);
-  display: inline-block;
-  width: 1ch;
-  margin: 0 1ch;
+@media (min-width: 1024px) {
+  .site-footer .copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .site-footer ul {
+    display: flex;
+  }
+  .site-footer ul li {
+    position: relative;
+  }
+  .site-footer ul li::before {
+    content: "•";
+    color: var(--bleu);
+    display: inline-block;
+    width: 1ch;
+    margin: 0 1ch;
+  }
 }
 
 .pmpro-login .signin {

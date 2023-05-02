@@ -43,9 +43,16 @@
 	}
 
 	.copyright {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		padding:0;
+		margin:0;
+		li::before {
+		display: none;
+		}
 	}
 
 	a {
@@ -60,23 +67,31 @@
 		}
 	}
 
-	ul {
-		display: flex;
-		list-style: none;
-		padding:0;
-		margin:0;
+	
 
-		li {
-			position: relative;
-			&::before {
-				content: '•'; 
-				color: var(--bleu);
-				display: inline-block; 
-				width: 1ch;
-				margin: 0 1ch;
-			}
+	@include bp(lg) {
+		.copyright {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 
+		ul {
+			display: flex;
+		
+
+			li {
+				position: relative;
+				&::before {
+					content: '•'; 
+					color: var(--bleu);
+					display: inline-block; 
+					width: 1ch;
+					margin: 0 1ch;
+				}
+			}
+
+		}
 	}
 }
 
