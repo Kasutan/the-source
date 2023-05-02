@@ -1859,15 +1859,21 @@ p.fil-ariane, p.fil-ariane a, p.fil-ariane span {
 /*--------------------------------------------------------------
 ## Lien ma selection
 --------------------------------------------------------------*/
+@media (min-width: 1024px) {
+  .header-right-top {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    top: 0.4rem;
+  }
+}
 .site-header a.selection {
   align-items: center;
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
-  position: absolute;
-  right: var(--margin-x-header);
   text-align: center;
-  top: 1.4rem;
 }
 .site-header a.selection .count {
   --diametre:1.6rem;
@@ -2133,8 +2139,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 }
 .nav-menu.desktop.menu-products {
   align-items: flex-start;
-  padding-top: 1rem;
-  padding-left: 4rem;
+  padding-left: 1rem;
   position: relative;
   top: 4px;
 }
@@ -2248,13 +2253,15 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   }
 }
 .nav-menu.desktop.menu-my-account > li {
-  padding: 1.5rem 0;
+  margin-left: 2.7rem;
+  padding: 0;
   position: relative;
 }
 .nav-menu.desktop.menu-my-account > li a {
   color: var(--cyan);
   position: relative;
-  font-weight: 300;
+  font-size: 1.6rem;
+  font-weight: 700;
   text-transform: unset;
 }
 .nav-menu.desktop.menu-my-account > li > a::after {
@@ -2273,7 +2280,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   margin-top: 0px;
   position: absolute;
   top: 90%;
-  top: calc(100% + 1rem);
+  top: calc(100% + 1.5rem);
   left: -999em;
   z-index: 10;
 }
@@ -2321,7 +2328,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 }
 .nav-menu.desktop.menu-my-account .sub-menu a {
   color: var(--blanc);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   left: 0;
   line-height: 1.1;
   font-weight: 700;
@@ -2334,10 +2341,12 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 }
 .nav-menu.desktop.menu-my-account .sub-menu a[href*=logout] {
   background-image: url("icons/logout.svg");
-  background-position: left 3px;
+  background-position: left 2px;
   background-repeat: no-repeat;
-  background-size: 1.6rem;
+  background-size: 1.4rem;
   padding-left: 2.2rem;
+  height: 2rem;
+  line-height: 2rem;
 }
 
 /*Animations*/
@@ -3592,7 +3601,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 }
 @media (min-width: 1024px) {
   .site-title {
-    margin: 2.5rem 3.5rem 1rem;
+    margin: 3rem 3.5rem 1rem;
     width: 25.3rem;
   }
 }
@@ -5378,6 +5387,7 @@ hr.wp-block-separator {
 }
 
 .wpml-ls-statics-shortcode_actions {
+  padding-right: 1rem;
   width: unset;
 }
 .wpml-ls-statics-shortcode_actions ul {
@@ -5410,7 +5420,8 @@ hr.wp-block-separator {
 }
 .wpml-ls-statics-shortcode_actions a.wpml-ls-link {
   font-weight: 400;
-  padding-top: 2px;
+  padding-top: 6px;
+  padding-bottom: 9px;
 }
 .wpml-ls-statics-shortcode_actions a.wpml-ls-link, .wpml-ls-statics-shortcode_actions a.wpml-ls-link:visited {
   color: #fff;

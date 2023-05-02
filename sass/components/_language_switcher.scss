@@ -1,5 +1,5 @@
 .wpml-ls-statics-shortcode_actions {
-	//TODO masquer en mobile non connecté
+	padding-right:1rem;
 	width: unset;
 	ul {
 		padding-left:0;
@@ -31,7 +31,8 @@
 	}
 	a.wpml-ls-link {
 		font-weight: 400;
-		padding-top: 2px;
+		padding-top: 6px;
+		padding-bottom: 9px;
 
 		&, &:visited {
 			color:#fff;

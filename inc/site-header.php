@@ -114,18 +114,23 @@ function kasutan_header_right() {
 			wp_nav_menu( array( 'theme_location' => 'the-source', 'menu_id' => 'menu-the-source', 'container'=>false, 'menu_class' => 'menu-the-source nav-menu desktop' ) );
 		}
 
-		if( has_nav_menu( 'my-account' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'my-account', 'menu_id' => 'menu-my-account', 'container'=>false, 'menu_class' => 'menu-my-account nav-menu desktop' ) );
-		}
+	
 
 		do_action('wpml_add_language_selector');
 
-		$page_selection=kasutan_get_page_ID('selection');
-		$user_id=get_current_user_id(  );
-		$count=kasutan_count_selection($user_id); //BONUS compter uniquement les items dans la langue actuelle ?
-		if($page_selection) {
-			printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">%s</span></a>',get_page_link($page_selection),$count,esc_html__('Saved items','the-source'));
-		}
+		echo '<div class="header-right-top">';
+		
+			$page_selection=kasutan_get_page_ID('selection');
+			$user_id=get_current_user_id(  );
+			$count=kasutan_count_selection($user_id); //BONUS compter uniquement les items dans la langue actuelle ?
+			if($page_selection) {
+				printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">%s</span></a>',get_page_link($page_selection),$count,esc_html__('Saved items','the-source'));
+			}
+
+			if( has_nav_menu( 'my-account' ) ) {
+				wp_nav_menu( array( 'theme_location' => 'my-account', 'menu_id' => 'menu-my-account', 'container'=>false, 'menu_class' => 'menu-my-account nav-menu desktop' ) );
+			}
+		echo '</div>';
 
 		
 	echo '</nav>';
