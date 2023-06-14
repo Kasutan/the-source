@@ -20,7 +20,7 @@ function ea_entry_title() {
 		$class='has-cyan-color';
 	} elseif(kasutan_is_account_child_page()) {
 		$class='has-cyan-color no-dots';
-		$subtitle=sprintf('<div class="h3 dots has-cyan-color">%s</div>',esc_html__('My account','the-source'));
+		$subtitle=sprintf('<div class="h3 dots has-cyan-color subtitle">%s</div>',esc_html__('My account','the-source'));
 	}
 
 	if(!is_front_page()) {
@@ -213,13 +213,29 @@ function kasutan_fil_ariane() {
 * Image banniere
 *
 */
+add_action( 'tha_entry_top', 'kasutan_page_banniere',5 );
+
 function kasutan_page_banniere() {
 	if(!function_exists('get_field')) {
 		return;
 	}
+	if(!is_singular() || is_single() || is_home() || is_front_page(  )) {
+		return;
+	}
+
 	$image_id=esc_attr(get_field('zs_page_banniere'));
-	if(!empty($image_id)) {
-		printf('<div class="page-banniere">%s</div>',wp_get_attachment_image( $image_id, 'banniere',false,array('decoding'=>'async')));
+	$image_id_mobile=esc_attr(get_field('zs_page_banniere_mobile'));
+	if(empty($image_id)) {
+		$image_id=esc_attr(get_field('zs_banniere_defaut','option'));
+	}
+	if(empty($image_id_mobile)) {
+		$image_id_mobile=esc_attr(get_field('zs_banniere_mobile_defaut','option'));
+	}
+	if(!empty($image_id) || !empty($image_id_mobile)) {
+		printf('<div class="page-banniere">%s %s</div>',
+			wp_get_attachment_image( $image_id, 'banniere',false,array('decoding'=>'async','class'=>'desktop')),
+			wp_get_attachment_image( $image_id_mobile, 'medium_large',false,array('decoding'=>'async','class'=>'mobile'))
+		);
 	}
 }
 

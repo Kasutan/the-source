@@ -6,6 +6,7 @@
             "key": "field_60fae7f8ff4f4",
             "label": "Hide regular header",
             "name": "hide_regular_header",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -15,16 +16,69 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 1,
             "choices": {
                 "hide": "hide",
                 "show": "show"
             },
+            "default_value": "show",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "show",
             "layout": "horizontal",
-            "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_6489b337d1085",
+            "label": "Image bannière desktop",
+            "name": "zs_page_banniere",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6489b365d1086",
+            "label": "Image bannière mobile",
+            "name": "zs_page_banniere_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -44,5 +98,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627056206
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1686747044
 }

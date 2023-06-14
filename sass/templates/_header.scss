@@ -76,18 +76,71 @@
 ## Entry-header
 --------------------------------------------------------------*/
 .page .entry-header, .archive-header {
-	align-items: center;
-	background-image: url('icons/header-fond.svg');
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	margin-left:var(--margin-x-header);
 	margin-right:var(--margin-x-header);
 	margin-top: 10px;
-	min-height:24vw;
-	padding:var(--margin-y-2) var(--padding-x);
+	min-height:15rem;
+	height:44vw;
+	&, .entry-title, .subtitle {
+		position: relative;
+	}
+
+	.entry-title, .subtitle {
+		color: #FFFFFF;
+		text-shadow: 0px 3px 6px #00000080;
+	}
+
+	.subtitle + .entry-title {
+		margin-top: 0;
+	}
+
+	.subtitle {
+		font-size: 2rem;
+		margin-top: auto;
+	}
+
+	.entry-title {
+		font-size: 3rem;
+	}	
+	.page-banniere {
+		height:100%;
+		left:0;
+		position:absolute;
+		top:0;
+		width:100%;
+		img {
+			&.desktop {
+				display: none;
+			}
+			height:100%;
+			object-fit: cover;
+			width:100%;
+			@include bp(lg) {
+				&.mobile {
+					display: none;
+				}
+				&.desktop {
+					display: flex;
+				}
+			}
+
+		}
+	}
+
+	@include bp(lg) {
+		height:calc(100vw * 300px / 1400px);
+		max-height: 300px;
+		.entry-title {
+			font-size: 7rem;
+		}
+		.subtitle {
+			font-size: 4rem;
+		}
+
+	}
 
 
 	@include bp(xl) {

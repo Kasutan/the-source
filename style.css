@@ -3632,18 +3632,66 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 ## Entry-header
 --------------------------------------------------------------*/
 .page .entry-header, .archive-header {
-  align-items: center;
-  background-image: url("icons/header-fond.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: var(--margin-x-header);
   margin-right: var(--margin-x-header);
   margin-top: 10px;
-  min-height: 24vw;
-  padding: var(--margin-y-2) var(--padding-x);
+  min-height: 15rem;
+  height: 44vw;
+}
+.page .entry-header, .page .entry-header .entry-title, .page .entry-header .subtitle, .archive-header, .archive-header .entry-title, .archive-header .subtitle {
+  position: relative;
+}
+.page .entry-header .entry-title, .page .entry-header .subtitle, .archive-header .entry-title, .archive-header .subtitle {
+  color: #FFFFFF;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5019607843);
+}
+.page .entry-header .subtitle + .entry-title, .archive-header .subtitle + .entry-title {
+  margin-top: 0;
+}
+.page .entry-header .subtitle, .archive-header .subtitle {
+  font-size: 2rem;
+  margin-top: auto;
+}
+.page .entry-header .entry-title, .archive-header .entry-title {
+  font-size: 3rem;
+}
+.page .entry-header .page-banniere, .archive-header .page-banniere {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.page .entry-header .page-banniere img, .archive-header .page-banniere img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.page .entry-header .page-banniere img.desktop, .archive-header .page-banniere img.desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .page .entry-header .page-banniere img.mobile, .archive-header .page-banniere img.mobile {
+    display: none;
+  }
+  .page .entry-header .page-banniere img.desktop, .archive-header .page-banniere img.desktop {
+    display: flex;
+  }
+}
+@media (min-width: 1024px) {
+  .page .entry-header, .archive-header {
+    height: 21.4285714286vw;
+    max-height: 300px;
+  }
+  .page .entry-header .entry-title, .archive-header .entry-title {
+    font-size: 7rem;
+  }
+  .page .entry-header .subtitle, .archive-header .subtitle {
+    font-size: 4rem;
+  }
 }
 @media (min-width: 1400px) {
   .page .entry-header, .archive-header {
