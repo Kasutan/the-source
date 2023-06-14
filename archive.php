@@ -78,6 +78,9 @@ add_action( 'ea_archive_header_after', 'kasutan_fil_ariane', 5 );
 //Description
 add_action( 'ea_archive_header_after', 'kasutan_archive_description', 10 );
 function kasutan_archive_description() {
+	if(!kasutan_is_member()) {
+		return;
+	}
 	$description_native=get_the_archive_description();
 	if($description_native) {
 		printf('<div class="archive-description">%s</div>',$description_native);
@@ -88,7 +91,6 @@ function kasutan_archive_description() {
 //Filtre si c'est une catégorie produit et qu'elle a des filles : balises html pour que le filtre avec list.js fonctionne
 add_action('kasutan_loop_wrap_before','kasutan_loop_wrap_before');
 function kasutan_loop_wrap_before() {
-
 	$direct_children=$taxonomy=false;
 	$queried_object = get_queried_object();
 	$taxonomy=kasutan_is_archive_for_product($queried_object);

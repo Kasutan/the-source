@@ -36,6 +36,18 @@ function ea_default_loop() {
 			$post_type=kasutan_get_cpt_slug_for_taxonomy($taxonomy);
 			$user_id=get_current_user_id(  );
 		}
+
+
+		//ne pas montrer les produits aux non-membres pour les archives produits
+		if($taxonomy && !kasutan_is_member()) {
+			if(function_exists('kasutan_paywall')) {
+				kasutan_paywall();
+			}
+			tha_content_while_after();
+
+			return;
+		}
+
 		if(!$special_loop) : 
 
 			

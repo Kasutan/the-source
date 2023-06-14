@@ -1,6 +1,6 @@
 {
     "key": "group_60fae7e74a643",
-    "title": "Header layout",
+    "title": "Header layout and access control",
     "fields": [
         {
             "key": "field_60fae7f8ff4f4",
@@ -79,6 +79,27 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_648a0bcf3cc21",
+            "label": "Réserver le contenu aux membres ?",
+            "name": "zs_only_members",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Les personnes non connectées ou non abonnées pourront afficher la page mais pas son contenu",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "Réserver le contenu de cette page aux membres",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -100,5 +121,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1686747044
+    "modified": 1686768794
 }

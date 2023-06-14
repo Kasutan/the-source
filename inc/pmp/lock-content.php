@@ -47,6 +47,12 @@ function kasutan_lock_content() {
 			$redirect=false;
 		} else if(kasutan_is_member()) {
 			$redirect=false;
+		} else if(is_tax()) {
+			$term=get_queried_object(  );
+			if(empty($term->parent)) {
+				//On autorise l'accès aux pages archives des catégories parentes
+				$redirect=false;
+			}
 		}
 	
 	}
@@ -57,3 +63,8 @@ function kasutan_lock_content() {
 	}
 }
 
+function kasutan_paywall() {
+	//TODO afficher un message modifiable en BO et un formulaire de connexion
+	echo '<p>TEMPORAIRE Connectez-vous ou renouvelez votre abonnement + formulaire</p>';
+
+}
