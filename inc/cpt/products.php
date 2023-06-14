@@ -44,7 +44,7 @@ function kasutan_get_cpt_for_taxonomy($taxonomy) {
 		'taxonomies'            => array($taxonomy),
 	), $output='objects');
 	foreach ($cpt_objects as $cpt) {
-		if(array_key_exists('label',$cpt)) {
+		if(isset($cpt->label)) {
 			$cpt_name=$cpt->label;
 		}
 	}
@@ -81,7 +81,7 @@ function kasutan_get_taxonomy_slug_for_cpt($cpt) {
 		'virtuous_companies' =>'cat_companies',
 		'philantropy' =>'cat_projects',
 	);
-	if(array_key_exists($cpt,$taxonomies)) {
+	if(isset($taxonomies[$cpt])) {
 		$taxonomy= $taxonomies[$cpt];
 	}
 	return $taxonomy;
