@@ -84,16 +84,16 @@
 	margin-top: 10px;
 	min-height:15rem;
 	height:44vw;
-	&, .entry-title, .subtitle {
+	&, .entry-title, .archive-title, .subtitle {
 		position: relative;
 	}
 
-	.entry-title, .subtitle {
+	.entry-title, .archive-title,.subtitle {
 		color: #FFFFFF;
 		text-shadow: 0px 3px 6px #00000080;
 	}
 
-	.subtitle + .entry-title {
+	.subtitle + .entry-title, .subtitle + .archive-title {
 		margin-top: 0;
 	}
 
@@ -102,7 +102,7 @@
 		margin-top: auto;
 	}
 
-	.entry-title {
+	.entry-title, .archive-title {
 		font-size: 3rem;
 	}	
 	.page-banniere {
@@ -133,7 +133,7 @@
 	@include bp(lg) {
 		height:calc(100vw * 300px / 1400px);
 		max-height: 300px;
-		.entry-title {
+		.archive-title,.entry-title {
 			font-size: 7rem;
 		}
 		.subtitle {

@@ -210,7 +210,7 @@ function kasutan_fil_ariane() {
 
 
 /**
-* Image banniere
+* Image banniere pour les pages
 *
 */
 add_action( 'tha_entry_top', 'kasutan_page_banniere',5 );
@@ -225,6 +225,39 @@ function kasutan_page_banniere() {
 
 	$image_id=esc_attr(get_field('zs_page_banniere'));
 	$image_id_mobile=esc_attr(get_field('zs_page_banniere_mobile'));
+	if(empty($image_id)) {
+		$image_id=esc_attr(get_field('zs_banniere_defaut','option'));
+	}
+	if(empty($image_id_mobile)) {
+		$image_id_mobile=esc_attr(get_field('zs_banniere_mobile_defaut','option'));
+	}
+	if(!empty($image_id) || !empty($image_id_mobile)) {
+		printf('<div class="page-banniere">%s %s</div>',
+			wp_get_attachment_image( $image_id, 'banniere',false,array('decoding'=>'async','class'=>'desktop')),
+			wp_get_attachment_image( $image_id_mobile, 'medium_large',false,array('decoding'=>'async','class'=>'mobile'))
+		);
+	}
+}
+
+
+
+/**
+* Image banniere pour les archives produits
+*
+*/
+
+function kasutan_tax_banniere() {
+	if(!function_exists('get_field')) {
+		return;
+	}
+	if(!is_tax()) {
+		return;
+	}
+	$term=get_queried_object(  );
+
+	$image_id=esc_attr(get_field('zs_banniere_archive',$term));
+	$image_id_mobile=esc_attr(get_field('zs_banniere_archive_mobile',$term));
+
 	if(empty($image_id)) {
 		$image_id=esc_attr(get_field('zs_banniere_defaut','option'));
 	}

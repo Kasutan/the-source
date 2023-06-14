@@ -1,0 +1,92 @@
+{
+    "key": "group_6489bfef7e451",
+    "title": "Images bannières pour les catégories de produits",
+    "fields": [
+        {
+            "key": "field_6489bff048af2",
+            "label": "Image banniere desktop",
+            "name": "zs_banniere_archive",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6489c1f46d14e",
+            "label": "Image bannière mobile",
+            "name": "zs_banniere_archive_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "cat_assets"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "cat_companies"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "cat_projects"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1686750590
+}

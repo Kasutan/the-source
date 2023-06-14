@@ -59,8 +59,11 @@ function ea_archive_header() {
 
 	do_action ('ea_archive_header_before' );
 	echo '<header class="' . join( ' ', $classes ) . '">';
+	if(function_exists('kasutan_tax_banniere')) {
+		kasutan_tax_banniere();
+	}
 	if( !empty( $subtitle ) )
-	echo '<div class="h2 dots">' . $subtitle . '</div>';
+	echo '<div class="h2 dots subtitle">' . $subtitle . '</div>';
 	if( ! empty( $title ) )
 		echo '<h1 class="archive-title">' . $title . '</h1>';
 	echo '</header>';
@@ -70,6 +73,16 @@ function ea_archive_header() {
 
 // Breadcrumbs
 add_action( 'ea_archive_header_after', 'kasutan_fil_ariane', 5 );
+
+
+//Description
+add_action( 'ea_archive_header_after', 'kasutan_archive_description', 10 );
+function kasutan_archive_description() {
+	$description_native=get_the_archive_description();
+	if($description_native) {
+		printf('<div class="archive-description">%s</div>',$description_native);
+	}
+}
 
 
 //Filtre si c'est une catégorie produit et qu'elle a des filles : balises html pour que le filtre avec list.js fonctionne

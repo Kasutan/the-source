@@ -3071,6 +3071,19 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   transform: translate(84px, 84px) rotate(360deg) translate(70px, 0);
 }
 
+.archive-description {
+  margin-bottom: 5rem;
+  padding: 0 var(--padding-x);
+}
+@media (min-width: 1400px) {
+  .archive-description {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    padding: 0;
+  }
+}
+
 .products {
   margin-bottom: 3rem;
   position: relative;
@@ -3641,21 +3654,21 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   min-height: 15rem;
   height: 44vw;
 }
-.page .entry-header, .page .entry-header .entry-title, .page .entry-header .subtitle, .archive-header, .archive-header .entry-title, .archive-header .subtitle {
+.page .entry-header, .page .entry-header .entry-title, .page .entry-header .archive-title, .page .entry-header .subtitle, .archive-header, .archive-header .entry-title, .archive-header .archive-title, .archive-header .subtitle {
   position: relative;
 }
-.page .entry-header .entry-title, .page .entry-header .subtitle, .archive-header .entry-title, .archive-header .subtitle {
+.page .entry-header .entry-title, .page .entry-header .archive-title, .page .entry-header .subtitle, .archive-header .entry-title, .archive-header .archive-title, .archive-header .subtitle {
   color: #FFFFFF;
   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5019607843);
 }
-.page .entry-header .subtitle + .entry-title, .archive-header .subtitle + .entry-title {
+.page .entry-header .subtitle + .entry-title, .page .entry-header .subtitle + .archive-title, .archive-header .subtitle + .entry-title, .archive-header .subtitle + .archive-title {
   margin-top: 0;
 }
 .page .entry-header .subtitle, .archive-header .subtitle {
   font-size: 2rem;
   margin-top: auto;
 }
-.page .entry-header .entry-title, .archive-header .entry-title {
+.page .entry-header .entry-title, .page .entry-header .archive-title, .archive-header .entry-title, .archive-header .archive-title {
   font-size: 3rem;
 }
 .page .entry-header .page-banniere, .archive-header .page-banniere {
@@ -3686,7 +3699,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
     height: 21.4285714286vw;
     max-height: 300px;
   }
-  .page .entry-header .entry-title, .archive-header .entry-title {
+  .page .entry-header .archive-title, .page .entry-header .entry-title, .archive-header .archive-title, .archive-header .entry-title {
     font-size: 7rem;
   }
   .page .entry-header .subtitle, .archive-header .subtitle {
