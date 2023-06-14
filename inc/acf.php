@@ -26,7 +26,7 @@ class BE_ACF_Customizations {
 		add_action( 'init', array( $this, 'register_options_page' ) );
 
 		// Register Blocks
-		add_filter( 'block_categories', array($this,'kasutan_block_categories'), 10, 2 );
+		add_filter( 'block_categories_all', array($this,'kasutan_block_categories'), 10, 2 );
 		add_action('acf/init', array( $this, 'register_blocks' ) );
 
 		//Show custom fields in edit screens
