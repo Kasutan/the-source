@@ -78,6 +78,10 @@ function kasutan_pmprorh_init_2() {
 	}
 
 	$options=kasutan_get_email_options();
+	if(empty($options)) {
+		return;
+	}
+
 	// Define the fields for each email option
 	$fields = array();
 	foreach($options as $option) {
