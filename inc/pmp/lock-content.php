@@ -64,7 +64,26 @@ function kasutan_lock_content() {
 }
 
 function kasutan_paywall() {
-	//TODO afficher un message modifiable en BO et un formulaire de connexion
-	echo '<p>TEMPORAIRE Connectez-vous ou renouvelez votre abonnement + formulaire</p>';
+	if(!function_exists('get_field')) {
+		return;
+	}
+	$message=get_field('zs_paywall_message','option');
+	if(empty($message)) {
+		return;
+	}
+	echo '<section class="paywall-message">';
+		if(isset($message['phrase_1']) && !empty($message['phrase_1'])) printf('<p class="phrase-1">%s</p>',$message['phrase_1']);	
+		
+		if(isset($message['lien']) && !empty($message['lien'])) {
+			printf('<a href="%s" class="button">%s</a>',$message['lien']['url'],$message['lien']['title']);
+		}
+
+		if(isset($message['phrase_2']) && !empty($message['phrase_2'])) printf('<p class="phrase-2">%s</p>',$message['phrase_2']);	
+
+		echo '<div class="form-wrap">';
+			echo do_shortcode( '[pmpro_login]');
+		echo '</div>';
+
+	echo '</section>';
 
 }

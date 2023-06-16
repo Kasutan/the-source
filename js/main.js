@@ -641,11 +641,11 @@
 		
 
 		/********************************************************************************** 
-		************************* LOGIN PAGE 
+		************************* LOGIN PAGE and all pages containing pmpro login forms
 		* ******************************************************************************/	
 
 		/************ Fix status visibility on Remember me checkbox label ***************/	
-		var rememberInput=$('body.pmpro-login #rememberme');
+		var rememberInput=$('#rememberme');
 		if(rememberInput.length > 0) {
 
 			var label=$(rememberInput).parent('label');

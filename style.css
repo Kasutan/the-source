@@ -5515,6 +5515,65 @@ a.page {
   font-weight: 500;
 }
 
+.paywall-message {
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.paywall-message .phrase-1, .paywall-message .phrase-2 {
+  color: var(--bleu);
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+.paywall-message p.phrase-1 {
+  font-size: 2.6rem;
+}
+.paywall-message p.phrase-2 {
+  font-size: 2.2rem;
+}
+.paywall-message a.button {
+  margin-bottom: 4.7rem;
+}
+.paywall-message .form-wrap h2 {
+  display: none;
+}
+.paywall-message #loginform {
+  margin: 0 auto;
+  max-width: 40rem;
+}
+.paywall-message #loginform label {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.paywall-message #loginform input[type=text], .paywall-message #loginform input[type=password] {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px var(--bleu);
+  max-width: unset;
+  width: 100% !important;
+}
+.paywall-message #loginform .login-submit {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.paywall-message #loginform input[type=submit] {
+  background-color: var(--bleu);
+  color: var(--blanc);
+  display: inline-block;
+  font-weight: 700;
+  width: 20rem;
+}
+.paywall-message #loginform input[type=submit]:hover, .paywall-message #loginform input[type=submit]:focus {
+  background-color: var(--cyan);
+}
+.paywall-message hr {
+  display: none;
+}
+.paywall-message .pmpro_actions_nav a {
+  color: var(--bleu);
+  font-weight: 300;
+}
+
 .popup {
   display: none;
 }
