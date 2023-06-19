@@ -23,8 +23,16 @@ function ea_entry_title() {
 		$subtitle=sprintf('<div class="h3 dots has-cyan-color subtitle">%s</div>',esc_html__('My account','the-source'));
 	}
 
+	$hide_title=false;
+	if(function_exists('get_field') && esc_attr( get_field('hide_page_title') ) == 'hide') {
+		$hide_title=true;
+		$class.=' screen-reader-text';
+	}
+
+
 	if(!is_front_page()) {
-		echo $subtitle;
+		if(!$hide_title) echo $subtitle;
+
 		printf('<h1 class="entry-title %s">%s</h1>',$class, get_the_title());
 	}
 }
@@ -222,7 +230,6 @@ function kasutan_page_banniere() {
 	if(!is_singular() || is_single() || is_home() || is_front_page(  )) {
 		return;
 	}
-
 	$image_id=esc_attr(get_field('zs_page_banniere'));
 	$image_id_mobile=esc_attr(get_field('zs_page_banniere_mobile'));
 	if(empty($image_id)) {

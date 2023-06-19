@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_60fae7f8ff4f4",
-            "label": "Hide regular header",
+            "label": "Hide whole header",
             "name": "hide_regular_header",
             "aria-label": "",
             "type": "radio",
@@ -29,8 +29,34 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_64901c043450d",
+            "label": "Hide page title",
+            "name": "hide_page_title",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "Banner image will be displayed but page title will be hidden",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "show": "show",
+                "hide": "hide"
+            },
+            "default_value": "show",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_6489b337d1085",
-            "label": "Image bannière desktop",
+            "label": "Banner image desktop",
             "name": "zs_page_banniere",
             "aria-label": "",
             "type": "image",
@@ -56,7 +82,7 @@
         },
         {
             "key": "field_6489b365d1086",
-            "label": "Image bannière mobile",
+            "label": "Banner image mobile",
             "name": "zs_page_banniere_mobile",
             "aria-label": "",
             "type": "image",
@@ -82,11 +108,11 @@
         },
         {
             "key": "field_648a0bcf3cc21",
-            "label": "Réserver le contenu aux membres ?",
+            "label": "Only show content to members?",
             "name": "zs_only_members",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Les personnes non connectées ou non abonnées pourront afficher la page mais pas son contenu",
+            "instructions": "People who are not logged in or who have not subscribed will be able to view the page but not its content.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -112,7 +138,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -121,5 +147,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1686768794
+    "modified": 1687166094
 }
