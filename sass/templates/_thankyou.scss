@@ -1,7 +1,7 @@
 .pmpro-confirmation {
-	//Masquer bloc natif PMPRO
-	.pmpro_confirmation_wrap {
-		display: none;
+	//Masquer bloc natif PMPRO et fil d'ariane
+	.pmpro_confirmation_wrap, .fil-ariane {
+		display: none; 
 	}
 	.entry-content {
 		margin-left: var(--margin-x-header);
@@ -9,26 +9,40 @@
 		position: relative;
 	}
 
-	@include bp(xl) {
-		h2 {
-			font-size: 7rem;
-		}
-	}
+
 	
 	.confirmation-thankyou {
-		@include pointe;
-		--pointe:95%;
-
+	
+		padding-top: 2rem;
 		h2, h3 {
-			color:var(--blanc);
+			color:var(--bleu);
 		}
 		h2 {
+			font-size: 2.6rem;
 			margin-bottom: 0.5em;
 			text-transform: unset;
+			br {
+				display: none;
+			}
 		}
 
-		p.has-big-font-size {
-			margin-bottom: 2em;
+		figure {
+			margin-bottom: 1.2rem;
+		}
+	
+
+		@include bp(lg) {
+			padding-top: 5rem;
+			h2 {
+				font-size: 5rem;
+				br {
+					display: block;
+				}
+			}
+
+			p {
+				font-size: 2rem;
+			}
 		}
 	}
 	.confirmation-enjoy {
@@ -42,6 +56,19 @@
 				font-weight: 700;
 			}
 		}
+
+		.wp-block-button, .wp-block-button__link {
+			width: 100%;
+		}
+		@media screen and (min-width:350px) {
+			.wp-block-button, .wp-block-button__link {
+				width: unset;
+			}
+			.wp-block-button__link {
+				min-width: 34rem;
+			}
+		}
+		
 		@include bp(md) {
 			.wp-block-column:first-of-type {
 				border-right: solid 1px var(--bordure);
@@ -50,6 +77,8 @@
 				margin-left: 0;
 			}
 		}
+
+		
 	}
 
 	.confirmation-thankyou, .confirmation-enjoy {
@@ -59,7 +88,7 @@
 		@include bp(lg) {
 			@include padding-x(0);
 			.wp-block-group__inner-container {
-				@include max-width(85rem);
+				@include max-width(90rem);
 			}
 		}
 	}
