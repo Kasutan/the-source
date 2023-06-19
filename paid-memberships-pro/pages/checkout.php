@@ -270,7 +270,7 @@
 						<?php
 							global $pmpro_countries;
 							?><option value="none" selected disabled hidden>
-								Country
+								<?php _e('Country', 'paid-memberships-pro' );?>
 							</option><?php
 							foreach($pmpro_countries as $abbr => $country) { ?>
 								<option value="<?php echo $abbr?>" <?php if($abbr == $bcountry) { ?>selected="selected"<?php } ?>><?php echo $country?></option>
