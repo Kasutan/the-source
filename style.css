@@ -3609,7 +3609,7 @@ body.hide-header .entry-header, body.hide-header .fil-ariane {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-  background-color: var(--bleu-clair);
+  border-top: solid 1px var(--bordure);
   font-size: 1.8rem;
   padding: 2.3rem 1rem;
   position: relative;
