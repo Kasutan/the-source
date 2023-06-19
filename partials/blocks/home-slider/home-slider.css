@@ -56,15 +56,6 @@
 .home-slider .owl-carousel .owl-nav button.owl-prev {
   transform: rotateZ(180deg);
 }
-.home-slider .slider-overlay {
-  background-color: var(--bleu);
-  height: 100%;
-  left: 0;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 .home-slider .texte {
   align-items: center;
   color: #fff;

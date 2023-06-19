@@ -39,7 +39,7 @@ if(function_exists('get_field')) :
 				if($galerie) {
 					printf('<div class="owl owl-carousel %s">',$key);
 					foreach($galerie as $image) {
-						printf('<div class="image">%s<div class="slider-overlay"></div></div>',wp_get_attachment_image($image,$size));
+						printf('<div class="image">%s</div>',wp_get_attachment_image($image,$size));
 
 					}
 					echo '</div>';
