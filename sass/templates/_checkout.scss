@@ -1,6 +1,16 @@
 .pmpro-checkout {
-	h2, h3 {
-		color:var(--cyan);
+	.fil-ariane {
+		display: none;
+	}
+	h2 {
+		color:var(--bleu);
+		margin-top: 0 !important;
+		text-transform: uppercase;
+
+		@include bp(lg) {
+			font-size: 5rem;
+			line-height: 6.8rem;
+		}
 	}
 	input[type="text"],
 	input[type="password"],
@@ -78,13 +88,9 @@
 		padding:0 var(--padding-x);
 	}
 	#pmpro_user_fields {
-		background-color: #f0f7ff;
-		margin-top: -10rem;
-		padding-top:12rem;
+		
 		position: relative;
-		@include bp(lg) {
-			padding-top: 15rem;
-		}
+		
 
 		.pmpro_checkout-h3-msg a {
 			color:var(--bleu);
@@ -102,29 +108,9 @@
 		padding-bottom:5rem;
 
 		position: relative;
-		--fond:95%;
-		@include bp(lg) {
-			padding-bottom:10rem;
-		}
-		@include bp(xl) {
-			--fond:90%;
-		}
+		
 
-		& > * {
-			position: relative;
-		}
-
-		&::before {
-			background-color: #f0f7ff;
-			content:'';
-			clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
-			display: block;
-			height:100%;
-			left:0;
-			position:absolute;
-			top:0;
-			width:100%;
-		}
+		
 	}
 
 	#zs-com_div .pmpro_asterisk, #zs-lang_div {
@@ -146,93 +132,24 @@
 		line-height: 1.1;
 		margin-bottom: 2rem;
 	}
-
-	#pmpro_vat_table {
+	
+	h2 span.pmpro_checkout-h2-msg {
+		display: block;
+		font-style: normal;
+		font-weight: bold;
 		text-align: center;
-		hr {
-			display: none;
+		@include bp(lg) {
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+			margin-bottom: 3rem;
 		}
-		h3 {
-			@include dots;
-			//@include fs(2rem,5rem);
-			font-size: 2rem;
-			@include bp(lg) {
-				font-size: 5rem;
-			}
-			display: flex;
-			justify-content: center;
-		}
-		
-		#eu_self_id_instructions {
-			color:var(--cyan);
-			font-weight: 700;
-			margin-bottom: 0;
-			text-align: center;
-			text-transform: uppercase;
-		}
-		.pmpro_checkout-fields {
-			max-width:unset;
-		}
-		select, input, label {
-			margin: 0 auto;
-			max-width: 36rem;
-			position: relative;
-			width:100%;
-		}
-		#vat-country-info {
-			margin-bottom: 1rem;
-			max-width:50rem;
-		}
-		#vat_have_number {
-			margin-bottom: 0;
-			input {
-				@include screen-reader-text;
-			}
-			label {
-				opacity:1;
-				font-size: 2rem;
-				top:0;
-			}
-		}
-		#vat_number_validation_tr {
-			margin-bottom:0;
-			label {
-				opacity:1;
-			}
-		}
-		#vat_number_validation_button {
-			margin:1em auto;
-			width:20rem;
-		}
-
 	}
 
 	form.pmpro_form #pmpro_payment_information_fields {
 		display: block;
 		padding: 0;
 		text-align: center;
-		h3 {
-			@include dots;
-			//@include fs(2rem,5rem);
-			font-size: 2rem;
-			@include bp(lg) {
-				font-size: 5rem;
-			}
-			display: flex;
-			justify-content: center;
-			margin-bottom: 5rem;
-			position: relative;
-			.pmpro_checkout-h3-msg {
-				position:absolute;
-				font-size: 1.5rem;
-				font-style: normal;
-				font-weight: 700;
-				left:0;
-				text-align: center;
-				top:100%;
-				width:100%;
-			}
-		}
+		
 		.pmpro_checkout-fields {
 			display:block;
 			max-width: unset;
@@ -323,7 +240,6 @@
 	#pmpro_autorenewal_checkbox,
 	#pmpro_tos_fields,
 	.pmpro_submit {
-		background-color: var(--fond);
 		@include bp(sm) {
 			margin-left: auto;
 			margin-right: auto;
@@ -334,11 +250,7 @@
 		}
 	}
 
-	//Fix pas de champs billing ou payment -> fond bleu pleine page
-	#pmpro_level-2 {
-		background-color: var(--fond);
-		//padding-bottom: 1px;
-	}
+
 }
 
 
