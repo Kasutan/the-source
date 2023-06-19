@@ -1,20 +1,9 @@
 .home-join {
-  --pointe:5%;
-  --mt:-10rem;
-  --pt:12rem;
   align-items: center;
-  background-color: var(--bleu);
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--pointe));
-          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 50% var(--pointe));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: var(--mt);
-  padding: var(--pt) var(--padding-x) 10rem;
-  position: relative;
-  transform: translateX(calc(-1 * var(--padding-x)));
-  width: 100vw;
-  z-index: 1;
+  padding: 5rem var(--padding-x) 4rem;
 }
 .home-join a.button {
   font-weight: 300;
@@ -23,72 +12,98 @@
 .home-join a.button span {
   font-weight: 700;
 }
-.home-join, .home-join .h1, .home-join .subtitle {
-  color: var(--blanc);
-  position: relative;
+.home-join, .home-join .title, .home-join .subtitle {
+  color: var(--bleu);
 }
-.home-join .h1, .home-join .subtitle {
+.home-join .title, .home-join .subtitle {
+  font-weight: bold;
   margin-top: 0;
 }
-.home-join .h1 {
-  margin-bottom: 1.4rem;
+.home-join .title {
+  font-size: 3.8rem;
+  line-height: 5.2rem;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 .home-join .subtitle {
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  margin-bottom: 9px;
 }
 .home-join .offers {
   list-style: none;
-  margin: 0 0 6.5rem;
+  margin: 0 0 4rem;
   padding: 0;
   width: 100%;
 }
 .home-join .offer {
-  --size:8.5rem;
+  --size:0.8rem;
   align-items: center;
   display: flex;
-  flex-direction: column;
-  font-size: 110%;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.3;
-  height: var(--size);
+  line-height: 2rem;
   justify-content: center;
-  margin: 1em 0;
+  margin: 0;
   position: relative;
   text-align: center;
 }
 .home-join .offer .picto {
-  border: 2px solid #FFFFFF;
-  border-radius: 100%;
-  height: 23px;
-  width: 23px;
+  height: var(--size);
+  margin-right: 6px;
+  width: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 2px;
 }
 .home-join .offer .picto svg {
-  position: relative;
-  top: -3px;
-  width: 70%;
+  max-width: var(--size);
 }
-@media (min-width: 500px) {
-  .home-join {
-    --fond:90%;
-  }
+.home-join .decor {
+  --size:4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size);
 }
-@media (min-width: 768px) {
-  .home-join {
-    --fond:85%;
-  }
+.home-join .decor svg {
+  max-height: 100%;
 }
 @media (min-width: 1024px) {
   .home-join {
-    --fond:95%;
-    padding-bottom: 12rem;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+  .home-join .title {
+    font-size: 6rem;
+    line-height: 8.2rem;
+  }
+  .home-join .subtitle {
+    font-size: 3.2rem;
+    line-height: 4.3rem;
+    margin-bottom: 2.8rem;
   }
   .home-join .offers {
-    display: flex;
-    justify-content: center;
-    max-width: 90rem;
+    margin-bottom: 2rem;
   }
   .home-join .offer {
-    flex-basis: 33%;
-    padding: 0 1rem;
+    font-size: 2.2rem;
+    line-height: 3rem;
+    margin-bottom: 7px;
+  }
+  .home-join .text {
+    font-size: 3.2rem;
+    line-height: 4.3rem;
+    margin-bottom: 2.3rem;
+  }
+  .home-join .small-text {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    margin-bottom: 8rem;
+  }
+  .home-join .decor {
+    --size:10rem;
   }
 }

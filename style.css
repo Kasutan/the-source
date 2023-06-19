@@ -3929,6 +3929,16 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   margin: 0 auto;
   max-width: 85rem;
 }
+.home .home-commited {
+  padding: 0 var(--padding-x);
+}
+@media (min-width: 1024px) {
+  .home .home-commited {
+    margin: 0 auto;
+    max-width: 85rem;
+    padding: 0;
+  }
+}
 .home .home-sunrise {
   margin: 5rem auto;
   max-width: 62rem;
@@ -3944,7 +3954,6 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   min-height: 300px;
 }
 .home figure.is-type-video {
-  background: #EAF2FA;
   margin: 0 auto;
   max-width: 106.4rem;
   padding: 1rem;
@@ -3955,9 +3964,15 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   }
 }
 .home .home-contact {
-  --pt:4rem;
-  padding: var(--pt) 0;
+  padding: 0 var(--padding-x);
   text-align: center;
+}
+@media (min-width: 1024px) {
+  .home .home-contact {
+    margin: 0 auto;
+    max-width: 85rem;
+    padding: 0;
+  }
 }
 .home .home-contact h2 {
   text-transform: uppercase;
@@ -3966,7 +3981,7 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
   position: relative;
 }
 .home .home-contact h2::after {
-  background-color: var(--gris);
+  background-color: var(--bleu);
   bottom: 0;
   content: " ";
   height: 3px;
@@ -3977,8 +3992,12 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
 }
 .home .home-contact .home-contact-intro {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 300;
   margin-bottom: 2rem;
+}
+.home .home-contact .home-contact-intro a {
+  font-weight: 300;
+  text-decoration: underline;
 }
 .home .home-contact .nf-form-fields-required {
   display: none;
@@ -3999,9 +4018,11 @@ li.product .to-selection.my-selection-page label, li.product .to-selection.my-se
 }
 @media (min-width: 1024px) {
   .home .home-contact {
-    --pt:8rem;
     margin: 0 auto;
     max-width: 85rem;
+  }
+  .home .home-contact h2 {
+    font-size: 4rem;
   }
 }
 

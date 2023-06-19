@@ -1,5 +1,6 @@
 .home-liste {
   margin: 5.5rem auto;
+  padding: 0 var(--padding-x);
   --size-num:3rem;
 }
 .home-liste .num {
@@ -31,6 +32,11 @@
   margin-bottom: 2.4rem;
 }
 @media (min-width: 1024px) {
+  .home-liste {
+    margin: 0 auto;
+    max-width: 106.4rem;
+    padding: 0;
+  }
   .home-liste .item {
     display: grid;
     grid-auto-flow: dense;

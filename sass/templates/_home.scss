@@ -14,6 +14,15 @@
 		max-width: 85rem;
 	}
 
+	.home-commited {
+		padding: 0 var(--padding-x);
+		@include bp(lg) {
+			margin:0 auto;
+			max-width: 85rem;
+			padding:0;
+		}
+	}
+
 	.home-sunrise {
 		margin:5rem auto;
 		max-width: 62rem;
@@ -31,7 +40,6 @@
 	}
 
 	figure.is-type-video {
-		background: #EAF2FA;
 		margin:0 auto;
 		max-width: 106.4rem;
 		padding:1rem;
@@ -42,8 +50,12 @@
 	}
 
 	.home-contact {
-		--pt:4rem;
-		padding:var(--pt) 0;
+		padding: 0 var(--padding-x);
+		@include bp(lg) {
+			margin:0 auto;
+			max-width: 85rem;
+			padding:0;
+		}
 		text-align: center;
 		h2 {
 			text-transform: uppercase;
@@ -52,7 +64,7 @@
 			position: relative;
 		
 			&::after {
-				background-color: var(--gris);
+				background-color: var(--bleu);
 				bottom: 0;
 				content:' ';
 				height:3px;
@@ -64,8 +76,12 @@
 		}
 		.home-contact-intro {
 			font-size: 2rem;
-			font-weight: 700;
+			font-weight: 300;
 			margin-bottom: 2rem;
+			a {
+				font-weight: 300;
+				text-decoration: underline;
+			}
 		}
 
 		.nf-form-fields-required {
@@ -91,9 +107,11 @@
 		}
 
 		@include bp(lg) {
-			--pt:8rem;
 			margin:0 auto;
 			max-width:85rem;
+			h2 {
+				font-size: 4rem;
+			}
 		}
 	}
 }

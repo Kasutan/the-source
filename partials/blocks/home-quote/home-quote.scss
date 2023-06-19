@@ -1,16 +1,11 @@
 @import "./././sass/abstracts/variables-et-mixins";
 
 .home-quote {
-	--fond:95%;
-	background: transparent linear-gradient(180deg, #FFFFFF 0%, #EAF2FA 100%);
 	color:var(--bleu);
-	clip-path: polygon(100% 0, 100% var(--fond), 50% 100%, 0 var(--fond), 0 0);
 	font-size: 2.2rem;
-	transform:translateX(calc(-1 * var(--padding-x)));
 	margin-bottom: 4rem;
-	padding:4rem var(--padding-x);
+	padding: 0 var(--padding-x);
 	text-align: center;
-	width:100vw;
 	q {
 		display: block;
 		font-style:italic;
@@ -36,14 +31,5 @@
 		max-width:43rem;
 		margin-left:auto;
 		margin-right: auto;
-	}
-
-	@include bp(md) {
-		padding-bottom: 8rem;
-	}
-
-	@include bp(lg) {
-		margin-bottom: 6rem;
-		padding-bottom: 11rem;
 	}
 }

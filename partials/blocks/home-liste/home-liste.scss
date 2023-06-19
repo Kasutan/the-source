@@ -2,6 +2,7 @@
 
 .home-liste {
 	margin:5.5rem auto;
+	padding:0 var(--padding-x);
 	--size-num:3rem;
 	.num {
 		align-items: center;
@@ -33,6 +34,9 @@
 		margin-bottom: 2.4rem;
 	}
 	@include bp(lg) {
+		margin: 0 auto;
+		max-width: 106.4rem;
+		padding:0;
 		.item {
 			display: grid;
 			grid-auto-flow: dense;
