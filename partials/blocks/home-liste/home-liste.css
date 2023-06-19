@@ -1,24 +1,29 @@
 .home-liste {
   margin: 5.5rem auto;
-  padding-left: 3rem;
+  --size-num:3rem;
+}
+.home-liste .num {
+  align-items: center;
+  background-color: var(--bleu);
+  border-radius: 100px;
+  color: var(--blanc);
+  display: flex;
+  height: var(--size-num);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: var(--size-num);
+  margin: 0 auto 5px;
+  justify-content: center;
+  width: var(--size-num);
 }
 .home-liste .titre {
   font-size: 2.2rem;
   font-weight: 700;
   position: relative;
+  text-align: center;
 }
 .home-liste .titre strong {
   color: var(--cyan);
-}
-.home-liste .titre::before {
-  content: " ";
-  width: 1.4rem;
-  left: -3rem;
-  height: 3px;
-  background: var(--bleu);
-  position: absolute;
-  top: 1.5rem;
-  border-radius: 100px;
 }
 .home-liste .texte {
   color: var(--bleu);
@@ -26,9 +31,36 @@
   margin-bottom: 2.4rem;
 }
 @media (min-width: 1024px) {
-  .home-liste {
-    margin: 5.5rem auto;
-    max-width: 85rem;
-    padding-left: 0;
+  .home-liste .item {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 7.5rem 1fr;
+    padding-bottom: 6rem;
+    position: relative;
+  }
+  .home-liste .item::before {
+    background-color: #C2D6EE;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+  .home-liste .item .titre, .home-liste .item .texte {
+    grid-column: 1;
+    text-align: right;
+  }
+  .home-liste .item:nth-of-type(2n) .titre, .home-liste .item:nth-of-type(2n) .texte {
+    grid-column: 3;
+    text-align: left;
+  }
+  .home-liste .item:last-of-type::before {
+    height: var(--size-num);
+  }
+  .home-liste .num {
+    grid-column: 2;
+    position: relative;
   }
 }

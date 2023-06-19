@@ -1,6 +1,6 @@
 <?php 
 /**
-* Template pour le bloc xxxxx
+* Template pour le bloc home-liste
 *
 * @param   array $block The block settings and attributes.
 * @param   string $content The block inner HTML (empty).
@@ -21,12 +21,17 @@ if(function_exists('get_field')) :
 
 	if(have_rows('list')) {
 		printf('<section class="home-liste acf %s"%s>',$className,$anchor);
+		$n=1;
 		while(have_rows('list')) {
 			the_row();
 			$titre=wp_kses_post(get_sub_field('titre'));
 			$texte=wp_kses_post(get_sub_field('texte'));
-			printf('<p class="titre">%s</p>',$titre);
-			printf('<p class="texte">%s</p>',$texte);
+			echo '<div class="item">';
+				printf('<span class="num">%s</span>',$n);
+				printf('<p class="titre">%s</p>',$titre);
+				printf('<p class="texte">%s</p>',$texte);
+			echo '</div>';
+			$n++;
 		}
 		
 
