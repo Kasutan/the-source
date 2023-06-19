@@ -12,7 +12,7 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 				return 'My invoices';
 				break;
 			case 'Lost Password?' :
-				return 'Forgot your password?';
+				return esc_html__('Forgot your password?','the-source');
 				break;
 			case 'Username or Email Address' :
 				return 'Email';
