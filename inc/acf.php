@@ -291,6 +291,16 @@ class BE_ACF_Customizations {
 			true,
 			true
 		);
+
+		/*********Blocs Deux colonnes***************/
+		$this->helper_register_block_type(
+			'deux-col',
+			'Block two columns',
+			'One column with clickable title on blue background and text, other column with image.',
+			'admin-generic',
+			false,
+			true
+		);
 		
 	}
 }
