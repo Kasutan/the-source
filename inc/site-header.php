@@ -85,7 +85,7 @@ function kasutan_header_right() {
 			$user_id=get_current_user_id(  );
 			$count=kasutan_count_selection($user_id); //BONUS compter uniquement les items dans la langue actuelle ?
 			if($page_selection) {
-				printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">%s</span></a>',get_page_link($page_selection),$count,esc_html__('Saved items','the-source'));
+				printf('<a class="selection" href="%s"><span id="count" class="count">%s</span><span class="label">%s</span></a>',get_page_link($page_selection),$count,esc_html__('My favourites','the-source'));
 			}
 
 			if( has_nav_menu( 'my-account' ) ) {

@@ -5,8 +5,8 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 
 	if($domain == 'paid-memberships-pro') {
 		switch ($original) {
-			case 'My Memberships' :
-				return esc_html__('My Membership','the-source');
+			case 'Level' :
+				return esc_html__('Status','the-source');
 				break;
 			case 'Past Invoices' :
 				return 'My invoices';
