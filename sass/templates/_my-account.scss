@@ -47,10 +47,11 @@ ul.menu-my-account-links, .email-preferences {
 .email-preferences {
 	button {
 		--color: var(--bleu);
-		background: var(--bleu-clair);
+		background-color: var(--bleu-clair);
 		border-color:transparent;
 		color:var(--color);
 		flex-direction: column;
+		padding:2rem;
 		text-transform: unset;
 		transition: none;
 
@@ -72,7 +73,7 @@ ul.menu-my-account-links, .email-preferences {
 		}
 		&:focus, &:hover {
 			--color:var(--bleu);
-			border-color:var(--color);
+			//border-color:var(--color);
 			color:var(--color);
 		}
 		.check {
@@ -96,6 +97,39 @@ ul.menu-my-account-links, .email-preferences {
 
 		&:disabled {
 			opacity:0.5;
+		}
+
+		&.avec-image {
+			overflow: hidden;
+			&, .name, .picto {
+				position: relative;
+			}
+			.image {
+				display: flex;
+				height:100%;
+				left:0;
+				position:absolute;
+				top:0;
+				transform-origin: center center;
+				transition: all var(--transition);
+				width:100%;
+				& > img {
+					height:100%;
+					object-fit: cover;
+					width:100%;
+				}
+			}
+
+			&:focus, &:hover {
+				.image {
+					transform:scale(1.05);
+				}
+			}
+		}
+
+
+		@include bp(xl) {
+			height:13.6rem;
 		}
 	}
 }

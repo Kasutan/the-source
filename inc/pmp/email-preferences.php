@@ -13,7 +13,8 @@ function kasutan_my_email_preferences() {
 	echo '<formgroup class="email-preferences">';
 	//boucle afficher un bouton pour chaque option
 	foreach($options as $option) {
-		$slug=$option['slug'];
+		$slug=$option['slug'];		
+
 		if(kasutan_get_email_option_for_user($slug,$user_meta)) {
 			$class='checked';
 			$label=esc_html__('Deactivate this option','the-source');
@@ -21,8 +22,17 @@ function kasutan_my_email_preferences() {
 			$class='';
 			$label=esc_html__('Activate this option','the-source');
 		}
+
+		$image_id=esc_attr($option['image']);
+		$img='';
+		if(!empty($image_id)) {
+			$class.=' avec-image';
+			$img=sprintf('<div class="image">%s</div>',wp_get_attachment_image( $image_id, 'medium'));
+		}
+
 		printf('<button class="js-toggle-option %s" data-slug="%s"  data-user="%s" title="%s">',$class,$slug,$user_id, $label);
-			printf('<div class="name">%s</div><div class="picto check">%s</div><div class="picto croix">%s</div>',
+			printf('%s <div class="name">%s</div><div class="picto check">%s</div><div class="picto croix">%s</div>',
+				$img,
 				$option['name'],
 				kasutan_picto(array('icon'=>'check','size'=>16)),
 				kasutan_picto(array('icon'=>'close','size'=>15))

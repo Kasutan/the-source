@@ -4163,10 +4163,11 @@ ul.menu-my-account-links a:hover, ul.menu-my-account-links a:focus, ul.menu-my-a
 
 .email-preferences button {
   --color: var(--bleu);
-  background: var(--bleu-clair);
+  background-color: var(--bleu-clair);
   border-color: transparent;
   color: var(--color);
   flex-direction: column;
+  padding: 2rem;
   text-transform: unset;
   transition: none;
 }
@@ -4185,7 +4186,6 @@ ul.menu-my-account-links a:hover, ul.menu-my-account-links a:focus, ul.menu-my-a
 }
 .email-preferences button:focus, .email-preferences button:hover {
   --color:var(--bleu);
-  border-color: var(--color);
   color: var(--color);
 }
 .email-preferences button .check {
@@ -4203,6 +4203,35 @@ ul.menu-my-account-links a:hover, ul.menu-my-account-links a:focus, ul.menu-my-a
 }
 .email-preferences button:disabled {
   opacity: 0.5;
+}
+.email-preferences button.avec-image {
+  overflow: hidden;
+}
+.email-preferences button.avec-image, .email-preferences button.avec-image .name, .email-preferences button.avec-image .picto {
+  position: relative;
+}
+.email-preferences button.avec-image .image {
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: center center;
+  transition: all var(--transition);
+  width: 100%;
+}
+.email-preferences button.avec-image .image > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.email-preferences button.avec-image:focus .image, .email-preferences button.avec-image:hover .image {
+  transform: scale(1.05);
+}
+@media (min-width: 1400px) {
+  .email-preferences button {
+    height: 13.6rem;
+  }
 }
 
 /**********************Formulaires de la page Personal information*********************/

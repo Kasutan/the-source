@@ -293,11 +293,11 @@
         },
         {
             "key": "field_60f82fd317e10",
-            "label": "Email preferences options",
+            "label": "Email preferences options \/ Centres of interest",
             "name": "zs_email_options",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Options available on \"My email preferences\" page.\r\nYou may change the display names as often as you like, but changing the option slugs is not recommended once members have started to choose options. The slug is used for keeping track of members preferences and organizing mailing lists, and will not be shown to the member.",
+            "instructions": "Options available on \"My centres of interest\" page and on the payment page.\r\nYou may change the display names as often as you like, but changing the option slugs is not recommended once members have started to choose options. The slug is used for keeping track of members preferences and organizing mailing lists, and will not be shown to the member. Please keep the same slug in both languages.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -305,11 +305,14 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_60f8300f17e11",
+            "wpml_cf_preferences": 0,
+            "layout": "row",
+            "pagination": 0,
             "min": 0,
             "max": 0,
-            "layout": "row",
+            "collapsed": "field_60f8300f17e11",
             "button_label": "Add option",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_60f8300f17e11",
@@ -325,11 +328,12 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
                     "parent_repeater": "field_60f82fd317e10"
                 },
                 {
@@ -346,15 +350,42 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
+                    "parent_repeater": "field_60f82fd317e10"
+                },
+                {
+                    "key": "field_6491b39b572b9",
+                    "label": "Option image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
                     "parent_repeater": "field_60f82fd317e10"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_642bd99077973",
@@ -433,6 +464,84 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_648b31d809b8f",
+            "label": "Message pour les utilisateurs non membres ou non connectés",
+            "name": "zs_paywall_message",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_648b320f09b90",
+                    "label": "Phrase 1",
+                    "name": "phrase_1",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_648b321f09b91",
+                    "label": "Bouton",
+                    "name": "lien",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_648b323b09b92",
+                    "label": "Phrase au-dessus du formulaire de connexion",
+                    "name": "phrase_2",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -454,5 +563,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1686746975
+    "modified": 1687272860
 }
