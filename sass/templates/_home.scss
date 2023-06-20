@@ -14,14 +14,7 @@
 		max-width: 85rem;
 	}
 
-	.home-commited {
-		padding: 0 var(--padding-x);
-		@include bp(lg) {
-			margin:0 auto;
-			max-width: 85rem;
-			padding:0;
-		}
-	}
+	
 
 	.home-sunrise {
 		margin:5rem auto;
@@ -113,5 +106,107 @@
 				font-size: 4rem;
 			}
 		}
+	}
+}
+//Blocs communs aux deux homes
+.home-commited {
+	a.wp-element-button {
+		font-weight: 300;
+		strong {
+			font-weight: 700;
+		}
+	}
+	@include bp(lg) {
+		margin:0 auto;
+		max-width: 85rem;
+		padding:0;
+	}
+}
+//Home premium
+.home-premium-welcome {
+	margin-bottom: 3.5rem;
+	margin-top: 2.3rem;
+	h2 {
+		font-size: 2.6rem;
+		line-height: 3rem;
+		margin-bottom: 2.7rem;
+	}
+	p {
+		font-size: 1.6rem;
+		line-height: 2rem;
+
+		&strong {
+			margin-bottom: 4px;
+		}
+	}
+
+	@include bp(lg) {
+		margin-bottom: 7rem;
+		margin-top: 6.85rem;
+
+		h2 {
+			font-size: 5rem;
+			line-height: 6.8rem;
+			margin-bottom: 4.35rem;
+		}
+		p {
+			font-size: 2rem;
+			line-height: 2.8rem;
+			margin-left:auto;
+			margin-right: auto;
+			max-width: 85rem;
+
+			&strong {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.home-premium-assets {
+	margin-top: 2rem;
+	h3 {
+		font-size: 1.8rem;
+		line-height: 2rem;
+		margin: 0;
+		text-transform: uppercase;
+		a {
+			color:var(--bleu);
+		}
+	}
+	
+	p {
+		font-size: 1.6rem;
+		line-height: 2rem;
+		margin-bottom: 10px;
+		&.conclusion {
+			font-size: 1.8rem;
+			line-height: 2rem;
+		}
+	}
+
+	@include bp(lg) {
+		margin-left:auto;
+		margin-right: auto;
+		margin-top:6rem;
+		max-width: 85rem;
+		h3 {
+			font-size: 2.6rem;
+			line-height: 2.8rem;
+		}
+		p {
+			font-size: 2rem;
+			line-height: 2.8rem;
+			margin-bottom: 15px;
+
+			&.conclusion {
+				font-size: 2rem;
+				line-height: 2.8rem;
+				margin-top: 9rem;
+				text-align: center;
+			}
+		}
+		
+
 	}
 }
