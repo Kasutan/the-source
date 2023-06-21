@@ -40,8 +40,7 @@ function kasutan_display_advisor($post_id,$context) {
 		printf('<li class="advisor advisor-%s">',$context);
 			printf('<div class="portrait">%s</div>',$portrait);
 			printf('<p class="name">%s</p>',$name);
-			if($area) printf('<p class="area">%s %s</p>',
-				esc_html__('Your expert for:','the-source'),
+			if($area) printf('<p class="area">%s</p>',
 				$area);
 			printf('<a href="mailto:%s?subject=%s" title="%s %s">%s</a>',
 				$email,
