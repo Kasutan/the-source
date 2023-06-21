@@ -93,11 +93,6 @@ function kasutan_pmprorh_init_2() {
 	}
 	
 
-	//Ajout d'une option pour refuser les notifications
-	//TODO JS quand cette option est cochée, décocher les autres
-	//TODO PHP ajax, quand une option est activée depuis l'espace mon compte, effacer celle-ci
-	$options[]=array('name'=>esc_html__('I do not want to be notified','the-source'),'slug'=>'no-notifications');
-
 	// Define the fields for each email option
 	$fields = array();
 	foreach($options as $option) {
@@ -114,6 +109,20 @@ function kasutan_pmprorh_init_2() {
 			)
 		);
 	}
+
+	//Ajout d'une option pour refuser les notifications
+	$fields[] = new PMProRH_Field(
+		'zs-email-no-notifications',		// input name, will also be used as meta key
+		'checkbox',								// type of field
+		array(
+			'label'		=> esc_html__('I do not want to be notified','the-source'),		// custom field label
+			'class'		=> '',		// pas de classe pour pouvoir distinguer cette option des autres
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> false,			// make this field required
+			'memberslistcsv' => true, //export with csv export
+			'showrequired' => false
+		)
+	);
 	
 	// Add the fields inside the checkout page.
 	foreach ( $fields as $field ) {

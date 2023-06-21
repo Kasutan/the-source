@@ -492,6 +492,21 @@
 			var lang=$('html').attr('lang');
 			$('#zs-lang').val(lang);
 
+			/************ Quand l'input "pas de notification" est coché, décocher les autres inputs de notification ***************/	
+			var inputDisableNotifs=$('#zs-email-no-notifications');
+			$(inputDisableNotifs).on('change',function(e) {
+				if($(this).prop('checked')) {
+					$('input.email-option').prop('checked',false);
+				}
+			});
+
+			//Réciproquement, si un input de notif est coché, on décoche l'input "pas de notifications"
+			$('input.email-option').on('change',function(e) {
+				if($(this).prop('checked')) {
+					$(inputDisableNotifs).prop('checked',false);
+				}
+			});
+			
 			/************ Show label on input change/focus ***************/	
 
 			var inputs=$('#pmpro_user_fields, #pmpro_billing_address_fields').find('select, input');
