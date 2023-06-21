@@ -33,6 +33,20 @@ function kasutan_pmpro_change_email_based_on_user_locale( $email ) {
 			$subject = file_get_contents( get_stylesheet_directory(  ) . '/paid-memberships-pro/email_subject_fr/' . $email->template . '.html');
 
 
+			//Convertir ou compléter !!enddate!! et !!membership_expiration!! et !!invoice_date!!
+			global $wpdb;
+			$enddate = $wpdb->get_var("SELECT UNIX_TIMESTAMP(CONVERT_TZ(enddate, '+00:00', @@global.time_zone)) FROM $wpdb->pmpro_memberships_users WHERE user_id = '" . $user->ID . "' AND status = 'active' LIMIT 1");
+			$enddate_formate=date_i18n('d/m/Y', $enddate);
+			$data["enddate"]=$enddate_formate;
+
+			$data["membership_expiration"] = "<p>" . sprintf("Cette adhésion expirera le %s.", $enddate_formate) . "</p>\n";
+
+
+			if(isset($data['invoice_date'])) {
+				$invoice_date_timestamp=strtotime($data['invoice_date']);
+				$data['invoice_date']=date_i18n( 'd/m/Y', $invoice_date_timestamp);
+			}
+
 			//swap data into body and subject line
 			if(is_array($data))
 			{
