@@ -63,9 +63,17 @@
 			opacity:0.3;
 		}
 		&[for="zs-com"] {
+			font-size:2.2rem;
+			font-weight: 700;
+			opacity:1;
+		}
+		&[for^="zs-email"] {
 			font-size:2rem;
 			opacity:1;
 		}
+	}
+	form.pmpro_form .pmpro_checkout-fields div[id^="zs-email"] {
+		margin-bottom: 5px;
 	}
 	.pmprosp-tooltip__password {
 		display: none;
@@ -113,7 +121,7 @@
 		
 	}
 
-	#zs-com_div .pmpro_asterisk, #zs-lang_div {
+	#zs-lang_div {
 		display: none;
 	}
 

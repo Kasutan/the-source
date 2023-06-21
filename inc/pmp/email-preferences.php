@@ -91,6 +91,12 @@ function kasutan_pmprorh_init_2() {
 	if(empty($options)) {
 		return;
 	}
+	
+
+	//Ajout d'une option pour refuser les notifications
+	//TODO JS quand cette option est cochée, décocher les autres
+	//TODO PHP ajax, quand une option est activée depuis l'espace mon compte, effacer celle-ci
+	$options[]=array('name'=>esc_html__('I do not want to be notified','the-source'),'slug'=>'no-notifications');
 
 	// Define the fields for each email option
 	$fields = array();
@@ -99,20 +105,20 @@ function kasutan_pmprorh_init_2() {
 			'zs-email-'.$option['slug'],		// input name, will also be used as meta key
 			'checkbox',								// type of field
 			array(
-				'label'		=> 'Email preference: '.$option['name'],		// custom field label
+				'label'		=> $option['name'],		// custom field label
 				'class'		=> 'email-option',		// custom class
-				'profile'	=> 'only_admin',			// show only in admin
+				'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
 				'required'	=> false,			// make this field required
 				'memberslistcsv' => true, //export with csv export
 				'showrequired' => false
 			)
 		);
 	}
-	//TODO besoin de traduire ?
+	
 	// Add the fields inside the checkout page.
 	foreach ( $fields as $field ) {
 		pmprorh_add_registration_field(
-			'just_profile',				// location on checkout page
+			'after_billing_fields',				// location on checkout page
 			$field							// PMProRH_Field object
 		);
 	}

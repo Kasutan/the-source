@@ -3265,8 +3265,16 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   opacity: 0.3;
 }
 .pmpro-checkout form.pmpro_form label[for=zs-com], .pmpro-checkout #loginform label[for=zs-com] {
+  font-size: 2.2rem;
+  font-weight: 700;
+  opacity: 1;
+}
+.pmpro-checkout form.pmpro_form label[for^=zs-email], .pmpro-checkout #loginform label[for^=zs-email] {
   font-size: 2rem;
   opacity: 1;
+}
+.pmpro-checkout form.pmpro_form .pmpro_checkout-fields div[id^=zs-email] {
+  margin-bottom: 5px;
 }
 .pmpro-checkout .pmprosp-tooltip__password {
   display: none;
@@ -3305,7 +3313,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   padding-bottom: 5rem;
   position: relative;
 }
-.pmpro-checkout #zs-com_div .pmpro_asterisk, .pmpro-checkout #zs-lang_div {
+.pmpro-checkout #zs-lang_div {
   display: none;
 }
 .pmpro-checkout .pmpro_checkout-fields {

@@ -121,20 +121,7 @@ function kasutan_pmprorh_init_canal_fields() {
 		)
 	);
 
-	$fields[] = new PMProRH_Field(
-		'zs-com',							// input name, will also be used as meta key
-		'checkbox',								// type of field
-		array(
-			'label'		=> esc_html__('I accept to receive commercial communications by The Source only*','the-source'),		// custom field label
-			'size'		=> 30,				// input size
-			'class'		=> 'com',		// custom class
-			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
-			'required'	=> true,			
-			'placehoder' => '',
-			'memberslistcsv' => true,
-			'hint' => ''
-		)
-	);
+	
 
 	$fields[] = new PMProRH_Field(
 		'zs-lang',							// input name, will also be used as meta key
@@ -152,6 +139,23 @@ function kasutan_pmprorh_init_canal_fields() {
 		)
 	);
 	
+	//Sert de label aux préférences email
+	$fields[] = new PMProRH_Field(
+		'zs-com',							// input name, will also be used as meta key
+		'html',								// type of field
+		array(
+			'label'		=> esc_html__('I would like to be notified when the below assets are published:','the-source'),		// custom field label
+			'size'		=> 30,				// input size
+			'class'		=> 'com',		// custom class
+			'profile'	=> 'admin',			// show the field on the profile page to admins only + on checkout
+			'required'	=> false,			
+			'placehoder' => '',
+			'memberslistcsv' => false,
+			'hint' => ''
+		)
+	);
+
+	//SI BESOIN : ajouter ici un sous-titre pour le formulaire de paiement et le déplacer ensuite en JS
 
 	// Add the fields inside the checkout page.
 	foreach ( $fields as $field ) {
