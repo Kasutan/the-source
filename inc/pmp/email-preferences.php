@@ -155,6 +155,10 @@ function kasutan_update_email_preference() {
 		//returns Meta ID if the key didn't exist, true on successful update, false on failure or if the value passed to the function is the same as the one that is already in the database.
 		
 		if($response) {
+			//Si l'adhérent a activé une préférence depuis son espace membre, on désactive la meta no-notif
+			update_user_meta($user_id,'zs-email-no-notifications',0);
+
+			//Finaliser l'ajax
 			echo true; 
 			die();
 		} else {
