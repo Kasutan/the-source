@@ -5161,6 +5161,7 @@ body.admin-bar .single-product {
   text-align: center;
 }
 .advisor.advisor-faq .area {
+  font-size: 2.2rem;
   margin-bottom: 1.6rem;
 }
 
@@ -5172,7 +5173,7 @@ body.admin-bar .single-product {
   padding: 0;
 }
 .advisors.grid-4 {
-  justify-content: space-between;
+  justify-content: center;
 }
 .advisors.grid-4 .advisor {
   flex-basis: 45%;
