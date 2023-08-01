@@ -264,10 +264,10 @@ function kasutan_display_contact_popup($user_id,$main_advisor,$backup_advisor,$s
 
 	$email='';
 	if(function_exists('get_field')) {
-		$email=sanitize_email(get_field('zs_general_email','option'));
+		$email=sanitize_email(get_field('zs_contact_email','option'));
 	}
 	if(empty($email)) {
-		$email='team@thesourceworldconnection.com';
+		$email='contact@thesourceworldconnection.com';
 	}
 	
 	$email=antispambot($email);
